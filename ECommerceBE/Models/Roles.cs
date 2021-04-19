@@ -7,8 +7,8 @@ namespace ECommerceBE.Models
 {
     public class Roles
     {
-        int roleID { get; set; }
-        string roleName { get; set; }
+        public int roleID { get; set; }
+        public string roleName { get; set; }
     }
     public class BaseRespone
     {
