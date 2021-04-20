@@ -10,9 +10,4 @@ namespace ECommerceBE.Models
         public int roleID { get; set; }
         public string roleName { get; set; }
     }
-    public class BaseRespone
-    {
-        public bool Success { get; set; }
-        public Object Data { get; set; }
-    }
 }
