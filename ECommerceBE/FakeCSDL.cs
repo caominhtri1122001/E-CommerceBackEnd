@@ -10,6 +10,9 @@ namespace ECommerceBE
     {
         public  List<Roles> listRole { get; set; }
         public  List<Users> listUser { get; set; }
+        public List<Products> listPro { get; set; }
+        public List<Category> listCat { get; set; }
+
 
         private static FakeCSDL _instance;
         public static FakeCSDL Instance
@@ -30,6 +33,7 @@ namespace ECommerceBE
         {
             listRole = new List<Roles>();
             listUser = new List<Users>();
+            listCat = new List<Category>();
 
             Roles r1 = new Roles();
             r1.roleID = 1;
@@ -58,6 +62,16 @@ namespace ECommerceBE
             u2.userPhone = "0337222577";
             u2.userRoleID = 2;
             listUser.Add(u2);
+
+            Category cat1 = new Category();
+            cat1.catID = 1;
+            cat1.catName = "Clothes";
+            listCat.Add(cat1);
+
+            Category cat2 = new Category();
+            cat2.catID = 2;
+            cat2.catName = "Shoes";
+            listCat.Add(cat2);
         }
     }
 }
