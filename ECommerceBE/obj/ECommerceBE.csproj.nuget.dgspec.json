@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cao Minh Tri\\source\\repos\\EcommerceBE\\ECommerceBE\\ECommerceBE.csproj": {}
+    "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\ECommerceBE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cao Minh Tri\\source\\repos\\EcommerceBE\\ECommerceBE\\ECommerceBE.csproj": {
+    "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\ECommerceBE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cao Minh Tri\\source\\repos\\EcommerceBE\\ECommerceBE\\ECommerceBE.csproj",
+        "projectUniqueName": "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\ECommerceBE.csproj",
         "projectName": "ECommerceBE",
-        "projectPath": "C:\\Users\\Cao Minh Tri\\source\\repos\\EcommerceBE\\ECommerceBE\\ECommerceBE.csproj",
+        "projectPath": "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\ECommerceBE.csproj",
         "packagesPath": "C:\\Users\\Cao Minh Tri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cao Minh Tri\\source\\repos\\EcommerceBE\\ECommerceBE\\obj\\",
+        "outputPath": "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cao Minh Tri\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -34,6 +34,7 @@ namespace ECommerceBE
             listRole = new List<Roles>();
             listUser = new List<Users>();
             listCat = new List<Category>();
+            listPro = new List<Products>();
 
             Roles r1 = new Roles();
             r1.roleID = 1;
