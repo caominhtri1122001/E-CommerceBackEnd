@@ -23,9 +23,16 @@ namespace ECommerceBE
 
         //GET: api/Roles
         [HttpGet]
-        public List<Roles> GetListRoles()
+        public BaseRespone GetListRoles()
         {
-            return FakeCSDL.Instance.listRole;
+            var res = new BaseRespone(false, null);
+            List<Roles> data = FakeCSDL.Instance.listRole;
+            if (data.Count != 0)
+            {
+                res.Success = true;
+                res.Data = data;
+            }
+            return res;
         }
 
         //GET: api/Roles/{id}

@@ -11,6 +11,7 @@ namespace ECommerceBE.Models
         public string proName { get; set; }
         public string proBrand { get; set; }
         public string proOrigin { get; set; }
+        public double proOldPrice { get; set; }
         public double proPrice { get; set; }
         public string proDescription { get; set; }
         public int status { get; set; }

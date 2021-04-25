@@ -10,9 +10,17 @@ namespace ECommerceBE.Controllers
     {
         //GET: api/Users
         [HttpGet]
-        public List<Users> GetListUser()
+        public BaseRespone GetListUser()
         {
-            return FakeCSDL.Instance.listUser;
+            var res = new BaseRespone(false, null);
+            List<Users> data = FakeCSDL.Instance.listUser;
+            if (data.Count != 0)
+            {
+                res.Success = true;
+                res.Data = data;
+            }
+            return res;
+            //return FakeCSDL.Instance.listUser;
         }
 
         //GET: api/Users/{id}

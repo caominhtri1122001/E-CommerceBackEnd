@@ -15,9 +15,17 @@ namespace ECommerceBE.Controllers
 
         //GET: api/Category
         [HttpGet]
-        public List<Category> GetListCate()
+        public BaseRespone GetListCate()
         {
-            return FakeCSDL.Instance.listCat;
+            var res = new BaseRespone(false, null);
+            List<Category> data = FakeCSDL.Instance.listCat;
+            if (data.Count != 0)
+            {
+                res.Success = true;
+                res.Data = data;
+            }
+            return res;
+            //return FakeCSDL.Instance.listCat;
         }
 
         //GET: api/Category/{id}
