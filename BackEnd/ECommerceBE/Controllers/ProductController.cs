@@ -108,7 +108,7 @@ namespace ECommerceBE.Controllers
         }
 
         //PUT: api/Products/{id}
-        [HttpPut("{id}")]
+        [HttpPut("{proID}")]
         public BaseRespone PutProduct(int proID, string proName,
             string proBrand, string proOrigin,double proOldPrice, double proPrice,
             string proDescription, int status, int catID)
@@ -173,7 +173,8 @@ namespace ECommerceBE.Controllers
         }
 
         //DELETE: api/Products/{id}
-        [HttpDelete("{id}")]
+        //[HttpDelete("{catID}")]
+        [HttpDelete("product-detail-delete")]
         public BaseRespone DeleteProduct(int catID,int proID)
         {
             List<Products> data = FakeCSDL.Instance.listPro;

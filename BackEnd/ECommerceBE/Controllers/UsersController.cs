@@ -24,7 +24,7 @@ namespace ECommerceBE.Controllers
         }
 
         //GET: api/Users/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{userID}")]
         public BaseRespone GetUser(int userID)
         {
             var res = new BaseRespone(false, null);
@@ -45,7 +45,7 @@ namespace ECommerceBE.Controllers
 
 
         //PUT: api/Users/{id}
-        [HttpPut("{id}")]
+        [HttpPut("{userID}")]
         public BaseRespone PutUser(int userID, string uName , string uAName, string uPass, string uPhone,string uAddress,int uRoleID)
         {
             List<Users> data = FakeCSDL.Instance.listUser;
@@ -97,7 +97,7 @@ namespace ECommerceBE.Controllers
         }
 
         //DELETE: api/Users/{id}
-        [HttpDelete("{id}")]
+        [HttpDelete("{userID}")]
         public BaseRespone DeleteRole(int userID)
         {
             List<Users> data = FakeCSDL.Instance.listUser;
