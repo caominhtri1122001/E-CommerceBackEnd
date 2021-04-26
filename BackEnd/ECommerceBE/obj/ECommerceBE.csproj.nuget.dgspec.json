@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\ECommerceBE.csproj": {}
+    "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\ECommerceBE.csproj": {
+    "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\ECommerceBE.csproj",
+        "projectUniqueName": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
         "projectName": "ECommerceBE",
-        "projectPath": "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\ECommerceBE.csproj",
-        "packagesPath": "C:\\Users\\Cao Minh Tri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cao Minh Tri\\source\\repos\\ECommerceBE\\ECommerceBE\\obj\\",
+        "projectPath": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+        "packagesPath": "C:\\Users\\duong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Cao Minh Tri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\duong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
