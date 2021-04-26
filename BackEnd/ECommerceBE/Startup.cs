@@ -30,6 +30,16 @@ namespace ECommerceBE
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ECommerceBE", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "MyCors",
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("*");
+                                  });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +53,9 @@ namespace ECommerceBE
             }
 
             app.UseRouting();
+
+            app.UseCors("MyCors");
+
 
             app.UseAuthorization();
 
