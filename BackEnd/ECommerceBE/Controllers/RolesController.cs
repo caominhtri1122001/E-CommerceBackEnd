@@ -36,7 +36,7 @@ namespace ECommerceBE
         }
 
         //GET: api/Roles/{id}
-         [HttpGet("{id}")]
+         [HttpGet("{roleID}")]
         public BaseRespone GetRoles(int roleID)
         {
             var res = new BaseRespone(false, null);
@@ -57,7 +57,7 @@ namespace ECommerceBE
 
 
         //PUT: api/Roles/{id}
-        [HttpPut("{id}")]
+        [HttpPut("{roleID}")]
         public BaseRespone PutRoles(int roleID,string roleName)
         {
             List<Roles> data = FakeCSDL.Instance.listRole;
@@ -99,7 +99,7 @@ namespace ECommerceBE
         }
 
         //DELETE: api/Roles/{id}
-        [HttpDelete("{id}")]
+        [HttpDelete("{roleID}")]
         public BaseRespone DeleteRole(int roleID)
         {
             List<Roles> data = FakeCSDL.Instance.listRole;

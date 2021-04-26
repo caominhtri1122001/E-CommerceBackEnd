@@ -48,7 +48,7 @@ namespace ECommerceBE.Controllers
         //}
 
         //GET: api/Products/{catID}
-        [HttpGet("{id}")]
+        [HttpGet("product-detail")]
         public BaseRespone GetProductByCat(int catID, int proID)
         {
             var res = new BaseRespone(false, null);

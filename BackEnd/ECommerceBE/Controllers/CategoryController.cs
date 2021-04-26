@@ -29,7 +29,7 @@ namespace ECommerceBE.Controllers
         }
 
         //GET: api/Category/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{catID}")]
         public BaseRespone GetCate(int catID)
         {
             var res = new BaseRespone(false, null);
@@ -49,7 +49,7 @@ namespace ECommerceBE.Controllers
         }
 
         //PUT: api/Category/{id}
-        [HttpPut("{id}")]
+        [HttpPut("{catID}")]
         public BaseRespone PutCate(int catID, string catName)
         {
             List<Category> data = FakeCSDL.Instance.listCat;
@@ -91,7 +91,7 @@ namespace ECommerceBE.Controllers
         }
 
         //DELETE: api/Category/{id}
-        [HttpDelete("{id}")]
+        [HttpDelete("{catID}")]
         public BaseRespone DeleteCate(int catID)
         {
             List<Category> data = FakeCSDL.Instance.listCat;
