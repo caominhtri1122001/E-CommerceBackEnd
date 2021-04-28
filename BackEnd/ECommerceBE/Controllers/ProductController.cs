@@ -28,24 +28,24 @@ namespace ECommerceBE.Controllers
         }
 
         //GET: api/Products/{id}
-        //[HttpGet("{id}")]
-        //public BaseRespone GetProduct(int proID)
-        //{
-        //    var res = new BaseRespone(false, null);
-        //    List<Products> data = FakeCSDL.Instance.listPro;
-        //    Products pro = new Products();
-        //    foreach (Products i in data)
-        //    {
-        //        if (i.proID == proID)
-        //        {
-        //            pro = i;
-        //            res.Success = true;
-        //            res.Data = pro;
-        //            return res;
-        //        }
-        //    }
-        //    return res;
-        //}
+        [HttpGet("GetProductByID")]
+        public BaseRespone GetProduct(int proID)
+        {
+            var res = new BaseRespone(false, null);
+            List<Products> data = FakeCSDL.Instance.listPro;
+            Products pro = new Products();
+            foreach (Products i in data)
+            {
+                if (i.proID == proID)
+                {
+                    pro = i;
+                    res.Success = true;
+                    res.Data = pro;
+                    return res;
+                }
+            }
+            return res;
+        }
 
         //GET: api/Products/{catID}
         [HttpGet("product-detail")]
