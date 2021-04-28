@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Đại học\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {}
+    "D:\\Dai hoc\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {}
   },
   "projects": {
-    "D:\\Đại học\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {
+    "D:\\Dai hoc\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Đại học\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+        "projectUniqueName": "D:\\Dai hoc\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
         "projectName": "ECommerceBE",
-        "projectPath": "D:\\Đại học\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+        "projectPath": "D:\\Dai hoc\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Đại học\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\obj\\",
+        "outputPath": "D:\\Dai hoc\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\ECommerce\\BackEnd\\ECommerceBE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
