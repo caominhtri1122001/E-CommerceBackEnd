@@ -52,19 +52,37 @@ namespace ECommerceBE
             u1.userID = 1;
             u1.userName = "Cao Minh Tri";
             u1.userAccName = "caominhtri";
-            u1.userPass = "123456";
+            u1.userPass = "1";
             u1.userPhone = "0349319314";
             u1.userRoleID = 1;
             listUser.Add(u1);
 
             Users u2 = new Users();
             u2.userID = 2;
-            u2.userName = "Tri Minh Cao";
-            u2.userAccName = "triminhcao";
-            u2.userPass = "654321";
-            u2.userPhone = "0337222577";
-            u2.userRoleID = 2;
+            u2.userName = "Truong Thi My Duyen";
+            u2.userAccName = "truongthimyduyen";
+            u2.userPass = "1";
+            u2.userPhone = "000";
+            u2.userRoleID = 1;
             listUser.Add(u2);
+
+            Users u3 = new Users();
+            u3.userID = 3;
+            u3.userName = "Tran Anh Dung";
+            u3.userAccName = "trananhdung";
+            u3.userPass = "1";
+            u3.userPhone = "000";
+            u3.userRoleID = 1;
+            listUser.Add(u3);
+
+            Users u4 = new Users();
+            u4.userID = 4;
+            u4.userName = "Duong Truong Vu";
+            u4.userAccName = "duongtruongvu";
+            u4.userPass = "1";
+            u4.userPhone = "000";
+            u4.userRoleID = 1;
+            listUser.Add(u4);
 
             //Categories
             Category cat1 = new Category();

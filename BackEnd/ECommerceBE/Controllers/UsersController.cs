@@ -8,6 +8,23 @@ namespace ECommerceBE.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+
+        [HttpGet("DangNhap")]
+        public BaseRespone Login(string taikhoan, string matkhau)
+        {
+            var res = new BaseRespone(false, false);
+            foreach (Users i in FakeCSDL.Instance.listUser)
+            {
+                if (i.userAccName == taikhoan && i.userPass == matkhau)
+                {
+                    res.Success = true;
+                    res.Data = true;
+                }
+            }
+            return res;
+        }
+
+
         //GET: api/Users
         [HttpGet]
         public BaseRespone GetListUser()
