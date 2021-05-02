@@ -16,5 +16,7 @@ namespace ECommerceBE.Models
         public string proDescription { get; set; }
         public int status { get; set; }
         public int catID { get; set; }
+
+        public string ProLinkPicture { get; set; }
     }
 }
