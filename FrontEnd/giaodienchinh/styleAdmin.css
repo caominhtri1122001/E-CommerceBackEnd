@@ -16,36 +16,40 @@
     width:100%;
     overflow: hidden;
     display: flex;
-    padding:0 5em;
-    justify-content: space-around;
+    font-size: 0.8rem;
+    justify-content: space-between;
 }
 .homepage{
     display: flex;
-    justify-content: center;
+    padding:0 4em;
     align-items: center;
 }
 .home{
     color:var(--shadow-color);
     margin-right:1em;
+ 
 }
 .logo{
     display: flex;
     justify-content: center;
     align-items: center;
    margin-right:1em;
+  
 }
 .logo > img{
-    width:80px;
-    height:80px;
+    width:60px;
+    height:60px;
     object-fit: contain;
 }
 .profile{
     margin-left:1em;
 }
+/* Phần tài khoản  */
 .account-admin{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right:5em;
 }
 .account-img > img{
     width:50px;
@@ -66,4 +70,46 @@
     padding:0.5em;
     border:1px solid #333;
     border-radius: 20px;
+}
+/* Phần thân */
+a{
+    text-decoration: none;
+}
+.GUIAdmin{
+    display: flex;
+}
+/* Toàn bộ phần quản lý  */
+.sliderbar{
+    width:20%;
+}
+/* Thành phần quản lý  */
+.sliderbar-menu{
+  font-size:0.8rem;
+}
+/* một quản lý item */
+.manager-order{
+    padding-top:1em;
+}
+ul{
+    list-style: none;
+}
+.manager-order-name{
+    display: flex;
+    align-items: center;
+    padding:0em 1em;
+}
+.manager-icon{
+    padding-right:0.8em;
+}
+.manager-icon>img{
+    width:25px;
+    height:25px;
+    object-fit: contain;
+}
+.manager-function{
+    padding-right:0.8em;
+}
+.manager{
+    width: fit-content;
+   padding:0 2.5em;
 }
