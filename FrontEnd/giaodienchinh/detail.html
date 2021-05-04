@@ -17,20 +17,6 @@
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous"></script>
 <script>
-    let yeucau=""
-    console.log("truong my duyen")
-       var proudcts = [];
-        proudcts.push({
-            id: 1,
-            title: "Dieu hoa",
-            url: "https://contents.mediadecathlon.com/p1788183/k$74f724f0b21408c05cc53b2db0a022b0/ao-thun-om-vua-tap-gym-pilates-500-cho-nam-xam-co-van-dam.jpg?format=auto&f=250x250"
-        });
-
-        proudcts.push({
-            id: 2,
-            title: "Tu lanh",
-            url: "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
-        });
 
         function requestData(url) {
             var xhttp = new XMLHttpRequest();
@@ -47,6 +33,7 @@
             xhttp.send();
         }
 
+     
         function requestDataAjax(url) {
             $.ajax({
                 url: url,
@@ -72,14 +59,6 @@
      
 
         var loadData = function (proudcts) {
-            // Duyeen tuwj chinh 
-            console.log(proudcts.proName)
-           console.log(proudcts.proID)
-         let yeucau="http://localhost:37504/api/Product/GetProductByID?proID="+proudcts.proID
-        alert(yeucau)
-          
-           
-                // product.url = "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
                 var productHtml = `
                 <div class="product__codes hide-on-mobile-tablet">
                             <label class="product__codes-label width-label">${proudcts.proName}</label>
@@ -188,12 +167,20 @@
             ` 
          
                 $("#product-infor").append(productHtml)
-              
         }
         $(document).ready(function () {
-            console.log("ready!");
-         alert("Yeu cau duoi ready : "+yeucau)
-            requestDataAjax("http://localhost:37504/api/Product/GetProductByID?proID=12");
+           
+            // console.log("ben trong ham readey: ")
+            // console.log(id)
+            var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5";
+            var url = new URL(url_string);
+            var c = url.searchParams.get("c");
+            console.log(c);
+            var url = new URL(window.location.href)
+            let productId = url.searchParams.get("productId");
+            console.log(url)
+            console.log(productId)
+            requestDataAjax("http://localhost:37504/api/Product/GetProductByID?proID="+productId);
 
         });
 </script>
