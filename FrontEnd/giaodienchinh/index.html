@@ -15,108 +15,7 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>
     <!-- tesst java script -->
-    <script>
-        var proudcts = [];
-        proudcts.push({
-            id: 1,
-            title: "Dieu hoa",
-            url: "https://contents.mediadecathlon.com/p1788183/k$74f724f0b21408c05cc53b2db0a022b0/ao-thun-om-vua-tap-gym-pilates-500-cho-nam-xam-co-van-dam.jpg?format=auto&f=250x250"
-        });
-
-        proudcts.push({
-            id: 2,
-            title: "Tu lanh",
-            url: "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
-        });
-
-        function requestData(url) {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    var data = JSON.parse(this.responseText)
-                    loadData(data)
-                    console.log("load ok")
-                } else {
-                    console.log("error")
-                }
-            };
-            xhttp.open("GET", url, true);
-            xhttp.send();
-        }
-
-        function requestDataAjax(url) {
-            $.ajax({
-                url: url,
-                data: null,
-                cache: false,
-                type: "GET",
-                success: function (response) {
-                    console.log(response)
-                    if (response.success) {
-                        loadData(response.data)
-                    }
-                    else {
-                        alert(response.message)
-                    }
-                },
-                error: function (xhr) {
-
-                }
-            });
-        }
-
-        var goToPage = function (id) {
-                window.location.href = "/detail.html?productId="+id;
-            }
-
-        var loadData = function (proudcts) {
-            console.log("load data");
-
-            for(var i = 0; i < proudcts.length; i++) {
-                let product = proudcts[i];
-                console.log(product.proID)
-                // product.url = "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
-                var productHtml = `
-                <div onclick="goToPage('${product.proID}')" class="grid__column-2-4">
-                                    <!-- product-item -->
-                                        <a href="#" id="0" class="home-product-item">
-                                            <img src=" ${product.proLinkPicture}">
-                                            <div class="home-product-item__name"> ${product.proName} </div>
-                                            <div class="home-product-item__price">
-                                                <span class="home-product-item__price-old"> đ${product.proOldPrice}</span>
-                                                <span class="home-product-item__price-current"> đ${product.proPrice} </span>
-                                            </div>
-                                            <div class="home-product-item__action">
-                                                <div class="home-product-item__rating">
-                                                    <i class="home-product-item__star--gold fas fa-star"></i>
-                                                    <i class="home-product-item__star--gold fas fa-star"></i>
-                                                    <i class="home-product-item__star--gold fas fa-star"></i>
-                                                    <i class="home-product-item__star--gold fas fa-star"></i>
-                                                    <i class="fas fa-star"></i>
-                                                </div>
-                                                <span class="home-product-item__sold"> 12 đã bán </span>
-                                            </div>
-                                            <div class="product-favourite">
-                                                <i class="fas fa-check"></i>
-                                                <span> Yêu thích </span>
-                                            </div>
-                                            <div class="product-sale-off">
-                                                <span class="product-sale-off__percent"> 23% </span>
-                                                <span class="product-sale-off__label"> GIẢM </span>
-                                            </div>
-                                        </a>
-                   
-                                </div>
-            `
-                $("#product-list-row").append(productHtml)
-            }
-        }
-        $(document).ready(function () {
-            console.log("ready!");
-           requestDataAjax("http://localhost:37504/api/Product");
-            //loadData(proudcts);
-        });
-    </script>
+   
      
 </head>
 
@@ -806,10 +705,10 @@
                     <div class="auth-form__form">
                         <div class="auth-form__group">
                             
-                            <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
+                            <input type="text" id="emailLogin" class="auth-form__input" placeholder="Nhập email của bạn" > 
                         </div>
                         <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                            <input type="password" id="passwordLogin"class="auth-form__input" placeholder="Mật khẩu của bạn">
                         </div>
                         
                     </div>
@@ -827,8 +726,12 @@
 
                     
                     <div class="auth-form__controls ">
-                        <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
-                        <button class="btn btn--primary ">ĐĂNG NHẬP</button>
+                        <button class="btn btn--normal auth-form__control-back">
+                            <a href="">
+                                TRỞ LẠI
+                              </a>
+                        </button>
+                        <button class="btn btn--primary " onclick="checkLogin()">ĐĂNG NHẬP</button>
                     </div>
                 </div>
                 
