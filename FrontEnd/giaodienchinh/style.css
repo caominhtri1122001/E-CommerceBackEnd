@@ -306,10 +306,11 @@ dành cho danh mục */
     min-height: 26px;
 }
 /* Lamf phần đăng ký đăng nhập */
-.logInOut{
+#logInOut{
     display: flex;
     color:#fff;
     font-size:1.3rem;
+   
     
 }
 #register{
@@ -321,10 +322,15 @@ dành cho danh mục */
     padding-left:1em;
     cursor: pointer;
 }
+/* Người dùng */
+#useraccount{
+    display: none;
+}
 .header__navbar-user{
     display: flex;
     justify-items: center;
     position: relative;
+    display: none;
 }
 .header__navbar-user-img{
     width: 22px;
@@ -332,7 +338,7 @@ dành cho danh mục */
     border-radius: 50%;
     border:1px solid rgba(0, 0, 0, 0.1)
 }
-.header__navbar-user-name{
+#header__navbar-user-name{
     margin-left: 4px;
     font-size: 1.4rem;
     font-weight: 400;

@@ -1,8 +1,10 @@
 var modal = document.getElementById("myModal");
 var modal2=document.getElementById("myModal2")
 let emailLogin=document.getElementById("emailLogin")
-console.log("emailLogin")
-console.log(emailLogin.value)
+var login=document.getElementById("logInOut")
+var user=document.getElementById("useraccount")
+let username=document.getElementById("header__navbar-user-name")
+
 
 // Get the button that opens the modal
 
@@ -125,9 +127,9 @@ function changeToRegister(){
   modal2.style.display = "none";
 }
 // Thực hiện chức năng xem xét dữ liệu sau khi đăng nhập
-var usename=[]
+var userdata=[]
 function requestDataUser(url) {
-  console.log("thuc hien usename")
+  console.log("thuc hien userdata")
   $.ajax({
       url: url,
       data: null,
@@ -150,10 +152,10 @@ function requestDataUser(url) {
 var checkData = function (data) {
   console.log("thuc hien ham checkdata")
     for(i=0;i<data.length;i++){
-      usename.push(data[i])
+        userdata.push(data[i])
     }
     console.log("user name trong ham checkdata: " )
-    console.log(usename)
+    console.log(userdata)
 }
 
 // Thực hiện lấy dữ liệu sau đó hiện lên 
@@ -161,11 +163,23 @@ function checkLogin(){
   // alert("duyen")
   // alert(emailLogin.value)
   // alert(passwordLogin.value)
+  modal2.style.display = "none";
   console.log("trong ham check Login")
   let valid=false;
-  usename.forEach(function(item){
-    if(emailLogin.value==item.userAccName&&passwordLogin.value==item.userPass) valid=true
- })
- if(valid==true) alert("dung")
+  let usevalid
+  userdata.forEach(function(item){
+    if(emailLogin.value==item.userAccName&&passwordLogin.value==item.userPass) 
+    {valid=true
+    usevalid=item
+    }
+     })
+ if(valid==true) {
+     login.style.display="none"
+     user.style.display="flex"
+     console.log(username.innerText)
+     console.log("nguoi dung dung")
+     console.log(usevalid)
+     username.innerText=usevalid.userName
+ }
  else alert("sai")
 }
