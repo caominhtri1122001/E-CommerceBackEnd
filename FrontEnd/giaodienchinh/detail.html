@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chitietsanpham</title>
-    <link rel="stylesheet" href="styledetail.css">
+    <title>Chi tiet san pham</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap&subset=vietnamese"
     rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styledetail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -60,98 +60,93 @@
 
         var loadData = function (proudcts) {
                 var productHtml = `
-                <div class="product__codes hide-on-mobile-tablet">
-                            <label class="product__codes-label width-label">${proudcts.proName}</label>
-                            <div class="product__codes-wrapper">
-                                <div class="product__code">Giảm ₫3k</div>
-                                <div class="product__code">Giảm ₫5k</div>
-                                <div class="product__code">Giảm ₫8k</div>
+                <div class="product-img">
+                    <div class="product-spe-img">
+                        <img src="${proudcts.proLinkPicture}" alt="hinhanh">
+                    </div>
+                    <div class="product-small-img">
+                        <img src="//likefit.vn/wp-content/uploads/2020/07/snb5-600x600.jpg" alt="">
+                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb1-600x600.jpg" alt="">
+                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb1-600x600.jpg" alt="">
+                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb3-600x600.jpg" alt="">
+                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb3-600x600.jpg" alt="">
+                    </div>
+                    <div class="product__sharing-icons hide-on-mobile-tablet">
+                        <div class="text">Chia sẻ:</div>
+                        <a href="#" class="product__action-icon messenger">
+                            <i class="fab fa-facebook-messenger"></i>
+                        </a>
+                        <a href="#" class="product__action-icon facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="product__action-icon google">
+                            <i class="fab fa-google-plus"></i>
+                        </a>
+                        <a href="#" class="product__action-icon pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="#" class="product__action-icon twitter">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                       
+                    </div>
+                </div>
+                <div id="product-infor">
+                    <div class="product-infor-inner">
+                        <h1 class="product-title entry-title">
+                           ${proudcts.proName}
+                       </div>
+                       <div class="product__price">
+                        <div class="product__price-main">
+                            <span class="product__price-old">₫${proudcts.proOldPrice}</span>
+                            <div class="product__price-current">
+                                <span class="product__price-new">₫${proudcts.proPrice}</span>
+                                <span class="product__price-label bgr-orange">33% GIẢM</span>
                             </div>
                         </div>
-
-                        <div class="product__combo hide-on-mobile-tablet">
-                            <label class="product__combo-label width-label">Combo Khuyến Mãi</label>
-                            <div class="product__combo-note">Mua 2 &amp; giảm 5%</div>
+                        <div class="product__price-slogan hide-on-mobile-tablet">
+                            <i class="product__price-icon-tag fas fa-tags"></i>
+                            <span class="product__price-slogan-text">Ở đâu rẻ hơn, Minecraft Shop hoàn
+                                tiền</span>
+                            <i class="product__price-icon-question far fa-question-circle"></i>
                         </div>
-
-                        <div class="product__shipping">
-                            <label class="product__shipping-label width-label">Vận Chuyển</label>
-                            <div class="product__shipping-wrapper">
-                                <div class="product__shipping-free">
-                                    <i class="product__shipping-free-icon fas fa-truck-loading"></i>
-                                    <div >
-                                        <div >Miễn Phí Vận Chuyển</div>
-                                        <div >Miễn Phí Vận Chuyển khi đơn đạt
-                                            giá trị tối thiểu</div>
-                                    </div>
-                                </div>
-
-                                <div class="product__shipping-free">
-                                    <i class="product__shipping-to-icon-truck fas fa-truck"></i>
-                                    <div>
-                                        <div class="product__shipping-to-destination">
-                                            <label class="product__shipping-to-label">Vận Chuyển Tới</label>
-                                            <div>
-                                                <span class="product__shipping-to-city">Huyện Ba Vì, Hà
-                                                    Nội</span>
-                                                <i class="product__shipping-to-icon fas fa-chevron-down"></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="product__shipping-to-destination">
-                                            <label class="product__shipping-to-label">Phí Vận Chuyển</label>
-                                            <div >
-                                                <span class="product__shipping-to-city">đ10.500</span>
-                                                <i class="product__shipping-to-icon fas fa-chevron-down"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div> 
+                    <div class="product-decription">
+                        <p class="product-detail-item"><strong>Mô tả sản phẩm</strong></p>
+                        <div class="product-detail-text">
+                            <p>– <strong>Mô ta</strong>: ${proudcts.proDescription}</p>
+                            <p>– <strong>Thương hiệu</strong>: ${proudcts.proBrand}</p>
+                            <p>– <strong>Xuất xứ</strong>: ${proudcts.proOrigin}</p>
                         </div>
-
-                        <div class="product__options">
-                            <label class="product__options-label width-label">Chọn loại hàng</label>
-                            <div class="product__options-items-wrapper">
-                                <div class="product__options-items">
-                                    <button class="product__options-item">Creeper</button>
-                                    <button class="product__options-item">Trong suốt</button>
-                                    <button class="product__options-item">TNT</button></div>
-                                <div class="product__options-items-error-message">Vui lòng chọn Phân loại hàng
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product__qnt hide-on-mobile">
-                            <label class="product__qnt-label width-label">Số Lượng</label>
-                            <div class="shop__qnt-btns">
-                                <button class="soluong">
-                                    <i class="shop__qnt-btn-icon fas fa-minus"></i>
-                                </button>
-                                <input class="shop__qnt-input" type="text" value="1" maxlength="4">
-                                <button class="soluong" >
-                                    <i class="shop__qnt-btn-icon fas fa-plus"></i>
-                                </button>
-                            </div>
-                            <div class="product__qnt-note">
-                                <span class="product__qnt-note-num">1100</span>
-                                sản phẩm có sẵn
-                            </div>
-                        </div>
-
-                        <div class="product-btns-main">
-                            <button class="product-btn-main product-btn-main__msg clear-btn hide-on-tablet">
-                                <i class="product-btn-main__msg-icon far fa-comment-dots"></i>
+                    </div>
+                    <div class="product__qnt hide-on-mobile">
+                        <label class="product__qnt-label width-label">Số Lượng</label>
+                        <div class="shop__qnt-btns">
+                            <button class="soluong">
+                                <i class="shop__qnt-btn-icon fas fa-minus"></i>
                             </button>
-                            <button class="product-btn-main product-btn-main__adding">
-                                <i class="product-btn-main__adding-icon fas fa-cart-plus"></i>
-                                <span class="product-btn-main__text product-btn-main__adding-text hide-on-mobile">Thêm Vào Giỏ Hàng</span>
-                            </button>
-                            <button onclick="document.location.href=this.getAttribute('href');" href="product-cart.html" class="product-btn-main product-btn-main__buying">
-                                <span class="product-btn-main__text product-btn-main__buying-text">Mua
-                                    Ngay</span>
+                            <input class="shop__qnt-input" type="text" value="1" maxlength="4">
+                            <button class="soluong" >
+                                <i class="shop__qnt-btn-icon fas fa-plus"></i>
                             </button>
                         </div>
+                        <div class="product__qnt-note">
+                            <span class="product__qnt-note-num">1100</span>
+                            sản phẩm có sẵn
+                        </div>
+                    </div>
+                    <div class="product-btns-main">
+                        <button class="product-btn-main product-btn-main__msg clear-btn hide-on-tablet">
+                            <i class="product-btn-main__msg-icon far fa-comment-dots"></i>
+                        </button>
+                        <button class="product-btn-main product-btn-main__adding">
+                            <i class="product-btn-main__adding-icon fas fa-cart-plus"></i>
+                            <span class="product-btn-main__text product-btn-main__adding-text hide-on-mobile">Thêm Vào Giỏ Hàng</span>
+                        </button>
+                        <button onclick="document.location.href=this.getAttribute('href');" href="product-cart.html" class="product-btn-main product-btn-main__buying">
+                            <span class="product-btn-main__text product-btn-main__buying-text">Mua
+                                Ngay</span>
+                        </button>
                     </div>
                     <div class="product__guarantee-container">
                         <a href="*" class="product__guarantee">
@@ -163,10 +158,11 @@
                             </div>
                             <span class="product__guarantee-note">3 Ngày Trả Hàng / Hoàn Tiền</span>
                         </a>
+                    </div> 
                     </div>
             ` 
          
-                $("#product-infor").append(productHtml)
+                $("#product-inner").append(productHtml)
         }
         $(document).ready(function () {
            
@@ -590,8 +586,8 @@
         <!-- ket thuc phan head -->
         <!-- bat dau phan chi tiet san pham -->
         <div class="web-inner">
-            <div class="product-inner">
-                <div class="product-img">
+            <div id="product-inner">
+                <!-- <div class="product-img">
                     <div class="product-spe-img">
                         <img src="https://likefit.vn/wp-content/uploads/2020/07/snb2-600x600.jpg" alt="hinhanh">
                     </div>
@@ -623,35 +619,11 @@
                     </div>
                 </div>
                 <div id="product-infor">
-                   <!-- <div class="product-content">
-                        <div class="icon-love">Yêu thích</div>
-                        <span> [KHAI TRƯƠNG 149K-219K] Chuỗi Balo, Túi xách Minecraft được giảm giá đặc biệt nhân ngày mở bán</span>
-                    </div> 
-                     <div class="product__status">
-                        <div class="product__status-rating">
-                            <div class="product__status-rating-point underscore">4.9</div>
-                            <div class="product__status-rating-stars">
-                                <i class="product__status-rating-star fas fa-star"></i>
-                                <i class="product__status-rating-star fas fa-star"></i>
-                                <i class="product__status-rating-star fas fa-star"></i>
-                                <i class="product__status-rating-star fas fa-star"></i>
-                                <i class="product__status-rating-star fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="product__status-reviewing hide-on-mobile">
-                            <span class="product__status-reviewing-qnt underscore">78</span>
-                            <span class="product__status-text pr-text">Đánh Giá</span>
-                        </div>
-                        <div class="product__status-sold">
-                            <span class="product__status-sold-qnt">251</span>
-                            <span class="product__status-text pr-text">Đã Bán</span>
-                        </div>
-                        <div class="product__liking">
-                            <i class="product__action-icon product__action-icon--liking far fa-heart"></i>
-                            <a class="text hide-on-mobile">Đã thích (2,1k)</a>
-                        </div>
-                    </div>
-                    <div class="product__price">
+                    <div class="product-infor-inner">
+                        <h1 class="product-title entry-title">
+                            Áo Ba lỗ – Tank top Buzt</h1>
+                       </div>
+                       <div class="product__price">
                         <div class="product__price-main">
                             <span class="product__price-old">₫396.000</span>
                             <div class="product__price-current">
@@ -666,99 +638,42 @@
                             <i class="product__price-icon-question far fa-question-circle"></i>
                         </div>
                     </div> 
-                     <div class="product__info"> 
-                         <div class="product__codes hide-on-mobile-tablet">
-                            <label class="product__codes-label width-label">Mã Giảm Giá Của Shop</label>
-                            <div class="product__codes-wrapper">
-                                <div class="product__code">Giảm ₫3k</div>
-                                <div class="product__code">Giảm ₫5k</div>
-                                <div class="product__code">Giảm ₫8k</div>
-                            </div>
+                    <div class="product-decription">
+                        <p class="product-detail-item"><strong>Mô tả sản phẩm</strong></p>
+                        <div class="product-detail-text">
+                            <p>– <strong>Mô ta</strong>: Áo tank top Butz form cắt xẻ tank top, xẻ ngang sườn, form mặc rộng thoải mái, không quá ôm</p>
+                            <p>– <strong>Thương hiệu</strong>: FM-Style</p>
+                            <p>– <strong>Xuất xứ</strong>: Việt Nam</p>
                         </div>
-
-                        <div class="product__combo hide-on-mobile-tablet">
-                            <label class="product__combo-label width-label">Combo Khuyến Mãi</label>
-                            <div class="product__combo-note">Mua 2 &amp; giảm 5%</div>
-                        </div>
-
-                        <div class="product__shipping">
-                            <label class="product__shipping-label width-label">Vận Chuyển</label>
-                            <div class="product__shipping-wrapper">
-                                <div class="product__shipping-free">
-                                    <i class="product__shipping-free-icon fas fa-truck-loading"></i>
-                                    <div >
-                                        <div >Miễn Phí Vận Chuyển</div>
-                                        <div >Miễn Phí Vận Chuyển khi đơn đạt
-                                            giá trị tối thiểu</div>
-                                    </div>
-                                </div>
-
-                                <div class="product__shipping-free">
-                                    <i class="product__shipping-to-icon-truck fas fa-truck"></i>
-                                    <div>
-                                        <div class="product__shipping-to-destination">
-                                            <label class="product__shipping-to-label">Vận Chuyển Tới</label>
-                                            <div>
-                                                <span class="product__shipping-to-city">Huyện Ba Vì, Hà
-                                                    Nội</span>
-                                                <i class="product__shipping-to-icon fas fa-chevron-down"></i>
-                                            </div>
-                                        </div>
-
-                                        <div class="product__shipping-to-destination">
-                                            <label class="product__shipping-to-label">Phí Vận Chuyển</label>
-                                            <div >
-                                                <span class="product__shipping-to-city">đ10.500</span>
-                                                <i class="product__shipping-to-icon fas fa-chevron-down"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product__options">
-                            <label class="product__options-label width-label">Chọn loại hàng</label>
-                            <div class="product__options-items-wrapper">
-                                <div class="product__options-items">
-                                    <button class="product__options-item">Creeper</button>
-                                    <button class="product__options-item">Trong suốt</button>
-                                    <button class="product__options-item">TNT</button></div>
-                                <div class="product__options-items-error-message">Vui lòng chọn Phân loại hàng
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product__qnt hide-on-mobile">
-                            <label class="product__qnt-label width-label">Số Lượng</label>
-                            <div class="shop__qnt-btns">
-                                <button class="soluong">
-                                    <i class="shop__qnt-btn-icon fas fa-minus"></i>
-                                </button>
-                                <input class="shop__qnt-input" type="text" value="1" maxlength="4">
-                                <button class="soluong" >
-                                    <i class="shop__qnt-btn-icon fas fa-plus"></i>
-                                </button>
-                            </div>
-                            <div class="product__qnt-note">
-                                <span class="product__qnt-note-num">1100</span>
-                                sản phẩm có sẵn
-                            </div>
-                        </div>
-
-                        <div class="product-btns-main">
-                            <button class="product-btn-main product-btn-main__msg clear-btn hide-on-tablet">
-                                <i class="product-btn-main__msg-icon far fa-comment-dots"></i>
+                    </div>
+                    <div class="product__qnt hide-on-mobile">
+                        <label class="product__qnt-label width-label">Số Lượng</label>
+                        <div class="shop__qnt-btns">
+                            <button class="soluong">
+                                <i class="shop__qnt-btn-icon fas fa-minus"></i>
                             </button>
-                            <button class="product-btn-main product-btn-main__adding">
-                                <i class="product-btn-main__adding-icon fas fa-cart-plus"></i>
-                                <span class="product-btn-main__text product-btn-main__adding-text hide-on-mobile">Thêm Vào Giỏ Hàng</span>
-                            </button>
-                            <button onclick="document.location.href=this.getAttribute('href');" href="product-cart.html" class="product-btn-main product-btn-main__buying">
-                                <span class="product-btn-main__text product-btn-main__buying-text">Mua
-                                    Ngay</span>
+                            <input class="shop__qnt-input" type="text" value="1" maxlength="4">
+                            <button class="soluong" >
+                                <i class="shop__qnt-btn-icon fas fa-plus"></i>
                             </button>
                         </div>
+                        <div class="product__qnt-note">
+                            <span class="product__qnt-note-num">1100</span>
+                            sản phẩm có sẵn
+                        </div>
+                    </div>
+                    <div class="product-btns-main">
+                        <button class="product-btn-main product-btn-main__msg clear-btn hide-on-tablet">
+                            <i class="product-btn-main__msg-icon far fa-comment-dots"></i>
+                        </button>
+                        <button class="product-btn-main product-btn-main__adding">
+                            <i class="product-btn-main__adding-icon fas fa-cart-plus"></i>
+                            <span class="product-btn-main__text product-btn-main__adding-text hide-on-mobile">Thêm Vào Giỏ Hàng</span>
+                        </button>
+                        <button onclick="document.location.href=this.getAttribute('href');" href="product-cart.html" class="product-btn-main product-btn-main__buying">
+                            <span class="product-btn-main__text product-btn-main__buying-text">Mua
+                                Ngay</span>
+                        </button>
                     </div>
                     <div class="product__guarantee-container">
                         <a href="*" class="product__guarantee">
@@ -770,8 +685,11 @@
                             </div>
                             <span class="product__guarantee-note">3 Ngày Trả Hàng / Hoàn Tiền</span>
                         </a>
-                    </div>  -->
-                </div>
+                    </div> 
+                    </div> -->
+                    
+            </div>
+                
             </div>
             <div class="products-combo">
                 <div class="products-combo-header">

@@ -86,7 +86,7 @@ namespace ECommerceBE
 
             //Categories
             Category cat1 = new Category();
-            cat1.catID = 1;
+            cat1.catID = 1; 
             cat1.catName = "Clothes";
             listCat.Add(cat1);
 
