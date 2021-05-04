@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giao dien chinh</title>
+    <title>Test giao dien</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap&subset=vietnamese"
         rel="stylesheet">
@@ -14,88 +14,110 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>
+    <!-- tesst java script -->
+    <script>
+        var proudcts = [];
+        proudcts.push({
+            id: 1,
+            title: "Dieu hoa",
+            url: "https://contents.mediadecathlon.com/p1788183/k$74f724f0b21408c05cc53b2db0a022b0/ao-thun-om-vua-tap-gym-pilates-500-cho-nam-xam-co-van-dam.jpg?format=auto&f=250x250"
+        });
 
-        <script>
-            var proudcts = [];
-            proudcts.push({
-                id: 1,
-                title: "Dieu hoa",
-                url: "https://contents.mediadecathlon.com/p1788183/k$74f724f0b21408c05cc53b2db0a022b0/ao-thun-om-vua-tap-gym-pilates-500-cho-nam-xam-co-van-dam.jpg?format=auto&f=250x250"
-            });
-    
-            proudcts.push({
-                id: 2,
-                title: "Tu lanh",
-                url: "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
-            });
-    
-            function requestData(url) {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        var data = JSON.parse(this.responseText)
-                        loadData(data)
-                        console.log("load ok")
-                    } else {
-                        console.log("error")
-                    }
-                };
-                xhttp.open("GET", url, true);
-                xhttp.send();
-            }
-    
-            function requestDataAjax(url) {
-                $.ajax({
-                    url: url,
-                    data: null,
-                    cache: false,
-                    type: "GET",
-                    success: function (response) {
-                        console.log(response)
-                        if (response.success) {
-                            loadData(response.data)
-                        }
-                        else {
-                            alert(response.message)
-                        }
-                    },
-                    error: function (xhr) {
-    
-                    }
-                });
-            }
-    
-            var goToPage = function (id) {
-                window.location.href = "/detail.html?productId=" + id
-                // window.location.href = "/testindex.html?productId=" + id
-            }
-    
-            var loadData = function (proudcts) {
-                console.log("load data");
-    
-                for(var i = 0; i < proudcts.length; i++) {
-                    let product = proudcts[i];
-                    // product.url = "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
-                    var productHtml = `
-                <div onclick="goToPage('${product.proID}')");" class="grid__column-2-4">
-                                        <!-- product-item -->
-                                        <a class="home-product-item" href="#">
-                                            <div class="home-product-item__img">
-                                                <img class="home-product-item__img-size"src="${product.proLinkPicture}" alt="Bộ đồ thể thao nam thoải mái">
-                                            </div>
-                                            <h4 class="home-product-item__name">${product.proName}</h4>
-                                        </a>           
-                                    </div>
-                `
-                    $("#product-list-row").append(productHtml)
+        proudcts.push({
+            id: 2,
+            title: "Tu lanh",
+            url: "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
+        });
+
+        function requestData(url) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText)
+                    loadData(data)
+                    console.log("load ok")
+                } else {
+                    console.log("error")
                 }
-            }
-            $(document).ready(function () {
-                console.log("ready!");
-               requestDataAjax("http://localhost:37504/api/Product");
-                //loadData(proudcts);
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        function requestDataAjax(url) {
+            $.ajax({
+                url: url,
+                data: null,
+                cache: false,
+                type: "GET",
+                success: function (response) {
+                    console.log(response)
+                    if (response.success) {
+                        loadData(response.data)
+                    }
+                    else {
+                        alert(response.message)
+                    }
+                },
+                error: function (xhr) {
+
+                }
             });
-        </script>
+        }
+
+        var goToPage = function (id) {
+                window.location.href = "/detail.html?productId="+id;
+            }
+
+        var loadData = function (proudcts) {
+            console.log("load data");
+
+            for(var i = 0; i < proudcts.length; i++) {
+                let product = proudcts[i];
+                console.log(product.proID)
+                // product.url = "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
+                var productHtml = `
+                <div onclick="goToPage('${product.proID}')" class="grid__column-2-4">
+                                    <!-- product-item -->
+                                        <a href="#" id="0" class="home-product-item">
+                                            <img src=" ${product.proLinkPicture}">
+                                            <div class="home-product-item__name"> ${product.proName} </div>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-old"> đ${product.proOldPrice}</span>
+                                                <span class="home-product-item__price-current"> đ${product.proPrice} </span>
+                                            </div>
+                                            <div class="home-product-item__action">
+                                                <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="home-product-item__sold"> 12 đã bán </span>
+                                            </div>
+                                            <div class="product-favourite">
+                                                <i class="fas fa-check"></i>
+                                                <span> Yêu thích </span>
+                                            </div>
+                                            <div class="product-sale-off">
+                                                <span class="product-sale-off__percent"> 23% </span>
+                                                <span class="product-sale-off__label"> GIẢM </span>
+                                            </div>
+                                        </a>
+                   
+                                </div>
+            `
+                $("#product-list-row").append(productHtml)
+            }
+        }
+        $(document).ready(function () {
+            console.log("ready!");
+           requestDataAjax("http://localhost:37504/api/Product");
+            //loadData(proudcts);
+        });
+    </script>
+     
 </head>
 
 <body>
@@ -226,9 +248,9 @@
                             </ul>
                         </li> -->
                         <li class="logInOut">
-                            <p id="register" onclick="openLogInOut()">Đăng Ký</p>
+                            <p id="register" onclick="openRegister()">Đăng Ký</p>
                            
-                            <p id="logIn">Đăng nhập</p>
+                            <p id="logIn" onclick="openLogInOut()">Đăng nhập</p>
                            
                         </li>
                     </ul>
@@ -575,6 +597,7 @@
                         <div id="product-list" class="home-product ">
                             <div id="product-list-row" class="grid__row">
                                 <!--product list here-->
+                                
                             </div>
                         </div>
                         <!-- phân trang -->
@@ -705,137 +728,136 @@
             </div>
         </footer>
     </div>
-    <!-- Modal lyout -->
-    <!-- <div id="modal">
-        </div> -->
-    <!-- lớp phủ màu đen của giá bán -->
-    <div class="modal__overlay"> 
-
-            </div>
-    <!-- content -->
-     <!-- <div class="modal__body">
-         
-</div> -->
-
+   
     <!-- Register form -->
     <!-- form dùng cho cả 2 -->
     <!-- form đăng ký -->
-    <div id="auth-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__header">
-                            <h3 class="auth-form__heading">Đăng ký</h3>
-                            
-                            <span class="auth-form__switch-btn">Đăng nhập</span>
-                        </div>
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                               
-                                <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
-                            </div>
-                        </div>
-                       
-                        <div class="auth-form__aside">
-                            <p class="auth-form__policy-text">
-                                Bằng việc đăng kí, bạn đã đồng ý với DDVT về
-                                <a href="https://shopee.vn/legaldoc/termsOfService/?__classic__=1" class="auth-form__text-link">Điều khoản dịch vụ</a> &
-                                <a href="https://shopee.vn/legaldoc/privacy/?__classic__=1" class="auth-form__text-link">Chính sách bảo mật</a>
-                            </p>
-                        </div>
-
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div id="formRegis" class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
                         
-                        <div class="auth-form__controls ">
-                            <button class="btn btn--normal auth-form__control-back">
-                                <a href="">
-                                  TRỞ LẠI
-                                </a>
-                            </button>
-                            <button class="btn btn--primary ">ĐĂNG KÝ</button>
+                        <span class="auth-form__switch-btn" onclick="changeToLogin()">Đăng nhập</span>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                           
+                            <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
                         </div>
                     </div>
-                    
-                    
-                    <div class="auth-form__socials">
-                        <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
-                            <i class="auth-form__socials-icon fab fa-facebook-square"></i>
-                            <span class="auth-form__socials-title">
-                                Kết nối với Facebook
-                            </span>
-                        </a>
-                        <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
-                            <i class="auth-form__socials-icon fab fa-google"></i>
-                            <span class="auth-form__socials-title">
-                                Kết nối với Foogle
-                            </span>
-                        </a>
+                   
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng kí, bạn đã đồng ý với DDVT về
+                            <a href="https://shopee.vn/legaldoc/termsOfService/?__classic__=1" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="https://shopee.vn/legaldoc/privacy/?__classic__=1" class="auth-form__text-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>  
+                    <div class="auth-form__controls ">
+                        <button class="btn btn--normal auth-form__control-back">
+                            <a href="">
+                              TRỞ LẠI
+                            </a>
+                        </button>
+                        <button class="btn btn--primary ">ĐĂNG KÝ</button>
                     </div>
                 </div>
-
-
-    <!-- Login form -->
-    <!-- form dùng cho cả 2 -->
-    <!-- form đăng nhập -->
-    <!-- <div class="auth-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__header">
-                            <h3 class="auth-form__heading">Đăng nhập</h3>
+                
+                
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Foogle
+                        </span>
+                    </a>
+                </div>
+            </div>
+         
+   
+        </div>
+      
+      </div>
+      <div id="myModal2" class="modal2">
+        <!-- Modal content -->
+        <div class="modal-content">
+              <div id="formLogGin" class="auth-form" >
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        
+                        <span class="auth-form__switch-btn"  onclick="changeToRegister()">Đăng ký</span>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
                             
-                            <span class="auth-form__switch-btn">Đăng ký</span>
+                            <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
                         </div>
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                
-                                <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
-                            </div>
-                            
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
                         </div>
                         
-                        <div class="auth-form__aside">
-                            
-                            <div class="auth-form__help">
-                                <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
-                                <span class="auth-form__help-separate">
-
-                                </span>
-                                <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
-                            </div>
-                        </div>
-
+                    </div>
+                    
+                    <div class="auth-form__aside">
                         
-                        <div class="auth-form__controls ">
-                            <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
-                            <button class="btn btn--primary ">ĐĂNG NHẬP</button>
+                        <div class="auth-form__help">
+                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                            <span class="auth-form__help-separate">
+
+                            </span>
+                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
                         </div>
                     </div>
+
                     
-                    
-                    <div class="auth-form__socials">
-                        <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
-                            <i class="auth-form__socials-icon fab fa-facebook-square"></i>
-                            <span class="auth-form__socials-title">
-                                Kết nối với Facebook
-                            </span>
-                        </a>
-                        <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
-                            <i class="auth-form__socials-icon fab fa-google"></i>
-                            <span class="auth-form__socials-title">
-                                Kết nối với Foogle
-                            </span>
-                        </a>
+                    <div class="auth-form__controls ">
+                        <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
+                        <button class="btn btn--primary ">ĐĂNG NHẬP</button>
                     </div>
-                </div> -->
-    <!-- </div>          
-        </div> -->
-       
-       
+                </div>
+                
+                
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Foogle
+                        </span>
+                    </a>
+                </div>
+            </div>        
+         
+   
+        </div>
+      
+      </div>
+
+
+<!-- Form đăng nhập -->
+   
+    
         <script src="script.js"></script>
 </body>
 

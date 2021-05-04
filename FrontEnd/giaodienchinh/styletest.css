@@ -644,7 +644,7 @@ dành cho danh mục */
 
 /* Phần giao diện đăng ký, đăng nhập */
 /* AUTHEN MODAL */
-.modal {
+.modal, .modal2 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -673,8 +673,6 @@ dành cho danh mục */
     left:50%;
     transform: translate(-50%,-50%);
     z-index:50;
-    
-   
 }
 .auth-form__container{
     padding: 0 32px;
@@ -798,6 +796,8 @@ dành cho danh mục */
 .auth-form__help-forgot{
     color: var(--primary-color);
 }
+/* Làm chỗ đăng ký */
+
 /* header-with-search */
 .header-with-search{
     width:90%;
