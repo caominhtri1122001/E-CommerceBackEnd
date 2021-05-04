@@ -14,5 +14,6 @@ namespace ECommerceBE.Models
         public string userPhone { get; set; }
         public string userAddress { get; set; }
         public int userRoleID { get; set; }
+        public string urlAvatar { get; set; }
     }
 }
