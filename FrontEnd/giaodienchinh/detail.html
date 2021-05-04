@@ -17,6 +17,7 @@
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous"></script>
 <script>
+    let yeucau=""
     console.log("truong my duyen")
        var proudcts = [];
         proudcts.push({
@@ -56,7 +57,7 @@
                     console.log(response.success)
                     if (response.success) {
                         loadData(response.data)
-                      
+                      console.log(response.data.proID)
                     }
                     else {
                         alert(response.message)
@@ -68,13 +69,15 @@
             });
         }
 
-        var goToPage = function (id) {
-            window.location.href = "/detail.html"
-        }
+     
 
         var loadData = function (proudcts) {
             // Duyeen tuwj chinh 
             console.log(proudcts.proName)
+           console.log(proudcts.proID)
+         let yeucau="http://localhost:37504/api/Product/GetProductByID?proID="+proudcts.proID
+        alert(yeucau)
+          
            
                 // product.url = "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
                 var productHtml = `
@@ -185,132 +188,12 @@
             ` 
          
                 $("#product-infor").append(productHtml)
-               
-
-
-
-
-            // for(var i = 0; i < proudcts.length; i++) {
-            //     let product = proudcts[i];
               
-            //    console.log(product.proID)
-            //     // product.url = "https://manhnguyen.com.vn/img/uploads/lib/6049_tu-lanh-darling-nad-1580wx-gia-tot.jpg"
-            //     var productHtml = `
-            //     <div class="product__codes hide-on-mobile-tablet">
-            //                 <label class="product__codes-label width-label">${proudcts.proName}</label>
-            //                 <div class="product__codes-wrapper">
-            //                     <div class="product__code">Giảm ₫3k</div>
-            //                     <div class="product__code">Giảm ₫5k</div>
-            //                     <div class="product__code">Giảm ₫8k</div>
-            //                 </div>
-            //             </div>
-
-            //             <div class="product__combo hide-on-mobile-tablet">
-            //                 <label class="product__combo-label width-label">Combo Khuyến Mãi</label>
-            //                 <div class="product__combo-note">Mua 2 &amp; giảm 5%</div>
-            //             </div>
-
-            //             <div class="product__shipping">
-            //                 <label class="product__shipping-label width-label">Vận Chuyển</label>
-            //                 <div class="product__shipping-wrapper">
-            //                     <div class="product__shipping-free">
-            //                         <i class="product__shipping-free-icon fas fa-truck-loading"></i>
-            //                         <div >
-            //                             <div >Miễn Phí Vận Chuyển</div>
-            //                             <div >Miễn Phí Vận Chuyển khi đơn đạt
-            //                                 giá trị tối thiểu</div>
-            //                         </div>
-            //                     </div>
-
-            //                     <div class="product__shipping-free">
-            //                         <i class="product__shipping-to-icon-truck fas fa-truck"></i>
-            //                         <div>
-            //                             <div class="product__shipping-to-destination">
-            //                                 <label class="product__shipping-to-label">Vận Chuyển Tới</label>
-            //                                 <div>
-            //                                     <span class="product__shipping-to-city">Huyện Ba Vì, Hà
-            //                                         Nội</span>
-            //                                     <i class="product__shipping-to-icon fas fa-chevron-down"></i>
-            //                                 </div>
-            //                             </div>
-
-            //                             <div class="product__shipping-to-destination">
-            //                                 <label class="product__shipping-to-label">Phí Vận Chuyển</label>
-            //                                 <div >
-            //                                     <span class="product__shipping-to-city">đ10.500</span>
-            //                                     <i class="product__shipping-to-icon fas fa-chevron-down"></i>
-            //                                 </div>
-            //                             </div>
-            //                         </div>
-            //                     </div>
-            //                 </div>
-            //             </div>
-
-            //             <div class="product__options">
-            //                 <label class="product__options-label width-label">Chọn loại hàng</label>
-            //                 <div class="product__options-items-wrapper">
-            //                     <div class="product__options-items">
-            //                         <button class="product__options-item">Creeper</button>
-            //                         <button class="product__options-item">Trong suốt</button>
-            //                         <button class="product__options-item">TNT</button></div>
-            //                     <div class="product__options-items-error-message">Vui lòng chọn Phân loại hàng
-            //                     </div>
-            //                 </div>
-            //             </div>
-
-            //             <div class="product__qnt hide-on-mobile">
-            //                 <label class="product__qnt-label width-label">Số Lượng</label>
-            //                 <div class="shop__qnt-btns">
-            //                     <button class="soluong">
-            //                         <i class="shop__qnt-btn-icon fas fa-minus"></i>
-            //                     </button>
-            //                     <input class="shop__qnt-input" type="text" value="1" maxlength="4">
-            //                     <button class="soluong" >
-            //                         <i class="shop__qnt-btn-icon fas fa-plus"></i>
-            //                     </button>
-            //                 </div>
-            //                 <div class="product__qnt-note">
-            //                     <span class="product__qnt-note-num">1100</span>
-            //                     sản phẩm có sẵn
-            //                 </div>
-            //             </div>
-
-            //             <div class="product-btns-main">
-            //                 <button class="product-btn-main product-btn-main__msg clear-btn hide-on-tablet">
-            //                     <i class="product-btn-main__msg-icon far fa-comment-dots"></i>
-            //                 </button>
-            //                 <button class="product-btn-main product-btn-main__adding">
-            //                     <i class="product-btn-main__adding-icon fas fa-cart-plus"></i>
-            //                     <span class="product-btn-main__text product-btn-main__adding-text hide-on-mobile">Thêm Vào Giỏ Hàng</span>
-            //                 </button>
-            //                 <button onclick="document.location.href=this.getAttribute('href');" href="product-cart.html" class="product-btn-main product-btn-main__buying">
-            //                     <span class="product-btn-main__text product-btn-main__buying-text">Mua
-            //                         Ngay</span>
-            //                 </button>
-            //             </div>
-            //         </div>
-            //         <div class="product__guarantee-container">
-            //             <a href="*" class="product__guarantee">
-            //                 <div class="product__guarantee-wrapper">
-            //                     <span>
-            //                         <i class="product__guarantee-icon fas fa-clipboard-check"></i>
-            //                     </span>
-            //                     <div class="product__guarantee-text">Minecraft Shop Đảm Bảo</div>
-            //                 </div>
-            //                 <span class="product__guarantee-note">3 Ngày Trả Hàng / Hoàn Tiền</span>
-            //             </a>
-            //         </div>
-            // ` 
-            // console.log(product.proID)
-            //     $(".product-infor").append(productHtml)
-               
-            // }
         }
         $(document).ready(function () {
             console.log("ready!");
-        //    requestDataAjax("http://localhost:37504/api/Product/product-detail?catID=1&proID=1");
-            //loadData(proudcts);
-            requestDataAjax("http://localhost:37504/api/Product/GetProductByID?proID=2");
+         alert("Yeu cau duoi ready : "+yeucau)
+            requestDataAjax("http://localhost:37504/api/Product/GetProductByID?proID=12");
 
         });
 </script>

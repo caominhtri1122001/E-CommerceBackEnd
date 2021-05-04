@@ -66,8 +66,9 @@
         }
 
         var goToPage = function (id) {
-            window.location.href = "/detail.html"
-        }
+                window.location.href = "/detail.html?productId="+id;
+
+            }
 
         var loadData = function (proudcts) {
             console.log("load data");
@@ -79,8 +80,7 @@
                 var productHtml = `
                 <div onclick="goToPage('${product.proID}')" class="grid__column-2-4">
                                     <!-- product-item -->
-
-                                        <a href="product-info.html" id="0" class="home-product-item">
+                                        <a href="#" id="0" class="home-product-item">
                                             <img src=" ${product.proLinkPicture}">
                                             <div class="home-product-item__name"> ${product.proName} </div>
                                             <div class="home-product-item__price">
