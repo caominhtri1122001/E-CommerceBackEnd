@@ -19,6 +19,7 @@ namespace ECommerceBE.Controllers
             var res = new BaseRespone(false, null);
             List<Products> data = FakeCSDL.Instance.listPro;
             data.Reverse();
+            if (data[0].proID == 1) data.Reverse();
             if (data.Count != 0)
             {
                 res.Success = true;
