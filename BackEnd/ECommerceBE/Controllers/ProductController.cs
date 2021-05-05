@@ -10,14 +10,15 @@ namespace ECommerceBE.Controllers
     {
         public ProductController()
         {
-
         }
+
         //GET: api/Products
         [HttpGet]
         public BaseRespone GetListProduct()
         {
             var res = new BaseRespone(false, null);
             List<Products> data = FakeCSDL.Instance.listPro;
+            data.Reverse();
             if (data.Count != 0)
             {
                 res.Success = true;
@@ -47,65 +48,137 @@ namespace ECommerceBE.Controllers
             return res;
         }
 
-        //GET: api/Products/{catID}
-        [HttpGet("product-detail")]
-        public BaseRespone GetProductByCat(int catID, int proID)
+        private List<Products> getListProByCatID (int IDCat)
+        {
+            List<Products> data = new List<Products>();
+            if (IDCat == 0) data = FakeCSDL.Instance.listPro;
+            else
+            {
+                foreach (Products i in FakeCSDL.Instance.listPro)
+                {
+                    if (i.catID == IDCat)
+                    {
+                        data.Add(i);
+                    }
+                }
+            }
+            return data;
+        }
+
+        [HttpGet("GetListProductByIDCat")]
+        public BaseRespone GetProductCat(int catID)
         {
             var res = new BaseRespone(false, null);
-            List<Products> data = new List<Products>();
-            foreach (Products i in FakeCSDL.Instance.listPro)
-            {
-                if (catID == 0)
-                {                   
-                    if (i.proID == proID)
-                    {
-                        //data.Add(new Products
-                        //{
-                        //    proName = i.proName,
-                        //    proBrand = i.proBrand,
-                        //    proOrigin = i.proOrigin,
-                        //    proOldPrice = i.proOldPrice,
-                        //    proPrice = i.proPrice,
-                        //    proDescription = i.proDescription,
-                        //    status = i.status,
-                        //    proID = i.proID,
-                        //    catID = i.catID
-                        //});
-                        data.Add(i);
-                    }
-                }
-                else if (i.catID == catID && i.proID == proID)
-                {
-                    data.Add(i);
-                    //data.Add(new Products
-                    //{
-                    //    proName = i.proName,
-                    //    proBrand = i.proBrand,
-                    //    proOrigin = i.proOrigin,
-                    //    proOldPrice = i.proOldPrice,
-                    //    proPrice = i.proPrice,
-                    //    proDescription = i.proDescription,
-                    //    status = i.status,
-                    //    proID = i.proID,
-                    //    catID = i.catID
-                    //});
-                }
-                else if (proID == 0)
-                {
-                    if (i.catID == catID)
-                    {
-                        data.Add(i);
-                    }
-                }
-
-            }
-            if (data.Count != 0)
-            {
-                res.Success = true;
-                res.Data = data;
-            }
+            List<Products> data = getListProByCatID(catID);
+            data.Reverse();
+            res.Data = data;
+            res.Success = true;
             return res;
         }
+
+        // xếp theo giá giảm dần
+        [HttpGet("GetSort1ListProductByIDCat")]
+        public BaseRespone Get1ProductCat(int catID)
+        {
+            var res = new BaseRespone(false, null);
+            List<Products> data = getListProByCatID(catID);
+            for(int i = 0; i < data.Count - 1; i++)
+            {
+                for (int j = i + 1; j < data.Count; j++)
+                {
+                    if(data[i].proPrice > data[j].proPrice)
+                    {
+                        Products temp = data[i];
+                        data[i] = data[j];
+                        data[j] = temp;
+                    }
+                }
+            }
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
+        // xếp theo giá tăng dần
+        [HttpGet("GetSort2ListProductByIDCat")]
+        public BaseRespone Get2ProductCat(int catID)
+        {
+            var res = new BaseRespone(false, null);
+            List<Products> data = getListProByCatID(catID);
+            for (int i = 0; i < data.Count - 1; i++)
+            {
+                for (int j = i + 1; j < data.Count; j++)
+                {
+                    if (data[i].proPrice < data[j].proPrice)
+                    {
+                        Products temp = data[i];
+                        data[i] = data[j];
+                        data[j] = temp;
+                    }
+                }
+            }
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
+        // xếp theo ưu chuộng
+        [HttpGet("GetSort3ListProductByIDCat")]
+        public BaseRespone Get3ProductCat(int catID)
+        {
+            var res = new BaseRespone(false, null);
+            List<Products> data = getListProByCatID(catID);
+            for (int i = 0; i < data.Count - 1; i++)
+            {
+                for (int j = i + 1; j < data.Count; j++)
+                {
+                    if (data[i].NumberOfSold < data[j].NumberOfSold)
+                    {
+                        Products temp = data[i];
+                        data[i] = data[j];
+                        data[j] = temp;
+                    }
+                }
+            }
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
+        //GET: api/Products/{catID}
+        //[HttpGet("product-detail")]
+        //public BaseRespone GetProductByCat(int catID, int proID)
+        //{
+        //    var res = new BaseRespone(false, null);
+        //    List<Products> data = new List<Products>();
+        //    foreach (Products i in FakeCSDL.Instance.listPro)
+        //    {
+        //        if (catID == 0)
+        //        {                   
+        //            if (i.proID == proID)
+        //            {
+        //                data.Add(i);
+        //            }
+        //        }
+        //        else if (i.catID == catID && i.proID == proID)
+        //        {
+        //        }
+        //        else if (proID == 0)
+        //        {
+        //            if (i.catID == catID)
+        //            {
+        //                data.Add(i);
+        //            }
+        //        }
+
+        //    }
+        //    if (data.Count != 0)
+        //    {
+        //        res.Success = true;
+        //        res.Data = data;
+        //    }
+        //    return res;
+        //}
 
         //PUT: api/Products/{id}
         [HttpPut("{proID}")]

@@ -124,6 +124,7 @@ namespace ECommerceBE
             pro1.ProLinkPicture1 = "https://shopgiayreplica.com/wp-content/uploads/2020/11/jordan-1-low-light-smoke-grey.jpg";
             pro1.ProLinkPicture2 = "https://bizweb.dktcdn.net/100/363/576/products/air-jordan-1-low-white-metallic-gold-cz4776-100-1.jpg?v=1603178374000";
             pro1.ProLinkPicture3 = "https://bizweb.dktcdn.net/100/347/064/products/air-jordan-1-low-shoe-m16jdr.jpg?v=1598262665593";
+            pro1.NumberOfSold = 123;
             listPro.Add(pro1);
 
             Products pro2 = new Products();
@@ -140,6 +141,7 @@ namespace ECommerceBE
             pro2.ProLinkPicture1 = "https://product.hstatic.net/1000282067/product/air-jordan-1-retro-high-black-white-w-product_231181cd7d6c46fd87d17ff82f830641_master.jpg";
             pro2.ProLinkPicture2 = "https://sneakerdaily.vn/wp-content/uploads/2021/01/dark-mocha-air-jordan-1-555088-105-7.jpg";
             pro2.ProLinkPicture3 = "https://bizweb.dktcdn.net/100/347/064/products/air-jordan-1-high-og-wmns-tie-dye-cd0461-100-release-date.jpg?v=1599229584797";
+            pro2.NumberOfSold = 67;
             listPro.Add(pro2);
 
             Products pro3 = new Products();
@@ -156,6 +158,7 @@ namespace ECommerceBE
             pro3.ProLinkPicture1 = "https://media.gq.com/photos/5ce29fb0e352114010a7b749/16:9/w_2000,h_1125,c_limit/Graphic-Shirts-GQ-05202019.jpg";
             pro3.ProLinkPicture2 = "https://cf.shopee.vn/file/a85957b24bd1a72f0c84bdc8070d004d";
             pro3.ProLinkPicture3 = "https://2inn3u3s3k9e1asyaw3g5gb6-wpengine.netdna-ssl.com/wp-content/uploads/2018/03/funny-graphic-t-shirts-for-men-2018-mens-tees-2019.jpg";
+            pro3.NumberOfSold = 201;
             listPro.Add(pro3);
 
             Products pro4 = new Products();
@@ -172,6 +175,7 @@ namespace ECommerceBE
             pro4.ProLinkPicture1 = "https://cf.shopee.vn/file/d850ce1600d2c8d4885ef7fb50672e08";
             pro4.ProLinkPicture2 = "https://yousport.vn/Media/Blog/top-vot-cau-long-2019/danh-gia-top-vot-cau-long-2.jpg";
             pro4.ProLinkPicture3 = "https://vantelinvietnam.com/wp-content/uploads/2020/02/top-15-cay-vot-cau-long-tot-nhat-nen-mua.jpg";
+            pro4.NumberOfSold = 211;
             listPro.Add(pro4);
 
             Products pro5 = new Products();
@@ -188,6 +192,7 @@ namespace ECommerceBE
             pro5.ProLinkPicture1 = "https://www.sport9.vn/images/thumbs/qua/qua-bong-da-molten-f5u3400-k19_750_20001756_.jpeg";
             pro5.ProLinkPicture2 = "http://media3.scdn.vn/img4/2020/01_04/f2w181CitR6hY0nEhPGI.jpg";
             pro5.ProLinkPicture3 = "https://cf.shopee.vn/file/59df15783847b0d441b796f96f03bddd";
+            pro5.NumberOfSold = 87;
             listPro.Add(pro5);
 
             Products pro6 = new Products();
@@ -204,6 +209,7 @@ namespace ECommerceBE
             pro6.ProLinkPicture1 = "http://www.buocnhayxitin.com/wp-content/uploads/2019/02/kich-thuoc-qua-bong-chuyen.jpg";
             pro6.ProLinkPicture2 = "https://bizweb.dktcdn.net/100/180/757/files/thumb.jpg?v=1507352112010"; 
             pro6.ProLinkPicture3 = "https://cf.shopee.vn/file/57be6aeec03e6815bb294459abd5c646";
+            pro6.NumberOfSold = 78;
             listPro.Add(pro6);
 
             Products pro7 = new Products();
@@ -220,6 +226,7 @@ namespace ECommerceBE
             pro7.ProLinkPicture1 = "https://sportonline.vn/wp-content/uploads/2017/12/qua-bong-ro-geru-star-s6.jpg";
             pro7.ProLinkPicture2 = "https://image.tienphong.vn/w665/Uploaded/2020/rrd_zrkwvo/2020_11_07/123138225_927096427828342_7262511522426498154_o_zsos.jpg";
             pro7.ProLinkPicture3 = "https://newsmd1fr.keeng.net/media_old_2016/medias12//2015/07/11/da1bcefe-84da-4f29-bd38-d6421dec5d22.jpg";
+            pro7.NumberOfSold = 45;
             listPro.Add(pro7);
 
             Products pro8 = new Products();
@@ -236,6 +243,7 @@ namespace ECommerceBE
             pro8.ProLinkPicture1 = "https://cf.shopee.vn/file/058498bbc7b6f826ca109b952e61a723";
             pro8.ProLinkPicture2 = "https://cf.shopee.vn/file/f9f17b29b990d189428eb1ea74310692";
             pro8.ProLinkPicture3 = "https://salt.tikicdn.com/ts/tmp/e5/1a/6e/ce444dc46e71db4c228bda83ec93bd7a.jpg";
+            pro8.NumberOfSold = 089;
             listPro.Add(pro8);
 
             Products pro9 = new Products();
@@ -252,6 +260,7 @@ namespace ECommerceBE
             pro9.ProLinkPicture1 = "http://fbshop.vn/wp-content/uploads/2018/04/vay-cau-long-victor-k81303-4-466x400.gif";
             pro9.ProLinkPicture2 = "https://fbshop.vn/wp-content/uploads/2018/04/vay-cau-long-victor-k76300-2.gif";
             pro9.ProLinkPicture3 = "https://cf.shopee.vn/file/5cd7a4f75c66f506336d93fb3b248e89";
+            pro9.NumberOfSold = 76;
             listPro.Add(pro9);
 
             Products pro10 = new Products();
@@ -268,6 +277,7 @@ namespace ECommerceBE
             pro10.ProLinkPicture1 = "https://baothainguyen.vn/UserFiles/image/cs(30).jpg";
             pro10.ProLinkPicture2 = "https://vinmec-prod.s3.amazonaws.com/images/20191125_074919_348099_can-sa.max-1800x1800.jpg";
             pro10.ProLinkPicture3 = "https://salt.tikicdn.com/cache/w444/ts/product/fd/b6/8f/3f179a49c92a7993ec9ec077154cf406.jpg";
+            pro10.NumberOfSold = 13;
             listPro.Add(pro10);
 
             Products pro11 = new Products();
@@ -284,6 +294,7 @@ namespace ECommerceBE
             pro11.ProLinkPicture1 = "https://product.hstatic.net/200000199393/product/0t8a5965_195d2ba4af3942728a9e28706a88a021_master.jpg";
             pro11.ProLinkPicture2 = "https://sudospaces.com/babycuatoi/2020/03/do-choi-ban-co-cho-be.jpg";
             pro11.ProLinkPicture3 = "https://giadungnhaviet.com/wp-content/uploads/2020/01/bo-co-vua-Albatros-Royal-AW1579917-4.jpg";
+            pro11.NumberOfSold = 45;
             listPro.Add(pro11);
 
             Products pro12 = new Products();
@@ -292,7 +303,7 @@ namespace ECommerceBE
             pro12.proBrand = "Logitech";
             pro12.proOrigin = "VietNam";
             pro12.proOldPrice = 800000;
-            pro12.proPrice = 750000;
+            pro12.proPrice = 650000;
             pro12.proDescription = "Chuột Logitech G304 là một trong những dòng chuột không dây Logitech được thiết kế cho hiệu suất thực sự " +
                 "với các đột phá công nghệ mới nhất ở mức giá thành phù hợp với người dùng phổ thông, học sinh - sinh viên. GEARVN.COM chuột " +
                 "gaming logitech g304 lightspeed wireless Thông qua chế tạo và thiết kế đầu cuối, Logitech G đã phát triển một giải pháp không " +
@@ -309,6 +320,7 @@ namespace ECommerceBE
             pro12.ProLinkPicture1 = "https://phucanhcdn.com/media/product/35684_g304.jpg";
             pro12.ProLinkPicture2 = "http://ae01.alicdn.com/kf/H73874085766d48a192f521766553aed3Z.jpg_q50.jpg";
             pro12.ProLinkPicture3 = "https://anphat.com.vn/media/product/37343_logitech_g304_kda__1_.jpg";
+            pro12.NumberOfSold = 425;
             listPro.Add(pro12);
 
         }
