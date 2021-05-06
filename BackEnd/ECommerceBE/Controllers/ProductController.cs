@@ -17,9 +17,12 @@ namespace ECommerceBE.Controllers
         public BaseRespone GetListProduct()
         {
             var res = new BaseRespone(false, null);
-            List<Products> data = FakeCSDL.Instance.listPro;
+            List<Products> data = new List<Products>();
+            foreach (Products i in FakeCSDL.Instance.listPro)
+            {
+                data.Add(i);
+            }
             data.Reverse();
-            if (data[0].proID == 1) data.Reverse();
             if (data.Count != 0)
             {
                 res.Success = true;
@@ -52,7 +55,13 @@ namespace ECommerceBE.Controllers
         private List<Products> getListProByCatID (int IDCat)
         {
             List<Products> data = new List<Products>();
-            if (IDCat == 0) data = FakeCSDL.Instance.listPro;
+            if (IDCat == 0)
+            {
+                foreach (Products i in FakeCSDL.Instance.listPro)
+                {
+                    data.Add(i);
+                }
+            }
             else
             {
                 foreach (Products i in FakeCSDL.Instance.listPro)

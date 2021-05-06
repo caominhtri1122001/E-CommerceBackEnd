@@ -102,10 +102,10 @@ namespace ECommerceBE
             Category cat3 = new Category();
             cat3.catID = 3;
             cat3.catName = "Sport Equipment";
-            listCat.Add(cat3);
+            listCat.Add(cat2);
 
             Category cat4 = new Category();
-            cat4.catID = 4;
+            cat4.catID = 3;
             cat4.catName = "Ball";
             listCat.Add(cat4);
 

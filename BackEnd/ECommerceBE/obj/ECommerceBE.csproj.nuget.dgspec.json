@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {}
+    "C:\\Users\\duong\\Downloads\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {
+    "C:\\Users\\duong\\Downloads\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+        "projectUniqueName": "C:\\Users\\duong\\Downloads\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
         "projectName": "ECommerceBE",
-        "projectPath": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+        "projectPath": "C:\\Users\\duong\\Downloads\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
         "packagesPath": "C:\\Users\\duong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\obj\\",
+        "outputPath": "C:\\Users\\duong\\Downloads\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\duong\\AppData\\Roaming\\NuGet\\NuGet.Config",

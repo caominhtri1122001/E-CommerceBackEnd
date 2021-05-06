@@ -1,9 +1,9 @@
 var modal = document.getElementById("myModal");
-var modal2=document.getElementById("myModal2")
-let emailLogin=document.getElementById("emailLogin")
-var login=document.getElementById("logInOut")
-var user=document.getElementById("useraccount")
-let username=document.getElementById("header__navbar-user-name")
+var modal2 = document.getElementById("myModal2")
+let emailLogin = document.getElementById("emailLogin")
+var login = document.getElementById("logInOut")
+var user = document.getElementById("useraccount")
+let username = document.getElementById("header__navbar-user-name")
 
 
 // Get the button that opens the modal
@@ -49,11 +49,11 @@ function requestDataAjax(url) {
 }
 
 var goToPage = function (id) {
-        window.location.href = "/detail.html?productId="+id;
-    }
+    window.location.href = "/detail.html?productId=" + id;
+}
 
 var loadData = function (proudcts) {
-    for(var i = 0; i < proudcts.length; i++) {
+    for (var i = 0; i < proudcts.length; i++) {
         let product = proudcts[i];
         var productHtml = `
         <div onclick="goToPage('${product.proID}')" class="grid__column-2-4">
@@ -92,9 +92,8 @@ var loadData = function (proudcts) {
 }
 $(document).ready(function () {
     console.log("ready!");
-   requestDataAjax("http://localhost:37504/api/Product");
+    requestDataAjax("http://localhost:37504/api/Product");
     requestDataUser("http://localhost:37504/api/Users");
-
 });
 
 var span = document.getElementsByClassName("close")[0];
@@ -102,84 +101,96 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 
 // When the user clicks on <span> (x), close the modal
-function openRegister(){
+function openRegister() {
     modal.style.display = "block";
 }
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal||event.target==modal2) {
-    modal.style.display = "none";
-    modal2.style.display = "none";
-  }
+window.onclick = function (event) {
+    if (event.target == modal || event.target == modal2) {
+        modal.style.display = "none";
+        modal2.style.display = "none";
+    }
 }
 
 //Đăng nhập
-function openLogInOut(){
-  modal2.style.display = "block";
+function openLogInOut() {
+    modal2.style.display = "block";
 }
 //Thực hiện hàm khi bấm chỗ đăng nhập trong form sẵn
-function changeToLogin(){
-  modal.style.display = "none";
-  modal2.style.display = "block";
+function changeToLogin() {
+    modal.style.display = "none";
+    modal2.style.display = "block";
 }
-function changeToRegister(){
-  modal.style.display = "block";
-  modal2.style.display = "none";
+function changeToRegister() {
+    modal.style.display = "block";
+    modal2.style.display = "none";
 }
 // Thực hiện chức năng xem xét dữ liệu sau khi đăng nhập
-var userdata=[]
+var userdata = []
 function requestDataUser(url) {
-  console.log("thuc hien userdata")
-  $.ajax({
-      url: url,
-      data: null,
-      cache: false,
-      type: "GET",
-      success: function (response) {
-          if (response.success) {
-              checkData(response.data)
-          }
-          else {
-              alert(response.message)
-          }
-      },
-      error: function (xhr) {
+    console.log("thuc hien userdata")
+    $.ajax({
+        url: url,
+        data: null,
+        cache: false,
+        type: "GET",
+        success: function (response) {
+            if (response.success) {
+                checkData(response.data)
+            }
+            else {
+                alert(response.message)
+            }
+        },
+        error: function (xhr) {
 
-      }
-  });
+        }
+    });
 }
 
 var checkData = function (data) {
-  console.log("thuc hien ham checkdata")
-    for(i=0;i<data.length;i++){
+    console.log("thuc hien ham checkdata")
+    for (i = 0; i < data.length; i++) {
         userdata.push(data[i])
     }
-    console.log("user name trong ham checkdata: " )
+    console.log("user name trong ham checkdata: ")
     console.log(userdata)
 }
 
 // Thực hiện lấy dữ liệu sau đó hiện lên 
-function checkLogin(){
-  // alert("duyen")
-  // alert(emailLogin.value)
-  // alert(passwordLogin.value)
-  modal2.style.display = "none";
-  console.log("trong ham check Login")
-  let valid=false;
-  let usevalid
-  userdata.forEach(function(item){
-    if(emailLogin.value==item.userAccName&&passwordLogin.value==item.userPass) 
-    {valid=true
-    usevalid=item
+function checkLogin() {
+    // alert("duyen")
+    // alert(emailLogin.value)
+    // alert(passwordLogin.value)
+    modal2.style.display = "none";
+    console.log("trong ham check Login")
+    let valid = false;
+    let usevalid
+    userdata.forEach(function (item) {
+        if (emailLogin.value == item.userAccName && passwordLogin.value == item.userPass) {
+            valid = true
+            usevalid = item
+        }
+    })
+    if (valid == true) {
+        login.style.display = "none"
+        user.style.display = "flex"
+        console.log(username.innerText)
+        console.log("nguoi dung dung")
+        console.log(usevalid)
+        username.innerText = usevalid.userName
     }
-     })
- if(valid==true) {
-     login.style.display="none"
-     user.style.display="flex"
-     console.log(username.innerText)
-     console.log("nguoi dung dung")
-     console.log(usevalid)
-     username.innerText=usevalid.userName
- }
- else alert("sai")
+    else alert("sai")
+}
+
+function sortBanChay() {
+    requestDataAjax("http://localhost:37504/api/Product/GetSort3ListProductByIDCat?catID=0");
+}
+
+function sortThapdenCao(){
+    requestDataAjax("http://localhost:37504/api/Product/GetSort1ListProductByIDCat?catID=0");
+}
+
+function sortCaoDenThap(){
+    requestDataAjax("http://localhost:37504/api/Product/GetSort2ListProductByIDCat?catID=0");
 }
