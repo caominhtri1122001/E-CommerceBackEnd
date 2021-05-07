@@ -281,8 +281,7 @@ dành cho danh mục */
 }
 /* Phần quản lý của admin */
 #manageAdmin{
-    display: flex;
-}
+    display: flex;}
 #manageUser{
     margin-right: 1em;
 }

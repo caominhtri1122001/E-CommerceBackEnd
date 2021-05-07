@@ -43,6 +43,8 @@
                 success: function (response) {
                     console.log(response.success)
                     if (response.success) {
+                        console.log("du lieu chi tiet cua san pham")
+                        console.log(response.data)
                         loadData(response.data)
                       console.log(response.data.proID)
                     }
@@ -56,8 +58,6 @@
             });
         }
 
-     
-
         var loadData = function (proudcts) {
                 var productHtml = `
                 <div class="product-img">
@@ -65,9 +65,9 @@
                         <img src="${proudcts.proLinkPicture}" alt="hinhanh">
                     </div>
                     <div class="product-small-img">
-                        <img src="//likefit.vn/wp-content/uploads/2020/07/snb5-600x600.jpg" alt="">
-                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb1-600x600.jpg" alt="">
-                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb1-600x600.jpg" alt="">
+                        <img src="${proudcts.proLinkPicture1}" alt="">
+                        <img src="${proudcts.proLinkPicture2}" alt="">
+                        <img src="${proudcts.proLinkPicture3    }" alt="">
                         <img src="https://likefit.vn/wp-content/uploads/2020/07/snb3-600x600.jpg" alt="">
                         <img src="https://likefit.vn/wp-content/uploads/2020/07/snb3-600x600.jpg" alt="">
                     </div>
@@ -288,10 +288,10 @@
                         </li>
                         <!-- <li class="header__navbar-item header__navbar-item--bold header__navbar-item--separate">Đăng kí</li>
                         <li class="header__navbar-item header__navbar-item--bold">Đăng nhập</li>-->
-                        <li class="header__navbar-item header__navbar-user">
-                            <img src="https://cdn.vietnambiz.vn/2020/3/23/9005608425724062764144382127330218338156544n-1584933586723443851956.jpg"
+                        <li class="header__navbar-item header__navbar-user" id="useraccount">
+                            <img id="userIMG" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=X_j0p5fsR3MAX-BAEM8&_nc_ht=scontent-hkt1-1.xx&oh=7fd69fd3ff40f734ce7386de9039f44e&oe=60B8122A"
                                 alt="" class="header__navbar-user-img">
-                            <span class="header__navbar-user-name">Trương Thị Mỹ Duyên</span>
+                            <span id="header__navbar-user-name">Trương Thị Mỹ Duyên</span>
                             <ul class="header__navbar-user-menu">
                                 <li class="header__navbar-user-item">
                                     <a href="">Tài khoản của tôi</a>
@@ -307,6 +307,12 @@
                                 </li>
 
                             </ul>
+                        </li>
+                        <li id="logInOut">
+                            <p id="register" onclick="openRegister()">Đăng Ký</p>
+                           
+                            <p id="logIn" onclick="openLogInOut()">Đăng nhập</p>
+                           
                         </li>
                     </ul>
                 </nav>

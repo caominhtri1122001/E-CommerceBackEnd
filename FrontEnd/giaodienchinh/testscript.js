@@ -4,11 +4,18 @@ let emailLogin = document.getElementById("emailLogin")
 var login = document.getElementById("logInOut")
 var user = document.getElementById("useraccount")
 let username = document.getElementById("header__navbar-user-name")
+let userIMG=document.getElementById("userIMG")
+
 
 var proPrice=document.getElementById("proPrice")
+var manageAdmin=document.getElementById("manageAdmin")
 var manageUser=document.getElementById("manageUser")
 var manageProduct=document.getElementById("manageProduct")
 var btnPoppular=document.getElementById("btnPoppular")
+
+
+
+
 // Get the button that opens the modal
 
 // Get the <span> element that closes the modal
@@ -52,7 +59,7 @@ function requestDataAjax(url) {
 }
 
 var goToPage = function (id) {
-    window.location.href = "/detail.html?productId=" + id;
+    window.location.href = "/detailtest.html?productId=" + id;
 }
 
 var loadData = function (proudcts) {
@@ -87,7 +94,6 @@ var loadData = function (proudcts) {
                                         <span class="product-sale-off__label"> GIẢM </span>
                                     </div>
                                 </a>
-           
                         </div>
     `
         $("#product-list-row").append(productHtml)
@@ -131,7 +137,6 @@ function changeToRegister() {
 // Thực hiện chức năng xem xét dữ liệu sau khi đăng nhập
 var userdata = []
 function requestDataUser(url) {
-    console.log("thuc hien userdata")
     $.ajax({
         url: url,
         data: null,
@@ -152,21 +157,15 @@ function requestDataUser(url) {
 }
 
 var checkData = function (data) {
-    console.log("thuc hien ham checkdata")
+   
     for (i = 0; i < data.length; i++) {
         userdata.push(data[i])
     }
-    console.log("user name trong ham checkdata: ")
-    console.log(userdata)
 }
 
-// Thực hiện lấy dữ liệu sau đó hiện lên 
+// Thực hiện hàm login 
 function checkLogin() {
-    // alert("duyen")
-    // alert(emailLogin.value)
-    // alert(passwordLogin.value)
     modal2.style.display = "none";
-    console.log("trong ham check Login")
     let valid = false;
     let usevalid
     userdata.forEach(function (item) {
@@ -177,14 +176,14 @@ function checkLogin() {
     })
     if (valid == true) {
         login.style.display = "none"
-        user.style.display = "flex"
-        console.log(username.innerText)
-        console.log("nguoi dung dung")
-        console.log(usevalid)
+        user.style.display = "flex"     
         username.innerText = usevalid.userName
+        userIMG.src =usevalid.urlAvatar   
+        if(usevalid.isAdmin) GUIAdmin()
     }
     else alert("sai")
 }
+
 
 function sortBanChay() {
     requestDataAjax("http://localhost:37504/api/Product/GetSort3ListProductByIDCat?catID=0");
@@ -197,6 +196,15 @@ function sortThapdenCao(){
 function sortCaoDenThap(){
     requestDataAjax("http://localhost:37504/api/Product/GetSort2ListProductByIDCat?catID=0");
 }
+
+function GUIAdmin(){
+    proPrice.style.display="none"
+    btnPoppular.style.display="none"
+    manageAdmin.style.display="flex"
+}
 // Sau khi check người dùng là admin sẽ thực hiện thay đổi giao diện admin
-proPrice.style.display="none"
-btnPoppular.style.display="none"
+proPrice.style.display="block"
+btnPoppular.style.display="block"
+manageAdmin.style.display="none"
+// proPrice.style.display="none"
+// btnPoppular.style.display="none"

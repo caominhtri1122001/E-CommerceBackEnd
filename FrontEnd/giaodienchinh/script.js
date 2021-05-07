@@ -179,6 +179,7 @@ function checkLogin() {
         console.log("nguoi dung dung")
         console.log(usevalid)
         username.innerText = usevalid.userName
+        alert(usevalid.userName)
     }
     else alert("sai")
 }

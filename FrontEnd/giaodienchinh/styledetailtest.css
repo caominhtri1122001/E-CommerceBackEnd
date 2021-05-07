@@ -239,6 +239,25 @@ html{
     position: relative;
     min-height: 26px;
 }
+/* Phần đăng nhập người dùng */
+#useraccount{
+display: none;
+}
+#logInOut {
+    display: flex;
+    color: #fff;
+    font-size: 1.3rem;
+    align-items: center;
+}
+#register {
+    padding-right: 1em;
+    border-right: 1px solid #fff;
+    cursor: pointer;
+}
+#logIn {
+    padding-left: 1em;
+    cursor: pointer;
+}
 .header__navbar-user{
     display: flex;
     justify-items: center;
