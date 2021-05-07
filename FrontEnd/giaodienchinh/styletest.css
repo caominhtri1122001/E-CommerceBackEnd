@@ -83,7 +83,7 @@ dành cho danh mục */
 .home-product-item img{
     width: 100%;
     height:200px;
-    object-fit: contain;
+    object-fit: cover;
 }
 /* phần giới thiệu sản phẩm , khai trương ...  */
 .home-product-item__name {
@@ -231,6 +231,7 @@ dành cho danh mục */
 /* MODAL */
 
 /* selection */
+/* Phần giá sản phẩm */
 .select-input{
     position: relative;
     height: 34px;
@@ -242,6 +243,7 @@ dành cho danh mục */
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 1px 1px #c4c1c1; 
+    z-index:1;
 }
 .select-input:hover .select-input__list{
     display: block;
@@ -277,7 +279,13 @@ dành cho danh mục */
 .select-input__item-link:hover{
     color: var(--primary-color);
 }
-
+/* Phần quản lý của admin */
+#manageAdmin{
+    display: flex;
+}
+#manageUser{
+    margin-right: 1em;
+}
 /* main */
 #header{
     /* để có màu từ đậm đến nhạt  */
@@ -306,11 +314,10 @@ dành cho danh mục */
     min-height: 26px;
 }
 /* Lamf phần đăng ký đăng nhập */
-.logInOut{
+#logInOut{
     display: flex;
     color:#fff;
     font-size:1.3rem;
-    
 }
 #register{
     padding-right:1em;
@@ -321,10 +328,15 @@ dành cho danh mục */
     padding-left:1em;
     cursor: pointer;
 }
+/* Người dùng */
+#useraccount{
+    display: none;
+}
 .header__navbar-user{
     display: flex;
     justify-items: center;
     position: relative;
+    display: none;
 }
 .header__navbar-user-img{
     width: 22px;
@@ -332,7 +344,7 @@ dành cho danh mục */
     border-radius: 50%;
     border:1px solid rgba(0, 0, 0, 0.1)
 }
-.header__navbar-user-name{
+#header__navbar-user-name{
     margin-left: 4px;
     font-size: 1.4rem;
     font-weight: 400;
