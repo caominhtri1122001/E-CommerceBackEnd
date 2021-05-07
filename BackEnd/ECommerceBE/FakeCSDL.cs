@@ -8,7 +8,6 @@ namespace ECommerceBE
 {
     public class FakeCSDL
     {
-        public  List<Roles> listRole { get; set; }
         public  List<Users> listUser { get; set; }
         public List<Products> listPro { get; set; }
         public List<Category> listCat { get; set; }
@@ -31,21 +30,10 @@ namespace ECommerceBE
 
         private FakeCSDL()
         {
-            listRole = new List<Roles>();
             listUser = new List<Users>();
             listCat = new List<Category>();
             listPro = new List<Products>();
 
-            //Roles
-            Roles r1 = new Roles();
-            r1.roleID = 1;
-            r1.roleName = "Administator";
-            listRole.Add(r1);
-
-            Roles r2 = new Roles();
-            r2.roleID = 2;
-            r2.roleName = "Customer";
-            listRole.Add(r2);
 
             //Users
             Users u1 = new Users();
@@ -54,7 +42,7 @@ namespace ECommerceBE
             u1.userAccName = "caominhtri";
             u1.userPass = "1";
             u1.userPhone = "0349319314";
-            u1.userRoleID = 1;
+            u1.isAdmin = true;
             u1.urlAvatar = "https://thuthuatnhanh.com/wp-content/uploads/2019/04/anh-cute-buon.jpg";
             listUser.Add(u1);
 
@@ -64,7 +52,7 @@ namespace ECommerceBE
             u2.userAccName = "truongthimyduyen";
             u2.userPass = "1";
             u2.userPhone = "000";
-            u2.userRoleID = 1;
+            u2.isAdmin = true;
             u2.urlAvatar = "https://i.pinimg.com/originals/f3/0a/04/f30a04f09d78d6b0dfdf0bf0255c5487.jpg";
             listUser.Add(u2);
 
@@ -74,7 +62,7 @@ namespace ECommerceBE
             u3.userAccName = "trananhdung";
             u3.userPass = "1";
             u3.userPhone = "000";
-            u3.userRoleID = 1;
+            u3.isAdmin = false;
             u2.urlAvatar = "https://anhdephd.com/wp-content/uploads/2019/07/hinh-anh-avatar-chibi-cute-de-thuong-dep-nhat-cho-facebook-15-560x560.jpg";
             listUser.Add(u3);
 
@@ -84,7 +72,7 @@ namespace ECommerceBE
             u4.userAccName = "duongtruongvu";
             u4.userPass = "1";
             u4.userPhone = "000";
-            u4.userRoleID = 1;
+            u4.isAdmin = false;
             u4.urlAvatar = "https://taoanhonline.com/wp-content/uploads/2019/08/hinh-anh-avatar-0.jpg";
             listUser.Add(u4);
 

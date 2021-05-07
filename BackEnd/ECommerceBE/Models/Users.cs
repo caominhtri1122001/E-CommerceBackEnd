@@ -13,7 +13,7 @@ namespace ECommerceBE.Models
         public string userPass { get; set; }
         public string userPhone { get; set; }
         public string userAddress { get; set; }
-        public int userRoleID { get; set; }
+        public bool isAdmin { get; set; }
         public string urlAvatar { get; set; }
     }
 }

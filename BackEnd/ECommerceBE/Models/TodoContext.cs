@@ -13,6 +13,5 @@ namespace ECommerceBE.Models
 
         public DbSet<TodoItem> TodoRole { get;set;}
 
-        public DbSet<ECommerceBE.Models.Roles> Roles { get;set;}
     }
 }

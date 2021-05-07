@@ -63,7 +63,7 @@ namespace ECommerceBE.Controllers
 
         //PUT: api/Users/{id}
         [HttpPut("{userID}")]
-        public BaseRespone PutUser(int userID, string uName , string uAName, string uPass, string uPhone,string uAddress,int uRoleID)
+        public BaseRespone PutUser(int userID, string uName , string uAName, string uPass, string uPhone,string uAddress)
         {
             List<Users> data = FakeCSDL.Instance.listUser;
             var res = new BaseRespone(false, null);
@@ -77,7 +77,6 @@ namespace ECommerceBE.Controllers
                     i.userPass = uPass;
                     i.userPhone = uPhone;
                     i.userAddress = uAddress;
-                    i.userRoleID = uRoleID;
                     res.Success = true;
                     res.Data = data;
                     return res;
@@ -88,7 +87,7 @@ namespace ECommerceBE.Controllers
 
         //POST: api/Users
         [HttpPost]
-        public BaseRespone PostRole(int userID, string uName, string uAName, string uPass, string uPhone, string uAddress, int uRoleID)
+        public BaseRespone PostRole(int userID, string uName, string uAName, string uPass, string uPhone, string uAddress)
         {
             List<Users> data = FakeCSDL.Instance.listUser;
             Users newUser = new Users();
@@ -106,7 +105,6 @@ namespace ECommerceBE.Controllers
             newUser.userPass = uPass;
             newUser.userPhone = uPhone;
             newUser.userAddress = uAddress;
-            newUser.userRoleID = uRoleID;
             data.Add(newUser);
             res.Success = true;
             res.Data = data;
