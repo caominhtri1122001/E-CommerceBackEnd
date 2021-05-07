@@ -63,7 +63,7 @@ namespace ECommerceBE
             u3.userPass = "1";
             u3.userPhone = "000";
             u3.isAdmin = false;
-            u2.urlAvatar = "https://anhdephd.com/wp-content/uploads/2019/07/hinh-anh-avatar-chibi-cute-de-thuong-dep-nhat-cho-facebook-15-560x560.jpg";
+            u3.urlAvatar = "https://anhdephd.com/wp-content/uploads/2019/07/hinh-anh-avatar-chibi-cute-de-thuong-dep-nhat-cho-facebook-15-560x560.jpg";
             listUser.Add(u3);
 
             Users u4 = new Users();
