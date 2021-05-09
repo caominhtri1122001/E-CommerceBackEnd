@@ -8,10 +8,33 @@ var modal2 = document.getElementById("myModal2")
 let emailLogin = document.getElementById("emailLogin")
 var login = document.getElementById("logInOut")
 
+var userdata = []
+
 // Theem vao ne 
 
 
 adminEdit.style.display="none"
+
+function requestDataUser() {
+    $.ajax({
+        url: "http://localhost:37504/api/Users",
+        data: null,
+        cache: false,
+        type: "GET",
+        success: function (response) {
+            if (response.success) {
+                for (i = 0; i < response.data.length; i++) {
+                    userdata[i] = (response.data[i])
+                }
+            }
+            else {
+                alert(response.message)
+            }
+        },
+        error: function (xhr) {
+        }
+    });
+}
 
 
 function requestDataDetail(url) {
@@ -150,6 +173,7 @@ $(document).ready(function () {
     console.log(url)
     console.log(productId)
     requestDataDetail("http://localhost:37504/api/Product/GetProductByID?proID="+productId);
+    requestDataUser()
 });
 
 console.log("gio se check xem co ai dang nhap chua ")
@@ -204,3 +228,27 @@ window.onclick = function(event) {
 }
 
 //dang nhap 
+function checkLogin() {
+    modal2.style.display = "none";
+    console.log("trong ham check Login")
+    console.log(userdata)
+    let valid = false;
+    let usevalid
+    userdata.forEach(function (item) {
+        if (emailLogin.value == item.userAccName && passwordLogin.value == item.userPass) {
+            valid = true
+            usevalid = item
+        }
+    })
+    if (valid == true) {
+        console.log("nguoi dung dung")
+        console.log(usevalid)
+        login.style.display = "none"
+        user.style.display = "flex"
+        console.log(username.innerText)
+        console.log(usevalid)
+        username.innerText = usevalid.userName
+        alert(usevalid.userName)
+    }
+    else alert("sai")
+}
