@@ -284,7 +284,6 @@ function checkLogin() {
      listnguoidung.push(nguoidung)
      localStorage.setItem("data",JSON.stringify(listnguoidung))
 
-<<<<<<< HEAD
      onclick="openRegister()"
      
 
@@ -301,30 +300,3 @@ function checkLogin() {
     }
     else alert("sai")
 }
-=======
-//dang nhap 
-function checkLogin() {
-    modal2.style.display = "none";
-    console.log("trong ham check Login")
-    console.log(userdata)
-    let valid = false;
-    let usevalid
-    userdata.forEach(function (item) {
-        if (emailLogin.value == item.userAccName && passwordLogin.value == item.userPass) {
-            valid = true
-            usevalid = item
-        }
-    })
-    if (valid == true) {
-        console.log("nguoi dung dung")
-        console.log(usevalid)
-        login.style.display = "none"
-        user.style.display = "flex"
-        console.log(username.innerText)
-        console.log(usevalid)
-        username.innerText = usevalid.userName
-        alert(usevalid.userName)
-    }
-    else alert("sai")
-}
->>>>>>> 5664cadc1d6dcc71d64c0bac1434c7b5f217a04a
