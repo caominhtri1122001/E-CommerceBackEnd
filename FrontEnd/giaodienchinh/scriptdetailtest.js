@@ -193,11 +193,8 @@ $(document).ready(function () {
     var url = new URL(window.location.href)
     let productId = url.searchParams.get("productId");
     requestDataDetail("http://localhost:37504/api/Product/GetProductByID?proID="+productId);
-<<<<<<< HEAD
     requestDataUser("http://localhost:37504/api/Users");
-=======
-    requestDataUser()
->>>>>>> 5664cadc1d6dcc71d64c0bac1434c7b5f217a04a
+
 });
 
 console.log("gio se check xem co ai dang nhap chua ")
