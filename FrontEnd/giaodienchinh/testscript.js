@@ -12,16 +12,13 @@ var manageAdmin=document.getElementById("manageAdmin")
 var manageUser=document.getElementById("manageUser")
 var manageProduct=document.getElementById("manageProduct")
 var btnPoppular=document.getElementById("btnPoppular")
-
-
-
+// nguoi dung detail 
 
 // Get the button that opens the modal
 
 // Get the <span> element that closes the modal
 
 //Load dữ liệu cho sản phẩm 
-
 
 function requestData(url) {
     var xhttp = new XMLHttpRequest();
@@ -61,6 +58,7 @@ function requestDataAjax(url) {
 var goToPage = function (id) {
     window.location.href = "/detailtest.html?productId=" + id;
 }
+
 
 var loadData = function (proudcts) {
     for (var i = 0; i < proudcts.length; i++) {
@@ -105,7 +103,6 @@ $(document).ready(function () {
     requestDataUser("http://localhost:37504/api/Users");
 });
 
-var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 
@@ -157,13 +154,12 @@ function requestDataUser(url) {
 }
 
 var checkData = function (data) {
-   
     for (i = 0; i < data.length; i++) {
         userdata.push(data[i])
     }
 }
 
-// Thực hiện hàm login 
+// Thực hiện hàm đăng nhập 
 function checkLogin() {
     modal2.style.display = "none";
     let valid = false;
@@ -174,12 +170,29 @@ function checkLogin() {
             usevalid = item
         }
     })
+    console.log(usevalid)
+    var listdata=[]
+    var nguoidung={
+        "name" :usevalid.userName,
+        "src" : usevalid.urlAvatar,
+        "isAdmin" : usevalid.isAdmin
+     }
+     listdata.push(nguoidung)
+     localStorage.setItem("data",JSON.stringify(listdata))
+
+     onclick="openRegister()"
+     
+
+    // Đăng nhập thành công lưu người dùng vào local
     if (valid == true) {
         login.style.display = "none"
         user.style.display = "flex"     
         username.innerText = usevalid.userName
-        userIMG.src =usevalid.urlAvatar   
+        userIMG.src =usevalid.urlAvatar  
+        // Nếu là admin thì hiển thị giao diện admin 
         if(usevalid.isAdmin) GUIAdmin()
+
+        // Dùng local để lưu người đã đăng nhập
     }
     else alert("sai")
 }
@@ -208,3 +221,40 @@ btnPoppular.style.display="block"
 manageAdmin.style.display="none"
 // proPrice.style.display="none"
 // btnPoppular.style.display="none"
+
+// Dùng local Storage đẻ lưu dữ liệu 
+// var listdata=[]
+// var newSTudent={
+//     "stt" :1,
+//     "name" :"Trương Thị Mỹ Duyên",
+//     "major" : "Công nghệ thông tin",
+//     "src" : "https://scontent.fdad8-1.fna.fbcdn.net/v/t1.6435-9/82440376_1333037346905603_3222950360930844672_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=dTFYgGi3ekcAX9_D8Hq&_nc_ht=scontent.fdad8-1.fna&oh=94979b660ba50170151332133e959a7d&oe=609C12E3"
+//  }
+//  listdata.push(newSTudent)
+
+//  var newSTudent2={
+//     "stt" :2 ,
+//     "name" :"Lê Hoàng Ngọc Hân",
+//     "major" : "Công nghệ thông tin",
+//     "src" : "https://scontent.fdad3-1.fna.fbcdn.net/v/t1.6435-9/150082242_1430472140650096_2994224548256427455_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ijzlDP0lmtYAX8iK-xF&_nc_ht=scontent.fdad3-1.fna&oh=181ebe62574d2af57767852080048b12&oe=609E143B"
+//  }
+//  listdata.push(newSTudent2)
+//  localStorage.setItem("data",JSON.stringify(listdata))
+//  var stored = JSON.parse(localStorage.getItem("data"));
+
+// Thực hiện hàm logOut sau khi người dùng đăng xuất thì local Storage sẽ xóa dữ liệu của người dùng 
+function logOut(){
+    localStorage.clear();
+}
+//neu trong local co du lieu thi hien 
+let listdata=localStorage.getItem("data")?JSON.parse(localStorage.getItem("data")):[]
+if(listdata.length==1) shownguoidung()
+
+//neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky 
+function shownguoidung(){
+    console.log(listdata[0].name)
+    username.innerText = listdata[0].name
+    userIMG.src=listdata[0].src
+    useraccount.style.display="flex"
+    logInOut.style.display="none"
+}

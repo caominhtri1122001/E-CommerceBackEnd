@@ -32,8 +32,6 @@
             xhttp.open("GET", url, true);
             xhttp.send();
         }
-
-     
         function requestDataAjax(url) {
             $.ajax({
                 url: url,
@@ -48,7 +46,6 @@
                     }
                     else {
                         alert(response.message)
-                        
                     }
                 },
                 error: function (xhr) {
@@ -165,9 +162,6 @@
                 $("#product-inner").append(productHtml)
         }
         $(document).ready(function () {
-           
-            // console.log("ben trong ham readey: ")
-            // console.log(id)
             var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5";
             var url = new URL(url_string);
             var c = url.searchParams.get("c");
@@ -176,13 +170,12 @@
             let productId = url.searchParams.get("productId");
             console.log(url)
             console.log(productId)
-            requestDataAjax("http://localhost:37504/api/Product/GetProductByID?proID="+productId);
-
+            requestDataAjax("http://localhost:37504/api/Product/GetProductByID?proID="+productId);  
         });
 </script>
 </head>
 <body>
-    <div class="web">
+    <div class="web" id="web-inner">
         <header class="header">
             <div class="grid">
               

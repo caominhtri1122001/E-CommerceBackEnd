@@ -675,16 +675,7 @@ dành cho danh mục */
     width: fit-content;
   }
   
-#auth-form{
-    position: fixed;
-    width: 500px;
-    background-color: var(--white-color);
-    border-radius: 5px;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    z-index:50;
-}
+
 .auth-form__container{
     padding: 0 32px;
 }
@@ -701,6 +692,7 @@ dành cho danh mục */
     font-size: 2.2rem;
     font-weight: 500;
     cursor: pointer;
+   
 }
 
 .auth-form__switch-btn{

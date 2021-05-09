@@ -16,41 +16,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous"></script>
-<script>
 
-        function requestData(url) {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    var data = JSON.parse(this.responseText)
-                    loadData(data)
-                    console.log("load ok")
-                } else {
-                    console.log("error")
-                }
-            };
-            xhttp.open("GET", url, true);
-            xhttp.send();
-        }
-
-     
-        function requestDataAjax(url) {
+    <!-- them -->
+    
+ <!-- <script>
+        function requestDataDetail(url) {
             $.ajax({
                 url: url,
                 data: null,
                 cache: false,
                 type: "GET",
                 success: function (response) {
-                    console.log(response.success)
-                    if (response.success) {
-                        console.log("du lieu chi tiet cua san pham")
-                        console.log(response.data)
-                        loadData(response.data)
-                      console.log(response.data.proID)
+                  
+                    if (response.success) {     
+                        loadData2(response.data)
                     }
                     else {
                         alert(response.message)
-                        
+   
                     }
                 },
                 error: function (xhr) {
@@ -58,7 +41,7 @@
             });
         }
 
-        var loadData = function (proudcts) {
+        var loadData2 = function (proudcts) {
                 var productHtml = `
                 <div class="product-img">
                     <div class="product-spe-img">
@@ -165,9 +148,6 @@
                 $("#product-inner").append(productHtml)
         }
         $(document).ready(function () {
-           
-            // console.log("ben trong ham readey: ")
-            // console.log(id)
             var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5";
             var url = new URL(url_string);
             var c = url.searchParams.get("c");
@@ -176,10 +156,10 @@
             let productId = url.searchParams.get("productId");
             console.log(url)
             console.log(productId)
-            requestDataAjax("http://localhost:37504/api/Product/GetProductByID?proID="+productId);
-
+            requestDataDetail("http://localhost:37504/api/Product/GetProductByID?proID="+productId);
         });
-</script>
+</script>  -->
+
 </head>
 <body>
     <div class="web">
@@ -303,9 +283,8 @@
                                     <a href="">Đơn mua</a>
                                 </li>
                                 <li class="header__navbar-user-item header__navbar-user-item--sperate">
-                                    <a href="">Đăng xuất</a>
+                                    <a href="" onclick="logOut()">Đăng xuất</a>
                                 </li>
-
                             </ul>
                         </li>
                         <li id="logInOut">
@@ -591,7 +570,7 @@
         <!-- bat dau phan chi tiet san pham -->
         <div class="web-inner">
             <!-- Phần nút chức năng chỉnh sửa sản phẩm -->
-            <div class="adminEdit">
+            <div id="adminEdit">
                 <button class="home-filter__btn btn " id="btnEditProduct">Cập nhật</button>
                 <button class="home-filter__btn btn btn--primary">Xóa sản phẩm</button>
             </div>
@@ -805,7 +784,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row sm-gutter product-shop">
+            <div class="row sm-gutter product-shop" id="usercomment">
                 <div class="product-shop__contact">
                     <a href="#" class="product-shop__contact-img-link">
                         <div class="product-shop__contact-avatar-wrapper">
@@ -876,6 +855,147 @@
           
             </div>
         </div>
+      
+ <!-- Register form -->
+     <!-- Register form -->
+    <!-- form dùng cho cả 2 -->
+    <!-- form đăng ký -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div id="formRegis" class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        
+                        <span class="auth-form__switch-btn" onclick="changeToLogin()">Đăng nhập</span>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                           
+                            <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+                   
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng kí, bạn đã đồng ý với DDVT về
+                            <a href="https://shopee.vn/legaldoc/termsOfService/?__classic__=1" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="https://shopee.vn/legaldoc/privacy/?__classic__=1" class="auth-form__text-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>  
+                    <div class="auth-form__controls ">
+                        <button class="btn btn--normal auth-form__control-back">
+                            <a href="">
+                              TRỞ LẠI
+                            </a>
+                        </button>
+                        <button class="btn btn--primary ">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+                
+                
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Foogle
+                        </span>
+                    </a>
+                </div>
+            </div>
+         
+   
+        </div>
+      
+      </div>
+      <div id="myModal2" class="modal2">
+        <!-- Modal content -->
+        <div class="modal-content">
+              <div id="formLogGin" class="auth-form" >
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        
+                        <span class="auth-form__switch-btn"  onclick="changeToRegister()">Đăng ký</span>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            
+                            <input type="text" id="emailLogin" class="auth-form__input" placeholder="Nhập email của bạn" > 
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" id="passwordLogin"class="auth-form__input" placeholder="Mật khẩu của bạn">
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="auth-form__aside">
+                        
+                        <div class="auth-form__help">
+                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                            <span class="auth-form__help-separate">
+
+                            </span>
+                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                        </div>
+                    </div>
+
+                    
+                    <div class="auth-form__controls ">
+                        <button class="btn btn--normal auth-form__control-back">
+                            <a href="">
+                                TRỞ LẠI
+                              </a>
+                        </button>
+                        <button class="btn btn--primary " onclick="checkLogin()">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+                
+                
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Foogle
+                        </span>
+                    </a>
+                </div>
+            </div>        
+         
+   
+        </div>
+      
+      </div>
+    
     </div>
+    <script src="scriptdetailtest.js">
+        // console.log("gio se check xem co ai dang nhap chua ")
+        //  let listdata=localStorage.getItem("data")?JSON.parse(localStorage.getItem("data")):[]
+        // console.log(listdata.length)
+        // console.log("show du lieu ne")
+        // listdata.forEach((student,index)=>{
+        //     console.log(student.name) 
+        //     console.log(student.src)    
+        // })
+    </script>
 </body>
 </html>
