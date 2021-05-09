@@ -137,7 +137,7 @@ html{
     background-color: #c3c3c3;
 }
 /* MODAL */
-.modal{
+.modal, .modal2{
     position: fixed;
     top: 0;
     right: 0;
@@ -1865,6 +1865,7 @@ a {
 .auth-form__socials-icon
 {
     color: var(--white-color);
+   
 }
 
 .auth-form__socials-title{
@@ -1883,6 +1884,7 @@ a {
     text-decoration: none;
     font-size: 1.4rem;
     color: #939393;
+
 }
 .auth-form__help-separate{
     display: block;
@@ -1893,4 +1895,3 @@ a {
 .auth-form__help-forgot{
     color: var(--primary-color);
 }
-

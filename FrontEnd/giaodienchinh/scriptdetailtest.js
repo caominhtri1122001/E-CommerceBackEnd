@@ -169,54 +169,38 @@ function logOut(){
 }
 //ham kiem tra giao dien nguoi dung 
 
-if( listdata[0].isAdmin==true) 
-{
-    adminEdit.style.display="block"
+// if( listdata[0].isAdmin==true) 
+// {
+//     adminEdit.style.display="block"
 
-}
-else {
-    adminEdit.style.display="none"
-}
+// }
+// else {
+//     adminEdit.style.display="none"
+// }
+
+
 // Sau khi bam dang ky , dang nhap 
+
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-
+function openRegister(){
+  modal.style.display = "block";
+}
+function openLogInOut(){
+    modal2.style.display = "block";
+}
 // When the user clicks on <span> (x), close the modal
-function openRegister() {
-    modal.style.display = "block";
-}
-// window.onclickwindow.onclickwindow.onclick
-// When user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-
-function openRegister() {
-    modal.style.display = "block";
+span.onclick = function() {
+  modal.style.display = "none";
+  modal2.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    alert("okkkkk")
-    if (event.target == modal || event.target == modal2) {
-        modal.style.display = "none";
-        modal2.style.display = "none";
-    }
+window.onclick = function(event) {
+  if (event.target == modal||event.target == modal2) {
+    modal.style.display = "none";
+    modal2.style.display = "none";
+  }
 }
 
-//Đăng nhập
-function openLogInOut() {
-    modal2.style.display = "block";
-}
-//Thực hiện hàm khi bấm chỗ đăng nhập trong form sẵn
-function changeToLogin() {
-    modal.style.display = "none";
-    modal2.style.display = "block";
-}
-function changeToRegister() {
-    modal.style.display = "block";
-    modal2.style.display = "none";
-}
+//dang nhap 

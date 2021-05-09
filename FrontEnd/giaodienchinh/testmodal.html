@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testmodal</title>
+   <link rel="stylesheet" href="styletestmodal.css">
+</head>
+<style>
+   
+</style>
+<body>
+    <h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="formRegis" class="auth-form">
+        <div class="auth-form__container">
+            <div class="auth-form__header">
+                <h3 class="auth-form__heading">Đăng ký</h3>
+                
+                <span class="auth-form__switch-btn" onclick="changeToLogin()">Đăng nhập</span>
+            </div>
+            <div class="auth-form__form">
+                <div class="auth-form__group">
+                   
+                    <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
+                </div>
+                <div class="auth-form__group">
+                    <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                </div>
+                <div class="auth-form__group">
+                    <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                </div>
+            </div>
+           
+            <div class="auth-form__aside">
+                <p class="auth-form__policy-text">
+                    Bằng việc đăng kí, bạn đã đồng ý với DDVT về
+                    <a href="https://shopee.vn/legaldoc/termsOfService/?__classic__=1" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                    <a href="https://shopee.vn/legaldoc/privacy/?__classic__=1" class="auth-form__text-link">Chính sách bảo mật</a>
+                </p>
+            </div>  
+            <div class="auth-form__controls ">
+                <button class="btn btn--normal auth-form__control-back">
+                    <a href="">
+                      TRỞ LẠI
+                    </a>
+                </button>
+                <button class="btn btn--primary ">ĐĂNG KÝ</button>
+            </div>
+        </div>
+        
+        
+        <div class="auth-form__socials">
+            <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                <span class="auth-form__socials-title">
+                    Kết nối với Facebook
+                </span>
+            </a>
+            <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                <i class="auth-form__socials-icon fab fa-google"></i>
+                <span class="auth-form__socials-title">
+                    Kết nối với Foogle
+                </span>
+            </a>
+        </div>
+    </div>
+  </div>
+
+</div>
+<script>
+    var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>
