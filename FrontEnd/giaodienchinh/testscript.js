@@ -1,6 +1,5 @@
 var modal = document.getElementById("myModal");
 var modal2 = document.getElementById("myModal2")
-let emailLogin = document.getElementById("emailLogin")
 var login = document.getElementById("logInOut")
 var user = document.getElementById("useraccount")
 let username = document.getElementById("header__navbar-user-name")
@@ -164,37 +163,38 @@ function checkLogin() {
     modal2.style.display = "none";
     let valid = false;
     let usevalid
+    
     userdata.forEach(function (item) {
         if (emailLogin.value == item.userAccName && passwordLogin.value == item.userPass) {
+            console.log(emailLogin.value)
             valid = true
             usevalid = item
+           
         }
     })
-    console.log(usevalid)
-    var listdata=[]
-    var nguoidung={
-        "name" :usevalid.userName,
-        "src" : usevalid.urlAvatar,
-        "isAdmin" : usevalid.isAdmin
-     }
-     listdata.push(nguoidung)
-     localStorage.setItem("data",JSON.stringify(listdata))
-
-     onclick="openRegister()"
-     
-
     // Đăng nhập thành công lưu người dùng vào local
     if (valid == true) {
+        console.log("da tim duoc nguoi")
         login.style.display = "none"
         user.style.display = "flex"     
         username.innerText = usevalid.userName
         userIMG.src =usevalid.urlAvatar  
         // Nếu là admin thì hiển thị giao diện admin 
         if(usevalid.isAdmin) GUIAdmin()
-
         // Dùng local để lưu người đã đăng nhập
+        var listnguoidung=[]
+        var nguoidung={
+            "name" :usevalid.userName,
+            "src" : usevalid.urlAvatar,
+            "isAdmin" : usevalid.isAdmin
+         }
+         listnguoidung.push(nguoidung)
+         localStorage.setItem("data",JSON.stringify(listnguoidung))
     }
-    else alert("sai")
+    else {
+        console.log("chua tim duoc nguoi")
+        alert("sai")
+    }
 }
 
 
@@ -247,14 +247,17 @@ function logOut(){
     localStorage.clear();
 }
 //neu trong local co du lieu thi hien 
+
+
 let listdata=localStorage.getItem("data")?JSON.parse(localStorage.getItem("data")):[]
 if(listdata.length==1) shownguoidung()
+console.log("co nguoi dang dang nhap hay khong " + listdata.length)
 
 //neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky 
 function shownguoidung(){
-    console.log(listdata[0].name)
     username.innerText = listdata[0].name
     userIMG.src=listdata[0].src
     useraccount.style.display="flex"
     logInOut.style.display="none"
 }
+

@@ -9,7 +9,29 @@ let emailLogin = document.getElementById("emailLogin")
 var login = document.getElementById("logInOut")
 
 // Theem vao ne 
+//ham dang xuat dang nhap hien form 
+var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks the button, open the modal 
+function openRegister(){
+  modal.style.display = "block";
+}
+function openLogInOut(){
+    modal2.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  modal2.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal||event.target == modal2) {
+    modal.style.display = "none";
+    modal2.style.display = "none";
+  }
+}
+//ket thuc dang xuat dang nhap hien form
 
 adminEdit.style.display="none"
 
@@ -147,13 +169,13 @@ $(document).ready(function () {
     console.log(c);
     var url = new URL(window.location.href)
     let productId = url.searchParams.get("productId");
-    console.log(url)
-    console.log(productId)
     requestDataDetail("http://localhost:37504/api/Product/GetProductByID?proID="+productId);
+    requestDataUser("http://localhost:37504/api/Users");
 });
 
 console.log("gio se check xem co ai dang nhap chua ")
 let listdata=localStorage.getItem("data")?JSON.parse(localStorage.getItem("data")):[]
+console.log("so luong localstorage" + listdata.length)
 if(listdata.length==1) shownguoidung()
 
 //neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky 
@@ -168,39 +190,86 @@ function logOut(){
     localStorage.clear();
 }
 //ham kiem tra giao dien nguoi dung 
+if(listdata.length==1){
+        if( listdata[0].isAdmin==true) 
+    {
+        adminEdit.style.display="block"
 
-// if( listdata[0].isAdmin==true) 
-// {
-//     adminEdit.style.display="block"
+    }
+    else {
+        adminEdit.style.display="none"
+    }
 
-// }
-// else {
-//     adminEdit.style.display="none"
-// }
+}
 
 
 // Sau khi bam dang ky , dang nhap 
 
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-function openRegister(){
-  modal.style.display = "block";
+
+//dang nhap tu giao dien detail 
+var userdata = []
+function requestDataUser(url) {
+    $.ajax({
+        url: url,
+        data: null,
+        cache: false,
+        type: "GET",
+        success: function (response) {
+            if (response.success) {
+                checkData(response.data)
+            }
+            else {
+                alert(response.message)
+            }
+        },
+        error: function (xhr) {
+
+        }
+    });
 }
-function openLogInOut(){
-    modal2.style.display = "block";
+
+var checkData = function (data) {
+    for (i = 0; i < data.length; i++) {
+        userdata.push(data[i])
+    }
 }
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-  modal2.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal||event.target == modal2) {
-    modal.style.display = "none";
+
+// Thực hiện hàm đăng nhập 
+function checkLogin() {
     modal2.style.display = "none";
-  }
-}
+    let valid = false;
+    let usevalid
+    let i =1 
+    userdata.forEach(function (item) {
+        if (emailLogin.value == item.userAccName && passwordLogin.value == item.userPass) {
+            valid = true
+            usevalid = item
+        }
+    })
+    console.log("kiem tra nguoi dung")
+    var listnguoidung=[]
+    var nguoidung={
+        "name" :usevalid.userName,
+        "src" : usevalid.urlAvatar,
+        "isAdmin" : usevalid.isAdmin
+     }
+     listnguoidung.push(nguoidung)
+     localStorage.setItem("data",JSON.stringify(listnguoidung))
 
-//dang nhap 
+     onclick="openRegister()"
+     
+
+    // Đăng nhập thành công lưu người dùng vào local
+    if (valid == true) {
+        login.style.display = "none"
+        user.style.display = "flex"     
+        username.innerText = usevalid.userName
+        userIMG.src =usevalid.urlAvatar  
+        // Nếu là admin thì hiển thị giao diện admin 
+        if(usevalid.isAdmin) GUIAdmin()
+
+        // Dùng local để lưu người đã đăng nhập
+    }
+    else alert("sai")
+}
