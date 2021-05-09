@@ -7,6 +7,8 @@ var modal = document.getElementById("myModal");
 var modal2 = document.getElementById("myModal2")
 let emailLogin = document.getElementById("emailLogin")
 var login = document.getElementById("logInOut")
+var user = document.getElementById("useraccount")
+
 
 var userdata = []
 
@@ -229,8 +231,6 @@ if(listdata.length==1){
 
 // Sau khi bam dang ky , dang nhap 
 
-
-
 //dang nhap tu giao dien detail 
 var userdata = []
 function requestDataUser(url) {
@@ -264,36 +264,34 @@ function checkLogin() {
     modal2.style.display = "none";
     let valid = false;
     let usevalid
-    let i =1 
     userdata.forEach(function (item) {
         if (emailLogin.value == item.userAccName && passwordLogin.value == item.userPass) {
+            console.log(emailLogin.value)
             valid = true
-            usevalid = item
+            usevalid = item   
         }
     })
-    console.log("kiem tra nguoi dung")
-    var listnguoidung=[]
-    var nguoidung={
-        "name" :usevalid.userName,
-        "src" : usevalid.urlAvatar,
-        "isAdmin" : usevalid.isAdmin
-     }
-     listnguoidung.push(nguoidung)
-     localStorage.setItem("data",JSON.stringify(listnguoidung))
-
-     onclick="openRegister()"
-     
-
     // Đăng nhập thành công lưu người dùng vào local
     if (valid == true) {
+        console.log("da tim duoc nguoi")
         login.style.display = "none"
         user.style.display = "flex"     
         username.innerText = usevalid.userName
         userIMG.src =usevalid.urlAvatar  
         // Nếu là admin thì hiển thị giao diện admin 
         if(usevalid.isAdmin) GUIAdmin()
-
         // Dùng local để lưu người đã đăng nhập
+        var listnguoidung=[]
+        var nguoidung={
+            "name" :usevalid.userName,
+            "src" : usevalid.urlAvatar,
+            "isAdmin" : usevalid.isAdmin
+         }
+         listnguoidung.push(nguoidung)
+         localStorage.setItem("data",JSON.stringify(listnguoidung))
     }
-    else alert("sai")
+    else {
+        console.log("chua tim duoc nguoi")
+        alert("sai")
+    }
 }
