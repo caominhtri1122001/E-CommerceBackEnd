@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index giao dien</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap&subset=vietnamese"
-        rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous"></script>
-    <!-- tesst java script -->
-   
-     
+    <title>Document</title>
+    <link rel="stylesheet" href="styleAdmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 </head>
-
 <body>
-    <!-- Thẻ chứa tất cả  -->
-    <div class="app">
-        <!-- tiếp theo là thẻ header -->
+    <div class="website" id="productManage">
+        <!-- Phan navbar -->
         <header id="header">
             <div class="grid">
               
@@ -126,32 +117,33 @@
 
                             </a>
                         </li>
-                        <li class="header__navbar-item header__navbar-user" id="useraccount">
-                            <img src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=X_j0p5fsR3MAX-BAEM8&_nc_ht=scontent-hkt1-1.xx&oh=7fd69fd3ff40f734ce7386de9039f44e&oe=60B8122A"
-                                alt="" class="header__navbar-user-img">
-                            <span id="header__navbar-user-name">Trương Thị Mỹ Duyên</span>
-                            <ul class="header__navbar-user-menu">
-                                <li class="header__navbar-user-item">
-                                    <a href="">Tài khoản của tôi</a>
-                                </li>
-                                <li class="header__navbar-user-item">
-                                    <a href="">Địa chỉ của tôi</a>
-                                </li>
-                                <li class="header__navbar-user-item">
-                                    <a href="">Đơn mua</a>
-                                </li>
-                                <li class="header__navbar-user-item header__navbar-user-item--sperate">
-                                    <a href="">Đăng xuất</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li id="logInOut">
-                            <p id="register" onclick="openRegister()">Đăng Ký</p>
-                           
-                            <p id="logIn" onclick="openLogInOut()">Đăng nhập</p>
-                           
-                        </li>
+                        <li class="header__navbar-user">
+                            <!-- Nếu có người dùng-->
+                            <div class="header__navbar-item header__navbar-user" id="useraccount">
+                                <img id="userIMG" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=X_j0p5fsR3MAX-BAEM8&_nc_ht=scontent-hkt1-1.xx&oh=7fd69fd3ff40f734ce7386de9039f44e&oe=60B8122A"
+                                    alt="" class="header__navbar-user-img">
+                                <span id="header__navbar-user-name">Trương Thị Mỹ Duyên</span>
+                                <ul class="header__navbar-user-menu">
+                                    <li class="header__navbar-user-item">
+                                        <a href="">Tài khoản của tôi</a>
+                                    </li>
+                                    <li class="header__navbar-user-item">
+                                        <a href="">Địa chỉ của tôi</a>
+                                    </li>
+                                    <li class="header__navbar-user-item">
+                                        <a href="">Đơn mua</a>
+                                    </li>
+                                    <li class="header__navbar-user-item header__navbar-user-item--sperate">
+                                        <a href="" onclick="logOut()">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div> 
+                            <!-- Nếu không có người dùng -->
+                            <div id="logInOut">
+                                <div id="register" onclick="openRegister()">Đăng ký</div>
+                                <div id="logIn" onclick="openLogInOut()">Đăng nhập</div>
+                            </div>
+                        </li>                      
                     </ul>
                 </nav>
                 <!-- header-with-searchs -->
@@ -429,339 +421,216 @@
 
 
         </header>
-        <!-- tiếp theo là phần thân -->
-        <div id="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
-                        <nav class="category">
-                            <h3 class="category__heading">
-                                <i class="category__heading-icon fas fa-list"></i>
-                                Danh Mục
-                            </h3>
-
-
-                            <ul class="category-list">
-                                <li class="category-item category-item--active">
-                                    <a href="#" class="category-item__link">Sản phẩm</a>
-                                </li>
-                                <li class="category-item ">
-                                    <a href="#" class="category-item__link ">Quần thể thao</a>
-                                </li>
-                                <li class="category-item">
-                                    <a href="#" class="category-item__link">Áo thể thao</a>
-                                </li>
-                                <li class="category-item">
-                                    <a href="#" class="category-item__link">Dụng cụ tập luyện</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="grid__column-10">
-                        <div class="home-filter">
-                            <span class="home-filter__label">Sắp xếp theo</span>
-                            <button class="home-filter__btn btn">Phổ biến</button>
-                            <button class="home-filter__btn btn btn--primary">Mới nhất</button>
-                            <button class="home-filter__btn btn" onclick="sortBanChay()">Bán chạy</button>
-
-                            <div class="select-input">
-                                <span class="select-input__label">Giá</span>
-                                <i class="select-input__icon fas fa-angle-down"></i>
-                                <!-- list option -->
-                                <ul class="select-input__list">
-                                    <li class="select-input__item">
-                                        <a href="" class="select-input__item-link" onclick="sortThapdenCao()">Giá: Thấp đến cao</a>
-                                    </li>
-                                    <li class="select-input__item">
-                                        <a href="" class="select-input__item-link" onclick="sortCaodenThap()">Giá: Cao đến thấp</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- phân trang -->
-                            <div class="home-filter__page">
-                                <span class="home-filter__page-num">
-                                    <span class="home-filter__page-current">1</span>/5
-                                </span>
-                                <div class="home-filter__page-control">
-                                    <a href="" class="home-filter__page-btn home-filter__page-btn--disabled">
-                                        <i class="home-filter__page-icon fas fa-angle-left"></i>
-                                    </a>
-                                    <a href="" class="home-filter__page-btn">
-                                        <i class="home-filter__page-icon fas fa-angle-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="product-list" class="home-product ">
-                            <div id="product-list-row" class="grid__row">
-                                <!--product list here-->
-                                
-                            </div>
-                        </div>
-                        <!-- phân trang -->
-                        <ul class="pagination home-product__pagniation">
-                            <li class="pagination_item">
-                                <a href="" class="pagination-item__link">
-                                    <i class="pagination-item__icon fas fa-angle-left"></i>
-                                </a>
-                            </li>
-                            <li class="pagination_item pagination_item--active">
-                                <a href="" class="pagination-item__link">1</a>
-                            </li>
-                            <li class="pagination_item">
-                                <a href="" class="pagination-item__link">2</a>
-                            </li>
-                            <li class="pagination_item">
-                                <a href="" class="pagination-item__link">3</a>
-                            </li>
-                            <li class="pagination_item">
-                                <a href="" class="pagination-item__link">4</a>
-                            </li>
-                            <li class="pagination_item">
-                                <a href="" class="pagination-item__link">5</a>
-                            </li>
-                            <li class="pagination_item">
-                                <a href="" class="pagination-item__link">
-                                    <i class="pagination-item__icon fas fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- Xong phan navbar -->
+        <!-- Phan quan cac nut chuc nang quan ly -->
+        <div class="website-inner">
+            <div id="settingManager">
+                <button type="button" class="btn btn-outline-secondary">Quản lý sản phẩm</button>
+                <button type="button" class="btn btn-outline-secondary">Quản lý đơn hàng</button>
+                <button type="button" class="btn btn-outline-secondary">Quản lý người dùng</button>
             </div>
         </div>
-
-        <!-- cuối cùng là thẻ footer -->
-        <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
-                        <ul class="footer-list">
-                            <li class="footer-tem">
-                                <a href="#" class="footer-item__link">Trung tâm trợ giúp</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">DDVT-Shop</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">Hướng dẫn mua hàng</a>
-                            </li>
-                        </ul>
+        <div id="manager">
+           <div class="manager-inner">
+            <div class="managerHeader">
+                <h2 class="managerName">Sản phẩm</h2>
+                <button type="button" class="btn btn-secondary">Thêm mới</button>
+            </div>
+            <div class="form-manager">
+                <div class="table">
+                    <div class="row header">
+                      <div class="cell cellName">
+                        ID 
+                      </div>
+                      <div class="cell cellName">
+                        Tên
+                      </div>
+                      <div class="cell cellName">
+                        Hình ảnh
+                      </div>
+                      <div class="cell cellName">
+                        Loại Mặt Hàng
+                      </div>
+                      <div class="cell cellName">
+                        Số lượng đã bán
+                      </div>
+                      <div class="cell cellName">
+                        Xóa
+                      </div>
+                      <div class="cell cellName">
+                         Sửa
+                      </div>
+                      <div class="cell cellName">
+                       Nhập hàng
+                      </div>
                     </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">GIỚI THIỆU</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">Giới thiệu</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">Tuyển Dụng</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">Điều khoản</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer-heading">DANH MỤC</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">Áo thể thao</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">Quần thể thao</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">Phụ kiện</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">THEO DÕI CHÚNG TÔI</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">
-                                    <i class="footer-item__icon fab fa-facebook"></i>
-                                    Facebook
-                                </a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">
-                                    <i class="footer-item__icon fab fa-instagram"></i>
-                                    Instagram
-                                </a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="#" class="footer-item__link">
-                                    <i class="footer-item__icon fab fa-twitter-square"></i>
-                                    Twitter
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">VÀO CỬA HÀNG TRÊN ỨNG DỤNG </h3>
-                        <div class="footer__dowload">
-                            <img src="https://toanhocbactrungnam.vn/uploads/news/2019_11/1573006985.png" alt="Mã Qr" class="footer__dowload-qr">
-                            <div class="footer__dowload-app">
-                                <a href="" class="footer__dowload-app-link">
-                                    <img src="https://sites.google.com/site/taichplaymjenphivem2019/_/rsrc/1539059092276/home/chplay.png?height=200&width=200" alt="Ch-play">
-                                    <span>GOOGLE PLAY</span>
-                                </a>
-                                <a href="" class="footer__dowload-app-link">
-                                    <img src="https://e7.pngegg.com/pngimages/566/36/png-clipart-app-store-iphone-apple-app-store-icon-blue-text.png" alt="appstore">
-                                    <span>APPSTORE</span>  
-                                </a>
+                    <div class="listProduct">
+                        <div class="row list product">
+                            <div class="cell"  data-title="Name">
+                             1
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer__bottom">
-                <div class="grid">
-                    <p class="footer__text">© 2021 - Bản quyền thuộc về TTMD-Shop</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-   
-    <!-- Register form -->
-    <!-- form dùng cho cả 2 -->
-    <!-- form đăng ký -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div id="formRegis" class="auth-form">
-                <div class="auth-form__container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Đăng ký</h3>
-                        
-                        <span class="auth-form__switch-btn" onclick="changeToLogin()">Đăng nhập</span>
-                    </div>
-                    <div class="auth-form__form">
-                        <div class="auth-form__group">
-                           
-                            <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
-                        </div>
+                            <div class="cell" id="proName" data-title="Age">
+                              Quần thể thao nam
+                            </div>
+                            <div class="cell hinhanh" data-title="Occupation">
+                              <img src="https://media3.scdn.vn/img3/2019/6_26/agRJvz_simg_de2fe0_500x500_maxb.jpg" alt="">
+                            </div>
+                            <div class="cell" data-title="Location">
+                              Quần áo
+                            </div>
+                            <div class="cell" data-title="numberSold">
+                                12
+                            </div>
+                            <div class="cell func edit" data-title="edit">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="cell func" data-title="delete">
+                                <i class="fas fa-trash-alt"></i>
+                           </div>
+                            <div class="cell func" data-title="addmore">
+                                <i class="far fa-plus-square"></i>
+                            </div>
+                          </div>
+                          
+                          <div class="row list product">
+                            <div class="cell"  data-title="Name">
+                             1
+                            </div>
+                            <div class="cell" id="proName" data-title="Age">
+                              Quần thể thao nam
+                            </div>
+                            <div class="cell hinhanh" data-title="Occupation">
+                              <img src="https://media3.scdn.vn/img3/2019/6_26/agRJvz_simg_de2fe0_500x500_maxb.jpg" alt="">
+                            </div>
+                            <div class="cell" data-title="Location">
+                              Quần áo
+                            </div>
+                            <div class="cell" data-title="numberSold">
+                                12
+                            </div>
+                            <div class="cell func edit" data-title="edit">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="cell func" data-title="delete">
+                                <i class="fas fa-trash-alt"></i>
+                           </div>
+                            <div class="cell func" data-title="addmore">
+                                <i class="far fa-plus-square"></i>
+                            </div>
+                          </div>
+                          <div class="row list product">
+                            <div class="cell"  data-title="Name">
+                             1
+                            </div>
+                            <div class="cell" id="proName" data-title="Age">
+                              Quần thể thao nam
+                            </div>
+                            <div class="cell hinhanh" data-title="Occupation">
+                              <img src="https://media3.scdn.vn/img3/2019/6_26/agRJvz_simg_de2fe0_500x500_maxb.jpg" alt="">
+                            </div>
+                            <div class="cell" data-title="Location">
+                              Quần áo
+                            </div>
+                            <div class="cell" data-title="numberSold">
+                                12
+                            </div>
+                            <div class="cell func edit" data-title="edit">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="cell func" data-title="delete">
+                                <i class="fas fa-trash-alt"></i>
+                           </div>
+                            <div class="cell func" data-title="addmore">
+                                <i class="far fa-plus-square"></i>
+                            </div>
+                          </div>
+                          
+                          <div class="row list product">
+                            <div class="cell"  data-title="Name">
+                             1
+                            </div>
+                            <div class="cell" id="proName" data-title="Age">
+                              Quần thể thao nam
+                            </div>
+                            <div class="cell hinhanh" data-title="Occupation">
+                              <img src="https://media3.scdn.vn/img3/2019/6_26/agRJvz_simg_de2fe0_500x500_maxb.jpg" alt="">
+                            </div>
+                            <div class="cell" data-title="Location">
+                              Quần áo
+                            </div>
+                            <div class="cell" data-title="numberSold">
+                                12
+                            </div>
+                            <div class="cell func edit" data-title="edit">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="cell func" data-title="delete">
+                                <i class="fas fa-trash-alt"></i>
+                           </div>
+                            <div class="cell func" data-title="addmore">
+                                <i class="far fa-plus-square"></i>
+                            </div>
+                          </div>
+                          <div class="row list product">
+                            <div class="cell"  data-title="Name">
+                             1
+                            </div>
+                            <div class="cell" id="proName" data-title="Age">
+                              Quần thể thao nam
+                            </div>
+                            <div class="cell hinhanh" data-title="Occupation">
+                              <img src="https://media3.scdn.vn/img3/2019/6_26/agRJvz_simg_de2fe0_500x500_maxb.jpg" alt="">
+                            </div>
+                            <div class="cell" data-title="Location">
+                              Quần áo
+                            </div>
+                            <div class="cell" data-title="numberSold">
+                                12
+                            </div>
+                            <div class="cell func edit" data-title="edit">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="cell func" data-title="delete">
+                                <i class="fas fa-trash-alt"></i>
+                           </div>
+                            <div class="cell func" data-title="addmore">
+                                <i class="far fa-plus-square"></i>
+                            </div>
+                          </div>
+                          
+                          <div class="row list product">
+                            <div class="cell"  data-title="Name">
+                             1
+                            </div>
+                            <div class="cell" id="proName" data-title="Age">
+                              Quần thể thao nam
+                            </div>
+                            <div class="cell hinhanh" data-title="Occupation">
+                              <img src="https://media3.scdn.vn/img3/2019/6_26/agRJvz_simg_de2fe0_500x500_maxb.jpg" alt="">
+                            </div>
+                            <div class="cell" data-title="Location">
+                              Quần áo
+                            </div>
+                            <div class="cell" data-title="numberSold">
+                                12
+                            </div>
+                            <div class="cell func edit" data-title="edit">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="cell func" data-title="delete">
+                                <i class="fas fa-trash-alt"></i>
+                           </div>
+                            <div class="cell func" data-title="addmore">
+                                <i class="far fa-plus-square"></i>
+                            </div>
+                          </div>
                     </div>
                    
-                    <div class="auth-form__aside">
-                        <p class="auth-form__policy-text">
-                            Bằng việc đăng kí, bạn đã đồng ý với DDVT về
-                            <a href="https://shopee.vn/legaldoc/termsOfService/?__classic__=1" class="auth-form__text-link">Điều khoản dịch vụ</a> &
-                            <a href="https://shopee.vn/legaldoc/privacy/?__classic__=1" class="auth-form__text-link">Chính sách bảo mật</a>
-                        </p>
-                    </div>  
-                    <div class="auth-form__controls ">
-                        <button class="btn btn--normal auth-form__control-back">
-                            <a href="">
-                              TRỞ LẠI
-                            </a>
-                        </button>
-                        <button class="btn btn--primary ">ĐĂNG KÝ</button>
-                    </div>
-                </div>
-                
-                
-                <div class="auth-form__socials">
-                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
-                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
-                        <span class="auth-form__socials-title">
-                            Kết nối với Facebook
-                        </span>
-                    </a>
-                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
-                        <i class="auth-form__socials-icon fab fa-google"></i>
-                        <span class="auth-form__socials-title">
-                            Kết nối với Foogle
-                        </span>
-                    </a>
-                </div>
+                    
+                  </div>    
             </div>
-         
-   
+            </div>
         </div>
-      
-      </div>
-      <div id="myModal2" class="modal2">
-        <!-- Modal content -->
-        <div class="modal-content">
-              <div id="formLogGin" class="auth-form" >
-                <div class="auth-form__container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Đăng nhập</h3>
-                        
-                        <span class="auth-form__switch-btn"  onclick="changeToRegister()">Đăng ký</span>
-                    </div>
-                    <div class="auth-form__form">
-                        <div class="auth-form__group">
-                            
-                            <input type="text" id="emailLogin" class="auth-form__input" placeholder="Nhập email của bạn" > 
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" id="passwordLogin"class="auth-form__input" placeholder="Mật khẩu của bạn">
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="auth-form__aside">
-                        
-                        <div class="auth-form__help">
-                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
-                            <span class="auth-form__help-separate">
-
-                            </span>
-                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
-                        </div>
-                    </div>
-
-                    
-                    <div class="auth-form__controls ">
-                        <button class="btn btn--normal auth-form__control-back">
-                            <a href="">
-                                TRỞ LẠI
-                              </a>
-                        </button>
-                        <button class="btn btn--primary " onclick="checkLogin()">ĐĂNG NHẬP</button>
-                    </div>
-                </div>
-                
-                
-                <div class="auth-form__socials">
-                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
-                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
-                        <span class="auth-form__socials-title">
-                            Kết nối với Facebook
-                        </span>
-                    </a>
-                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
-                        <i class="auth-form__socials-icon fab fa-google"></i>
-                        <span class="auth-form__socials-title">
-                            Kết nối với Foogle
-                        </span>
-                    </a>
-                </div>
-            </div>        
-         
-   
-        </div>
-      
-      </div>
-
-
-<!-- Form đăng nhập -->
-   
-    
-        <script src="script.js"></script>
+    </div>
 </body>
-
 </html>

@@ -215,20 +215,6 @@ function shownguoidung(){
 function logOut(){
     localStorage.clear();
 }
-//ham kiem tra giao dien nguoi dung 
-if(listdata.length==1){
-        if( listdata[0].isAdmin==true) 
-    {
-        adminEdit.style.display="block"
-
-    }
-    else {
-        adminEdit.style.display="none"
-    }
-
-}
-
-
 // Sau khi bam dang ky , dang nhap 
 
 //dang nhap tu giao dien detail 
@@ -279,7 +265,8 @@ function checkLogin() {
         username.innerText = usevalid.userName
         userIMG.src =usevalid.urlAvatar  
         // Nếu là admin thì hiển thị giao diện admin 
-        if(usevalid.isAdmin) GUIAdmin()
+        if(usevalid.isAdmin)  adminEdit.style.display="block"
+        else console.log("day khong phai la admin")
         // Dùng local để lưu người đã đăng nhập
         var listnguoidung=[]
         var nguoidung={
