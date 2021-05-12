@@ -36,7 +36,7 @@ namespace ECommerceBE
                 options.AddPolicy(name: "MyCors",
                                   builder =>
                                   {
-                                      builder.WithOrigins("*");
+                                      builder.WithOrigins("*").WithMethods("PUT", "DELETE", "GET");
                                   });
             });
 

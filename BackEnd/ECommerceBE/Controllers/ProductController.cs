@@ -256,20 +256,17 @@ namespace ECommerceBE.Controllers
         }
 
         //DELETE: api/Products/{id}
-        //[HttpDelete("{catID}")]
-        [HttpDelete("product-detail-delete")]
-        public BaseRespone DeleteProduct(int catID,int proID)
+        [HttpDelete("DeleteByID")]
+        public BaseRespone DeleteProduct(int proID)
         {
             List<Products> data = FakeCSDL.Instance.listPro;
             var res = new BaseRespone(false, null);
             foreach (Products i in data)
             {
-                if (i.catID == catID && i.proID == proID)
+                if (i.proID == proID)
                 {
                     data.Remove(i);
                     res.Success = true;
-                    res.Data = data;
-                    return res;
                 }
             }
             return res;
