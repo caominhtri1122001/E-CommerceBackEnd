@@ -18,7 +18,6 @@ var btnPoppular=document.getElementById("btnPoppular")
 // Get the <span> element that closes the modal
 
 //Load dữ liệu cho sản phẩm 
-
 function requestData(url) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -55,7 +54,7 @@ function requestDataAjax(url) {
 }
 
 var goToPage = function (id) {
-    window.location.href = "/detailtest.html?productId=" + id;
+    window.location.href = "/demothu/detailtest.html?productId=" + id;
 }
 
 
@@ -158,6 +157,8 @@ var checkData = function (data) {
     }
 }
 
+//Ban đầu không có người đăng nhập
+user.style.display = "none"   
 // Thực hiện hàm đăng nhập 
 function checkLogin() {
     modal2.style.display = "none";
@@ -176,6 +177,7 @@ function checkLogin() {
     if (valid == true) {
         console.log("da tim duoc nguoi")
         login.style.display = "none"
+        //chinh
         user.style.display = "flex"     
         username.innerText = usevalid.userName
         userIMG.src =usevalid.urlAvatar  

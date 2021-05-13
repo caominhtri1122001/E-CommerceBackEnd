@@ -313,6 +313,7 @@ dành cho danh mục */
     min-height: 26px;
 }
 /* Lamf phần đăng ký đăng nhập */
+/* Phần đăng ký người dùng  */
 #logInOut{
     display: flex;
     color:#fff;
@@ -330,16 +331,12 @@ dành cho danh mục */
 /* Người dùng */
 #useraccount{
     display: none;
-    display: block !important;
 }
 /* Có tài khoản người dùng */
 .header__navbar-user{
     display: flex;
     justify-items: center;
     position: relative;
-    display: none;
-    display: block !important;
-
 }
 .header__navbar-user-img{
     width: 22px;

@@ -7357,19 +7357,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+      "projectUniqueName": "D:\\Dai hoc\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\Web3\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
       "projectName": "ECommerceBE",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\E-CommerceBackEnd\\BackEnd\\ECommerceBE\\obj\\",
+      "projectPath": "D:\\Dai hoc\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\Web3\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "D:\\Dai hoc\\Năm 2\\Kì 2 Năm 2\\PBL3 Công nghệ phần mềm\\Web3\\BackEnd\\ECommerceBE\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7436,7 +7436,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

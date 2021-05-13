@@ -1,5 +1,6 @@
 // Load dữ liệu cho thàng table 
 console.log("truong my duyen")
+var modal = document.getElementById("myModal");
 
 function requestDataListProduct(url) {
     $.ajax({
@@ -102,3 +103,15 @@ $(document).ready(function () {
     requestDataListProduct("http://localhost:37504/api/Product");
 });
 
+// Thực hiện hiện form thêm sản phẩm
+
+function AddProduct() {
+    modal.style.display="block"
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal || event.target == modal2) {
+        modal.style.display = "none";
+        modal2.style.display = "none";
+    }
+}
