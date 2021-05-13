@@ -247,3 +247,40 @@ function shownguoidung(){
     logInOut.style.display="none"
 }
 
+// đăng ký
+function Regis() {
+    modal.style.display = "none";
+    if (mk.value == mk2.value){
+        requestRegisAcc("http://localhost:37504/api/Users/DangKy?",tk.value,mk.value,sdt.value,dc.value,hvt.value)
+        location.reload()
+    } else {
+        alert("Mật khẩu xác nhận không khớp")
+    }
+}
+
+// gửi yêu cầu đăng ký
+function requestRegisAcc(url, tk, mk, sdt, dc, hvt) {
+    $.ajax({
+        url: url,
+        data: { 
+            "taikhoan": tk,
+            "matkhau": mk,
+            "hvt": hvt,
+            "sdt": sdt,
+            "dc": dc
+          },
+        cache: false,
+        type: "GET",
+        success: function (response) {
+            if (response.success) {
+                alert ("Đăng ký thành công!")
+            }
+            else {
+                alert("Đăng ký thất bại, tài khoản đã tồn tại hoặc dữ liệu điền vào không hợp lệ!")
+            }
+        },
+        error: function (xhr) {
+
+        }
+    });
+}

@@ -8,6 +8,48 @@ namespace ECommerceBE.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+
+        private bool checkInfoAcc(string taikhoan, string matkhau)
+        {
+            foreach (Users i in FakeCSDL.Instance.listUser)
+            {
+                if (i.userAccName == taikhoan) return false;
+            }
+            for (int i = 0; i < taikhoan.Length; i++)
+            {
+                if ((taikhoan[i] < 48 || taikhoan[i] > 57) && (taikhoan[i] < 65 || taikhoan[i] > 90)
+                    && (taikhoan[i] < 97 || taikhoan[i] > 122)) return false;
+            }
+            for (int i = 0; i < matkhau.Length; i++)
+            {
+                if ((matkhau[i] < 48 || matkhau[i] > 57) && (matkhau[i] < 65 || matkhau[i] > 90)
+                    && (matkhau[i] < 97 || matkhau[i] > 122)) return false;
+            }
+            return true;
+        }
+
+        [HttpGet("DangKy")]
+        public BaseRespone Regis(string taikhoan, string matkhau, string hvt, string sdt, string dc)
+        {
+            var res = new BaseRespone(false, false);
+            if (checkInfoAcc(taikhoan, matkhau))
+            {
+                res.Success = true;
+                Users temp = new Users();
+                temp.userID = FakeCSDL.Instance.listUser.Count + 1;
+                temp.urlAvatar = "https://lazi.vn/uploads/users/avatar/1586010042_0ac3294600fdbbace1702b5b9c7ce1dc.jpg";
+                temp.userName = hvt;
+                temp.userAccName = taikhoan;
+                temp.userPass = matkhau;
+                temp.userAddress = dc;
+                temp.userPhone = sdt;
+                temp.isAdmin = false;
+                FakeCSDL.Instance.listUser.Add(temp);
+            }
+            return res;
+        }
+
+
         //GET: api/Users
         [HttpGet]
         public BaseRespone GetListUser()
