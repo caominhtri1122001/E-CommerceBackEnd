@@ -8,10 +8,6 @@ namespace ECommerceBE.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        public ProductController()
-        {
-        }
-
         //GET: api/Products
         [HttpGet]
         public BaseRespone GetListProduct()
@@ -30,6 +26,32 @@ namespace ECommerceBE.Controllers
             }
             return res;
             //return FakeCSDL.Instance.listPro;
+        }
+
+        [HttpGet("GetListProductManage")]
+        public BaseRespone GetListProductManage()
+        {
+            var res = new BaseRespone(false, null);
+            List<ProductsManage> data = new List<ProductsManage>();
+            foreach (Products i in FakeCSDL.Instance.listPro)
+            {
+                ProductsManage pm = new ProductsManage();
+                pm.proID = i.proID;
+                pm.proName = i.proName;
+                pm.ProLinkPicture = i.ProLinkPicture;
+                if (i.catID == 1) pm.category = "Thời Trang";
+                if (i.catID == 2) pm.category = "Giày";
+                if (i.catID == 3) pm.category = "Dụng cụ";
+                if (i.catID == 4) pm.category = "Bóng";
+                pm.NumberOfSold = i.NumberOfSold;
+                data.Add(pm);
+            }
+            if (data.Count != 0)
+            {
+                res.Success = true;
+                res.Data = data;
+            }
+            return res;
         }
 
         //GET: api/Products/{id}

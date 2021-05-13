@@ -8,10 +8,5 @@ namespace ECommerceBE.Models
            : base(options)
         {
         }
-
-        public DbSet<TodoItem> TodoItems { get; set; }
-
-        public DbSet<TodoItem> TodoRole { get;set;}
-
     }
 }

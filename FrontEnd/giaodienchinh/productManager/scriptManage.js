@@ -67,7 +67,7 @@ function requestDeleteProduct(url) {
 }
 
 var loadData = function (proudcts) {
-    for(var i=proudcts.length-1;i>=0;i--){
+    for(var i=0;i < proudcts.length;i++){
 
         var productHtml = `
         <div class="row list product">
@@ -81,7 +81,7 @@ var loadData = function (proudcts) {
                               <img src="${proudcts[i].proLinkPicture}" alt="">
                             </div>
                             <div class="cell" data-title="Location">
-                            ${proudcts[i].proBrand}
+                            ${proudcts[i].category}
                             </div>
                             <div class="cell" data-title="numberSold">
                             ${proudcts[i].numberOfSold}
@@ -103,7 +103,7 @@ var loadData = function (proudcts) {
 }
 $(document).ready(function () {
     console.log("ready!");
-    requestDataListProduct("http://localhost:37504/api/Product");
+    requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
 });
 
 // Thực hiện hiện form thêm sản phẩm

@@ -22,4 +22,13 @@ namespace ECommerceBE.Models
         public string ProLinkPicture3 { get; set; }
         public int NumberOfSold { get; set; }
     }
+
+    public class ProductsManage
+    {
+        public int proID { get; set; }
+        public string proName { get; set; }
+        public string ProLinkPicture { get; set; }
+        public string category { get; set; }
+        public int NumberOfSold { get; set; }
+    }
 }
