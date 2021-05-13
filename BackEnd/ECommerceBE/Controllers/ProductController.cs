@@ -39,9 +39,9 @@ namespace ECommerceBE.Controllers
                 pm.proID = i.proID;
                 pm.proName = i.proName;
                 pm.ProLinkPicture = i.ProLinkPicture;
-                if (i.catID == 1) pm.category = "Thời Trang";
+                if (i.catID == 1) pm.category = "Áo quần";
                 if (i.catID == 2) pm.category = "Giày";
-                if (i.catID == 3) pm.category = "Dụng cụ";
+                if (i.catID == 3) pm.category = "Phụ kiện";
                 if (i.catID == 4) pm.category = "Bóng";
                 pm.NumberOfSold = i.NumberOfSold;
                 data.Add(pm);
@@ -50,6 +50,34 @@ namespace ECommerceBE.Controllers
             {
                 res.Success = true;
                 res.Data = data;
+            }
+            return res;
+        }
+
+        [HttpGet("AddEditProduct")]
+        public BaseRespone AEPro(int id, string ten, string th, string ng, double gc, double gm, string mt,
+            int cid, string l0, string l1, string l2, string l3)
+        {
+            var res = new BaseRespone(false, null);
+            if(id == 0)
+            {
+                Products temp = new Products();
+                temp.proID = FakeCSDL.Instance.listPro[FakeCSDL.Instance.listPro.Count - 1].proID + 1;
+                temp.proName = ten;
+                temp.proBrand = th;
+                temp.proOrigin = ng;
+                temp.proOldPrice = gc;
+                temp.proPrice = gm;
+                temp.proDescription = mt;
+                temp.status = 1;
+                temp.catID = cid;
+                temp.ProLinkPicture = l0;
+                temp.ProLinkPicture1 = l1;
+                temp.ProLinkPicture2 = l2;
+                temp.ProLinkPicture3 = l3;
+                temp.NumberOfSold = 0;
+                FakeCSDL.Instance.listPro.Add(temp);
+                res.Success = true;
             }
             return res;
         }

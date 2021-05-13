@@ -1,10 +1,13 @@
 // Load dữ liệu cho thàng table 
 console.log("truong my duyen")
 var modal = document.getElementById("myModal");
-var login = document.getElementById("logInOut")
+var login = document.getElementById("logInOut");
+var mF = document.getElementById("majorForm");
+var mF2 = document.getElementById("majorForm2");
+var idsanpham = 0;
 
 
-login.style.display="none"
+login.style.display = "none"
 function requestDataListProduct(url) {
     $.ajax({
         url: url,
@@ -31,8 +34,9 @@ var goToPage = function (id) {
 }
 
 var ThemSua = function (id) {
-    if(id == 0) {
+    if (id == 0) {
         // hiện form add để điền thông tin sp
+        modal.style.display = "block"
         console.log("Thêm")
     } else {
         // hiện form như add nhưng điền sẵn thông tin cũ vào
@@ -67,7 +71,7 @@ function requestDeleteProduct(url) {
 }
 
 var loadData = function (proudcts) {
-    for(var i=0;i < proudcts.length;i++){
+    for (var i = 0; i < proudcts.length; i++) {
 
         var productHtml = `
         <div class="row list product">
@@ -106,15 +110,83 @@ $(document).ready(function () {
     requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
 });
 
-// Thực hiện hiện form thêm sản phẩm
 
-function AddProduct() {
-    modal.style.display="block"
-}
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target == modal || event.target == modal2) {
+    if (event.target == modal) {
         modal.style.display = "none";
-        modal2.style.display = "none";
     }
+}
+
+function isInt(num) {
+    if (num == parseInt(num)) return true
+    return false
+}
+
+// lấy dữ liệu trên form
+function AddEdit() {
+    if (isInt(giasanpham.value)) {
+        var tensp = tensanpham.value
+        var theloaisp
+        if (mF.value == "Giày") theloaisp = 2
+        if (mF.value == "Áo quần") theloaisp = 1
+        if (mF.value == "Phụ kiện") theloaisp = 3
+        if (mF.value == "Bóng") theloaisp = 4
+        var thuonghieu = tenthuonghieu.value
+        var xuatxu = tenxuatxu.value
+        var giacu = giasanpham.value
+        var khuyenmai
+        if (mF2.value == "0%") khuyenmai = 0
+        if (mF2.value == "5%") khuyenmai = 5
+        if (mF2.value == "10%") khuyenmai = 10
+        if (mF2.value == "20%") khuyenmai = 20
+        var giamoi
+        if ( giacu > 10000 ) giamoi = Math.floor((giacu - giacu * khuyenmai / 100) / 1000) * 1000
+        else giamoi = Math.floor(giacu - giacu * khuyenmai / 100)
+
+        var mieuta = mieutasanpham.value
+
+        var link0 = "https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
+        var link1 = "https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
+        var link2 = "https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
+        var link3 = "https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
+
+        requestAEP("http://localhost:37504/api/Product/AddEditProduct?", idsanpham, tensp, thuonghieu, xuatxu, giacu, giamoi, mieuta, theloaisp, link0, link1, link2, link3)
+        location.reload()
+    } else {
+        alert("Giá nhập vào sai kiểu dữ liệu")
+    }
+}
+
+function requestAEP(url, id, tensp, thuonghieu, xuatxu, giacu, giamoi, mieuta, theloai, l0, l1, l2, l3) {
+    $.ajax({
+        url: url,
+        data: { 
+            "id": id,
+            "ten": tensp,
+            "th": thuonghieu,
+            "ng": xuatxu,
+            "gc": giacu,
+            "gm": giamoi,
+            "mt": mieuta,
+            "cid": theloai,
+            "l0": l0,
+            "l1": l1,
+            "l2": l2,
+            "l3": l3,
+          },
+        cache: false,
+        type: "GET",
+        success: function (response) {
+            if (response.success) {
+                alert ("Thêm mới thành công!")
+            }
+            else {
+                alert("Thêm mới thất bại, có thể dữ liệu truyền vào không hợp lệ!")
+            }
+        },
+        error: function (xhr) {
+        }
+    });
 }

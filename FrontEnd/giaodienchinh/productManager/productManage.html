@@ -440,7 +440,7 @@
            <div class="manager-inner">
             <div class="managerHeader">
                 <h2 class="managerName">Sản phẩm</h2>
-                <button type="button" class="btn btn-secondary" onclick="AddProduct()">Thêm mới</button>
+                <button type="button" class="btn btn-secondary" onclick="ThemSua(0)">Thêm mới</button>
             </div>
             <div class="form-manager">
                 <div class="table">
@@ -518,7 +518,7 @@
                     </div>
                     <div class="auth-form__form">
                         <div class="auth-form__group">
-                            <input  data-category="productName" class="auth-form__input" placeholder="Nhập tên sản phẩm"> 
+                            <input  data-category="productName" id = "tensanpham" class="auth-form__input" placeholder="Nhập tên sản phẩm"> 
                             <p class="error" id="message"></p>
                         </div>
                         <div class="auth-form__group">
@@ -531,19 +531,19 @@
                             </select>
                         </div>
                         <div class="auth-form__group">
-                            <input  data-category="productName" class="auth-form__input" placeholder="Nhập tên thương hiệu"> 
+                            <input  data-category="productName" id = "tenthuonghieu" class="auth-form__input" placeholder="Nhập tên thương hiệu"> 
                             <p class="error" id="message"></p>
                         </div>
                         <div class="auth-form__group">
-                            <input  data-category="productName" class="auth-form__input" placeholder="Nhập tên xuất xứ"> 
+                            <input  data-category="productName" id = "tenxuatxu" class="auth-form__input" placeholder="Nhập tên xuất xứ"> 
                             <p class="error" id="message"></p>
                         </div>
                         <div class="auth-form__group">
-                            <input  data-category="productName" class="auth-form__input" placeholder="Nhập giá sản phẩm"> 
+                            <input  data-category="productName" id = "giasanpham" class="auth-form__input" placeholder="Nhập giá sản phẩm"> 
                             <p class="error" id="message"></p>
                         </div>
                         <div class="auth-form__group">
-                            <select name="" id="majorForm">
+                            <select name="" id="majorForm2">
                                 <option value="Chọn chuyên ngành" selected="selected">Chọn khuyến mãi kèm theo</option> 
                                 <option value="0%">0%</option>
                                 <option value="5%">5%</option> 
@@ -552,7 +552,7 @@
                             </select>
                         </div>
                         <div class="auth-form__group">
-                            <input  data-category="productName" class="auth-form__input" placeholder="Miêu tả sản phẩm"> 
+                            <input  data-category="productName" id = "mieutasanpham" class="auth-form__input" placeholder="Miêu tả sản phẩm"> 
                             <p class="error" id="message"></p>
                         </div>
                         <!-- Select  -->
@@ -573,7 +573,7 @@
                                 TRỞ LẠI
                               </a>
                         </button>
-                        <button class="btn btn--primary " onclick="checkLogin()">XÁC NHẬN</button>
+                        <button class="btn btn--primary " onclick="AddEdit()">XÁC NHẬN</button>
                     </div>
                 </div>
                 
