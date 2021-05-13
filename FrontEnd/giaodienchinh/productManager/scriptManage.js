@@ -1,7 +1,10 @@
 // Load dữ liệu cho thàng table 
 console.log("truong my duyen")
 var modal = document.getElementById("myModal");
+var login = document.getElementById("logInOut")
 
+
+login.style.display="none"
 function requestDataListProduct(url) {
     $.ajax({
         url: url,

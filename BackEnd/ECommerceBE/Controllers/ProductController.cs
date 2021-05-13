@@ -259,13 +259,14 @@ namespace ECommerceBE.Controllers
         [HttpDelete("DeleteByID")]
         public BaseRespone DeleteProduct(int proID)
         {
-            List<Products> data = FakeCSDL.Instance.listPro;
+            //List<Products> data = FakeCSDL.Instance.listPro;
             var res = new BaseRespone(false, null);
-            foreach (Products i in data)
+            foreach (Products i in FakeCSDL.Instance.listPro)
             {
                 if (i.proID == proID)
                 {
-                    data.Remove(i);
+                    FakeCSDL.Instance.listPro.Remove(i);
+                    //data.Remove(i);
                     res.Success = true;
                 }
             }
