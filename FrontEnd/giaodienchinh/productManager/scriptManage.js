@@ -33,14 +33,61 @@ var goToPage = function (id) {
     window.location.href = "/detailtest.html?productId=" + id;
 }
 
+function requestGetProduct(url) {
+    $.ajax({
+        url: url,
+        data: null,
+        cache: false,
+        type: "GET",
+        success: function (response) {
+            if (response.success) {
+                loadDataForm(response.data)
+            }
+            else {
+                alert("???")
+            }
+        },
+        error: function (xhr) {
+        }
+    });
+}
+
+var loadDataForm = function(sp) {
+    tensanpham.value = sp.proName
+    if(sp.catID == 1) mF.value = "Áo quần"
+    if(sp.catID == 2) mF.value = "Giày"
+    if(sp.catID == 3) mF.value = "Phụ kiện"
+    if(sp.catID == 4) mF.value = "Bóng"
+    tenthuonghieu.value = sp.proBrand
+    tenxuatxu.value = sp.proOrigin
+    giasanpham.value = sp.proOldPrice
+    mieutasanpham.value = sp.proDescription
+    mF2.value = "0%"
+    console.log(sp)
+}
+
+function loadNullForm(){
+    tensanpham.value = ""
+    mF.value = "Chọn chuyên ngành"
+    tenthuonghieu.value = ""
+    tenxuatxu.value = ""
+    giasanpham.value = ""
+    mieutasanpham.value = ""
+    mF2.value = "Chọn chuyên ngành"
+}
+
 var ThemSua = function (id) {
     if (id == 0) {
         // hiện form add để điền thông tin sp
         modal.style.display = "block"
+        loadNullForm()
         console.log("Thêm")
     } else {
         // hiện form như add nhưng điền sẵn thông tin cũ vào
-        console.log(id)
+        modal.style.display = "block"
+        idsanpham = id
+        requestGetProduct("http://localhost:37504/api/Product/GetProductByID?proID="+id)
+        console.log("Sửa")
     }
 }
 
@@ -116,6 +163,7 @@ $(document).ready(function () {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        idsanpham = 0
     }
 }
 
@@ -157,6 +205,7 @@ function AddEdit() {
     } else {
         alert("Giá nhập vào sai kiểu dữ liệu")
     }
+    idsanpham = 0;
 }
 
 function requestAEP(url, id, tensp, thuonghieu, xuatxu, giacu, giamoi, mieuta, theloai, l0, l1, l2, l3) {
@@ -180,10 +229,10 @@ function requestAEP(url, id, tensp, thuonghieu, xuatxu, giacu, giamoi, mieuta, t
         type: "GET",
         success: function (response) {
             if (response.success) {
-                alert ("Thêm mới thành công!")
+                alert ("Thành công!")
             }
             else {
-                alert("Thêm mới thất bại, có thể dữ liệu truyền vào không hợp lệ!")
+                alert("Thất bại, có thể dữ liệu truyền vào không hợp lệ!")
             }
         },
         error: function (xhr) {

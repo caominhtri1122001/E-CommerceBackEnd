@@ -54,6 +54,17 @@ namespace ECommerceBE.Controllers
             return res;
         }
 
+        private int getIndex (int id)
+        {
+            int index = 0;
+            foreach(Products i in FakeCSDL.Instance.listPro)
+            {
+                if (i.proID == id) return index;
+                index++;
+            }
+            return -1;
+        }
+
         [HttpGet("AddEditProduct")]
         public BaseRespone AEPro(int id, string ten, string th, string ng, double gc, double gm, string mt,
             int cid, string l0, string l1, string l2, string l3)
@@ -77,6 +88,18 @@ namespace ECommerceBE.Controllers
                 temp.ProLinkPicture3 = l3;
                 temp.NumberOfSold = 0;
                 FakeCSDL.Instance.listPro.Add(temp);
+                res.Success = true;
+            } else
+            {
+                int index = getIndex(id);
+                FakeCSDL.Instance.listPro[index].proName = ten;
+                FakeCSDL.Instance.listPro[index].proBrand = th;
+                FakeCSDL.Instance.listPro[index].proOrigin = ng;
+                FakeCSDL.Instance.listPro[index].proOldPrice = gc;
+                FakeCSDL.Instance.listPro[index].proPrice = gm;
+                FakeCSDL.Instance.listPro[index].proDescription = mt;
+                FakeCSDL.Instance.listPro[index].catID = cid;
+                //FakeCSDL.Instance.listPro[index].ProLinkPicture = l0;
                 res.Success = true;
             }
             return res;
@@ -205,40 +228,6 @@ namespace ECommerceBE.Controllers
             return res;
         }
 
-        //GET: api/Products/{catID}
-        //[HttpGet("product-detail")]
-        //public BaseRespone GetProductByCat(int catID, int proID)
-        //{
-        //    var res = new BaseRespone(false, null);
-        //    List<Products> data = new List<Products>();
-        //    foreach (Products i in FakeCSDL.Instance.listPro)
-        //    {
-        //        if (catID == 0)
-        //        {                   
-        //            if (i.proID == proID)
-        //            {
-        //                data.Add(i);
-        //            }
-        //        }
-        //        else if (i.catID == catID && i.proID == proID)
-        //        {
-        //        }
-        //        else if (proID == 0)
-        //        {
-        //            if (i.catID == catID)
-        //            {
-        //                data.Add(i);
-        //            }
-        //        }
-
-        //    }
-        //    if (data.Count != 0)
-        //    {
-        //        res.Success = true;
-        //        res.Data = data;
-        //    }
-        //    return res;
-        //}
 
         //PUT: api/Products/{id}
         [HttpPut("{proID}")]
@@ -309,17 +298,10 @@ namespace ECommerceBE.Controllers
         [HttpDelete("DeleteByID")]
         public BaseRespone DeleteProduct(int proID)
         {
-            //List<Products> data = FakeCSDL.Instance.listPro;
             var res = new BaseRespone(false, null);
-            foreach (Products i in FakeCSDL.Instance.listPro)
-            {
-                if (i.proID == proID)
-                {
-                    FakeCSDL.Instance.listPro.Remove(i);
-                    //data.Remove(i);
-                    res.Success = true;
-                }
-            }
+            int index = getIndex(proID);
+            FakeCSDL.Instance.listPro.RemoveAt(index);
+            res.Success = true;
             return res;
         }
     }   

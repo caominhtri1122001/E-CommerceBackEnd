@@ -54,7 +54,7 @@ function requestDataAjax(url) {
 }
 
 var goToPage = function (id) {
-    window.location.href = "/demothu/detailtest.html?productId=" + id;
+    window.location.href = "/detailtest.html?productId=" + id;
 }
 
 
@@ -120,7 +120,7 @@ window.onclick = function (event) {
 function openLogInOut() {
     modal2.style.display = "block";
 }
-//Thực hiện hàm khi bấm chỗ đăng nhập trong form sẵn
+// chuyển đổi form đăng nhập / đăng ký
 function changeToLogin() {
     modal.style.display = "none";
     modal2.style.display = "block";
