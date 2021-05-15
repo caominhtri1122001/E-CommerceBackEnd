@@ -881,11 +881,11 @@ background: #2980b9;
     width: 5% !important;
 }
 .row>*:nth-child(2){
-    width: 25% !important;
+    width: 35% !important;
     text-align: left;
 }
 .row>*:nth-child(3){
-    width: 20% !important;
+    width: 10% !important;
    
 }
 .row>*:nth-child(4){
