@@ -295,15 +295,7 @@ namespace ECommerceBE
             pro12.proOldPrice = 800000;
             pro12.proPrice = 650000;
             pro12.proDescription = "Chuột Logitech G304 là một trong những dòng chuột không dây Logitech được thiết kế cho hiệu suất thực sự " +
-                "với các đột phá công nghệ mới nhất ở mức giá thành phù hợp với người dùng phổ thông, học sinh - sinh viên. GEARVN.COM chuột " +
-                "gaming logitech g304 lightspeed wireless Thông qua chế tạo và thiết kế đầu cuối, Logitech G đã phát triển một giải pháp không " +
-                "dây mạnh mẽ để giải quyết vấn đề cơ bản của các dòng chuột bluetooth giá rẻ hiện nay như độ trễ, độ ổn định và khả năng kết nối." +
-                " Kết quả cuối cùng là LIGHTSPEED, giải pháp không dây cấp độ chuyên gia đạt được hiệu suất như có dây. GEARVN.COM chuột gaming" +
-                " logitech g304 lightspeed wireless HERO là cảm biến quang học đổi mới được thiết kế bởi Logitech G để mang lại hiệu suất đẳng cấp" +
-                " dẫn đầu và tiết kiệm năng lượng tới 10 lần (so với hệ thệ trước). Một trong những dòng chuột gaming giá rẻ đến từ Logitech được" +
-                " trang bị cảm biến HERO mang lại hiệu suất ổn định và chính xác vượt trội với khả năng làm mượt, lọc và tăng tốc nhanh chóng. " +
-                "GEARVN.COM chuột gaming logitech g304 lightspeed wireless Các phím chính của G304, cả ở bên trái và phải, được đánh giá 10 triệu" +
-                " lần nhấp. G304 cũng có nút giữa, nút DPI và hai nút bên có thể được lập trình tùy theo sở thích của bạn bằng G HUB của Logitech.";
+                                    "với các đột phá công nghệ mới nhất ở mức giá thành phù hợp với người dùng phổ thông, học sinh - sinh viên.";
             pro12.status = 1;
             pro12.catID = 3;
             pro12.ProLinkPicture = "https://cf.shopee.vn/file/4a628d09896585e303a2644b03171b0d";

@@ -68,8 +68,8 @@ var loadData = function (proudcts) {
                                     <img src=" ${product.proLinkPicture}">
                                     <div class="home-product-item__name"> ${product.proName} </div>
                                     <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old"> đ${product.proOldPrice}</span>
-                                        <span class="home-product-item__price-current"> đ${product.proPrice} </span>
+                                        <span class="home-product-item__price-old"> ${product.proOldPrice/1000}.000đ</span>
+                                        <span class="home-product-item__price-current"> ${product.proPrice/1000}.000đ </span>
                                     </div>
                                     <div class="home-product-item__action">
                                         <div class="home-product-item__rating">
@@ -79,14 +79,14 @@ var loadData = function (proudcts) {
                                             <i class="home-product-item__star--gold fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </div>
-                                        <span class="home-product-item__sold"> 12 đã bán </span>
+                                        <span class="home-product-item__sold"> ${product.numberOfSold} đã bán </span>
                                     </div>
                                     <div class="product-favourite">
                                         <i class="fas fa-check"></i>
                                         <span> Yêu thích </span>
                                     </div>
                                     <div class="product-sale-off">
-                                        <span class="product-sale-off__percent"> 23% </span>
+                                        <span class="product-sale-off__percent"> ${Math.floor((product.proOldPrice-product.proPrice)/product.proOldPrice*100)}% </span>
                                         <span class="product-sale-off__label"> GIẢM </span>
                                     </div>
                                 </a>
@@ -205,17 +205,29 @@ function checkLogin() {
     }
 }
 
+function sortDefault() {
+    $("#product-list-row").empty();
+    requestDataAjax("http://localhost:37504/api/Product");
+    console.log("sort mới nhất")
+}
+
 
 function sortBanChay() {
+    $("#product-list-row").empty();
     requestDataAjax("http://localhost:37504/api/Product/GetSort3ListProductByIDCat?catID=0");
+    console.log("sort bán chạy")
 }
 
 function sortThapdenCao(){
+    $("#product-list-row").empty();
     requestDataAjax("http://localhost:37504/api/Product/GetSort1ListProductByIDCat?catID=0");
+    console.log("sort thấp đến cao")
 }
 
 function sortCaoDenThap(){
+    $("#product-list-row").empty();
     requestDataAjax("http://localhost:37504/api/Product/GetSort2ListProductByIDCat?catID=0");
+    console.log("sort cao đến thấp")
 }
 
 function GUIAdmin(){

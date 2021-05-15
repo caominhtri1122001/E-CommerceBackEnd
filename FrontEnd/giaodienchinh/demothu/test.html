@@ -462,7 +462,7 @@
                         <div class="home-filter">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="home-filter__btn btn " id="btnPoppular">Phổ biến</button>
-                            <button class="home-filter__btn btn btn--primary">Mới nhất</button>
+                            <button class="home-filter__btn btn btn--primary" onclick = "sortDefault()">Mới nhất</button>
                             <button class="home-filter__btn btn" onclick="sortBanChay()">Bán chạy</button>
                             <!-- Phaanf gias  -->
                             <div id="proPrice">
@@ -472,10 +472,10 @@
                                     <!-- list option -->
                                     <ul class="select-input__list">
                                         <li class="select-input__item">
-                                            <a href="" class="select-input__item-link" onclick="sortThapdenCao()">Giá: Thấp đến cao</a>
+                                            <button href="" type="button" class="select-input__item-link" onclick="sortThapdenCao()">Giá: Thấp đến cao</button>
                                         </li>
-                                        <li class="select-input__item">
-                                            <a href="" class="select-input__item-link" onclick="sortCaodenThap()">Giá: Cao đến thấp</a>
+                                        <li class="select-input__item"> 
+                                            <button href="" type="button" class="select-input__item-link" onclick="sortCaoDenThap()">Giá: Cao đến thấp</button>
                                         </li>
                                     </ul>
                                 </div>

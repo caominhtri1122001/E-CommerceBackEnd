@@ -122,10 +122,10 @@ var loadData2 = function (proudcts) {
                </div>
                <div class="product__price">
                 <div class="product__price-main">
-                    <span class="product__price-old">₫${proudcts.proOldPrice}</span>
+                    <span class="product__price-old">${proudcts.proOldPrice/1000}.000đ</span>
                     <div class="product__price-current">
-                        <span class="product__price-new">₫${proudcts.proPrice}</span>
-                        <span class="product__price-label bgr-orange">33% GIẢM</span>
+                        <span class="product__price-new">${proudcts.proPrice/1000}.000đ</span>
+                        <span class="product__price-label bgr-orange">${Math.floor((proudcts.proOldPrice-proudcts.proPrice)/proudcts.proOldPrice*100)}%GIẢM</span>
                     </div>
                 </div>
                 <div class="product__price-slogan hide-on-mobile-tablet">
@@ -138,7 +138,7 @@ var loadData2 = function (proudcts) {
             <div class="product-decription">
                 <p class="product-detail-item"><strong>Mô tả sản phẩm</strong></p>
                 <div class="product-detail-text">
-                    <p>– <strong>Mô ta</strong>: ${proudcts.proDescription}</p>
+                    <p>– <strong>Mô tả</strong>: ${proudcts.proDescription}</p>
                     <p>– <strong>Thương hiệu</strong>: ${proudcts.proBrand}</p>
                     <p>– <strong>Xuất xứ</strong>: ${proudcts.proOrigin}</p>
                 </div>
