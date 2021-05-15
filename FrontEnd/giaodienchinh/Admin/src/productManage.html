@@ -1,58 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UserManagerOfAdmin</title>
-    <link rel="stylesheet" href="userManagerOfAdminStyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="../css/productManage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
     <!-- Them ne -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>
 </head>
-
 <body>
     <div class="website" id="productManage">
         <!-- Phan navbar -->
         <header id="header">
             <div class="grid">
-
+              
                 <nav class="header__navbar">
-
+                   
                     <ul class="header__navbar-list">
-
+                        
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
                             Vào cửa hàng trên ứng dụng DDVT
-
+                           
                             <div class="header__qr">
-                                <img src="https://cdn-www.vinid.net/2020/10/ae482776-qr-code-vinid.jpg" alt="QR_CODE"
-                                    class="header__qr-img">
+                                <img src="https://cdn-www.vinid.net/2020/10/ae482776-qr-code-vinid.jpg" alt="QR_CODE" class="header__qr-img">
                                 <div class="header__qr-apps">
                                     <a href="" class="header__qr-link">
-                                        <img src="https://www.tudiengia.com/wp-content/uploads/2019/04/Play-Store-Error-Code-910.jpg"
-                                            alt="GG PLAY" class="header__qr-dowload-img">
+                                        <img src="https://www.tudiengia.com/wp-content/uploads/2019/04/Play-Store-Error-Code-910.jpg" alt="GG PLAY"
+                                            class="header__qr-dowload-img">
                                         <span>GOOGLE PLAY</span>
                                     </a>
                                     <a href="" class="header__qr-link">
-                                        <img src="https://congnghenhat.com/wp-content/uploads/2019/09/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A1ch-chuy%E1%BB%83n-v%C3%B9ng-AppStore-t%E1%BB%AB-Nh%E1%BA%ADt-v%E1%BB%81-l%E1%BA%A1i-Vi%E1%BB%87t-Nam-cho-c%C3%A1c-thi%E1%BA%BFt-b%E1%BB%8B-iOS.jpg"
-                                            alt="appstore" class="header__qr-dowload-img">
+                                        <img src="https://congnghenhat.com/wp-content/uploads/2019/09/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A1ch-chuy%E1%BB%83n-v%C3%B9ng-AppStore-t%E1%BB%AB-Nh%E1%BA%ADt-v%E1%BB%81-l%E1%BA%A1i-Vi%E1%BB%87t-Nam-cho-c%C3%A1c-thi%E1%BA%BFt-b%E1%BB%8B-iOS.jpg" alt="appstore"
+                                            class="header__qr-dowload-img">
                                         <span>APPSTORE</span>
                                     </a>
                                 </div>
@@ -138,8 +126,7 @@
                         <li class="header__navbar-user">
                             <!-- Nếu có người dùng-->
                             <div class="header__navbar-item header__navbar-user" id="useraccount">
-                                <img id="userIMG"
-                                    src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=X_j0p5fsR3MAX-BAEM8&_nc_ht=scontent-hkt1-1.xx&oh=7fd69fd3ff40f734ce7386de9039f44e&oe=60B8122A"
+                                <img id="userIMG" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=X_j0p5fsR3MAX-BAEM8&_nc_ht=scontent-hkt1-1.xx&oh=7fd69fd3ff40f734ce7386de9039f44e&oe=60B8122A"
                                     alt="" class="header__navbar-user-img">
                                 <span id="header__navbar-user-name">Trương Thị Mỹ Duyên</span>
                                 <ul class="header__navbar-user-menu">
@@ -156,13 +143,13 @@
                                         <a href="" onclick="logOut()">Đăng xuất</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> 
                             <!-- Nếu không có người dùng -->
                             <div id="logInOut">
                                 <div id="register" onclick="openRegister()">Đăng ký</div>
                                 <div id="logIn" onclick="openLogInOut()">Đăng nhập</div>
                             </div>
-                        </li>
+                        </li>                      
                     </ul>
                 </nav>
                 <!-- header-with-searchs -->
@@ -170,8 +157,7 @@
                     <!-- vùng chứa logo -->
                     <div class="header__logo">
                         <a href="/" class="header__logo-link">
-                            <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/59163276_2020101838293857_3973786377429975040_n.png?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_ohc=lpMYw_FJqOkAX89Mn2w&_nc_ht=scontent.fsgn2-5.fna&oh=f583d1f9e6e446571fffee268abba362&oe=60A58220"
-                                alt="LOGO">
+                            <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/59163276_2020101838293857_3973786377429975040_n.png?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_ohc=lpMYw_FJqOkAX89Mn2w&_nc_ht=scontent.fsgn2-5.fna&oh=f583d1f9e6e446571fffee268abba362&oe=60A58220" alt="LOGO" >
                         </a>
                     </div>
 
@@ -451,163 +437,151 @@
             </div>
         </div>
         <div id="manager">
-            <div class="manager-inner">
-                <div class="managerHeader">
-                    <h2 class="managerName">Quản Lý Đơn Hàng</h2>
-                </div>
-                <div class="form-manager">
-                    <div class="table">
-                        <div class="row header">
-                            <div class="cell cellID">
-                                ID Account
-                            </div>
-                            <div class="cell cellName">
-                                Tên tài khoản
-                            </div>
-                            <div class="cell cellIMG">
-                                Tên người dùng
-                            </div>
-                            <div class="cell cellCatagory">
-                                Ảnh người dùng
-                            </div>
-                            <div class="cell cellNumOfSold">
-                                 SĐT
-                            </div>
-                            <div class="cell cellEdit">
-                                Địa Chỉ
-                            </div>
-                            <div class="cell cellDelete">
-                               Lịch sử mua hàng
-                            </div>
-                            <div class="cell cellAddProduct">
-                               Khóa Tài Khoản
-                            </div>
-                        </div>
-                        <!-- test thu  -->
-                        <!-- <div id="product-list-row">   
+           <div class="manager-inner">
+            <div class="managerHeader">
+                <h2 class="managerName">Sản phẩm</h2>
+                <button type="button" class="btn btn-secondary" onclick="AddProduct()">Thêm mới</button>
+            </div>
+            <div class="form-manager">
+                <div class="table">
+                    <div class="row header">
+                      <div class="cell cellID">
+                        ID 
+                      </div>
+                      <div class="cell cellName">
+                        Tên
+                      </div>
+                      <div class="cell cellIMG">
+                        Hình ảnh
+                      </div>
+                      <div class="cell cellCatagory">
+                        Loại Mặt Hàng
+                      </div>
+                      <div class="cell cellNumOfSold">
+                        Số lượng đã bán
+                      </div>
+                      <div class="cell cellEdit">
+                        Sửa
+                      </div>
+                      <div class="cell cellDelete">
+                        Xóa
+                      </div>
+                      <div class="cell cellAddProduct">
+                       Nhập hàng
+                      </div>
+                    </div>
+                    <!-- test thu  -->
+                    <!-- <div id="product-list-row">
+                        
+                        
                     </div> -->
-
-                        <div id="order-list-row">
-                             <div class="row list product">
-                        <div class="cell"  data-title="ID">
+                    <div id="product-list-row">
+                        <!-- <div class="row list product">
+                        <div class="cell"  data-title="Name">
                              1
                             </div>
-                            <div class="cell" id="proName" data-title="productName">
-                              Wibu
+                            <div class="cell" id="proName" data-title="Age">
+                              Quần thể thao nam
                             </div>
-                            <div class="cell nameAccount" data-title="Amount">
-                                Trương Mỹ Duyên
+                            <div class="cell hinhanh" data-title="Occupation">
+                              <img src="https://media3.scdn.vn/img3/2019/6_26/agRJvz_simg_de2fe0_500x500_maxb.jpg" alt="">
                             </div>
-                            <div class="cell hinhanh" data-title="Location">
-                             <img src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=sb986SEKDFIAX-N-fG6&_nc_ht=scontent-hkg4-2.xx&oh=94fdf973dee9b91629c5492db0f30c37&oe=60C3EFAA" alt="">
+                            <div class="cell" data-title="Location">
+                              Quần áo
                             </div>
                             <div class="cell" data-title="numberSold">
-                                0799634056
+                                12
                             </div>
                             <div class="cell func edit" data-title="edit">
-                                62 Ngô Sĩ Liên, phường Hòa Khánh
+                                <i class="fas fa-edit"></i>
                             </div>
-                            <div class="cell func" data-title="conform">
-                                <button type="button" class="btn btn-outline-success">Xem</button>
-                           </div>
                             <div class="cell func" data-title="delete">
                                 <i class="fas fa-trash-alt"></i>
+                           </div>
+                            <div class="cell func" data-title="addmore">
+                                <i class="far fa-plus-square"></i>
                             </div>
-                        </div>
-
-                        </div>
-
+                        </div> -->
                     </div>
-                </div>
+                  </div>    
+            </div>
             </div>
         </div>
         <!-- Thực hiện form đăng ký sản phẩm mới -->
         <div id="myModal" class="modal">
             <!-- Modal content -->
-            <div class="modal-content">
-                <div id="formLogGin" class="auth-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__header">
-                            Thông tin sản phẩm mới
+            <div class="modal-content">       
+              <div id="formLogGin" class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                       Thông tin sản phẩm mới
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input  data-category="productName" id = "tensanpham" class="auth-form__input" placeholder="Nhập tên sản phẩm"> 
+                            <p class="error" id="message"></p>
                         </div>
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                <input data-category="productName" id="tensanpham" class="auth-form__input"
-                                    placeholder="Nhập tên sản phẩm">
-                                <p class="error" id="message"></p>
-                            </div>
-                            <div class="auth-form__group">
-                                <select name="" id="catogory">
-                                    <option value="Chọn thể loại sản phẩm" selected="selected">Chọn thể loại sản phẩm
-                                    </option>
-                                    <option value="Giày">Giày</option>
-                                    <option value="Áo quần">Áo quần</option>
-                                    <option value="Phụ kiện">Phụ kiện</option>
-                                    <option value="Bóng">Bóng</option>
-                                </select>
-                            </div>
-                            <div class="auth-form__group">
-                                <input data-category="productName" id="tenthuonghieu" class="auth-form__input"
-                                    placeholder="Nhập tên thương hiệu">
-                                <p class="error" id="message"></p>
-                            </div>
-                            <div class="auth-form__group">
-                                <input data-category="productName" id="tenxuatxu" class="auth-form__input"
-                                    placeholder="Nhập tên xuất xứ">
-                                <p class="error" id="message"></p>
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="number" data-category="productName" id="giasanpham"
-                                    class="auth-form__input" placeholder="Nhập giá sản phẩm">
-                                <p class="error" id="message"></p>
-                            </div>
-                            <div class="auth-form__group">
-                                <select name="" id="promotion">
-                                    <option value="Chọn khuyến mãi kèm theo" selected="selected">Chọn khuyến mãi kèm
-                                        theo</option>
-                                    <option value="0%">0%</option>
-                                    <option value="5%">5%</option>
-                                    <option value="10%">10%</option>
-                                    <option value="20%">20%</option>
-                                </select>
-                            </div>
-                            <div class="auth-form__group">
-                                <input data-category="productName" id="mieutasanpham" class="auth-form__input"
-                                    placeholder="Miêu tả sản phẩm">
-                                <p class="error" id="message"></p>
-                            </div>
-                            <!-- Select  -->
-                            <div class="auth-form__group productIMG">
-                                <input type="file" id="input-image" accept="image/*">
-                                <div id="productIMG">
-                                    <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/176395998_308209923996921_5903442903423807598_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=RFn18IpRKzEAX-3Sbn8&_nc_ht=scontent.fhan2-4.fna&oh=8361796acc992741348983c5a71c5046&oe=60C182EF"
-                                        alt="" id="formIMG">
-                                    <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/176395998_308209923996921_5903442903423807598_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=RFn18IpRKzEAX-3Sbn8&_nc_ht=scontent.fhan2-4.fna&oh=8361796acc992741348983c5a71c5046&oe=60C182EF"
-                                        alt="" id="formIMG">
-                                    <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/176395998_308209923996921_5903442903423807598_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=RFn18IpRKzEAX-3Sbn8&_nc_ht=scontent.fhan2-4.fna&oh=8361796acc992741348983c5a71c5046&oe=60C182EF"
-                                        alt="" id="formIMG">
-                                    <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/176395998_308209923996921_5903442903423807598_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=RFn18IpRKzEAX-3Sbn8&_nc_ht=scontent.fhan2-4.fna&oh=8361796acc992741348983c5a71c5046&oe=60C182EF"
-                                        alt="" id="formIMG">
-                                </div>
-                                <p class="error" id="messageIMG">sai link sản phẩm</p>
-                            </div>
+                        <div class="auth-form__group">
+                            <select name="" id="catogory">
+                                <option value="Chọn thể loại sản phẩm" selected="selected">Chọn thể loại sản phẩm</option> 
+                                <option value="Giày">Giày</option> 
+                                <option value="Áo quần">Áo quần</option>
+                                <option value="Phụ kiện">Phụ kiện</option>
+                                <option value="Bóng">Bóng</option>
+                            </select>
                         </div>
-                        <div class="auth-form__controls ">
-                            <button class="btn btn--normal auth-form__control-back">
-                                <a href="">
-                                    TRỞ LẠI
-                                </a>
-                            </button>
-                            <button class="btn btn--primary " onclick="AddOrEdit()">XÁC NHẬN</button>
+                        <div class="auth-form__group">
+                            <input  data-category="productName" id = "tenthuonghieu" class="auth-form__input" placeholder="Nhập tên thương hiệu"> 
+                            <p class="error" id="message"></p>
                         </div>
+                        <div class="auth-form__group">
+                            <input  data-category="productName" id = "tenxuatxu" class="auth-form__input" placeholder="Nhập tên xuất xứ"> 
+                            <p class="error" id="message"></p>
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="number" data-category="productName" id = "giasanpham" class="auth-form__input" placeholder="Nhập giá sản phẩm"> 
+                            <p class="error" id="message"></p>
+                        </div>
+                        <div class="auth-form__group">
+                            <select name="" id="promotion">
+                                <option value="Chọn khuyến mãi kèm theo" selected="selected">Chọn khuyến mãi kèm theo</option> 
+                                <option value="0%">0%</option>
+                                <option value="5%">5%</option> 
+                                <option value="10%">10%</option>
+                                <option value="20%">20%</option> 
+                            </select>
+                        </div>
+                        <div class="auth-form__group">
+                            <input  data-category="productName" id = "mieutasanpham" class="auth-form__input" placeholder="Miêu tả sản phẩm"> 
+                            <p class="error" id="message"></p>
+                        </div>
+                        <!-- Select  -->
+                        <div class="auth-form__group productIMG">
+                            <input type="file" id="input-image" accept="image/*" >
+                           <div id="productIMG">
+                            <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/176395998_308209923996921_5903442903423807598_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=RFn18IpRKzEAX-3Sbn8&_nc_ht=scontent.fhan2-4.fna&oh=8361796acc992741348983c5a71c5046&oe=60C182EF" alt="" id="formIMG">
+                            <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/176395998_308209923996921_5903442903423807598_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=RFn18IpRKzEAX-3Sbn8&_nc_ht=scontent.fhan2-4.fna&oh=8361796acc992741348983c5a71c5046&oe=60C182EF" alt="" id="formIMG">
+                            <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/176395998_308209923996921_5903442903423807598_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=RFn18IpRKzEAX-3Sbn8&_nc_ht=scontent.fhan2-4.fna&oh=8361796acc992741348983c5a71c5046&oe=60C182EF" alt="" id="formIMG">
+                            <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/176395998_308209923996921_5903442903423807598_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=RFn18IpRKzEAX-3Sbn8&_nc_ht=scontent.fhan2-4.fna&oh=8361796acc992741348983c5a71c5046&oe=60C182EF" alt="" id="formIMG">
+                           </div>   
+                            <p class="error" id="messageIMG">sai link sản phẩm</p>
+                        </div>
+                    </div>                   
+                    <div class="auth-form__controls ">
+                        <button class="btn btn--normal auth-form__control-back">
+                            <a href="">
+                                TRỞ LẠI
+                              </a>
+                        </button>
+                        <button class="btn btn--primary " onclick="AddOrEdit()">XÁC NHẬN</button>
                     </div>
                 </div>
-
+            </div>        
+             
             </div>
-
-        </div>
+          
+          </div>
     </div>
-    <script src="userScript.js"></script>
+    <script src="../script/productManage.js"></script>
 </body>
-
 </html>

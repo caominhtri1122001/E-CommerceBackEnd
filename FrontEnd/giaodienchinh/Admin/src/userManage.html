@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="userStyle.css">
+    <title>UserManagerOfAdmin</title>
+    <link rel="stylesheet" href="../css/userManage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <!-- Them ne -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -451,35 +453,34 @@
         <div id="manager">
             <div class="manager-inner">
                 <div class="managerHeader">
-                    <h2 class="managerName">Sản phẩm</h2>
-                    <button type="button" class="btn btn-secondary" onclick="AddProduct()">Thêm mới</button>
+                    <h2 class="managerName">Quản Lý Đơn Hàng</h2>
                 </div>
                 <div class="form-manager">
                     <div class="table">
                         <div class="row header">
                             <div class="cell cellID">
-                                ID Đơn
+                                ID Account
                             </div>
                             <div class="cell cellName">
-                                Tên sản phẩm
+                                Tên tài khoản
                             </div>
                             <div class="cell cellIMG">
-                                Số lượng
+                                Tên người dùng
                             </div>
                             <div class="cell cellCatagory">
-                                Tổng Thanh Toán
+                                Ảnh người dùng
                             </div>
                             <div class="cell cellNumOfSold">
-                                Thời Gian Đặt Hàng
+                                 SĐT
                             </div>
                             <div class="cell cellEdit">
-                                Trạng Thái Đơn Hàng
+                                Địa Chỉ
                             </div>
                             <div class="cell cellDelete">
-                                Thời Gian Xác Nhận/Hủy Đơn
+                               Lịch sử mua hàng
                             </div>
                             <div class="cell cellAddProduct">
-                                Hủy Đơn Hàng
+                               Khóa Tài Khoản
                             </div>
                         </div>
                         <!-- test thu  -->
@@ -487,8 +488,32 @@
                     </div> -->
 
                         <div id="order-list-row">
-
-                            <!-- js -->
+                             <div class="row list product">
+                        <div class="cell"  data-title="ID">
+                             1
+                            </div>
+                            <div class="cell" id="proName" data-title="productName">
+                              Wibu
+                            </div>
+                            <div class="cell nameAccount" data-title="Amount">
+                                Trương Mỹ Duyên
+                            </div>
+                            <div class="cell hinhanh" data-title="Location">
+                             <img src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=sb986SEKDFIAX-N-fG6&_nc_ht=scontent-hkg4-2.xx&oh=94fdf973dee9b91629c5492db0f30c37&oe=60C3EFAA" alt="">
+                            </div>
+                            <div class="cell" data-title="numberSold">
+                                0799634056
+                            </div>
+                            <div class="cell func edit" data-title="edit">
+                                62 Ngô Sĩ Liên, phường Hòa Khánh
+                            </div>
+                            <div class="cell func" data-title="conform">
+                                <button type="button" class="btn btn-outline-success">Xem</button>
+                           </div>
+                            <div class="cell func" data-title="delete">
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                        </div>
 
                         </div>
 
@@ -582,7 +607,7 @@
 
         </div>
     </div>
-    <script src="userScript.js"></script>
+    <script src="../script/userManage.js"></script>
 </body>
 
 </html>

@@ -54,7 +54,7 @@ function requestDataAjax(url) {
 }
 
 var goToPage = function (id) {
-    window.location.href = "/detailtest.html?productId=" + id;
+    window.location.href = "../src/detail.html?productId=" + id;
 }
 
 
