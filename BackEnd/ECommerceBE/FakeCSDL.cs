@@ -337,7 +337,7 @@ namespace ECommerceBE
             listOrd.Add(od2);
 
             Orders od3 = new Orders();
-            od3.orderID = 2;
+            od3.orderID = 3;
             od3.proID = 8;
             od3.userID = 1;
             od3.proNum = 1;
