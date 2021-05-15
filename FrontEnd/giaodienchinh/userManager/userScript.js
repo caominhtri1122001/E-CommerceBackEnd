@@ -1,4 +1,4 @@
-console.log("alfkjadlkjsdaf")
+
 //login.style.display = "none"
 var UID = 1;
 
