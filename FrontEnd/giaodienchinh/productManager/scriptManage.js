@@ -2,9 +2,10 @@
 console.log("truong my duyen")
 var modal = document.getElementById("myModal");
 var login = document.getElementById("logInOut");
-var mF = document.getElementById("majorForm");
-var mF2 = document.getElementById("majorForm2");
+var catagory = document.getElementById("catogory");
+var promotion = document.getElementById("promotion");
 var idsanpham = 0;
+var productIMG=document.getElementById("input-image")
 
 
 login.style.display = "none"
@@ -16,7 +17,6 @@ function requestDataListProduct(url) {
         type: "GET",
         success: function (response) {
             if (response.success) {
-                console.log("thanh cong roi ne")
                 loadData(response.data)
             }
             else {
@@ -32,7 +32,7 @@ function requestDataListProduct(url) {
 var goToPage = function (id) {
     window.location.href = "/detailtest.html?productId=" + id;
 }
-
+//Khi chon sửa thì mình xác định cái id của sản phẩm cần sửa, truyền nó vào link, để lấy dữ liệu , sau đó load nó lên form
 function requestGetProduct(url) {
     $.ajax({
         url: url,
@@ -54,26 +54,15 @@ function requestGetProduct(url) {
 
 var loadDataForm = function(sp) {
     tensanpham.value = sp.proName
-    if(sp.catID == 1) mF.value = "Áo quần"
-    if(sp.catID == 2) mF.value = "Giày"
-    if(sp.catID == 3) mF.value = "Phụ kiện"
-    if(sp.catID == 4) mF.value = "Bóng"
+    if(sp.catID == 1) catagory.value = "Áo quần"
+    if(sp.catID == 2) catagory.value = "Giày"
+    if(sp.catID == 3) catagory.value = "Phụ kiện"
+    if(sp.catID == 4) catagory.value = "Bóng"
     tenthuonghieu.value = sp.proBrand
     tenxuatxu.value = sp.proOrigin
     giasanpham.value = sp.proOldPrice
     mieutasanpham.value = sp.proDescription
-    mF2.value = "0%"
-    console.log(sp)
-}
-
-function loadNullForm(){
-    tensanpham.value = ""
-    mF.value = "Chọn chuyên ngành"
-    tenthuonghieu.value = ""
-    tenxuatxu.value = ""
-    giasanpham.value = ""
-    mieutasanpham.value = ""
-    mF2.value = "Chọn chuyên ngành"
+    promotion.value = "0%"
 }
 
 var ThemSua = function (id) {
@@ -87,7 +76,6 @@ var ThemSua = function (id) {
         modal.style.display = "block"
         idsanpham = id
         requestGetProduct("http://localhost:37504/api/Product/GetProductByID?proID="+id)
-        console.log("Sửa")
     }
 }
 
@@ -95,8 +83,6 @@ var Xoa = function (id) {
     requestDeleteProduct("http://localhost:37504/api/Product/DeleteByID?proID=" + id)
     location.reload()
 }
-
-
 function requestDeleteProduct(url) {
     $.ajax({
         url: url,
@@ -105,21 +91,19 @@ function requestDeleteProduct(url) {
         type: "DELETE",
         success: function (response) {
             if (response.success) {
-                console.log("xóa ok")
+
             }
             else {
                 alert("???")
             }
         },
         error: function (xhr) {
-
         }
     });
 }
 
 var loadData = function (proudcts) {
     for (var i = 0; i < proudcts.length; i++) {
-
         var productHtml = `
         <div class="row list product">
                         <div class="cell"  data-title="Name">
@@ -167,28 +151,23 @@ window.onclick = function (event) {
     }
 }
 
-function isInt(num) {
-    if (num == parseInt(num)) return true
-    return false
-}
-
 // lấy dữ liệu trên form
-function AddEdit() {
-    if (isInt(giasanpham.value)) {
+//cua vu duong
+function Edit() {
         var tensp = tensanpham.value
         var theloaisp
-        if (mF.value == "Giày") theloaisp = 2
-        if (mF.value == "Áo quần") theloaisp = 1
-        if (mF.value == "Phụ kiện") theloaisp = 3
-        if (mF.value == "Bóng") theloaisp = 4
+        if (catagory.value == "Giày") theloaisp = 2
+        if (catagory.value == "Áo quần") theloaisp = 1
+        if (catagory.value == "Phụ kiện") theloaisp = 3
+        if (catagory.value == "Bóng") theloaisp = 4
         var thuonghieu = tenthuonghieu.value
         var xuatxu = tenxuatxu.value
         var giacu = giasanpham.value
         var khuyenmai
-        if (mF2.value == "0%") khuyenmai = 0
-        if (mF2.value == "5%") khuyenmai = 5
-        if (mF2.value == "10%") khuyenmai = 10
-        if (mF2.value == "20%") khuyenmai = 20
+        if (promotion.value == "0%") khuyenmai = 0
+        if (promotion.value == "5%") khuyenmai = 5
+        if (promotion.value == "10%") khuyenmai = 10
+        if (promotion.value == "20%") khuyenmai = 20
         var giamoi
         if ( giacu > 10000 ) giamoi = Math.floor((giacu - giacu * khuyenmai / 100) / 1000) * 1000
         else giamoi = Math.floor(giacu - giacu * khuyenmai / 100)
@@ -200,13 +179,14 @@ function AddEdit() {
         var link2 = "https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
         var link3 = "https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
 
+        console.log("truoc khi thuc hien thay doi")
         requestAEP("http://localhost:37504/api/Product/AddEditProduct?", idsanpham, tensp, thuonghieu, xuatxu, giacu, giamoi, mieuta, theloaisp, link0, link1, link2, link3)
         location.reload()
-    } else {
-        alert("Giá nhập vào sai kiểu dữ liệu")
-    }
-    idsanpham = 0;
+        idsanpham = 0;
 }
+//cua my duyen
+//http://localhost:37504/api/Product?proID=121&proName=tuan&proBrand=tuan&proOrigin=tuan&proOldPrice=120202&proPrice=155151&proDescription=tuan&status=2&catID=2
+
 
 function requestAEP(url, id, tensp, thuonghieu, xuatxu, giacu, giamoi, mieuta, theloai, l0, l1, l2, l3) {
     $.ajax({
@@ -229,7 +209,85 @@ function requestAEP(url, id, tensp, thuonghieu, xuatxu, giacu, giamoi, mieuta, t
         type: "GET",
         success: function (response) {
             if (response.success) {
-                alert ("Thành công!")
+               
+                console.log("thay doi thanh cong")
+            }
+            else {
+                
+                alert("Thất bại, có thể dữ liệu truyền vào không hợp lệ!")
+            }
+        },
+        error: function (xhr) {
+        }
+    });
+}
+
+//My Duyen chinh sua , ham them moi san pham
+//Hàm hiện form đăng ký lên
+function AddProduct(){
+    modal.style.display = "block"
+}
+//Hàm xác nhận việc đăng ký
+function AcpToAdd(){
+    let proID=2;
+    let proName="san pham moi"
+    let giamgia;
+    if(promotion.value=="0%") giamgia=0;
+    if(promotion.value=="5%") giamgia=0.05;
+    if(promotion.value=="10%") giamgia=0.1
+    if(promotion.value=="20%") giamgia=0.2;
+
+    var theloaisp
+        if (catagory.value == "Giày") theloaisp = 2
+        if (catagory.value == "Áo quần") theloaisp = 1
+        if (catagory.value == "Phụ kiện") theloaisp = 3
+        if (catagory.value == "Bóng") theloaisp = 4
+
+
+    var product={
+        "proName": tensanpham.value,
+        "proBrand": tenthuonghieu.value,
+        "proOrigin": tenxuatxu.value,
+        "proOldPrice": giasanpham.value,
+        "proPromotion": giamgia,
+        "proDescription": mieutasanpham.value,
+        "proStatus":1,
+        "proCatID": theloaisp,
+        "proLink": "l0",
+        "proLink1": "l1",
+        "proLink2": "l2",
+        "proLink3": "linkfake",
+     }
+     let urlRequestFake=`http://localhost:37504/api/Product?proID=2&proName=${product.proName}&proBrand=${product.proBrand}&proOrigin=${product.proOrigin}&proOldPrice=${product.proOldPrice}&proPromotion=${product.proPromotion}&proDescription=${product.proDescription}&proStatus=1&proCatID=${product.proCatID}&proLink=${product.proLink}&proLink1=link1&proLink2=link2&proLink3=link3`
+
+     let urlRequest=`http://localhost:37504/api/Product?proID=2&proName=Aooooooo%20quan&proBrand=Nike&proOrigin=USA&proOldPrice=200&proPromotion=0&proDescription=giay%20cua%20usa&proStatus=1&proCatID=2&proLink=link&proLink1=link1&proLink2=link2&proLink3=link3`
+    requestAddProduct(urlRequestFake)
+   
+}
+function requestAddProduct(url) {
+    $.ajax({
+        url: url,
+        data:{
+            "proID": "id",
+            "proName": "tensp",
+            "proBrand": "thuonghieu",
+            "proOrigin": "xuatxu",
+            "proOldPrice": 12,
+            "proPromotion": 0,
+            "proDescription": "mieuta",
+            "proStatus":1,
+            "proCatID": 2,
+            "proLink": "l0",
+            "proLink1": "l1",
+            "proLink2": "l2",
+            "proLink3": "linkfake",
+        },
+        cache: false,
+        type: "POST",
+        success: function (response) {
+            console.log(response)
+            if (response.success) {
+                alert ("Theem moiw san pham thanh cong!")
             }
             else {
                 alert("Thất bại, có thể dữ liệu truyền vào không hợp lệ!")
@@ -238,4 +296,14 @@ function requestAEP(url, id, tensp, thuonghieu, xuatxu, giacu, giamoi, mieuta, t
         error: function (xhr) {
         }
     });
+}
+
+//Sau khi nhấn nút đồng ý thì để xem nó sẽ thực hiện thêm mới hay edit 
+function AddOrEdit(){
+   if(idsanpham==0){
+    AcpToAdd()
+   }
+   else{
+    Edit()
+   }
 }

@@ -259,38 +259,28 @@ namespace ECommerceBE.Controllers
         //POST: api/Products
         [HttpPost]
         public BaseRespone PostProduct(int proID, string proName,
-            string proBrand, string proOrigin, double proOldPrice, double proPrice,
-            string proDescription, int status, int catID)
+            string proBrand, string proOrigin, double proOldPrice, double proPromotion,
+            string proDescription, int proStatus, int proCatID,string proLink,
+            string proLink1,string proLink2,string proLink3)
         {
-            List<Products> data = FakeCSDL.Instance.listPro;
-            List<Category> catData = FakeCSDL.Instance.listCat;
-            Products newPro = new Products();
             var res = new BaseRespone(false, null);
-            foreach (var i in data)
-            {
-                if (i.catID == catID && i.proID == proID)
-                {
-                    return res;
-                }
-            }
-            foreach (var i in catData)
-            {
-                if (catID == i.catID)
-                {
-                    newPro.proName = proName;
-                    newPro.proBrand = proBrand;
-                    newPro.proOrigin = proOrigin;
-                    newPro.proOldPrice = proOldPrice;
-                    newPro.proPrice = proPrice;
-                    newPro.proDescription = proDescription;
-                    newPro.status = status;
-                    newPro.proID = proID;
-                    newPro.catID = catID;
-                    data.Add(newPro);
-                    res.Success = true;
-                    res.Data = data;
-                }
-            }          
+            Products temp = new Products();
+            temp.proID = FakeCSDL.Instance.listPro[FakeCSDL.Instance.listPro.Count - 1].proID + 1;
+            temp.proName = proName;
+            temp.proBrand = proBrand;
+            temp.proOrigin = proOrigin;
+            temp.proOldPrice = proOldPrice;
+            temp.proPrice = proOldPrice- proOldPrice*proPromotion;
+            temp.proDescription = proDescription;
+            temp.status = 1;
+            temp.catID = proCatID;
+            temp.ProLinkPicture = "https://kenh14cdn.com/2019/12/22/1tzxy39bdzycfxwdkb2addg-1577027177279568463383.jpeg";
+            temp.ProLinkPicture1 = "https://kenh14cdn.com/2019/12/22/1tzxy39bdzycfxwdkb2addg-1577027177279568463383.jpeg";
+            temp.ProLinkPicture2 = "https://kenh14cdn.com/2019/12/22/1tzxy39bdzycfxwdkb2addg-1577027177279568463383.jpeg";
+            temp.ProLinkPicture3 = "https://kenh14cdn.com/2019/12/22/1tzxy39bdzycfxwdkb2addg-1577027177279568463383.jpeg";
+            temp.NumberOfSold = 0;
+            FakeCSDL.Instance.listPro.Add(temp);
+            res.Success = true;
             return res;
         }
 

@@ -440,7 +440,7 @@
            <div class="manager-inner">
             <div class="managerHeader">
                 <h2 class="managerName">Sản phẩm</h2>
-                <button type="button" class="btn btn-secondary" onclick="ThemSua(0)">Thêm mới</button>
+                <button type="button" class="btn btn-secondary" onclick="AddProduct()">Thêm mới</button>
             </div>
             <div class="form-manager">
                 <div class="table">
@@ -522,8 +522,8 @@
                             <p class="error" id="message"></p>
                         </div>
                         <div class="auth-form__group">
-                            <select name="" id="majorForm">
-                                <option value="Chọn chuyên ngành" selected="selected">Chọn thể loại sản phẩm</option> 
+                            <select name="" id="catogory">
+                                <option value="Chọn thể loại sản phẩm" selected="selected">Chọn thể loại sản phẩm</option> 
                                 <option value="Giày">Giày</option> 
                                 <option value="Áo quần">Áo quần</option>
                                 <option value="Phụ kiện">Phụ kiện</option>
@@ -539,12 +539,12 @@
                             <p class="error" id="message"></p>
                         </div>
                         <div class="auth-form__group">
-                            <input  data-category="productName" id = "giasanpham" class="auth-form__input" placeholder="Nhập giá sản phẩm"> 
+                            <input type="number" data-category="productName" id = "giasanpham" class="auth-form__input" placeholder="Nhập giá sản phẩm"> 
                             <p class="error" id="message"></p>
                         </div>
                         <div class="auth-form__group">
-                            <select name="" id="majorForm2">
-                                <option value="Chọn chuyên ngành" selected="selected">Chọn khuyến mãi kèm theo</option> 
+                            <select name="" id="promotion">
+                                <option value="Chọn khuyến mãi kèm theo" selected="selected">Chọn khuyến mãi kèm theo</option> 
                                 <option value="0%">0%</option>
                                 <option value="5%">5%</option> 
                                 <option value="10%">10%</option>
@@ -573,7 +573,7 @@
                                 TRỞ LẠI
                               </a>
                         </button>
-                        <button class="btn btn--primary " onclick="AddEdit()">XÁC NHẬN</button>
+                        <button class="btn btn--primary " onclick="AddOrEdit()">XÁC NHẬN</button>
                     </div>
                 </div>
             </div>        

@@ -1115,3 +1115,6 @@ input{
 .btn:focus{
     box-shadow: none !important;
 }
+select{
+    padding:10px;
+}
