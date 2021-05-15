@@ -7,8 +7,8 @@ var promotion = document.getElementById("promotion");
 var idsanpham = 0;
 var productIMG=document.getElementById("input-image")
 
-
 login.style.display = "none"
+
 function requestDataListProduct(url) {
     $.ajax({
         url: url,

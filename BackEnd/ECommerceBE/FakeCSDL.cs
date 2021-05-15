@@ -11,6 +11,7 @@ namespace ECommerceBE
         public  List<Users> listUser { get; set; }
         public List<Products> listPro { get; set; }
         public List<Category> listCat { get; set; }
+        public List<Orders> listOrd { get; set; }
 
 
         private static FakeCSDL _instance;
@@ -33,6 +34,7 @@ namespace ECommerceBE
             listUser = new List<Users>();
             listCat = new List<Category>();
             listPro = new List<Products>();
+            listOrd = new List<Orders>();
 
 
             //Users
@@ -311,6 +313,39 @@ namespace ECommerceBE
             pro12.NumberOfSold = 425;
             listPro.Add(pro12);
 
+
+            Orders od1 = new Orders();
+            od1.orderID = 1;
+            od1.proID = 1;
+            od1.userID = 1;
+            od1.proNum = 1;
+            od1.orderCTime = DateTime.Now;
+            od1.oderATime = DateTime.Now;
+            od1.orderStatus = 0;
+            if (od1.orderStatus != 0) od1.oderATime = DateTime.Now;
+            listOrd.Add(od1);
+
+            Orders od2 = new Orders();
+            od2.orderID = 2;
+            od2.proID = 12;
+            od2.userID = 1;
+            od2.proNum = 1;
+            od2.orderCTime = DateTime.Now;
+            od2.oderATime = DateTime.Now;
+            od2.orderStatus = 1;
+            if (od1.orderStatus != 0) od2.oderATime = DateTime.Now;
+            listOrd.Add(od2);
+
+            Orders od3 = new Orders();
+            od3.orderID = 2;
+            od3.proID = 8;
+            od3.userID = 1;
+            od3.proNum = 1;
+            od3.orderCTime = DateTime.Now;
+            od3.oderATime = DateTime.Now;
+            od3.orderStatus = -1;
+            if (od1.orderStatus != 0) od3.oderATime = DateTime.Now;
+            listOrd.Add(od3);
         }
     }
 }

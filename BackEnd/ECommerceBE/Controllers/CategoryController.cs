@@ -8,11 +8,6 @@ namespace ECommerceBE.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        public CategoryController()
-        {
-
-        }
-
         //GET: api/Category
         [HttpGet]
         public BaseRespone GetListCate()
