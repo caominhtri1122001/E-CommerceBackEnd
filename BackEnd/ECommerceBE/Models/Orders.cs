@@ -26,4 +26,14 @@ namespace ECommerceBE.Models
         public string orderStatus { get; set; }
         public string oderATime { get; set; }
     }
+
+    public class OrdersFormAdmin
+    {
+        public int orderID { get; set; }
+        public string proName { get; set; }
+        public int proNum { get; set; }
+        public string userName { get; set; }
+        public string userPhone { get; set; }
+        public string userAddress { get; set; }
+    }
 }

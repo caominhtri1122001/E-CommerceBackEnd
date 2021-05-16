@@ -65,6 +65,50 @@ namespace ECommerceBE.Controllers
             //return FakeCSDL.Instance.listUser;
         }
 
+        [HttpPut("KhoaUser")]
+        public BaseRespone KhoaUser(int id)
+        {
+            var res = new BaseRespone(false, null);
+            foreach (Users i in FakeCSDL.Instance.listUser)
+            {
+                if (i.userID == id)
+                {
+                    if (i.isAdmin == false && i.userStatus != -1)
+                    {
+                        i.userStatus = -1;
+                        res.Success = true;
+                    }
+                }    
+            }
+            return res;
+        }
+
+        [HttpGet("userInfo")]
+        public BaseRespone GetListUserInfo()
+        {
+            var res = new BaseRespone(false, null);
+            List<UsersInFo> data = new List<UsersInFo>();
+            foreach (Users i in FakeCSDL.Instance.listUser)
+            {
+                UsersInFo ui = new UsersInFo();
+                ui.userID = i.userID;
+                ui.userAccName = i.userAccName;
+                ui.userName = i.userName;
+                ui.userPhone = i.userPhone;
+                ui.userAddress = i.userAddress;
+                if (i.isAdmin == true) ui.userStatus = "Admin";
+                else
+                {
+                    if (i.userStatus == -1) ui.userStatus = "Bị khóa";
+                    else ui.userStatus = "Bình thường";
+                }
+                data.Add(ui);
+            }
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
         //GET: api/Users/{id}
         [HttpGet("{userID}")]
         public BaseRespone GetUser(int userID)

@@ -21,6 +21,16 @@ namespace ECommerceBE.Controllers
             return p;
         }
 
+        private Users getInfoU(int id)
+        {
+            Users p = new Users();
+            foreach (Users i in FakeCSDL.Instance.listUser)
+            {
+                if (i.userID == id) p = i;
+            }
+            return p;
+        }
+
         //GET: api/Category
         [HttpGet("GetListOrdersByUID")]
         public BaseRespone GetListCate(int userID)
@@ -44,6 +54,32 @@ namespace ECommerceBE.Controllers
                     if (i.orderStatus != 0)
                         o.oderATime = i.oderATime.ToString("HH:mm:ss dd/MM/yyyy");
                     else o.oderATime = "";
+                    data.Add(o);
+                }
+            }
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
+        [HttpGet("GetListOrders")]
+        public BaseRespone GetList()
+        {
+            var res = new BaseRespone(false, null);
+            List<OrdersFormAdmin> data = new List<OrdersFormAdmin>();
+            foreach (Orders i in FakeCSDL.Instance.listOrd)
+            {
+                if (i.orderStatus == 0)
+                {
+                    OrdersFormAdmin o = new OrdersFormAdmin();
+                    Products p = getInfoP(i.proID);
+                    Users u = getInfoU(i.userID);
+                    o.orderID = i.orderID;
+                    o.proName = p.proName;
+                    o.proNum = i.proNum;
+                    o.userName = u.userName;
+                    o.userPhone = u.userPhone;
+                    o.userAddress = u.userAddress;
                     data.Add(o);
                 }
             }

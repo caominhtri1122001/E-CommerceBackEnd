@@ -45,6 +45,8 @@ namespace ECommerceBE
             u1.userPass = "1";
             u1.userPhone = "0349319314";
             u1.isAdmin = true;
+            u1.userAddress = "Huế";
+            u1.userStatus = 0;
             u1.urlAvatar = "https://thuthuatnhanh.com/wp-content/uploads/2019/04/anh-cute-buon.jpg";
             listUser.Add(u1);
 
@@ -53,8 +55,10 @@ namespace ECommerceBE
             u2.userName = "Truong Thi My Duyen";
             u2.userAccName = "truongthimyduyen";
             u2.userPass = "1";
-            u2.userPhone = "000";
+            u2.userPhone = "0799634056";
             u2.isAdmin = true;
+            u2.userAddress = "62 Ngô Sĩ Liên, phường Hòa Khánh, Liên Chiểu, Đà Nẵng";
+            u2.userStatus = 0;
             u2.urlAvatar = "https://i.pinimg.com/originals/f3/0a/04/f30a04f09d78d6b0dfdf0bf0255c5487.jpg";
             listUser.Add(u2);
 
@@ -65,6 +69,8 @@ namespace ECommerceBE
             u3.userPass = "1";
             u3.userPhone = "000";
             u3.isAdmin = false;
+            u3.userAddress = "Duy Xuyên, Quảng Nam";
+            u3.userStatus = 0;
             u3.urlAvatar = "https://anhdephd.com/wp-content/uploads/2019/07/hinh-anh-avatar-chibi-cute-de-thuong-dep-nhat-cho-facebook-15-560x560.jpg";
             listUser.Add(u3);
 
@@ -75,6 +81,8 @@ namespace ECommerceBE
             u4.userPass = "1";
             u4.userPhone = "000";
             u4.isAdmin = false;
+            u4.userStatus = -1;
+            u4.userAddress = "số xx tổ xx thôn XXXXX, thị trấn Nam Phước, huyện Duy Xuyên, tỉnh Quảng Nam";
             u4.urlAvatar = "https://taoanhonline.com/wp-content/uploads/2019/08/hinh-anh-avatar-0.jpg";
             listUser.Add(u4);
 
@@ -338,6 +346,17 @@ namespace ECommerceBE
             od3.orderStatus = -1;
             if (od1.orderStatus != 0) od3.oderATime = DateTime.Now;
             listOrd.Add(od3);
+
+            Orders od4 = new Orders();
+            od4.orderID = 4;
+            od4.proID = 12;
+            od4.userID = 4;
+            od4.proNum = 5;
+            od4.orderCTime = DateTime.Now;
+            od4.oderATime = DateTime.Now;
+            od4.orderStatus = 0;
+            if (od1.orderStatus != 0) od3.oderATime = DateTime.Now;
+            listOrd.Add(od4);
         }
     }
 }
