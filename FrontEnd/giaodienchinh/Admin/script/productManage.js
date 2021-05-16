@@ -5,9 +5,22 @@ var login = document.getElementById("logInOut");
 var catagory = document.getElementById("catogory");
 var promotion = document.getElementById("promotion");
 var idsanpham = 0;
+
 var productIMG=document.getElementById("input-image")
 
-login.style.display = "none"
+
+$('#orderManage' ).click(function() {
+    window.location.href = "../src/orderAdmin.html" 
+});
+
+$( '#proManage' ).click(function() {
+    window.location.href = "../src/productManage.html.html" 
+});
+
+$( '#userManage' ).click(function() {
+    window.location.href = "../src/userManage.html" 
+});
+
 
 function requestDataListProduct(url) {
     $.ajax({
@@ -28,7 +41,6 @@ function requestDataListProduct(url) {
         }
     });
 }
-
 var goToPage = function (id) {
     window.location.href = "/detailtest.html?productId=" + id;
 }
@@ -144,12 +156,12 @@ $(document).ready(function () {
 
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        idsanpham = 0
-    }
-}
+// window.onclick = function (event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//         idsanpham = 0
+//     }
+// }
 
 // lấy dữ liệu trên form
 //cua vu duong
