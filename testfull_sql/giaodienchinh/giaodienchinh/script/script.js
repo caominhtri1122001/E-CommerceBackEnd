@@ -179,7 +179,7 @@ function checkLogin() {
             username.innerText = usevalid.userName
             userIMG.src = usevalid.userLinkAvatar
             // Nếu là admin thì hiển thị giao diện admin 
-            if (usevalid.isAdmin) adminEdit.style.display = "block"
+            //if (usevalid.isAdmin) adminEdit.style.display = "block"
             // Dùng local để lưu người đã đăng nhập
             var listnguoidung = []
             var nguoidung = {
