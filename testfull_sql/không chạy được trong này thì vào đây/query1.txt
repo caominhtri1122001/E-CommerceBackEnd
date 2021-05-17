@@ -1,0 +1,65 @@
+create table Categories
+(
+	catID			int identity(1,1) primary key,
+	catName			nvarchar(30)
+)
+
+create table Products
+(
+	proID			int identity(1,1) primary key,
+	proName			nvarchar(40),
+	proBrand		nvarchar(20),
+	proOrigin		nvarchar(30),
+	proOldPrice		int,
+	proPrice		int,
+	proDescription	ntext,
+	proStatus		int default 0,
+	catID			int foreign key (catID) references Categories,
+	proLinkPicture	ntext,
+	proLinkPicture1	ntext,
+	proLinkPicture2	ntext,
+	proLinkPicture3	ntext,
+	proNOS			int default 0,
+)
+
+
+create table Users
+(
+	userID			int identity(1,1) primary key,
+	userName		nvarchar(30),
+	userAccName		varchar(30),
+	userPass		varchar(30),
+	userPhone		varchar(15),
+	userAddress		nvarchar(100),
+	userStatus		int default 0,
+	isAdmin			bit,
+	userLinkAvatar	ntext,
+)
+
+
+create table Orders
+(
+	orderID			int identity(1,1) primary key,
+	proID			int foreign key (proID) references Products,
+	userID			int foreign key (userID) references Users,
+	proNum			int,
+	orderCTime		datetime default getdate(),
+	orderStatus		int default 0,
+	oderATime		datetime default null,
+)
+
+insert Categories values (N'Quần áo thể thao'), (N'Giày thể thao'), (N'Phụ kiện thể thao'), (N'Bóng')
+
+
+insert into Products (proName, proBrand, proOrigin, proOldPrice, proPrice, proDescription, catID, proLinkPicture, proLinkPicture1, proLinkPicture2, proLinkPicture3) 
+values (N'Giày a', N'ABC', N'Việt Nam', 20, 15, N'Siêu xịn', 2, N'', N'', N'', N'')
+update Products set proName = N'tên đã đổi', proBrand = N'B đã đổi', proOrigin = N'PO đã đổi', proOldPrice = 123,
+	proPrice = 456, proDescription = N'Miêu tả đã đổi', catID = 1, proLinkPicture = N'link',
+	proLinkPicture1 = N'Link1', proLinkPicture2 = N'l2', proLinkPicture3 = N'l3' where proID = 1
+
+insert into Users (userName, userAccName, userPass, userPhone, userAddress, isAdmin, userLinkAvatar)
+values (N'Dương Trường Vũ', 'duongtruongvu', '1', '123456789', N'Quảng Nam', 0, N'')
+
+
+insert into Orders (proID, userID, proNum)
+values (1, 1, 1)

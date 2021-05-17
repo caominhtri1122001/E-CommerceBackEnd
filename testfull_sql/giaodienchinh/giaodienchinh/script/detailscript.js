@@ -332,7 +332,7 @@ function giamsl() {
 }
 
 function tangsl() {
-    if (isInt(soluongg.value)) {
+    if (isInt(soluongg.value) && soluongg.value >= 1) {
         soluongg.value++;
     } else {
         soluongg.value = 1;
@@ -340,26 +340,23 @@ function tangsl() {
 }
 
 function MuaNgay() {
-    if (isInt(soluongg.value)) {
+    if (isInt(soluongg.value) && soluongg.value > 0) {
         if (listdata.length != 0){
             var url = new URL(window.location.href)
             let productId = url.searchParams.get("productId");
-            //requestDatDon("http://localhost:37504/api/Orders/DatDon?", productId, listdata[0].id, soluongg.value)
+            requestDatDon("http://localhost:37504/api/Orders/DatDon?pid=" + productId + "&uid=" + listdata[0].id + "&s=" + soluongg.value)
             alert ("đã đặt đơn hàng với id = " + productId + "và số lượng là " + soluongg.value + "trên userID: " + listdata[0].id)
-        } else alert("chưa có uid")
+        } else alert("Hãy đăng nhập trước")
     } else {
         alert("Số lượng lỗi, hãy thử lại!")
+        soluongg.value = 1;
     }
 }
 
-function requestDatDon(url, pid, uid, pNum) {
+function requestDatDon(url) {
     $.ajax({
         url: url,
-        data:{
-            "proID": pid,
-            "userID": uid,
-            "proNum": pNum,
-        },
+        data: null,
         cache: false,
         type: "POST",
         success: function (response) {

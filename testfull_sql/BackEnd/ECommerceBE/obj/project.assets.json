@@ -7362,11 +7362,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\duong\\Desktop\\E-CommerceBackEnd\\testfull\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+      "projectUniqueName": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\testfull_sql\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
       "projectName": "ECommerceBE",
-      "projectPath": "C:\\Users\\duong\\Desktop\\E-CommerceBackEnd\\testfull\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+      "projectPath": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\testfull_sql\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
       "packagesPath": "C:\\Users\\duong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\duong\\Desktop\\E-CommerceBackEnd\\testfull\\BackEnd\\ECommerceBE\\obj\\",
+      "outputPath": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\testfull_sql\\BackEnd\\ECommerceBE\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\duong\\AppData\\Roaming\\NuGet\\NuGet.Config",

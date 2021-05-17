@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hRVXVeD/q4X4t5DLCnHyqjYY5p/s2naybv7f6JFQK/3fK4Hgu/J6zKXhhPw88JiHc6bT3XDLPWYFyw9Xcritng==",
+  "dgSpecHash": "mzTgOSv4Aov4bujq5ySEMIMUOodyIp6TihdsV2Mu58qNp1SIIQWhgC0YJ28kL5Y/PGDhlHBveSS4c0Rn+gUobQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\duong\\Desktop\\E-CommerceBackEnd\\testfull\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
+  "projectFilePath": "C:\\Users\\duong\\Documents\\E-CommerceBackEnd\\testfull_sql\\BackEnd\\ECommerceBE\\ECommerceBE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\duong\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\duong\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
