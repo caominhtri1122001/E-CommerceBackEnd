@@ -90,6 +90,34 @@ namespace ECommerceBE.Controllers
         }
 
 
+        [HttpGet("LayListThongTinUsers")]
+        public BaseRespone GetListUserInfo()
+        {
+            var res = new BaseRespone(false, null);
+            QuanLyDuLieu dulieu = new QuanLyDuLieu();
+            List<UsersInFo> data = new List<UsersInFo>();
+            foreach (Users i in dulieu.LayListNguoiDung())
+            {
+                UsersInFo ui = new UsersInFo();
+                ui.userID = i.userID;
+                ui.userAccName = i.userAccName;
+                ui.userName = i.userName;
+                ui.userPhone = i.userPhone;
+                ui.userAddress = i.userAddress;
+                if (i.isAdmin == true) ui.userStatus = "Admin";
+                else
+                {
+                    if (i.userStatus == -1) ui.userStatus = "Bị khóa";
+                    else ui.userStatus = "Bình thường";
+                }
+                data.Add(ui);
+            }
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
+
         //PUT: api/Users/{id}
         [HttpPut("SuaThongTinUser")]
         public BaseRespone Sua(int userID, string userName, string userPass, string userPhone, string userAddress)

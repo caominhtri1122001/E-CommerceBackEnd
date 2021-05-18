@@ -65,7 +65,7 @@ var loadData = function (ods) {
 }
 
 function HuyDonHang(id) {
-    requestCancelOrdersByID("http://localhost:37504/api/Orders/CancelOrder?orID=" + id)
+    requestCancelOrdersByID("http://localhost:37504/api/Orders/HuyDonHang?orID=" + id)
 }
 
 function requestCancelOrdersByID(url) {
@@ -73,7 +73,7 @@ function requestCancelOrdersByID(url) {
         url: url,
         data: null,
         cache: false,
-        type: "PUT",
+        type: "DELETE",
         success: function (response) {
             if (response.success) {
                 console.log("chạy được")

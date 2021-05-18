@@ -17,4 +17,14 @@ namespace ECommerceBE.Models
         public bool isAdmin { get; set; }
         public string userLinkAvatar { get; set; }
     }
+
+    public class UsersInFo
+    {
+        public int userID { get; set; }
+        public string userName { get; set; }
+        public string userAccName { get; set; }
+        public string userStatus { get; set; }
+        public string userPhone { get; set; }
+        public string userAddress { get; set; }
+    }
 }

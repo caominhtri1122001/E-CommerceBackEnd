@@ -54,6 +54,14 @@ namespace ECommerceBE.Controllers
             DBHelper.Instance.ExcuteDB(query);
         }
 
+        public void SuaSanPhamKhongHinh(Products p)
+        {
+            string query = "update Products set proName = N'" + p.proName + "', proBrand = N'" + p.proBrand +
+                "', proOrigin = N'" + p.proOrigin + "', proOldPrice = " + p.proOldPrice + ", proPrice = " + p.proPrice +
+                ", proDescription = N'" + p.proDescription + "', catID = " + p.catID +  " where proID = " + p.proID;
+            DBHelper.Instance.ExcuteDB(query);
+        }
+
         public void ThemSanPham(Products p)
         {
             string query = "insert into Products(proName, proBrand, proOrigin, proOldPrice, proPrice, proDescription," +

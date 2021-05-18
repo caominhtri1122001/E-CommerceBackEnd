@@ -194,6 +194,7 @@ function checkLogin() {
             }
             listnguoidung.push(nguoidung)
             localStorage.setItem("data", JSON.stringify(listnguoidung))
+            location.reload()
         }
     } else alert("sai thông tin tài khoản hoặc mật khẩu")
 }
@@ -224,6 +225,7 @@ function sortCaoDenThap() {
 // Thực hiện hàm logOut sau khi người dùng đăng xuất thì local Storage sẽ xóa dữ liệu của người dùng 
 function logOut() {
     localStorage.clear();
+    location.reload()
 }
 //neu trong local co du lieu thi hien 
 
@@ -249,29 +251,24 @@ function shownguoidung() {
 function Regis() {
     modal.style.display = "none";
     if (mk.value == mk2.value) {
-        requestRegisAcc("http://localhost:37504/api/Users/DangKy?", tk.value, mk.value, sdt.value, dc.value, hvt.value)
-        location.reload()
+        requestRegisAcc("http://localhost:37504/api/Users/DangKy?taikhoan=" + tk.value + "&matkhau=" + mk.value + "&hvt=" + hvt.value +
+                        "&sdt=" + sdt.value + "&dc=" + dc.value)
     } else {
         alert("Mật khẩu xác nhận không khớp")
     }
 }
 
 // gửi yêu cầu đăng ký
-function requestRegisAcc(url, tk, mk, sdt, dc, hvt) {
+function requestRegisAcc(url) {
     $.ajax({
         url: url,
-        data: {
-            "taikhoan": tk,
-            "matkhau": mk,
-            "hvt": hvt,
-            "sdt": sdt,
-            "dc": dc
-        },
+        data: null,
         cache: false,
-        type: "GET",
+        type: "POST",
         success: function (response) {
             if (response.success) {
                 alert("Đăng ký thành công!")
+                location.reload()
             }
             else {
                 alert("Đăng ký thất bại, tài khoản đã tồn tại hoặc dữ liệu điền vào không hợp lệ!")

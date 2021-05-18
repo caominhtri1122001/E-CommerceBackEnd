@@ -198,7 +198,8 @@ namespace ECommerceBE.Controllers
             newP.proLinkPicture1 = proLinkPicture1;
             newP.proLinkPicture2 = proLinkPicture2;
             newP.proLinkPicture3 = proLinkPicture3;
-            dulieu.SuaSanPham(newP);
+            dulieu.SuaSanPhamKhongHinh(newP);
+            //dulieu.SuaSanPham(newP);
             res.Success = true;
             return res;
         }
