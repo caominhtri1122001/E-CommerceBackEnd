@@ -163,11 +163,26 @@ namespace ECommerceBE.Controllers
             DBHelper.Instance.ExcuteDB(query);
         }
 
+        public Orders LayDonHangBangID(int id)
+        {
+            string q = "Select * from Orders where orderID = " + id;
+            List<Orders> data = new List<Orders>();
+            foreach (DataRow i in DBHelper.Instance.GetRecords(q).Rows)
+            {
+                data.Add(LayDonHang(i));
+            }
+            return data[0];
+        }
+
         public void HuyDonHang(int id)
         {
+            int sl = LayDonHangBangID(id).proNum;
+            int pid = LayDonHangBangID(id).proID;
             string query = "update Orders set orderStatus = -1, oderATime = '" + DateTime.Now.ToString() +
                 "' where orderID = " + id;
+            string queryy = "update Products set proNOS = proNOS - " + sl + " where proID = " + pid;
             DBHelper.Instance.ExcuteDB(query);
+            DBHelper.Instance.ExcuteDB(queryy);
         }
 
         public void XacNhanDon(int id)

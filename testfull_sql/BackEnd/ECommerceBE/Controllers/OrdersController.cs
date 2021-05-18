@@ -64,6 +64,7 @@ namespace ECommerceBE.Controllers
                     data.Add(o);
                 }
             }
+            data.Reverse();
             res.Data = data;
             res.Success = true;
             return res;
