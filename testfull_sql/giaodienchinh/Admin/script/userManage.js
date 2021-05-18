@@ -74,7 +74,7 @@ function LSMH() {
 }
 
 function KhoaTaiKhoan(id) {
-    requestLockUsersByID("http://localhost:37504/api/Users/KhoaUser?id=" + id)
+    requestLockUsersByID("http://localhost:37504/api/Users/KhoaTaiKhoan?userID=" + id)
 }
 
 function requestLockUsersByID(url) {
@@ -82,7 +82,7 @@ function requestLockUsersByID(url) {
         url: url,
         data: null,
         cache: false,
-        type: "PUT",
+        type: "DELETE",
         success: function (response) {
             if (response.success) {
                 alert("Khóa tài khoản thành công!")
