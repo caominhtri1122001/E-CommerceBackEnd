@@ -17,7 +17,7 @@ namespace ECommerceBE.Controllers
             List<Products> data = new List<Products>();
             foreach (Products i in dulieu.LayListSanPham())
             {
-                data.Add(i);
+                if (i.proStatus != -1) data.Add(i);
             }
             data.Reverse();
             if (data.Count != 0)
@@ -36,16 +36,19 @@ namespace ECommerceBE.Controllers
             QuanLyDuLieu dulieu = new QuanLyDuLieu();
             foreach (Products i in dulieu.LayListSanPham())
             {
-                ProductsManage pm = new ProductsManage();
-                pm.proID = i.proID;
-                pm.proName = i.proName;
-                pm.proLinkPicture = i.proLinkPicture;
-                if (i.catID == 1) pm.category = "Áo quần";
-                if (i.catID == 2) pm.category = "Giày";
-                if (i.catID == 3) pm.category = "Phụ kiện";
-                if (i.catID == 4) pm.category = "Bóng";
-                pm.proNOS = i.proNOS;
-                data.Add(pm);
+                if (i.proStatus != -1)
+                {
+                    ProductsManage pm = new ProductsManage();
+                    pm.proID = i.proID;
+                    pm.proName = i.proName;
+                    pm.proLinkPicture = i.proLinkPicture;
+                    if (i.catID == 1) pm.category = "Áo quần";
+                    if (i.catID == 2) pm.category = "Giày";
+                    if (i.catID == 3) pm.category = "Phụ kiện";
+                    if (i.catID == 4) pm.category = "Bóng";
+                    pm.proNOS = i.proNOS;
+                    data.Add(pm);
+                }
             }
             if (data.Count != 0)
             {
@@ -81,14 +84,17 @@ namespace ECommerceBE.Controllers
             {
                 foreach (Products i in dulieu.LayListSanPham())
                 {
-                    data.Add(i);
+                    if (i.proStatus != -1)
+                    {
+                        data.Add(i);
+                    }
                 }
             }
             else
             {
                 foreach (Products i in dulieu.LayListSanPham())
                 {
-                    if (i.catID == IDCat)
+                    if (i.catID == IDCat && i.proStatus != -1)
                     {
                         data.Add(i);
                     }

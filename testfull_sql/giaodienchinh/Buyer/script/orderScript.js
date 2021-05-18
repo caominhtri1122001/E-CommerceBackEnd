@@ -1,6 +1,5 @@
-
-//login.style.display = "none"
-var UID = 1;
+let listdata = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
+var UID = listdata[0].id;
 
 
 

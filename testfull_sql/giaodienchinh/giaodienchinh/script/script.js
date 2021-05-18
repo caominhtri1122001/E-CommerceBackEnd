@@ -95,6 +95,7 @@ var loadData = function (proudcts) {
 }
 $(document).ready(function () {
     console.log("ready!");
+    localStorage.setItem("cate", 0)
     requestDataAjax("http://localhost:37504/api/Product");
     requestDataUser("http://localhost:37504/api/Users/LayListUser");
 });
@@ -206,25 +207,25 @@ function sortDefault() {
 }
 function sortBanChay() {
     $("#product-list-row").empty();
-    requestDataAjax("http://localhost:37504/api/Product/GetSort3ListProductByIDCat?catID=0");
+    requestDataAjax("http://localhost:37504/api/Product/GetSort3ListProductByIDCat?catID=" + localStorage.cate);
     console.log("sort bán chạy")
 }
 
 function sortThapdenCao() {
     $("#product-list-row").empty();
-    requestDataAjax("http://localhost:37504/api/Product/GetSort1ListProductByIDCat?catID=0");
+    requestDataAjax("http://localhost:37504/api/Product/GetSort1ListProductByIDCat?catID=" + localStorage.cate);
     console.log("sort thấp đến cao")
 }
 
 function sortCaoDenThap() {
     $("#product-list-row").empty();
-    requestDataAjax("http://localhost:37504/api/Product/GetSort2ListProductByIDCat?catID=0");
+    requestDataAjax("http://localhost:37504/api/Product/GetSort2ListProductByIDCat?catID=" + localStorage.cate);
     console.log("sort cao đến thấp")
 }
 
 // Thực hiện hàm logOut sau khi người dùng đăng xuất thì local Storage sẽ xóa dữ liệu của người dùng 
 function logOut() {
-    localStorage.clear();
+    localStorage.removeItem("data");
     location.reload()
 }
 //neu trong local co du lieu thi hien 
@@ -278,4 +279,34 @@ function requestRegisAcc(url) {
 
         }
     });
+}
+
+function cate0() {
+    localStorage.cate = 0;
+    $("#product-list-row").empty();
+    requestDataAjax("http://localhost:37504/api/Product");
+}
+
+function cate1() {
+    localStorage.cate = 1;
+    $("#product-list-row").empty();
+    requestDataAjax("http://localhost:37504/api/Product/GetListProductByIDCat?catID=1");
+}
+
+function cate2() {
+    localStorage.cate = 2;
+    $("#product-list-row").empty();
+    requestDataAjax("http://localhost:37504/api/Product/GetListProductByIDCat?catID=2");
+}
+
+function cate3() {
+    localStorage.cate = 3;
+    $("#product-list-row").empty();
+    requestDataAjax("http://localhost:37504/api/Product/GetListProductByIDCat?catID=3");
+}
+
+function cate4() {
+    localStorage.cate = 4;
+    $("#product-list-row").empty();
+    requestDataAjax("http://localhost:37504/api/Product/GetListProductByIDCat?catID=4");
 }

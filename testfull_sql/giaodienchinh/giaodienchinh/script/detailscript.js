@@ -196,7 +196,7 @@ function shownguoidung() {
 }
 //Nếu nhấn logout thì data sẽ xóa dữ liệu 
 function logOut() {
-    localStorage.clear();
+    localStorage.removeItem("data");
     location.reload()
 }
 // Sau khi bam dang ky , dang nhap 
