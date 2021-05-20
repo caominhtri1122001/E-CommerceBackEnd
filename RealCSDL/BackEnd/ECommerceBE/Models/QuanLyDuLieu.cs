@@ -114,9 +114,14 @@ namespace ECommerceBE.Controllers
 
         public void SuaThongTinTaiKhoan(Users u)
         {
-            string query = "update Users set userName = N'" + u.userName + "', userPass = '" + u.userPass + 
-                "', userPhone ='" + u.userPhone + "', userAddress = '" + u.userAddress + "', userLinkAvatar = '" +
-                u.userLinkAvatar + "' where userID = " + u.userID;
+            string query = "update Users set userName = N'" + u.userName + "', userPhone ='" + u.userPhone + 
+                "', userAddress = N'" + u.userAddress + "' where userID = " + u.userID;
+            DBHelper.Instance.ExcuteDB(query);
+        }
+
+        public void DoiMatKhau(Users u)
+        {
+            string query = "update Users set userPass = '" + u.userPass + "' where userID = " + u.userID;
             DBHelper.Instance.ExcuteDB(query);
         }
 

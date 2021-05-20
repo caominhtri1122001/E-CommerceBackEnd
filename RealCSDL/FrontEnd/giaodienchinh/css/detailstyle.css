@@ -1758,7 +1758,7 @@ a {
     align-items: center;
 }
 /* Modal de hien form dang ky dang nhap */
-.modal, .modal2 {
+.modal, .modal2, .modal3 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */

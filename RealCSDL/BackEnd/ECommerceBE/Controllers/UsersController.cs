@@ -31,7 +31,7 @@ namespace ECommerceBE.Controllers
         }
 
         [HttpPost("DangKy")]
-        public BaseRespone DangKy(string taikhoan, string matkhau, string hvt, string sdt, string dc,string avartarURL)
+        public BaseRespone DangKy(string taikhoan, string matkhau, string hvt, string sdt, string dc)
         {
             var res = new BaseRespone(false, false);
             QuanLyDuLieu dulieu = new QuanLyDuLieu();
@@ -44,7 +44,7 @@ namespace ECommerceBE.Controllers
                 temp.userPhone = sdt;
                 temp.userAddress = dc;
                 temp.isAdmin = false;
-                temp.userLinkAvatar = avartarURL;
+                temp.userLinkAvatar = "https://lazi.vn/uploads/users/avatar/1586010042_0ac3294600fdbbace1702b5b9c7ce1dc.jpg";
                 res.Success = true;
                 dulieu.DangKyTaiKhoan(temp);
                 res.Success = true;
@@ -120,20 +120,44 @@ namespace ECommerceBE.Controllers
 
         //PUT: api/Users/{id}
         [HttpPut("SuaThongTinUser")]
-        public BaseRespone Sua(int userID, string userName, string userPass, string userPhone, string userAddress)
+        public BaseRespone Sua(int userID, string userName, string userPhone, string userAddress)
         {
             QuanLyDuLieu dulieu = new QuanLyDuLieu();
             var res = new BaseRespone(false, null);
             Users temp = new Users();
             temp.userID = userID;
             temp.userName = userName;
-            temp.userPass = userPass;
             temp.userPhone = userPhone;
             temp.userAddress = userAddress;
             temp.userLinkAvatar = "https://lazi.vn/uploads/users/avatar/1586010042_0ac3294600fdbbace1702b5b9c7ce1dc.jpg";
-            res.Success = true;
             dulieu.SuaThongTinTaiKhoan(temp);
             res.Success = true;
+            return res;
+        }
+
+        private bool CheckMK(string matkhau)
+        {
+            for (int i = 0; i < matkhau.Length; i++)
+            {
+                if ((matkhau[i] < 48 || matkhau[i] > 57) && (matkhau[i] < 65 || matkhau[i] > 90)
+                    && (matkhau[i] < 97 || matkhau[i] > 122)) return false;
+            }
+            return true;
+        }
+
+        [HttpPut("DoiMatKhau")]
+        public BaseRespone DoiMK(int userID, string userPass)
+        {
+            var res = new BaseRespone(false, null);
+            if (CheckMK(userPass))
+            {
+                QuanLyDuLieu dulieu = new QuanLyDuLieu();
+                Users temp = new Users();
+                temp.userID = userID;
+                temp.userPass = userPass;
+                dulieu.DoiMatKhau(temp);
+                res.Success = true;
+            }
             return res;
         }
 

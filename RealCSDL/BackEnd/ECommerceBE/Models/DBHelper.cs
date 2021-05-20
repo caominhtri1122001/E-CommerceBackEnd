@@ -18,7 +18,7 @@ namespace ECommerceBE.Controllers
             {
                 if (_Instance == null)
                 {
-                    string cnnstr = @"Data Source=DESKTOP-D9VU28Q\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
+                    string cnnstr = @"Data Source=DESKTOP-P6C180P\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
                     _Instance = new DBHelper(cnnstr);
                 }
                 return _Instance;

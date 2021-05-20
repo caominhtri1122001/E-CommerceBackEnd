@@ -5,6 +5,8 @@ let userIMG = document.getElementById("userIMG")
 var adminEdit = document.getElementById("adminEdit")
 var modal = document.getElementById("myModal");
 var modal2 = document.getElementById("myModal2")
+var modal3 = document.getElementById("myModal3")
+var modal4 = document.getElementById("myModal4")
 let emailLogin = document.getElementById("emailLogin")
 var login = document.getElementById("logInOut")
 var user = document.getElementById("useraccount")
@@ -21,6 +23,7 @@ function openRegister() {
     modal.style.display = "block";
 }
 function openLogInOut() {
+    requestDataUser("http://localhost:37504/api/Users/LayListUser");
     modal2.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal
@@ -30,9 +33,11 @@ span.onclick = function () {
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target == modal || event.target == modal2) {
+    if (event.target == modal || event.target == modal2 || event.target == modal3 || event.target == modal4) {
         modal.style.display = "none";
         modal2.style.display = "none";
+        modal3.style.display = "none";
+        modal4.style.display = "none";
     }
 }
 //ket thuc dang xuat dang nhap hien form
@@ -174,8 +179,7 @@ $(document).ready(function () {
     var url = new URL(window.location.href)
     let productId = url.searchParams.get("productId");
     requestDataDetail("http://localhost:37504/api/Product/GetProductByID?proID=" + productId);
-    requestDataUser("http://localhost:37504/api/Users/LayListUser");
-
+    //requestDataUser("http://localhost:37504/api/Users/LayListUser");
 });
 
 console.log("gio se check xem co ai dang nhap chua ")
@@ -368,4 +372,72 @@ function requestDatDon(url) {
         error: function (xhr) {
         }
     });
+}
+
+function DoiThongTinNguoiDung() {
+    modal3.style.display = "block"
+    hvtm.value = listdata[0].name
+    dcm.value = listdata[0].address
+    sdtm.value = listdata[0].phone
+}
+
+function XacNhanDoiThongTin() {
+    if (mkht.value == listdata[0].pass) {
+        urlquery = "http://localhost:37504/api/Users/SuaThongTinUser?userID=" + listdata[0].id + "&userName=" + hvtm.value +
+            "&userPhone=" + sdtm.value + "&userAddress=" + dcm.value;
+        $.ajax({
+            url: urlquery,
+            data: null,
+            cache: false,
+            type: "PUT",
+            success: function (response) {
+                if (response.success) {
+                    alert("Đổi thông tin tài khoản thành công, vui lòng đăng nhập lại!!!")
+                    logOut()
+                }
+                else {
+                    alert("Lỗi! Vui lòng thử lại sau!")
+                }
+            },
+            error: function (xhr) {
+
+            }
+        });
+    } else {
+        alert("Mật khẩu nhập vào không chính xác!!! Hãy thử lại!")
+    }
+}
+
+function DoiMatKhauNguoiDung() {
+    modal4.style.display = "block"
+}
+
+function XacNhanDoiMatKhau() {
+    if (passcu.value == listdata[0].pass) {
+        if (passmoi1.value == passmoi2.value) {
+            urlquery = "http://localhost:37504/api/Users/DoiMatKhau?userID=" + listdata[0].id + "&userPass=" + passmoi1.value;
+            $.ajax({
+                url: urlquery,
+                data: null,
+                cache: false,
+                type: "PUT",
+                success: function (response) {
+                    if (response.success) {
+                        alert("Đổi mật khẩu thành công, vui lòng đăng nhập lại!!!")
+                        logOut()
+                    }
+                    else {
+                        alert("Định dạng mật khẩu mới sai! Chỉ dùng các ký tự a-z, A-Z, 0-9")
+                    }
+                },
+                error: function (xhr) {
+
+                }
+            });
+        } else {
+            alert("Xác thực mật khẩu mới thất bại!!! Hãy thử lại!")
+        }
+    } else {
+        alert("Mật khẩu cũ nhập vào không chính xác!!! Hãy thử lại!")
+    }
 }

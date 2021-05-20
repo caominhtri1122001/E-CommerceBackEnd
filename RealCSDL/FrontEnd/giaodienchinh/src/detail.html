@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail chinh</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap&subset=vietnamese"
-    rel="stylesheet">
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/detailstyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous"></script>
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
 
     <!-- them -->
-    
- <!-- <script>
+
+    <!-- <script>
         function requestDataDetail(url) {
             $.ajax({
                 url: url,
@@ -161,29 +168,31 @@
 </script>  -->
 
 </head>
+
 <body>
     <div class="web">
         <header class="header">
             <div class="grid">
-              
+
                 <nav class="header__navbar">
-                   
+
                     <ul class="header__navbar-list">
-                        
+
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
                             Vào cửa hàng trên ứng dụng DDVT
-                           
+
                             <div class="header__qr">
-                                <img src="https://cdn-www.vinid.net/2020/10/ae482776-qr-code-vinid.jpg" alt="QR_CODE" class="header__qr-img">
+                                <img src="https://cdn-www.vinid.net/2020/10/ae482776-qr-code-vinid.jpg" alt="QR_CODE"
+                                    class="header__qr-img">
                                 <div class="header__qr-apps">
                                     <a href="" class="header__qr-link">
-                                        <img src="https://www.tudiengia.com/wp-content/uploads/2019/04/Play-Store-Error-Code-910.jpg" alt="GG PLAY"
-                                            class="header__qr-dowload-img">
+                                        <img src="https://www.tudiengia.com/wp-content/uploads/2019/04/Play-Store-Error-Code-910.jpg"
+                                            alt="GG PLAY" class="header__qr-dowload-img">
                                         <span>GOOGLE PLAY</span>
                                     </a>
                                     <a href="" class="header__qr-link">
-                                        <img src="https://congnghenhat.com/wp-content/uploads/2019/09/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A1ch-chuy%E1%BB%83n-v%C3%B9ng-AppStore-t%E1%BB%AB-Nh%E1%BA%ADt-v%E1%BB%81-l%E1%BA%A1i-Vi%E1%BB%87t-Nam-cho-c%C3%A1c-thi%E1%BA%BFt-b%E1%BB%8B-iOS.jpg" alt="appstore"
-                                            class="header__qr-dowload-img">
+                                        <img src="https://congnghenhat.com/wp-content/uploads/2019/09/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A1ch-chuy%E1%BB%83n-v%C3%B9ng-AppStore-t%E1%BB%AB-Nh%E1%BA%ADt-v%E1%BB%81-l%E1%BA%A1i-Vi%E1%BB%87t-Nam-cho-c%C3%A1c-thi%E1%BA%BFt-b%E1%BB%8B-iOS.jpg"
+                                            alt="appstore" class="header__qr-dowload-img">
                                         <span>APPSTORE</span>
                                     </a>
                                 </div>
@@ -269,15 +278,16 @@
                         <!-- <li class="header__navbar-item header__navbar-item--bold header__navbar-item--separate">Đăng kí</li>
                         <li class="header__navbar-item header__navbar-item--bold">Đăng nhập</li>-->
                         <li class="header__navbar-item header__navbar-user" id="useraccount">
-                            <img id="userIMG" src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=X_j0p5fsR3MAX-BAEM8&_nc_ht=scontent-hkt1-1.xx&oh=7fd69fd3ff40f734ce7386de9039f44e&oe=60B8122A"
+                            <img id="userIMG"
+                                src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=X_j0p5fsR3MAX-BAEM8&_nc_ht=scontent-hkt1-1.xx&oh=7fd69fd3ff40f734ce7386de9039f44e&oe=60B8122A"
                                 alt="" class="header__navbar-user-img">
                             <span id="header__navbar-user-name">Trương Thị Mỹ Duyên</span>
                             <ul class="header__navbar-user-menu">
-                                <li class="header__navbar-user-item">
-                                    <a href="">Tài khoản của tôi</a>
+                                <li class="header__navbar-user-item" onclick="DoiThongTinNguoiDung()">
+                                    <a>Thay đổi thông tin</a>
                                 </li>
-                                <li class="header__navbar-user-item">
-                                    <a href="">Địa chỉ của tôi</a>
+                                <li class="header__navbar-user-item" onclick="DoiMatKhauNguoiDung()">
+                                    <a>Thay đổi mật khẩu</a>
                                 </li>
                                 <li class="header__navbar-user-item">
                                     <a href="../../Buyer/src/orderManage.html">Đơn mua</a>
@@ -292,9 +302,9 @@
                         </li>
                         <li id="logInOut">
                             <p id="register" onclick="openRegister()">Đăng Ký</p>
-                           
+
                             <p id="logIn" onclick="openLogInOut()">Đăng nhập</p>
-                           
+
                         </li>
                     </ul>
                 </nav>
@@ -303,7 +313,8 @@
                     <!-- vùng chứa logo -->
                     <div class="header__logo">
                         <a href="/" class="header__logo-link">
-                            <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/59163276_2020101838293857_3973786377429975040_n.png?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_ohc=lpMYw_FJqOkAX89Mn2w&_nc_ht=scontent.fsgn2-5.fna&oh=f583d1f9e6e446571fffee268abba362&oe=60A58220" alt="LOGO" >
+                            <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/59163276_2020101838293857_3973786377429975040_n.png?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_ohc=lpMYw_FJqOkAX89Mn2w&_nc_ht=scontent.fsgn2-5.fna&oh=f583d1f9e6e446571fffee268abba362&oe=60A58220"
+                                alt="LOGO">
                         </a>
                     </div>
 
@@ -678,347 +689,430 @@
                         </a>
                     </div> 
                     </div> -->
-                    
-            </div>
-                
-            </div>
-            <div class="products-combo">
-                <div class="products-combo-header">
-                    <div class="products-combo__title">
-                        <span class="products-combo__text">Combo khuyến mãi</span>
-                        <div class="products-combo__note">Mua 2 &amp; giảm 5%</div>
-                    </div>
 
-                    <a href="#" class="products-combo__see-more hide-on-mobile">
-                        <span>Xem thêm</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
+            </div>
+
+        </div>
+        <div class="products-combo">
+            <div class="products-combo-header">
+                <div class="products-combo__title">
+                    <span class="products-combo__text">Combo khuyến mãi</span>
+                    <div class="products-combo__note">Mua 2 &amp; giảm 5%</div>
                 </div>
 
-                <div class="products-combo-container">
-                    <div class="products-combo__cards"><div id="c-c-i-1" class="products-combo__card ">
-            <a href="/" class="products-combo__card-link">
-                <div class="products-combo__card-img-wrapper ">
-                    <img class="products-combo__card-img" src="https://cdn.shopify.com/s/files/1/0266/4841/2351/products/MCJM-CHCKN-100011-MF_1800x1800.png?v=1614028694">
-                </div>
-                <span class="products-combo__card-name">Áo thun tay ngắn cho người lớn gà Jolly Minecraft</span>
-            </a>
-            <div class="products-combo__card-wrapper">
-                <div class="shop-checkbox">
-                    <input class="shop-checkbox__input" type="checkbox">
-                    <div class="shop-checkbox__bgc"></div>
-                </div>
-                <div class="products-combo__card-price">
-                    <span class="products-combo__card-price-old hide-on-mobile">₫250.000</span>
-                    <span class="products-combo__card-price-new">₫150.000</span>
-                </div>
+                <a href="#" class="products-combo__see-more hide-on-mobile">
+                    <span>Xem thêm</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
             </div>
-        </div><div id="c-c-i-2" class="products-combo__card">
-            <a href="/" class="products-combo__card-link">
-                <div class="products-combo__card-img-wrapper">
-                    <img class="products-combo__card-img" src="https://cdn.shopify.com/s/files/1/0266/4841/2351/products/32281406691-1b_1800x1800.jpg?v=1611683885">
-                </div>
-                <span class="products-combo__card-name">Chăn đắp và lót giường Minecraft Dungeon</span>
-            </a>
-            <div class="products-combo__card-wrapper">
-                <div class="shop-checkbox">
-                    <input class="shop-checkbox__input" type="checkbox">
-                    <div class="shop-checkbox__bgc"></div>
-                </div>
-                <div class="products-combo__card-price">
-                    <span class="products-combo__card-price-old hide-on-mobile">₫140.000</span>
-                    <span class="products-combo__card-price-new">₫50.000</span>
-                </div>
-            </div>
-        </div><div id="c-c-i-3" class="products-combo__card ">
-            <a href="/" class="products-combo__card-link">
-                <div class="products-combo__card-img-wrapper">
-                    <img class="products-combo__card-img" src="https://cdn.shopify.com/s/files/1/0266/4841/2351/products/MCIC-TNT-100040-11oz-mug-Left-MF_1800x1800.png?v=1612793288">
-                </div>
-                <span class="products-combo__card-name">Ly gốm sứ bom TNT Minecraft</span>
-            </a>
-            <div class="products-combo__card-wrapper">
-                <div class="shop-checkbox">
-                    <input class="shop-checkbox__input" type="checkbox">
-                    <div class="shop-checkbox__bgc"></div>
-                </div>
-                <div class="products-combo__card-price">
-                    <span class="products-combo__card-price-old hide-on-mobile">₫329.000</span>
-                    <span class="products-combo__card-price-new">₫210.000</span>
-                </div>
-            </div>
-        </div><div id="c-c-i-4" class="products-combo__card">
-            <a href="/" class="products-combo__card-link">
-                <div class="products-combo__card-img-wrapper">
-                    <img class="products-combo__card-img" src="https://cdn.shopify.com/s/files/1/0266/4841/2351/products/MCIC-LOGO-100172-Black-MF_1800x1800.png?v=1612462143">
-                </div>
-                <span class="products-combo__card-name">Mũ in hình logo Minecraft được thêu bằng vải</span>
-            </a>
-            <div class="products-combo__card-wrapper">
-                <div class="shop-checkbox">
-                    <input class="shop-checkbox__input" type="checkbox">
-                    <div class="shop-checkbox__bgc"></div>
-                </div>
-                <div class="products-combo__card-price">
-                    <span class="products-combo__card-price-old hide-on-mobile">₫50.000</span>
-                    <span class="products-combo__card-price-new">₫19.000</span>
-                </div>
-            </div>
-        </div></div>
 
-                    <div class="products-combo__checkout hide-on-mobile">
-                        <div class="products-combo__checkout-wrapper">
-                            <div class="products-combo__checkout-total">
-                                <span class="products-combo__checkout-label">Tổng cộng</span>
-                                <span class="products-combo__checkout-total-old">₫0</span>
-                                <span class="products-combo__checkout-total-current">₫0</span>
+            <div class="products-combo-container">
+                <div class="products-combo__cards">
+                    <div id="c-c-i-1" class="products-combo__card ">
+                        <a href="/" class="products-combo__card-link">
+                            <div class="products-combo__card-img-wrapper ">
+                                <img class="products-combo__card-img"
+                                    src="https://cdn.shopify.com/s/files/1/0266/4841/2351/products/MCJM-CHCKN-100011-MF_1800x1800.png?v=1614028694">
                             </div>
-
-                            <div class="products-combo__checkout-save">
-                                <div class="products-combo__checkout-label">Tiết kiệm</div>
-                                <span class="products-combo__checkout-save-price">₫0</span>
-                            </div>
-                        </div>
-
-                        <button class="products-combo__checkout-btn">
-                            <i class="fas fa-cart-plus"></i>
-                            <span class="products-combo__checkout-btn-text hide-on-tablet">Bấm để mua khuyến mãi</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="row sm-gutter product-shop" id="usercomment">
-                <div class="product-shop__contact">
-                    <a href="#" class="product-shop__contact-img-link">
-                        <div class="product-shop__contact-avatar-wrapper">
-                            <img src="https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=vDB2kMX-sxAAX9EINWv&_nc_ht=scontent.fpnh22-3.fna&oh=305f82369427cb9edab5399a050c97a2&oe=60AC34AA">
-                        </div>
-                        <span class="label-loving">Yêu Thích</span>
-                    </a>
-
-                    <div class="product-shop__contact-container">
-                        <div class="product-shop__contact-info">
-                            <div class="product-shop__contact-name">Trương Mỹ Duyên</div>
-                            <div class="product-shop__contact-online-time">Online 28 Phút Trước</div>
-                        </div>
-
-                        <div class="product-shop__contact-main">
-                            <button class="product-shop__contact-btn product-shop__contact-message-btn hide-on-mobile">
-                                <i class="product-shop__contact-icon far fa-comment-alt"></i>
-                                <span class="product-shop__contact-message-text">Chat Ngay</span>
-                            </button>
-
-                            <a href="#" class="product-shop__contact-btn product-shop__contact-viewing">
-                                <i class="product-shop__contact-icon fas fa-store"></i>
-                                <div class="product-shop__contact-viewing-text">Xem Shop</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-shop__side hide-on-mobile-tablet">
-                    <div class="product-shop__side-container">
-                        <div class="product-shop__side-wrapper">
-                            <label class="product-shop__side-label">Đánh giá</label>
-                            <div class="product-shop__side-qnt">220</div>
-                        </div>
-
-                        <a href="#" class="product-shop__side-wrapper">
-                            <label class="product-shop__side-label">Sản phẩm</label>
-                            <div href="#" class="product-shop__side-qnt product-shop__side-qnt--link">12</div>
+                            <span class="products-combo__card-name">Áo thun tay ngắn cho người lớn gà Jolly
+                                Minecraft</span>
                         </a>
-                    </div>
-
-                    <div class="product-shop__side-container">
-                        <div class="product-shop__side-wrapper">
-                            <label class="product-shop__side-label">Tỉ Lệ Phản Hồi</label>
-                            <div class="product-shop__side-qnt">95%</div>
-                        </div>
-
-                        <div class="product-shop__side-wrapper">
-                            <label class="product-shop__side-label">Thời Gian Phản Hồi</label>
-                            <div class="product-shop__side-qnt">trong vài phút</div>
+                        <div class="products-combo__card-wrapper">
+                            <div class="shop-checkbox">
+                                <input class="shop-checkbox__input" type="checkbox">
+                                <div class="shop-checkbox__bgc"></div>
+                            </div>
+                            <div class="products-combo__card-price">
+                                <span class="products-combo__card-price-old hide-on-mobile">₫250.000</span>
+                                <span class="products-combo__card-price-new">₫150.000</span>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="product-shop__side-container">
-                        <div class="product-shop__side-wrapper">
-                            <label class="product-shop__side-label">Tham gia</label>
-                            <div class="product-shop__side-qnt">6 tháng trước</div>
+                    <div id="c-c-i-2" class="products-combo__card">
+                        <a href="/" class="products-combo__card-link">
+                            <div class="products-combo__card-img-wrapper">
+                                <img class="products-combo__card-img"
+                                    src="https://cdn.shopify.com/s/files/1/0266/4841/2351/products/32281406691-1b_1800x1800.jpg?v=1611683885">
+                            </div>
+                            <span class="products-combo__card-name">Chăn đắp và lót giường Minecraft Dungeon</span>
+                        </a>
+                        <div class="products-combo__card-wrapper">
+                            <div class="shop-checkbox">
+                                <input class="shop-checkbox__input" type="checkbox">
+                                <div class="shop-checkbox__bgc"></div>
+                            </div>
+                            <div class="products-combo__card-price">
+                                <span class="products-combo__card-price-old hide-on-mobile">₫140.000</span>
+                                <span class="products-combo__card-price-new">₫50.000</span>
+                            </div>
                         </div>
-
-                        <div class="product-shop__side-wrapper">
-                            <label class="product-shop__side-label">Người theo dõi</label>
-                            <div class="product-shop__side-qnt">1.5k</div>
+                    </div>
+                    <div id="c-c-i-3" class="products-combo__card ">
+                        <a href="/" class="products-combo__card-link">
+                            <div class="products-combo__card-img-wrapper">
+                                <img class="products-combo__card-img"
+                                    src="https://cdn.shopify.com/s/files/1/0266/4841/2351/products/MCIC-TNT-100040-11oz-mug-Left-MF_1800x1800.png?v=1612793288">
+                            </div>
+                            <span class="products-combo__card-name">Ly gốm sứ bom TNT Minecraft</span>
+                        </a>
+                        <div class="products-combo__card-wrapper">
+                            <div class="shop-checkbox">
+                                <input class="shop-checkbox__input" type="checkbox">
+                                <div class="shop-checkbox__bgc"></div>
+                            </div>
+                            <div class="products-combo__card-price">
+                                <span class="products-combo__card-price-old hide-on-mobile">₫329.000</span>
+                                <span class="products-combo__card-price-new">₫210.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="c-c-i-4" class="products-combo__card">
+                        <a href="/" class="products-combo__card-link">
+                            <div class="products-combo__card-img-wrapper">
+                                <img class="products-combo__card-img"
+                                    src="https://cdn.shopify.com/s/files/1/0266/4841/2351/products/MCIC-LOGO-100172-Black-MF_1800x1800.png?v=1612462143">
+                            </div>
+                            <span class="products-combo__card-name">Mũ in hình logo Minecraft được thêu bằng vải</span>
+                        </a>
+                        <div class="products-combo__card-wrapper">
+                            <div class="shop-checkbox">
+                                <input class="shop-checkbox__input" type="checkbox">
+                                <div class="shop-checkbox__bgc"></div>
+                            </div>
+                            <div class="products-combo__card-price">
+                                <span class="products-combo__card-price-old hide-on-mobile">₫50.000</span>
+                                <span class="products-combo__card-price-new">₫19.000</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Product shop slide on mobile -->
-          
+                <div class="products-combo__checkout hide-on-mobile">
+                    <div class="products-combo__checkout-wrapper">
+                        <div class="products-combo__checkout-total">
+                            <span class="products-combo__checkout-label">Tổng cộng</span>
+                            <span class="products-combo__checkout-total-old">₫0</span>
+                            <span class="products-combo__checkout-total-current">₫0</span>
+                        </div>
+
+                        <div class="products-combo__checkout-save">
+                            <div class="products-combo__checkout-label">Tiết kiệm</div>
+                            <span class="products-combo__checkout-save-price">₫0</span>
+                        </div>
+                    </div>
+
+                    <button class="products-combo__checkout-btn">
+                        <i class="fas fa-cart-plus"></i>
+                        <span class="products-combo__checkout-btn-text hide-on-tablet">Bấm để mua khuyến mãi</span>
+                    </button>
+                </div>
             </div>
         </div>
-      
- <!-- Register form -->
-     <!-- Register form -->
-    <!-- form dùng cho cả 2 -->
-    <!-- form đăng ký -->
-   
+        <div class="row sm-gutter product-shop" id="usercomment">
+            <div class="product-shop__contact">
+                <a href="#" class="product-shop__contact-img-link">
+                    <div class="product-shop__contact-avatar-wrapper">
+                        <img
+                            src="https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=vDB2kMX-sxAAX9EINWv&_nc_ht=scontent.fpnh22-3.fna&oh=305f82369427cb9edab5399a050c97a2&oe=60AC34AA">
+                    </div>
+                    <span class="label-loving">Yêu Thích</span>
+                </a>
+
+                <div class="product-shop__contact-container">
+                    <div class="product-shop__contact-info">
+                        <div class="product-shop__contact-name">Trương Mỹ Duyên</div>
+                        <div class="product-shop__contact-online-time">Online 28 Phút Trước</div>
+                    </div>
+
+                    <div class="product-shop__contact-main">
+                        <button class="product-shop__contact-btn product-shop__contact-message-btn hide-on-mobile">
+                            <i class="product-shop__contact-icon far fa-comment-alt"></i>
+                            <span class="product-shop__contact-message-text">Chat Ngay</span>
+                        </button>
+
+                        <a href="#" class="product-shop__contact-btn product-shop__contact-viewing">
+                            <i class="product-shop__contact-icon fas fa-store"></i>
+                            <div class="product-shop__contact-viewing-text">Xem Shop</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-shop__side hide-on-mobile-tablet">
+                <div class="product-shop__side-container">
+                    <div class="product-shop__side-wrapper">
+                        <label class="product-shop__side-label">Đánh giá</label>
+                        <div class="product-shop__side-qnt">220</div>
+                    </div>
+
+                    <a href="#" class="product-shop__side-wrapper">
+                        <label class="product-shop__side-label">Sản phẩm</label>
+                        <div href="#" class="product-shop__side-qnt product-shop__side-qnt--link">12</div>
+                    </a>
+                </div>
+
+                <div class="product-shop__side-container">
+                    <div class="product-shop__side-wrapper">
+                        <label class="product-shop__side-label">Tỉ Lệ Phản Hồi</label>
+                        <div class="product-shop__side-qnt">95%</div>
+                    </div>
+
+                    <div class="product-shop__side-wrapper">
+                        <label class="product-shop__side-label">Thời Gian Phản Hồi</label>
+                        <div class="product-shop__side-qnt">trong vài phút</div>
+                    </div>
+                </div>
+
+                <div class="product-shop__side-container">
+                    <div class="product-shop__side-wrapper">
+                        <label class="product-shop__side-label">Tham gia</label>
+                        <div class="product-shop__side-qnt">6 tháng trước</div>
+                    </div>
+
+                    <div class="product-shop__side-wrapper">
+                        <label class="product-shop__side-label">Người theo dõi</label>
+                        <div class="product-shop__side-qnt">1.5k</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product shop slide on mobile -->
+
+        </div>
+    </div>
+
+    <!-- Form thay đổi thông tin người dùng -->
+    <div id="myModal3" class="modal3">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-content changeUser">
+                <div id="formRegis" class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <label for="name">Nhập mật khẩu hiện tại</label>
+                                <input type="password" id="mkht" class="auth-form__input"
+                                    placeholder="Mật khẩu hiện tại">
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="name">Nhập họ và tên</label>
+                                <input type="text" id="hvtm" class="auth-form__input" placeholder="Họ và tên của bạn">
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="numberphone">Nhập số điện thoại</label>
+                                <input type="text" id="sdtm" class="auth-form__input" placeholder="Số điện thoại">
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="address">Nhập địa chỉ</label>
+                                <input type="text" id="dcm" class="auth-form__input" placeholder="Địa chỉ">
+                            </div>
+                        </div>
+                        <div class="auth-form__controls ">
+                            <button class="btn btn--normal auth-form__control-back">
+                                <a href="">
+                                    TRỞ LẠI
+                                </a>
+                            </button>
+                            <button class="btn btn--primary " onclick="XacNhanDoiThongTin()">Xác nhận</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="myModal4" class="modal3">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-content changeUser">
+                <div id="formRegis" class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <label for="name">Mật khẩu hiện tại</label>
+                                <input type="password" id="passcu" class="auth-form__input"
+                                    placeholder="Mật khẩu hiện tại">
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="numberphone">Mật khẩu mới</label>
+                                <input type="password" id="passmoi1" class="auth-form__input"
+                                    placeholder="Mật khẩu mới">
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="address">Xác nhận mật khẩu mới</label>
+                                <input type="password" id="passmoi2" class="auth-form__input"
+                                    placeholder="Nhập lại mật khẩu mới">
+                            </div>
+                        </div>
+                        <div class="auth-form__controls ">
+                            <button class="btn btn--normal auth-form__control-back">
+                                <a href="">
+                                    TRỞ LẠI
+                                </a>
+                            </button>
+                            <button class="btn btn--primary " onclick="XacNhanDoiMatKhau()">Xác nhận</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- The Modal -->
     <button id="myBtn">Open Modal</button>
     <div id="myModal" class="modal">
-    
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="formRegis" class="auth-form">
-            <div class="auth-form__container">
-                <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng ký</h3>
-                    
-                    <span class="auth-form__switch-btn" onclick="changeToLogin()">Đăng nhập</span>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="formRegis" class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+
+                        <span class="auth-form__switch-btn" onclick="changeToLogin()">Đăng nhập</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <label for="name">Nhập họ và tên</label>
+                            <input type="text" id="hvt" class="auth-form__input" placeholder="Họ và tên của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="numberphone">Nhập số điện thoại</label>
+                            <input type="text" id="sdt" class="auth-form__input" placeholder="Số điện thoại">
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="address">Nhập địa chỉ</label>
+                            <input type="text" id="dc" class="auth-form__input" placeholder="Địa chỉ">
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="account">Nhập tên đăng nhập</label>
+                            <input type="text" id="tk" class="auth-form__input" placeholder="Nhập tài khoản của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="password">Nhập mật khẩu</label>
+                            <input type="password" id="mk" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="password">Nhập lại mật khẩu</label>
+                            <input type="password" id="mk2" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng kí, bạn đã đồng ý với DDVT về
+                            <a href="https://shopee.vn/legaldoc/termsOfService/?__classic__=1"
+                                class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="https://shopee.vn/legaldoc/privacy/?__classic__=1"
+                                class="auth-form__text-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+                    <div class="auth-form__controls ">
+                        <button class="btn btn--normal auth-form__control-back">
+                            <a href="">
+                                TRỞ LẠI
+                            </a>
+                        </button>
+                        <button class="btn btn--primary " onclick="Regis()">ĐĂNG KÝ</button>
+                    </div>
                 </div>
-                <div class="auth-form__form">
-                    <div class="auth-form__group">
-                        <label for="name">Nhập họ và tên</label>
-                        <input type="text" id = "hvt" class="auth-form__input" placeholder="Họ và tên của bạn">
-                    </div>
-                    <div class="auth-form__group">
-                        <label for="numberphone">Nhập số điện thoại</label>
-                        <input type="text" id = "sdt" class="auth-form__input" placeholder="Số điện thoại">
-                    </div>
-                    <div class="auth-form__group">
-                        <label for="address">Nhập địa chỉ</label>
-                        <input type="text" id = "dc" class="auth-form__input" placeholder="Địa chỉ">
-                    </div>
-                    <div class="auth-form__group">
-                        <label for="account">Nhập tên đăng nhập</label>
-                        <input type="text" id = "tk" class="auth-form__input" placeholder="Nhập tài khoản của bạn">
-                    </div>
-                    <div class="auth-form__group">
-                        <label for="password">Nhập mật khẩu</label>
-                        <input type="password" id = "mk" class="auth-form__input" placeholder="Mật khẩu của bạn">
-                    </div>
-                    <div class="auth-form__group">
-                        <label for="password">Nhập lại mật khẩu</label>
-                        <input type="password" id = "mk2" class="auth-form__input" placeholder="Nhập lại mật khẩu">
-                    </div>
-                    <div class="auth-form__group">
-                        <label for="avatar">Chọn ảnh đại diện của bạn</label>
-                        <br>
-                        <input type="file" id="input-image" accept="image/*" >
-                        <img src="" alt="" id="avatarIMG">
-                    </div>
+
+
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Foogle
+                        </span>
+                    </a>
                 </div>
-               
-                <div class="auth-form__aside">
-                    <p class="auth-form__policy-text">
-                        Bằng việc đăng kí, bạn đã đồng ý với DDVT về
-                        <a href="https://shopee.vn/legaldoc/termsOfService/?__classic__=1" class="auth-form__text-link">Điều khoản dịch vụ</a> &
-                        <a href="https://shopee.vn/legaldoc/privacy/?__classic__=1" class="auth-form__text-link">Chính sách bảo mật</a>
-                    </p>
-                </div>  
-                <div class="auth-form__controls ">
-                    <button class="btn btn--normal auth-form__control-back">
-                        <a href="">
-                          TRỞ LẠI
-                        </a>
-                    </button>
-                    <button class="btn btn--primary " onclick="Regis()">ĐĂNG KÝ</button>
-                </div>
-            </div>
-            
-            
-            <div class="auth-form__socials">
-                <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
-                    <i class="auth-form__socials-icon fab fa-facebook-square"></i>
-                    <span class="auth-form__socials-title">
-                        Kết nối với Facebook
-                    </span>
-                </a>
-                <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
-                    <i class="auth-form__socials-icon fab fa-google"></i>
-                    <span class="auth-form__socials-title">
-                        Kết nối với Foogle
-                    </span>
-                </a>
             </div>
         </div>
-      </div>
-    
+
     </div>
     <!-- Thuc hien lan 2  -->
     <div id="myModal2" class="modal2">
-    
+
         <!-- Modal content -->
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <div id="formLogGin" class="auth-form" >
-            <div class="auth-form__container">
-                <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng nhập</h3>
-                    
-                    <span class="auth-form__switch-btn"  onclick="changeToRegister()">Đăng ký</span>
-                </div>
-                <div class="auth-form__form">
-                    <div class="auth-form__group">
-                        <label for="account">Nhập tài khoản của bạn</label>
-                        <input type="text" id="emailLogin" class="auth-form__input" placeholder="Nhập tài khoản của bạn" > 
-                    </div>
-                    <div class="auth-form__group">
-                        <label for="password">Nhập mật khẩu của bạn</label>
-                        <input type="password" id="passwordLogin"class="auth-form__input" placeholder="Mật khẩu của bạn">
-                    </div>
-                    
-                </div>
-                
-                <div class="auth-form__aside">
-                    
-                    <div class="auth-form__help">
-                        <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
-                        <span class="auth-form__help-separate">
+            <span class="close">&times;</span>
+            <div id="formLogGin" class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
 
+                        <span class="auth-form__switch-btn" onclick="changeToRegister()">Đăng ký</span>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <label for="account">Nhập tài khoản của bạn</label>
+                            <input type="text" id="emailLogin" class="auth-form__input"
+                                placeholder="Nhập tài khoản của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <label for="password">Nhập mật khẩu của bạn</label>
+                            <input type="password" id="passwordLogin" class="auth-form__input"
+                                placeholder="Mật khẩu của bạn">
+                        </div>
+
+                    </div>
+
+                    <div class="auth-form__aside">
+
+                        <div class="auth-form__help">
+                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                            <span class="auth-form__help-separate">
+
+                            </span>
+                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                        </div>
+                    </div>
+
+
+                    <div class="auth-form__controls ">
+                        <button class="btn btn--normal auth-form__control-back">
+                            <a href="">
+                                TRỞ LẠI
+                            </a>
+                        </button>
+                        <button class="btn btn--primary " onclick="checkLogin()">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+
+
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
                         </span>
-                        <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
-                    </div>
+                    </a>
+                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Foogle
+                        </span>
+                    </a>
                 </div>
+            </div>
 
-                
-                <div class="auth-form__controls ">
-                    <button class="btn btn--normal auth-form__control-back">
-                        <a href="">
-                            TRỞ LẠI
-                          </a>
-                    </button>
-                    <button class="btn btn--primary " onclick="checkLogin()">ĐĂNG NHẬP</button>
-                </div>
-            </div>
-            
-            
-            <div class="auth-form__socials">
-                <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
-                    <i class="auth-form__socials-icon fab fa-facebook-square"></i>
-                    <span class="auth-form__socials-title">
-                        Kết nối với Facebook
-                    </span>
-                </a>
-                <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
-                    <i class="auth-form__socials-icon fab fa-google"></i>
-                    <span class="auth-form__socials-title">
-                        Kết nối với Foogle
-                    </span>
-                </a>
-            </div>
-        </div>        
-         
         </div>
-      
-      </div>
+
+    </div>
     <!-- Ket thuc thuc hin lan 2 -->
     </div>
     <script src="../script/detailscript.js">
     </script>
-   
+
 </body>
+
 </html>

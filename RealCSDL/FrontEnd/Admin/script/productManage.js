@@ -77,13 +77,31 @@ var loadDataForm = function (sp) {
     giasanpham.value = sp.proOldPrice
     mieutasanpham.value = sp.proDescription
     promotion.value = "0%"
+    linkIMG.value = sp.proLinkPicture
+    linkIMG1.value = sp.proLinkPicture1
+    linkIMG2.value = sp.proLinkPicture2
+    linkIMG3.value = sp.proLinkPicture3
+}
+
+function loadNullForm() {
+    tensanpham.value = ""
+    catagory.value = "Giày"
+    tenthuonghieu.value = ""
+    tenxuatxu.value = ""
+    giasanpham.value = ""
+    mieutasanpham.value = ""
+    promotion.value = "0%"
+    linkIMG.value = ""
+    linkIMG1.value = ""
+    linkIMG2.value = ""
+    linkIMG3.value = ""
 }
 
 var ThemSua = function (id) {
     if (id == 0) {
         idsanpham = id
         modal.style.display = "block"
-        //loadNullForm()
+        loadNullForm()
         console.log("Thêm")
     } else {
         idsanpham = id
@@ -172,10 +190,10 @@ function CheckDataFom(){
         nameError.innerHTML="Bạn chưa nhập tên sản phẩm"
         checkValid=false;
     }
-    if(catagory.value=="Chọn thể loại sản phẩm") {
-        categoryError.innerHTML="Bạn chưa chọn thể loại sản phẩm"
-        checkValid=false;
-    }
+    // if(catagory.value=="Chọn thể loại sản phẩm") {
+    //     categoryError.innerHTML="Bạn chưa chọn thể loại sản phẩm"
+    //     checkValid=false;
+    // }
     if(tenthuonghieu.value=="") {
         brandError.innerHTML="Bạn chưa nhập tên thương hiệu"
         checkValid=false;
@@ -188,10 +206,10 @@ function CheckDataFom(){
         priceError.innerHTML="Bạn chưa nhập giá sản phẩm"
         checkValid=false;
     }
-    if(promotion.value =="Chọn khuyến mãi kèm theo") {
-        promotionError.innerHTML="Bạn chưa chọn khuyến mãi sản phẩm"
-        checkValid=false;
-    }
+    // if(promotion.value =="Chọn khuyến mãi kèm theo") {
+    //     promotionError.innerHTML="Bạn chưa chọn khuyến mãi sản phẩm"
+    //     checkValid=false;
+    // }
     if(mieutasanpham.value=="") {
         decriptionError.innerHTML="Bạn chưa nhập mô tả sản phẩm"
         checkValid=false;
@@ -199,6 +217,18 @@ function CheckDataFom(){
     if(giasanpham.value=="") {
         priceError.innerHTML="Bạn chưa nhập giá sản phẩm"
         checkValid=false;
+    }
+    if(linkIMG.value=="") {
+        linkIMG.value="https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
+    }
+    if(linkIMG1.value=="") {
+        linkIMG1.value="https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
+    }
+    if(linkIMG2.value=="") {
+        linkIMG2.value="https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
+    }
+    if(linkIMG3.value=="") {
+        linkIMG3.value="https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpgC"
     }
    return checkValid
 }
@@ -227,10 +257,10 @@ function XacNhan() {
     
         var mieuta = mieutasanpham.value
     
-        var link0 = "https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/136413530_2482105285426841_2609161170029067015_n.png?_nc_cat=108&ccb=1-3&_nc_sid=730e14&_nc_ohc=LV5LA72nlqoAX-KqoaE&_nc_ht=scontent.fpnh22-1.fna&oh=08507bf7679e83468f51bb8643fefe33&oe=60CAAA6C"
-        var link1 = "https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/136413530_2482105285426841_2609161170029067015_n.png?_nc_cat=108&ccb=1-3&_nc_sid=730e14&_nc_ohc=LV5LA72nlqoAX-KqoaE&_nc_ht=scontent.fpnh22-1.fna&oh=08507bf7679e83468f51bb8643fefe33&oe=60CAAA6C"
-        var link2 = "https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/136413530_2482105285426841_2609161170029067015_n.png?_nc_cat=108&ccb=1-3&_nc_sid=730e14&_nc_ohc=LV5LA72nlqoAX-KqoaE&_nc_ht=scontent.fpnh22-1.fna&oh=08507bf7679e83468f51bb8643fefe33&oe=60CAAA6C"
-        var link3 = "https://scontent.fpnh22-1.fna.fbcdn.net/v/t1.6435-9/136413530_2482105285426841_2609161170029067015_n.png?_nc_cat=108&ccb=1-3&_nc_sid=730e14&_nc_ohc=LV5LA72nlqoAX-KqoaE&_nc_ht=scontent.fpnh22-1.fna&oh=08507bf7679e83468f51bb8643fefe33&oe=60CAAA6C"
+        var link0 = linkIMG.value
+        var link1 = linkIMG1.value
+        var link2 = linkIMG2.value
+        var link3 = linkIMG3.value
     
         var qadd = "http://localhost:37504/api/Product/ThemSanPham?proName=" + tensp + "&proBrand=" + thuonghieu + "&proOrigin=" + 
         xuatxu + "&proOldPrice=" + giacu + "&proPrice=" + giamoi + "&proDescription=" + mieuta + "&catID=" + theloaisp + 
@@ -261,7 +291,7 @@ function requestEdit(url) {
         type: "PUT",
         success: function (response) {
             if (response.success) {
-                console.log("sửa thành công ? ")
+                alert("Sửa thông tin sản phẩm thành công!!")
             }
             else {
 
@@ -281,7 +311,7 @@ function requestAdd(url) {
         type: "POST",
         success: function (response) {
             if (response.success) {
-                console.log("Them ok")
+                alert("Thêm sản phẩm mới thành công!")
             }
             else {
 

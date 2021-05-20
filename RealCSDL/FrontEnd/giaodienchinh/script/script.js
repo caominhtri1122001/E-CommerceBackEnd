@@ -1,13 +1,14 @@
 var modal = document.getElementById("myModal");
 var modal2 = document.getElementById("myModal2")
-var modal3=document.getElementById("myModal3")
+var modal3 = document.getElementById("myModal3")
+var modal4 = document.getElementById("myModal4")
 var login = document.getElementById("logInOut")
 var user = document.getElementById("useraccount")
 let username = document.getElementById("header__navbar-user-name")
 let userIMG = document.getElementById("userIMG")
 let adminManage = document.getElementById("adminManage")
-let inputIMG=document.getElementById("input-image")
-let avatarIMG=document.getElementById("avatarIMG")
+let inputIMG = document.getElementById("input-image")
+let avatarIMG = document.getElementById("avatarIMG")
 var proPrice = document.getElementById("proPrice")
 
 // nguoi dung detail 
@@ -16,17 +17,73 @@ var proPrice = document.getElementById("proPrice")
 // Get the <span> element that closes the modal
 
 // Nếu nhấn vào thay đổi thông tin account của người dùng thì hiện form thay đổi thông tin lên 
-function changeInfor() {
-   modal3.style.display="block"
+function DoiThongTinNguoiDung() {
+    modal3.style.display = "block"
+    hvtm.value = listdata[0].name
+    dcm.value = listdata[0].address
+    sdtm.value = listdata[0].phone
 }
-//Lấy ảnh từ thằng input 
 
-function preview_img(event){
-    let files=event.target.files;
-    let bob=URL.createObjectURL(files[0])
-    document.querySelector("#avatarIMG").src=bob;
+function XacNhanDoiThongTin() {
+    if (mkht.value == listdata[0].pass) {
+        urlquery = "http://localhost:37504/api/Users/SuaThongTinUser?userID=" + listdata[0].id + "&userName=" + hvtm.value +
+            "&userPhone=" + sdtm.value + "&userAddress=" + dcm.value;
+        $.ajax({
+            url: urlquery,
+            data: null,
+            cache: false,
+            type: "PUT",
+            success: function (response) {
+                if (response.success) {
+                    alert("Đổi thông tin tài khoản thành công, vui lòng đăng nhập lại!!!")
+                    logOut()
+                }
+                else {
+                    alert("Lỗi! Vui lòng thử lại sau!")
+                }
+            },
+            error: function (xhr) {
+
+            }
+        });
+    } else {
+        alert("Mật khẩu nhập vào không chính xác!!! Hãy thử lại!")
+    }
 }
-document.querySelector("#input-image").onchange=preview_img;
+
+function DoiMatKhauNguoiDung() {
+    modal4.style.display = "block"
+}
+
+function XacNhanDoiMatKhau() {
+    if (passcu.value == listdata[0].pass) {
+        if (passmoi1.value == passmoi2.value) {
+            urlquery = "http://localhost:37504/api/Users/DoiMatKhau?userID=" + listdata[0].id + "&userPass=" + passmoi1.value;
+            $.ajax({
+                url: urlquery,
+                data: null,
+                cache: false,
+                type: "PUT",
+                success: function (response) {
+                    if (response.success) {
+                        alert("Đổi mật khẩu thành công, vui lòng đăng nhập lại!!!")
+                        logOut()
+                    }
+                    else {
+                        alert("Định dạng mật khẩu mới sai! Chỉ dùng các ký tự a-z, A-Z, 0-9")
+                    }
+                },
+                error: function (xhr) {
+
+                }
+            });
+        } else {
+            alert("Xác thực mật khẩu mới thất bại!!! Hãy thử lại!")
+        }
+    } else {
+        alert("Mật khẩu cũ nhập vào không chính xác!!! Hãy thử lại!")
+    }
+}
 
 
 //Load dữ liệu cho sản phẩm 
@@ -111,7 +168,7 @@ $(document).ready(function () {
     console.log("ready!");
     localStorage.setItem("cate", 0)
     requestDataAjax("http://localhost:37504/api/Product");
-    requestDataUser("http://localhost:37504/api/Users/LayListUser");
+    //requestDataUser("http://localhost:37504/api/Users/LayListUser");
 });
 
 
@@ -123,15 +180,17 @@ function openRegister() {
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target == modal || event.target == modal2 ||event.target==modal3) {
+    if (event.target == modal || event.target == modal2 || event.target == modal3 || event.target == modal4) {
         modal.style.display = "none";
         modal2.style.display = "none";
         modal3.style.display = "none";
+        modal4.style.display = "none";
     }
 }
 
 //Đăng nhập
 function openLogInOut() {
+    requestDataUser("http://localhost:37504/api/Users/LayListUser");
     modal2.style.display = "block";
 }
 // chuyển đổi form đăng nhập / đăng ký
@@ -266,15 +325,18 @@ function shownguoidung() {
 // đăng ký
 function Regis() {
     modal.style.display = "none";
-    //Lay link anh de dang ky nguoi dung
     if (mk.value == mk2.value) {
         requestRegisAcc("http://localhost:37504/api/Users/DangKy?taikhoan=" + tk.value + "&matkhau=" + mk.value + "&hvt=" + hvt.value +
-                        "&sdt=" + sdt.value + "&dc=" + dc.value+"&avartarURL="+ document.querySelector("#avatarIMG").src)
-       console.log(document.querySelector("#avatarIMG").src)
+            "&sdt=" + sdt.value + "&dc=" + dc.value)
+        console.log(tk.value)
+        console.log(mk.value)
+        console.log(hvt.value)
+        console.log(sdt.value)
+        console.log(dc.value)
     } else {
         alert("Mật khẩu xác nhận không khớp")
     }
-  
+
 }
 
 // gửi yêu cầu đăng ký
