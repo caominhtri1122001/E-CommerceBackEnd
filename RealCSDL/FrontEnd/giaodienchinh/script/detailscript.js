@@ -346,7 +346,6 @@ function MuaNgay() {
             var url = new URL(window.location.href)
             let productId = url.searchParams.get("productId");
             requestDatDon("http://localhost:37504/api/Orders/DatDon?pid=" + productId + "&uid=" + listdata[0].id + "&s=" + soluongg.value)
-            alert ("đã đặt đơn hàng với id = " + productId + "và số lượng là " + soluongg.value + "trên userID: " + listdata[0].id)
         } else alert("Hãy đăng nhập trước")
     } else {
         alert("Số lượng lỗi, hãy thử lại!")
@@ -363,7 +362,7 @@ function requestDatDon(url) {
         success: function (response) {
             console.log(response)
             if (response.success) {
-                alert ("Đặt ok thật")
+                alert ("Thành công, xem sản phẩm vừa đặt trong 'Đơn mua hàng'!")
             }
             else {
                 alert("Thất bại???")

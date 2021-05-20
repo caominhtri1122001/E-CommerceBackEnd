@@ -390,3 +390,13 @@ function cate4() {
     $("#product-list-row").empty();
     requestDataAjax("http://localhost:37504/api/Product/GetListProductByIDCat?catID=4");
 }
+
+
+function TimKiemSanPham(){
+    if(textTimKiem.value.replace(/\s+/g,' ').trim().length == 0) cate0()
+    else {
+        localStorage.cate = 0;
+        $("#product-list-row").empty();
+        requestDataAjax("http://localhost:37504/api/Product/GetListSearch?s=" + textTimKiem.value.replace(/\s+/g,' ').trim());
+    }
+}

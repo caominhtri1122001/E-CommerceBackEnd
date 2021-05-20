@@ -147,7 +147,7 @@
                                         <a>Thay đổi mật khẩu</a>
                                     </li>
                                     <li class="header__navbar-user-item">
-                                        <a href="../../Buyer/src/orderManage.html">Đơn mua</a>
+                                        <a href="../../Buyer/src/orderManage.html">Đơn mua hàng</a>
                                     </li>
                                     <li class="header__navbar-user-item" id="adminManage">
                                         <a href="../../Admin/src/orderAdmin.html">Quản lý website</a>
@@ -180,8 +180,7 @@
 
                     <div class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
-
+                            <input type="text" id = "textTimKiem" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
                             <!-- search history -->
                             <div class="header__search-history">
                                 <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
@@ -198,7 +197,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="header__search-select">
+                        <!-- <div class="header__search-select">
                             <span class="header__search-select-label">Trong shop</span>
                             <i class="header__search-select-icon fas fa-angle-down"></i>
                             <ul class="header__search-option">
@@ -211,8 +210,8 @@
                                     <i class="fas fa-check"></i>
                                 </li>
                             </ul>
-                        </div>
-                        <button class="header__search-btn">
+                        </div> -->
+                        <button class="header__search-btn" onclick = "TimKiemSanPham()">
                             <i class="header__search-btn-icon fas fa-search"></i>
                         </button>
                     </div>

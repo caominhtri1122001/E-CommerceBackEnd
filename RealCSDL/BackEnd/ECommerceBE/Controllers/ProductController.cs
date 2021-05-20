@@ -114,6 +114,21 @@ namespace ECommerceBE.Controllers
             return res;
         }
 
+        [HttpGet("GetListSearch")]
+        public BaseRespone searchlist(string s)
+        {
+            var res = new BaseRespone(false, null);
+            List<Products> data = new List<Products>();
+            foreach(Products i in getListProByCatID(0))
+            {
+                if (i.proName.ToUpper().Contains(s.ToUpper())) data.Add(i);
+            }
+            data.Reverse();
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
         // xếp theo giá giảm dần
         [HttpGet("GetSort1ListProductByIDCat")]
         public BaseRespone Get1ProductCat(int catID)
