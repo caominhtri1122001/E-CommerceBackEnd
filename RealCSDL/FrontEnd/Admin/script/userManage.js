@@ -1,21 +1,21 @@
 
-$("#proManage").click(function(){
-    window.location.href="../src/productManage.html"
-})
-$("#orderManage").click(function(){
-    window.location.href="../src/orderAdmin.html"
-})
-$("#userManage").click(function(){
-    window.location.href="../src/userManage.html"
-})
+// $("#proManage").click(function(){
+//     window.location.href="../src/productManage.html"
+// })
+// $("#orderManage").click(function(){
+//     window.location.href="../src/orderAdmin.html"
+// })
+// $("#userManage").click(function(){
+//     window.location.href="../src/userManage.html"
+// })
 
-$(document).ready(function () {
-    console.log("ready!");
-    requestDataUser("http://localhost:37504/api/Users/LayListThongTinUsers")
-});
-$( '#logOut' ).click(function() {
-    window.location.href="../../giaodienchinh/src/index.html"
-  });
+// $(document).ready(function () {
+//     console.log("ready!");
+//     requestDataUser("http://localhost:37504/api/Users/LayListThongTinUsers")
+// });
+// $( '#logOut' ).click(function() {
+//     window.location.href="../../giaodienchinh/src/index.html"
+//   });
 
 function requestDataUser(url) {
     $.ajax({

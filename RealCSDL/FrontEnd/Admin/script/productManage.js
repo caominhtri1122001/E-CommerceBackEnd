@@ -8,20 +8,20 @@ var idsanpham = 0;
 var productIMG = document.getElementById("input-image")
 
 
-$('#orderManage').click(function () {
-    window.location.href = "../src/orderAdmin.html"
-});
+// $('#orderManage').click(function () {
+//     window.location.href = "../src/orderAdmin.html"
+// });
 
-$('#proManage').click(function () {
-    window.location.href = "../src/productManage.html.html"
-});
+// $('#proManage').click(function () {
+//     window.location.href = "../src/productManage.html.html"
+// });
 
-$('#userManage').click(function () {
-    window.location.href = "../src/userManage.html"
-});
-$( '#logOut' ).click(function() {
-    window.location.href="../../giaodienchinh/src/index.html"
-  });
+// $('#userManage').click(function () {
+//     window.location.href = "../src/userManage.html"
+// });
+// $( '#logOut' ).click(function() {
+//     window.location.href="../../giaodienchinh/src/index.html"
+//   });
 
 
 function requestDataListProduct(url) {

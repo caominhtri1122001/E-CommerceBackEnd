@@ -1,0 +1,67 @@
+
+<div class="website-inner">
+    <div id="settingManager">
+        <button type="button" value='product' class="btn btn-outline-secondary active"  onclick="myFunction(event)" id="proManage">Quản lý sản phẩm</button>
+        <button type="button" value='order' class="btn btn-outline-secondary"   onclick="myFunction(event)" id="orderManage">Quản lý đơn hàng</button>
+        <button type="button" value='user' class="btn btn-outline-secondary"   onclick="myFunction(event)" id="userManage">Quản lý người dùng</button>
+    </div>
+</div>
+<div id="logOutAdmin">
+    <p>Xin chào <span>TruongMyDuyen</span></p>
+    <a href="./../../giaodienchinh/src/index.html"><i class="fas fa-store" style="color:#04417fb8"></i></a>
+    <button type="button" class="btn btn-outline-secondary" id="logOut">Quay lại trang chủ</button>
+
+
+
+    <div class="variation_form_section">
+        <div class="select">
+          <div class="swatch-wrapper"></div>
+          <div class="swatch-wrapper"></div>
+          <div class="swatch-wrapper"></div>
+        </div>
+      </div>
+</div>
+
+<style>
+    .website-inner{
+    padding-top:2em;
+    }
+    #settingManager{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #settingManager button{
+        margin-left:20px;
+    }
+    #settingManager button:focus{
+        outline: none;
+        box-shadow: none;
+    }
+    #logOutAdmin{
+        display: flex;
+        margin:2em 0em;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        padding-right:10em;
+    }
+    #logOutAdmin p{
+        transform:translateY(30%);
+        padding-right: 3em;
+    }
+    #logOutAdmin i{
+        padding-right:1em;
+        font-size:1.8rem;
+    }
+    .active{
+        color:#04417fb8;
+    }
+</style>
+<script>
+    function myFunction(e){
+       
+        
+    }
+
+</script>

@@ -36,30 +36,14 @@
 <body>
     <div class="website" id="productManage">
         <!-- Phan navbar -->
-        <section id="hireme" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
-            <div class="section-header container">
-                <div class="hireme-inner">
-                    <h2 class="animation animated fadeInLeft" data-animation="fadeInLeft" style="opacity: 1;">Explore
-                        the new collection by</h2>
-                    <h1 class="animation animated fadeInLeft" data-animation="fadeInLeft" style="opacity: 1;">trương mỹ
-                        duyên</h1>
-                </div>
-            </div>
-        </section>
+        <header id="header">
+
+        </header>
         <!-- Xong phan navbar -->
         <!-- Phan quan cac nut chuc nang quan ly -->
-        <div class="website-inner">
-            <div id="settingManager">
-                <button type="button" class="btn btn-outline-secondary" id="proManage">Quản lý sản phẩm</button>
-                <button type="button" class="btn btn-outline-secondary" id="orderManage">Quản lý đơn hàng</button>
-                <button type="button" class="btn btn-outline-secondary" id="userManage">Quản lý người dùng</button>
-            </div>
-        </div>
-        <div id="logOutAdmin">
-            <p>Xin chào <span>TruongMyDuyen</span></p>
-            <i class="fas fa-store"></i>
-            <button type="button" class="btn btn-outline-secondary" id="logOut">Quay lại trang chủ</button>
-    </div>
+      <div id="webControl">
+
+      </div>
         <div id="manager">
             <div class="manager-inner">
                 <div class="managerHeader">
@@ -98,9 +82,6 @@
                     </div> -->
 
                         <div id="user-list-row">
-                            
-
-
                         </div>
 
                     </div>
@@ -194,6 +175,10 @@
         </div>
     </div>
     <script src="../script/userManage.js"></script>
+    <script>
+        $("#header").load("./headerTest.html");
+        $("#webControl").load("./webControl.html");
+  </script>
 </body>
 
 </html>
