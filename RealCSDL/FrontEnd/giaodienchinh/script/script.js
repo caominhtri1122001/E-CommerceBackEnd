@@ -2,19 +2,22 @@ var modal = document.getElementById("myModal");
 var modal2 = document.getElementById("myModal2")
 var modal3 = document.getElementById("myModal3")
 var modal4 = document.getElementById("myModal4")
+
+
 var login = document.getElementById("logInOut")
 var user = document.getElementById("useraccount")
 let username = document.getElementById("header__navbar-user-name")
 let userIMG = document.getElementById("userIMG")
 let adminManage = document.getElementById("adminManage")
+
+
 let inputIMG = document.getElementById("input-image")
 let avatarIMG = document.getElementById("avatarIMG")
 var proPrice = document.getElementById("proPrice")
 
-// nguoi dung detail 
-// Get the button that opens the modal
 
-// Get the <span> element that closes the modal
+// nguoi dung detail 
+
 
 // Nếu nhấn vào thay đổi thông tin account của người dùng thì hiện form thay đổi thông tin lên 
 function DoiThongTinNguoiDung() {
@@ -231,7 +234,7 @@ var checkData = function (data) {
 }
 
 //Ban đầu không có người đăng nhập
-user.style.display = "none"
+
 // Thực hiện hàm đăng nhập 
 function checkLogin() {
     modal2.style.display = "none";
@@ -313,7 +316,7 @@ console.log("Xem thong tin nguoi dung : ")
 
 if (listdata.length == 1) shownguoidung()
 
-//neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky 
+//neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky
 function shownguoidung() {
     username.innerText = listdata[0].name
     userIMG.src = listdata[0].src
