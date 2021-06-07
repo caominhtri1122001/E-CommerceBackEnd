@@ -15,7 +15,8 @@ let inputIMG = document.getElementById("input-image")
 let avatarIMG = document.getElementById("avatarIMG")
 var proPrice = document.getElementById("proPrice")
 
-
+// Phần error của pw
+let errorPW=document.querySelector('#errorPW')
 // nguoi dung detail 
 
 
@@ -46,11 +47,10 @@ function XacNhanDoiThongTin() {
                 }
             },
             error: function (xhr) {
-
             }
         });
     } else {
-        alert("Mật khẩu nhập vào không chính xác!!! Hãy thử lại!")
+        errorPW.style.display="block"
     }
 }
 

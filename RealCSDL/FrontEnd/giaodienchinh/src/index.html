@@ -161,8 +161,8 @@
                 <nav class="header-with-search">
                     <!-- vùng chứa logo -->
                     <div class="header__logo">
-                        <a href="/" class="header__logo-link">
-                            <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-9/59163276_2020101838293857_3973786377429975040_n.png?_nc_cat=102&amp;ccb=1-3&amp;_nc_sid=174925&amp;_nc_ohc=MgK_U5yJS60AX8WBzOt&amp;tn=RSDatIzNuh_y4GfC&amp;_nc_ht=scontent.fhan14-1.fna&amp;oh=a5a3ae9b318a3c65f192ff1052112ea3&amp;oe=60E0D5A0" alt="LOGO">
+                        <a href="./index.html" class="header__logo-link">
+                            <img src="./../../public/images/logo.png" alt="LOGO">
                         </a>
                     </div>
             
@@ -726,10 +726,6 @@
                     <div class="auth-form__container">
                         <div class="auth-form__form">
                             <div class="auth-form__group">
-                                <label for="name">Nhập mật khẩu hiện tại</label>
-                                <input type="password" id="mkht" class="auth-form__input" placeholder="Mật khẩu hiện tại">
-                            </div>
-                            <div class="auth-form__group">
                                 <label for="name">Nhập họ và tên</label>
                                 <input type="text" id="hvtm" class="auth-form__input" placeholder="Họ và tên của bạn">
                             </div>
@@ -740,6 +736,11 @@
                             <div class="auth-form__group">
                                 <label for="address">Nhập địa chỉ</label>
                                 <input type="text" id="dcm" class="auth-form__input" placeholder="Địa chỉ">
+                            </div>
+                            <div class="auth-form__group">
+                                <label for="name">Nhập mật khẩu hiện tại</label>
+                                <input type="password" id="mkht" class="auth-form__input" placeholder="Mật khẩu hiện tại">
+                                <p id="errorPW">*Nhập lại mật khẩu</p>
                             </div>
                         </div>
                         <div class="auth-form__controls ">
@@ -981,7 +982,10 @@
 
     </script>
     <script> 
-  
+    window.addEventListener("scroll",function(){
+        let header=document.querySelector("#header");
+        header.classList.toggle("sticky",window.scrollY>0);
+    })
         
   </script>
 </body>

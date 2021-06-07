@@ -171,7 +171,7 @@
 
 <body>
     <div class="web">
-        <header class="header">
+        <header class="header" id="header">
             <div class="grid">
 
                 <nav class="header__navbar">
@@ -311,8 +311,8 @@
                 <nav class="header-with-search">
                     <!-- vùng chứa logo -->
                     <div class="header__logo">
-                        <a href="/" class="header__logo-link">
-                            <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-9/59163276_2020101838293857_3973786377429975040_n.png?_nc_cat=102&ccb=1-3&_nc_sid=174925&_nc_ohc=MgK_U5yJS60AX8WBzOt&tn=RSDatIzNuh_y4GfC&_nc_ht=scontent.fhan14-1.fna&oh=a5a3ae9b318a3c65f192ff1052112ea3&oe=60E0D5A0"
+                        <a href="./index.html" class="header__logo-link">
+                            <img src="./../../public/images/logo.png"
                                 alt="LOGO">
                         </a>
                     </div>
@@ -1112,7 +1112,10 @@
     <script src="../script/detailscript.js">
     </script>
     <script>
-     
+      window.addEventListener("scroll",function(){
+        let header=document.querySelector("#header");
+        header.classList.toggle("sticky",window.scrollY>0);
+    })
     </script>
 
 </body>

@@ -39,6 +39,17 @@ html{
 .header{
     width:100%;
 }
+#header{
+    position: fixed!important;;
+    width:100vw;
+    z-index:120;
+    transition:0.2s;
+}
+/* khi scroll manf hinh thi add class nay vao header */
+.sticky{
+    background-color: black;
+    background-image: none;
+}
 /* Reponsive để cho phù hợp với từng kích thước màn hình khác nhau  */
 
 .grid{
@@ -738,7 +749,6 @@ display: none;
 
 .header__logo-link > img {
     width:8em;
-    height:8em;
     object-fit: cover;
 }
 .header__search{
@@ -1097,6 +1107,7 @@ display: none;
     justify-content: center;
     align-items: center;
     padding:1.5em 1.5em; 
+    padding-top:150px;
 }
 /* Phần lựa chọn chức năng của admin */
 #adminEdit {
@@ -1761,7 +1772,7 @@ a {
 .modal, .modal2, .modal3 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 20; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;

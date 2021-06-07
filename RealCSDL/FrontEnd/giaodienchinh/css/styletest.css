@@ -28,6 +28,11 @@ html{
 }
 /* Reponsive để cho phù hợp với từng kích thước màn hình khác nhau  */
 /* Danh sách những sản phẩm bán */
+#header{
+    position: fixed!important;;
+    width:100vw;
+    z-index:15;
+}
 .grid{
     width: 80%;
     max-width: 100%;
@@ -289,7 +294,10 @@ dành cho danh mục */
 #header{
     /* để có màu từ đậm đến nhạt  */
     background-image: linear-gradient(0,#3d95eeb8,#04417fb8);
-    
+}
+.sticky{
+    background-color: black;
+    background-image: none;
 }
 .header__navbar{
     /* để cùng nằm trên một hàng */
@@ -663,7 +671,6 @@ background: red;
 .modal, .modal2, .modal3 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -672,6 +679,7 @@ background: red;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index:20;
   }
   .modal-content {
     background-color: #fefefe;
@@ -679,6 +687,9 @@ background: red;
     border: 1px solid #888;
     width: fit-content;
   }
+#formRegis{
+    padding:20px 15px;
+}
 .auth-form__group {
     margin-bottom:10px;
     display: flex;
@@ -821,6 +832,12 @@ background: red;
 .auth-form__help-forgot{
     color: var(--primary-color);
 }
+/* Phần error của pw */
+#errorPW{
+    display: none;
+    font-size:1.3rem;
+    color:red;
+}
 /* Làm chỗ đăng ký */
 
 /* header-with-search */
@@ -839,7 +856,6 @@ background: red;
 
 .header__logo-link > img {
     width:8em;
-    height:8em;
     object-fit: cover;
 }
 .header__search{
@@ -1188,11 +1204,15 @@ background: red;
 /* App container */
 #app__container{
     background-color: #f5f5f5;
+    padding-top:100px;
 }
 .app__content{
     padding-top: 36px;
 }
 .category{
+    position:fixed;
+    top:150px;
+    left:50px;
     background-color: var(--white-color);
     border-radius: 2px;
 }
