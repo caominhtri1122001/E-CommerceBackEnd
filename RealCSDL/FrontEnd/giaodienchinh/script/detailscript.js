@@ -106,9 +106,9 @@ var loadData2 = function (proudcts) {
                </div>
                <div class="product__price">
                 <div class="product__price-main">
-                    <span class="product__price-old">${proudcts.proOldPrice / 1000}.000đ</span>
+                    <span class="product__price-old">${proudcts.proOldPrice}đ</span>
                     <div class="product__price-current">
-                        <span class="product__price-new">${proudcts.proPrice / 1000}.000đ</span>
+                        <span class="product__price-new">${proudcts.proPrice}đ</span>
                         <span class="product__price-label bgr-orange">${Math.floor((proudcts.proOldPrice - proudcts.proPrice) / proudcts.proOldPrice * 100)}%GIẢM</span>
                     </div>
                 </div>

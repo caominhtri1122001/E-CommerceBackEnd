@@ -140,8 +140,8 @@ var loadData = function (proudcts) {
                                     <img src=" ${product.proLinkPicture}">
                                     <div class="home-product-item__name"> ${product.proName} </div>
                                     <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old"> ${product.proOldPrice / 1000}.000đ</span>
-                                        <span class="home-product-item__price-current"> ${product.proPrice / 1000}.000đ </span>
+                                        <span class="home-product-item__price-old"> ${product.proOldPrice}đ</span>
+                                        <span class="home-product-item__price-current"> ${product.proPrice}đ </span>
                                     </div>
                                     <div class="home-product-item__action">
                                         <div class="home-product-item__rating">
