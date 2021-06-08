@@ -11,12 +11,20 @@ let userIMG = document.getElementById("userIMG")
 let adminManage = document.getElementById("adminManage")
 
 
+
 let inputIMG = document.getElementById("input-image")
 let avatarIMG = document.getElementById("avatarIMG")
 var proPrice = document.getElementById("proPrice")
 
 // Phần error của pw
 let errorPW=document.querySelector('#errorPW')
+let errorLogin=document.querySelector('#errorLogin')
+
+//Đọc số lượng sản phẩm trong giỏ hàng 
+console.log('So luong san pham trong gio hang ')
+console.log(totalProduct.innerText==0)
+
+
 // nguoi dung detail 
 
 
@@ -120,7 +128,7 @@ function requestDataAjax(url) {
             }
         },
         error: function (xhr) {
-
+            
         }
     });
 }
@@ -237,7 +245,6 @@ var checkData = function (data) {
 
 // Thực hiện hàm đăng nhập 
 function checkLogin() {
-    modal2.style.display = "none";
     let valid = false;
     let usevalid
     userdata.forEach(function (item) {
@@ -272,9 +279,11 @@ function checkLogin() {
             }
             listnguoidung.push(nguoidung)
             localStorage.setItem("data", JSON.stringify(listnguoidung))
+            modal2.style.display = "none";
+            errorLogin.style.display="none"
             location.reload()
         }
-    } else alert("sai thông tin tài khoản hoặc mật khẩu")
+    } else errorLogin.style.display="block"
 }
 
 function sortDefault() {
@@ -325,21 +334,71 @@ function shownguoidung() {
     if (listdata[0].isAdmin) adminManage.style.display = "block"
 }
 
-// đăng ký
+//Cần một biến isError để kiểm tra việc nhập dữ liệu đã hợp lệ chưa, 
+//ban đầu gắn bằng true nghĩa là dữ liệu đã không hợp lệ , sau đó check dữ liệu đã nhập hay chưa 
+//Nếu chưa nhập thì add class not Valid Data (show ra màn hình), nếu không thì ẩn đi
+
 function Regis() {
-    modal.style.display = "none";
-    if (mk.value == mk2.value) {
+    console.log('-----------------------------------------')
+    console.log('Thuc hien ham nay')
+    console.log('Truoc khi thu')
+    let isError=true;
+    console.log(isError)
+    if(hvt.value==='') {
+        errorNameRegis.classList.add("notValidData");
+        isError = true
+    }
+    else{
+        errorNameRegis.classList.remove("notValidData");
+        isError=false
+    }
+    if(sdt.value==='') {
+        errorNumberRegis.classList.add("notValidData"); 
+        isError = true
+    }
+    else{
+        errorNumberRegis.classList.remove("notValidData");
+        isError=false
+    }
+    if(dc.value==='') {
+        errorAddressRegis.classList.add("notValidData");
+        isError = true
+    }
+    else{
+        errorAddressRegis.classList.remove("notValidData");
+        isError=false
+    }
+    if(tk.value==='') {
+        errorAccoutRegis.classList.add("notValidData");
+        isError = true
+    }
+    else{
+        errorAccoutRegis.classList.remove("notValidData");
+        isError=false
+    }
+    if(mk.value==='') {
+        errorPWRegis.classList.add("notValidData");
+        isError = true
+    }
+    else{
+        errorPWRegis.classList.remove("notValidData");
+        isError=false
+    }
+    if(mk.value!==mk2.value){
+        errorcheckPW.classList.add("notValidData");
+        isError = true
+    }
+    else{
+        errorcheckPW.classList.remove("notValidData");  
+        check=false
+    }
+    console.log('Sau khi thu ')
+    console.log(isError)
+    if (isError===false) {
         requestRegisAcc("http://localhost:37504/api/Users/DangKy?taikhoan=" + tk.value + "&matkhau=" + mk.value + "&hvt=" + hvt.value +
             "&sdt=" + sdt.value + "&dc=" + dc.value)
-        console.log(tk.value)
-        console.log(mk.value)
-        console.log(hvt.value)
-        console.log(sdt.value)
-        console.log(dc.value)
-    } else {
-        alert("Mật khẩu xác nhận không khớp")
-    }
-
+        // modal.style.display = "none";
+    } 
 }
 
 // gửi yêu cầu đăng ký
@@ -355,7 +414,10 @@ function requestRegisAcc(url) {
                 location.reload()
             }
             else {
-                alert("Đăng ký thất bại, tài khoản đã tồn tại hoặc dữ liệu điền vào không hợp lệ!")
+                alert("Tên đăng nhập đã tồn tại")
+                errorcheckPW.innerText='Tên đăng nhập đã tồn tại'
+                errorcheckPW.style.display="block"
+
             }
         },
         error: function (xhr) {

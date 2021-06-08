@@ -60,17 +60,13 @@ html{
 
 
 dành cho danh mục */
-.grid__column-2{
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 16.6667%;
-}
 /* Test */
 /* Phần list danh sách sản phẩm */
 #product-list{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    padding-top:10px;
 }
 /* Phhần danh mục */
 
@@ -80,8 +76,7 @@ dành cho danh mục */
     width: 19.8%;
     overflow: hidden;
     position: relative;
-    font-size:1.2rem;
-  
+    font-size:1.2rem;  
 }
 /* Phần test sản phẩm */
 /* Phần hình ảnh sản phẩm */
@@ -168,12 +163,10 @@ dành cho danh mục */
     border-color: transparent rgba(255, 216, 64, 0.94) transparent rgba(255, 216, 64, 0.94);
 }
 
-/* Kết thuc test */
 .grid__column-10{
     padding-left: 5px;
     padding-right: 5px;
-    width: 83.3333%;
-    
+    width: 100%;    
 }
 
 /* Animation */
@@ -835,15 +828,26 @@ background: red;
 /* Phần error của pw */
 #errorPW{
     display: none;
+}
+#errorLogin{
+    display: none;
+}
+.error{
     font-size:1.3rem;
     color:red;
+    display: none;
+}
+/* Nếu dữ liệu không hợp lệ thì hiển thị lỗi */
+.notValidData{
+    display: block;
 }
 /* Làm chỗ đăng ký */
 
 /* header-with-search */
+
 .header-with-search{
     width:90%;
-    height: var(--header-with-search-height);
+    padding:10px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -867,6 +871,7 @@ background: red;
     align-items: center;
 }
 /* Chỗ xe hàng bên cạnh tìm kiếm */
+
 .header__cart{
     width: 150px;
     text-align: center;
@@ -876,6 +881,17 @@ background: red;
     display: inline-block;
     padding: 0 12px;
     cursor: pointer;
+}
+/* Hiển thị giỏ hàng */
+/* Phần hiển thị thông báo không có sản phẩm */
+#header-no-product{
+    width:200px;
+    padding:50px 0px;
+    font-size:25px;
+    color:var(--primary-color);
+}
+.no-product{
+    background-color: red;
 }
 .header__cart-wrap:hover .header__cart-list{
     display: block;
@@ -1200,8 +1216,32 @@ background: red;
     font-weight: 400;
     display: block;
 }
-
+/* Phần list lựa chọn sản phẩm */
+.select-product{
+    font-size:1.3rem;
+    
+}
+ul{
+    list-style: none;
+}
+.list-choice-product{
+    display: flex;
+    width:90%;
+    margin:auto;
+    padding-bottom:10px;
+    padding-left:120px;
+}
+.list-choice-product li{
+    padding-left:20px;
+}
+.list-choice-product li a{
+    color:#fff!important;
+    text-decoration: none;
+}
 /* App container */
+.show{
+    display: block;
+}
 #app__container{
     background-color: #f5f5f5;
     padding-top:100px;
