@@ -129,10 +129,10 @@
                             <span id="header__navbar-user-name">Trần Thị Sa </span>
                             <ul class="header__navbar-user-menu">
                                 <li class="header__navbar-user-item" onclick="DoiThongTinNguoiDung()">
-                                    <a>Thay đổi thông tin</a>
+                                    <a href="">Thay đổi thông tin</a>
                                 </li>
                                 <li class="header__navbar-user-item" onclick="DoiMatKhauNguoiDung()">
-                                    <a>Thay đổi mật khẩu</a>
+                                    <a href="">Đổi mật khẩu</a>
                                 </li>
                                 <li class="header__navbar-user-item">
                                     <a href="../../Buyer/src/orderManage.html">Đơn mua hàng</a>
@@ -433,16 +433,41 @@
                     <div class="grid-control">
                         <!-- phan ho so của người dùng -->
                         <nav class="profileUser container">
-                            <div class="row">
-                                <div class="profileIMG">
-                                    <div class="col-4"></div>
-                                    <div class="col-8"></div>
+                            <div class="row profileIMG">
+                                <div class="col-4">
+                                    <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-9/195772360_2953821864890603_8958956138959001442_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=hktzsWA6XdsAX8jnRGQ&_nc_ht=scontent.fhan14-1.fna&oh=40f36d697a7e970c2d0621195ed9de41&oe=60E5BBCB" alt="">
+                                </div>
+                                <div class="col-8">
+                                    <div class="nameUser"><p>myduyen01_</p></div>
+                                    <div class="editProfile">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        <p>Sửa Hồ Sơ</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="managerAccount">
                                 <div class="row">
-                                    <div class="col-4"></div>
-                                    <div class="col-8"></div>
+                                    <div class="col-2">
+                                        <div class="userpage-sidebar-menu-entry__icon" style="background-color: rgb(255, 193, 7);"><svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon user-page-sidebar-icon icon-headshot"><g><circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle><path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10"></path></g></svg></div>
+                                    </div>
+                                    <div class="col-10">
+                                        <a href=""><p>Tài khoản của tôi</p></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="userpage-sidebar-menu-entry__icon" style="background-color: rgb(68, 181, 255);"><svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon user-page-sidebar-icon " style="fill: rgb(255, 255, 255);"><g><rect fill="none" height="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8" x="4.5" y="1.5"></rect><polyline fill="none" points="2.5 1.5 2.5 13.5 12.5 13.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polyline><line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="6.5" x2="10.5" y1="4" y2="4"></line><line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="6.5" x2="10.5" y1="6.5" y2="6.5"></line><line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="6.5" x2="10.5" y1="9" y2="9"></line></g></svg></div>
+                                    </div>
+                                    <div class="col-10">
+                                        <a href=""><p>Đơn mua</p></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="userpage-sidebar-menu-entry__icon" style="background-color: rgb(238, 77, 45);"><svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon user-page-sidebar-icon "><g><path d="m12 10.2 1.5 2h-12l1.5-2v-7.4c0-.5.5-1 1-1h7c .6 0 1 .5 1 1z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path><path d="m6 2c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5" fill="none" stroke-miterlimit="10"></path><path d="m5.8 13.5c.4.6 1 1 1.8 1s1.4-.4 1.8-1z"></path></g></svg></div>                                    </div>
+                                    <div class="col-10">
+                                        <a href=""><p>Thông báo</p></a>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -728,6 +753,81 @@
                 </div>
             </div>
         </div>
+        <!-- Phần chat -->
+        <div id="chat">
+            <i class="_3kEAcT1Mk5 src-components-MainLayout-index__chat--3J2KN"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="chat-icon"><path d="M18 6.07a1 1 0 01.993.883L19 7.07v10.365a1 1 0 01-1.64.768l-1.6-1.333H6.42a1 1 0 01-.98-.8l-.016-.117-.149-1.783h9.292a1.8 1.8 0 001.776-1.508l.018-.154.494-6.438H18zm-2.78-4.5a1 1 0 011 1l-.003.077-.746 9.7a1 1 0 01-.997.923H4.24l-1.6 1.333a1 1 0 01-.5.222l-.14.01a1 1 0 01-.993-.883L1 13.835V2.57a1 1 0 011-1h13.22zm-4.638 5.082c-.223.222-.53.397-.903.526A4.61 4.61 0 018.2 7.42a4.61 4.61 0 01-1.48-.242c-.372-.129-.68-.304-.902-.526a.45.45 0 00-.636.636c.329.33.753.571 1.246.74A5.448 5.448 0 008.2 8.32c.51 0 1.126-.068 1.772-.291.493-.17.917-.412 1.246-.74a.45.45 0 00-.636-.637z"></path></svg></i>
+            <i class="_3kEAcT1Mk5 src-components-MainLayout-index__logo--1byC8"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 22" class="chat-icon"><path d="M9.286 6.001c1.161 0 2.276.365 3.164 1.033.092.064.137.107.252.194.09.085.158.064.203 0 .046-.043.182-.194.251-.26.182-.17.433-.43.752-.752a.445.445 0 00.159-.323c0-.172-.092-.3-.227-.365A7.517 7.517 0 009.286 4C5.278 4 2 7.077 2 10.885s3.256 6.885 7.286 6.885a7.49 7.49 0 004.508-1.484l.022-.043a.411.411 0 00.046-.71v-.022a25.083 25.083 0 00-.957-.946.156.156 0 00-.227 0c-.933.796-2.117 1.205-3.392 1.205-2.846 0-5.169-2.196-5.169-4.885C4.117 8.195 6.417 6 9.286 6zm32.27 9.998h-.736c-.69 0-1.247-.54-1.247-1.209v-3.715h1.96a.44.44 0 00.445-.433V9.347h-2.45V7.035c-.021-.043-.066-.065-.111-.043l-1.603.583a.423.423 0 00-.29.41v1.362h-1.781v1.295c0 .238.2.433.445.433h1.337v4.19c0 1.382 1.158 2.505 2.583 2.505H42v-1.339a.44.44 0 00-.445-.432zm-21.901-6.62c-.739 0-1.41.172-2.013.496V4.43a.44.44 0 00-.446-.43h-1.788v13.77h2.234v-4.303c0-1.076.895-1.936 2.013-1.936 1.117 0 2.01.86 2.01 1.936v4.239h2.234v-4.561l-.021-.043c-.202-2.088-2.012-3.723-4.223-3.723zm10.054 6.785c-1.475 0-2.681-1.12-2.681-2.525 0-1.383 1.206-2.524 2.681-2.524 1.476 0 2.682 1.12 2.682 2.524 0 1.405-1.206 2.525-2.682 2.525zm2.884-6.224v.603a4.786 4.786 0 00-2.985-1.035c-2.533 0-4.591 1.897-4.591 4.246 0 2.35 2.058 4.246 4.59 4.246 1.131 0 2.194-.388 2.986-1.035v.604c0 .237.203.431.453.431h1.356V9.508h-1.356c-.25 0-.453.173-.453.432z"></path></svg></i>
+        </div>
+        <!-- cuối cùng là foooter -->
+        <footer class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footer-title"><p>Chăm sóc khách hàng</p></div>
+                    <div class="footer-content">
+                        <p>Trung tâm trợ giúp</p>
+                        <p>DDVT-Shop</p>
+                        <p>Hướng dẫn mua hàng</p>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="footer-title"><p>Giới thiệu</p></div>
+                    <div class="footer-content">
+                        <p>Giới thiệu</p>
+                        <p>Tuyển dụng</p>
+                        <p>Điều khoản</p>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="footer-title"><p>Danh mục</p></div>
+                    <div class="footer-content">
+                        <p>Áo thể thao</p>
+                        <p>Quần thể thao</p>
+                        <p>Phụ kiện</p>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="footer-title"><p>Theo dõi chúng tôi</p></div>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="#" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-instagram"></i>
+                                Instagram
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="#" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-twitter-square"></i>
+                                Twitter
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <div class="footer-title"><p>Vào cửa hàng trên ứng dụng</p></div>
+                    <div class="footer__dowload">
+                        <img src="https://toanhocbactrungnam.vn/uploads/news/2019_11/1573006985.png" alt="Mã Qr" class="footer__dowload-qr">
+                        <div class="footer__dowload-app">
+                            <a href="" class="footer__dowload-app-link">
+                                <img src="https://sites.google.com/site/taichplaymjenphivem2019/_/rsrc/1539059092276/home/chplay.png?height=200&amp;width=200" alt="Ch-play">
+                                <span>GOOGLE PLAY</span>
+                            </a>
+                            <a href="" class="footer__dowload-app-link">
+                                <img src="https://e7.pngegg.com/pngimages/566/36/png-clipart-app-store-iphone-apple-app-store-icon-blue-text.png" alt="appstore">
+                                <span>APPSTORE</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
+        
     </div>
     <script>
          window.addEventListener("scroll",function(){

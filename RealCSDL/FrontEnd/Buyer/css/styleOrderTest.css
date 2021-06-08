@@ -815,6 +815,7 @@ ul{
 /* phaanf quanr lis ben duoi  */
 #app-container{
     background-color: #f5f5f5;
+    padding-bottom:30px;
 }
 .grid-manager{
     margin-top:120px;
@@ -1082,7 +1083,149 @@ button:focus{
 }
 /* Phần hồ sơ người dùng */
 .profileUser{
-    background-color: red;
     width:100%;
     height:100px;
+    padding-top:10px;
+    font-size:14px;
+    margin-left:10px;
+}
+.profileIMG{
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(0,0,0,0.2);
+    
+
+}
+.profileIMG img{
+    width:100%;
+    object-fit: contain;
+    border-radius: 50%;
+
+}
+.nameUser{
+    color:#333;
+    font-weight: 600;
+    min-height: 1rem;
+    margin-bottom:5px;
+
+}
+.editProfile{
+    display: flex;
+    color:#888;
+}
+.userpage-sidebar-menu-entry__icon {
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 12px;
+    font-size: .9375rem;
+    cursor: pointer;
+}
+.userpage-sidebar-menu-entry__icon>svg {
+    fill: #fff;
+    stroke: #fff;
+    width: 13px;
+    height: 13px;
+}
+.managerAccount{
+    padding-top:20px;
+    color: rgba(0,0,0,.8);
+    font-size:14px;
+}
+.managerAccount p{
+    cursor: pointer;
+    color: rgba(0,0,0,.8);
+}
+.managerAccount p:hover{
+    color:var(--primary-color);
+}
+/* phần foooter  */
+footer{
+    padding:10px 0px;
+    
+}
+.footer-title{
+    font-size:14px;
+    font-weight: 700;
+    color:rgba(0,0,0,0.54);
+    margin-bottom:2.25rem;
+    margin-top:2.5rem;
+
+}
+.footer-content{
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.54);
+    font-size:12px;
+}
+.footer-list{
+    padding-left:0px;
+}
+.footer-item{
+    margin-bottom:10px;
+    
+}
+.footer-item a{
+    color:rgba(0, 0, 0, 0.54)
+}
+.footer-item a:hover{
+    color:var(--primary-color)!important;
+}
+.footer__dowload {
+    display: flex;
+    color:rgba(0, 0, 0, 0.54)!important;
+}
+.footer__dowload-qr {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--boder-color);
+}
+.footer__dowload-app {
+    flex: 1;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer__dowload-app span{
+    color:rgba(0, 0, 0, 0.54);
+}
+.footer__dowload-app-link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.footer__dowload-app-link>img {
+    height: 20px;
+    margin-right: 1em;
+}
+/* Phần chat */
+#chat{
+    position:fixed;
+    right:10px;
+    bottom:0px;
+    width:100px;
+    display: flex;
+    justify-content: center;
+    padding:12px;
+    background-color: var(--primary-color);
+    color:#fff;
+    border-radius: 4px 4px 0 0;
+}
+.src-components-MainLayout-index__chat--3J2KN {
+    opacity: 1;
+    width: 24px;
+    height: 24px;
+    color: #ee4d2d;
+    margin-right: 8px;
+    transition: all .15s linear .1s;
+}
+.src-components-MainLayout-index__logo--1byC8 {
+    width: 44px;
+    height: 22px;
+    color: #ee4d2d;
 }
