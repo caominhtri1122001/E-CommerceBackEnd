@@ -65,8 +65,8 @@ var loadData = function (ods) {
 
 function HuyDonHang(id) {
     requestCancelOrdersByID("http://localhost:37504/api/Orders/HuyDonHang?orID=" + id)
+    console.log(id)
 }
-
 function requestCancelOrdersByID(url) {
     $.ajax({
         url: url,

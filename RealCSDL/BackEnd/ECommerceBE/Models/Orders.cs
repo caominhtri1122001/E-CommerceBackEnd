@@ -25,6 +25,9 @@ namespace ECommerceBE.Models
         public string orderCTime { get; set; }
         public string orderStatus { get; set; }
         public string oderATime { get; set; }
+        //Duyen them vao , lấy link ảnh của sản phẩm order
+        public string orderIMG { get; set; }
+        
     }
 
     public class OrdersFormAdmin
@@ -35,5 +38,6 @@ namespace ECommerceBE.Models
         public string userName { get; set; }
         public string userPhone { get; set; }
         public string userAddress { get; set; }
+        public string orderIMG { get; set; }
     }
 }
