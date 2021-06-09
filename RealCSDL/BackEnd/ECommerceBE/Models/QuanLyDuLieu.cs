@@ -158,13 +158,14 @@ namespace ECommerceBE.Controllers
             {
                 temp.oderATime = Convert.ToDateTime(i[6]).ToString("HH:mm:ss dd/MM/yyyy");
             }
+            temp.orderAddress = i[7].ToString();
             return temp;
         }
 
         public void DatDon(Orders o)
         {
-            string query = "insert into Orders (proID, userID, proNum) values (" +
-                o.proID + ", " + o.userID + ", " + o.proNum + ")";
+            string query = "insert into Orders (proID, userID, proNum, orderAddress) values (" +
+                o.proID + ", " + o.userID + ", " + o.proNum + ", N'" + o.orderAddress + "')";
             DBHelper.Instance.ExcuteDB(query);
         }
 

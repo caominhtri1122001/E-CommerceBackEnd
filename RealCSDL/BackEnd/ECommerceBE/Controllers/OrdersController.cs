@@ -61,6 +61,11 @@ namespace ECommerceBE.Controllers
                     if (i.orderStatus != 0)
                         o.oderATime = i.oderATime;
                     else o.oderATime = "";
+                    o.orderIMG = p.proLinkPicture;
+                    o.orderAddress = i.orderAddress;
+                    o.proBrand = p.proBrand;
+                    o.proOldPrice = p.proOldPrice;
+                    o.proPrice = p.proPrice;
                     data.Add(o);
                 }
             }
@@ -88,7 +93,8 @@ namespace ECommerceBE.Controllers
                     o.proNum = i.proNum;
                     o.userName = u.userName;
                     o.userPhone = u.userPhone;
-                    o.userAddress = u.userAddress;
+                    o.userAddress = i.orderAddress;
+                    o.orderIMG = p.proLinkPicture;
                     data.Add(o);
                 }
             }
@@ -102,10 +108,12 @@ namespace ECommerceBE.Controllers
         {
             var res = new BaseRespone(false, null);
             QuanLyDuLieu dulieu = new QuanLyDuLieu();
+            Users u = LayIFNguoiDung(uid);
             Orders o = new Orders();
             o.proID = pid;
             o.userID = uid;
             o.proNum = s;
+            o.orderAddress = u.userAddress;
             dulieu.DatDon(o);
             res.Success = true;
             return res;
