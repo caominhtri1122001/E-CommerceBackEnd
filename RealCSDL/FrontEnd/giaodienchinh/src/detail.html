@@ -289,7 +289,7 @@
                                     <a>Thay đổi mật khẩu</a>
                                 </li>
                                 <li class="header__navbar-user-item">
-                                    <a href="../../Buyer/src/orderManage.html">Đơn mua hàng</a>
+                                    <a href="../../Buyer/src/orderTest.html">Đơn mua hàng</a>
                                 </li>
                                 <li class="header__navbar-user-item" id="adminManage">
                                     <a href="../../Admin/src/orderAdmin.html">Quản lý Website</a>
@@ -360,21 +360,15 @@
                     <div class="header__cart">
                         <div class="header__cart-wrap">
                             <i class="header__cart-icon fas fa-shopping-cart"></i>
-                            <span class="header__cart-notice">3</span>
-            
-                            <!-- No cart :header__cart-list--no-cart -->
-                            <div class="header__cart-list ">
-                                <img src="./assets/img/no_cart.png" alt="anh no cart" class="header__cart-no-cart-img">
-                                <span class="header__cart-list-no-cart-message">
-                                    Chưa có sản phẩm
-                                </span>
-            
+                            <span class="header__cart-notice" id="totalProduct">0</span>
+                            <!-- Nếu có sản phẩm -->
+                
+                            <!-- <div class="header__cart-list">       
                                 <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
                                 <ul class="header__cart-list-item">
-                                    <!-- Cart item -->
+                            
                                     <li class="header__cart-item">
-                                        <img src="https://hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/k/0/k0a32dy02-888-3.jpg"
-                                            alt="quần thể thao nam" class="header__cart-img">
+                                        <img src="https://hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/k/0/k0a32dy02-888-3.jpg" alt="quần thể thao nam" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Kappa quần shorts thể thao nam </h5>
@@ -395,8 +389,7 @@
                                         </div>
                                     </li>
                                     <li class="header__cart-item">
-                                        <img src="https://product.hstatic.net/1000326314/product/dsc_3882_0e0e789ef00e4541a1f40f3cd8c3a635_master.jpg"
-                                            alt="áo tanktop nam" class="header__cart-img">
+                                        <img src="https://product.hstatic.net/1000326314/product/dsc_3882_0e0e789ef00e4541a1f40f3cd8c3a635_master.jpg" alt="áo tanktop nam" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Áo tanktop nam </h5>
@@ -417,8 +410,7 @@
                                         </div>
                                     </li>
                                     <li class="header__cart-item">
-                                        <img src="https://dongphucthaihoa.vn/wp-content/uploads/2018/10/ao-thun-the-thao-1.png"
-                                            alt="áo thể thao" class="header__cart-img">
+                                        <img src="https://dongphucthaihoa.vn/wp-content/uploads/2018/10/ao-thun-the-thao-1.png" alt="áo thể thao" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Áo thể thao nam cá tính </h5>
@@ -439,8 +431,7 @@
                                         </div>
                                     </li>
                                     <li class="header__cart-item">
-                                        <img src="https://hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/k/0/k0a32dy02-888-3.jpg"
-                                            alt="quần thể thao nam" class="header__cart-img">
+                                        <img src="https://hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/k/0/k0a32dy02-888-3.jpg" alt="quần thể thao nam" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Kappa quần shorts thể thao nam</h5>
@@ -461,8 +452,7 @@
                                         </div>
                                     </li>
                                     <li class="header__cart-item">
-                                        <img src="https://product.hstatic.net/1000326314/product/dsc_3882_0e0e789ef00e4541a1f40f3cd8c3a635_master.jpg"
-                                            alt="áo tanktop nam" class="header__cart-img">
+                                        <img src="https://product.hstatic.net/1000326314/product/dsc_3882_0e0e789ef00e4541a1f40f3cd8c3a635_master.jpg" alt="áo tanktop nam" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Áo tanktop nam </h5>
@@ -483,8 +473,7 @@
                                         </div>
                                     </li>
                                     <li class="header__cart-item">
-                                        <img src="https://dongphucthaihoa.vn/wp-content/uploads/2018/10/ao-thun-the-thao-1.png"
-                                            alt="áo thể thao" class="header__cart-img">
+                                        <img src="https://dongphucthaihoa.vn/wp-content/uploads/2018/10/ao-thun-the-thao-1.png" alt="áo thể thao" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Áo thể thao nam cá tính </h5>
@@ -505,8 +494,7 @@
                                         </div>
                                     </li>
                                     <li class="header__cart-item">
-                                        <img src="https://hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/k/0/k0a32dy02-888-3.jpg"
-                                            alt="quần thể thao nam" class="header__cart-img">
+                                        <img src="https://hoang-phuc.com/media/catalog/product/cache/911a4dad289f521f5a511212882e4276/k/0/k0a32dy02-888-3.jpg" alt="quần thể thao nam" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Kappa quần shorts thể thao nam</h5>
@@ -527,8 +515,7 @@
                                         </div>
                                     </li>
                                     <li class="header__cart-item">
-                                        <img src="https://product.hstatic.net/1000326314/product/dsc_3882_0e0e789ef00e4541a1f40f3cd8c3a635_master.jpg"
-                                            alt="áo tanktop nam" class="header__cart-img">
+                                        <img src="https://product.hstatic.net/1000326314/product/dsc_3882_0e0e789ef00e4541a1f40f3cd8c3a635_master.jpg" alt="áo tanktop nam" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Áo tanktop nam </h5>
@@ -549,8 +536,7 @@
                                         </div>
                                     </li>
                                     <li class="header__cart-item">
-                                        <img src="https://dongphucthaihoa.vn/wp-content/uploads/2018/10/ao-thun-the-thao-1.png"
-                                            alt="áo thể thao" class="header__cart-img">
+                                        <img src="https://dongphucthaihoa.vn/wp-content/uploads/2018/10/ao-thun-the-thao-1.png" alt="áo thể thao" class="header__cart-img">
                                         <div class="header__cart-item-info">
                                             <div class="header__cart-item-head">
                                                 <h5 class="header__cart-item-name">Áo thể thao nam cá tính </h5>
@@ -573,6 +559,12 @@
             
                                 </ul>
                                 <a href="" class="header__card-view-cart btn btn--primary">Xem giỏ hàng</a>
+                            </div>  -->
+                            
+                            <!-- Khoong có sản phẩm -->
+                            <div class="header__cart-list" id="header-no-product">        
+                                <i class="fas fa-tags"></i>
+                                <p style="font-size:1.3rem">Chưa có sản phẩm !!</p>
                             </div>
                         </div>
                     </div>
@@ -588,107 +580,7 @@
                 <button class="home-filter__btn btn btn--primary">Xóa sản phẩm</button>
             </div>
             <div id="product-inner">
-                <!-- <div class="product-img">
-                    <div class="product-spe-img">
-                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb2-600x600.jpg" alt="hinhanh">
-                    </div>
-                    <div class="product-small-img">
-                        <img src="//likefit.vn/wp-content/uploads/2020/07/snb5-600x600.jpg" alt="">
-                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb1-600x600.jpg" alt="">
-                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb1-600x600.jpg" alt="">
-                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb3-600x600.jpg" alt="">
-                        <img src="https://likefit.vn/wp-content/uploads/2020/07/snb3-600x600.jpg" alt="">
-                    </div>
-                    <div class="product__sharing-icons hide-on-mobile-tablet">
-                        <div class="text">Chia sẻ:</div>
-                        <a href="#" class="product__action-icon messenger">
-                            <i class="fab fa-facebook-messenger"></i>
-                        </a>
-                        <a href="#" class="product__action-icon facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="product__action-icon google">
-                            <i class="fab fa-google-plus"></i>
-                        </a>
-                        <a href="#" class="product__action-icon pinterest">
-                            <i class="fab fa-pinterest"></i>
-                        </a>
-                        <a href="#" class="product__action-icon twitter">
-                            <i class="fab fa-twitter-square"></i>
-                        </a>
-                       
-                    </div>
-                </div>
-                <div id="product-infor">
-                    <div class="product-infor-inner">
-                        <h1 class="product-title entry-title">
-                            Áo Ba lỗ – Tank top Buzt</h1>
-                       </div>
-                       <div class="product__price">
-                        <div class="product__price-main">
-                            <span class="product__price-old">₫396.000</span>
-                            <div class="product__price-current">
-                                <span class="product__price-new">₫219.000</span>
-                                <span class="product__price-label bgr-orange">33% GIẢM</span>
-                            </div>
-                        </div>
-                        <div class="product__price-slogan hide-on-mobile-tablet">
-                            <i class="product__price-icon-tag fas fa-tags"></i>
-                            <span class="product__price-slogan-text">Ở đâu rẻ hơn, Minecraft Shop hoàn
-                                tiền</span>
-                            <i class="product__price-icon-question far fa-question-circle"></i>
-                        </div>
-                    </div> 
-                    <div class="product-decription">
-                        <p class="product-detail-item"><strong>Mô tả sản phẩm</strong></p>
-                        <div class="product-detail-text">
-                            <p>– <strong>Mô ta</strong>: Áo tank top Butz form cắt xẻ tank top, xẻ ngang sườn, form mặc rộng thoải mái, không quá ôm</p>
-                            <p>– <strong>Thương hiệu</strong>: FM-Style</p>
-                            <p>– <strong>Xuất xứ</strong>: Việt Nam</p>
-                        </div>
-                    </div>
-                    <div class="product__qnt hide-on-mobile">
-                        <label class="product__qnt-label width-label">Số Lượng</label>
-                        <div class="shop__qnt-btns">
-                            <button class="soluong">
-                                <i class="shop__qnt-btn-icon fas fa-minus"></i>
-                            </button>
-                            <input class="shop__qnt-input" type="text" value="1" maxlength="4">
-                            <button class="soluong" >
-                                <i class="shop__qnt-btn-icon fas fa-plus"></i>
-                            </button>
-                        </div>
-                        <div class="product__qnt-note">
-                            <span class="product__qnt-note-num">1100</span>
-                            sản phẩm có sẵn
-                        </div>
-                    </div>
-                    <div class="product-btns-main">
-                        <button class="product-btn-main product-btn-main__msg clear-btn hide-on-tablet">
-                            <i class="product-btn-main__msg-icon far fa-comment-dots"></i>
-                        </button>
-                        <button class="product-btn-main product-btn-main__adding">
-                            <i class="product-btn-main__adding-icon fas fa-cart-plus"></i>
-                            <span class="product-btn-main__text product-btn-main__adding-text hide-on-mobile">Thêm Vào Giỏ Hàng</span>
-                        </button>
-                        <button onclick="document.location.href=this.getAttribute('href');" href="product-cart.html" class="product-btn-main product-btn-main__buying">
-                            <span class="product-btn-main__text product-btn-main__buying-text">Mua
-                                Ngay</span>
-                        </button>
-                    </div>
-                    <div class="product__guarantee-container">
-                        <a href="*" class="product__guarantee">
-                            <div class="product__guarantee-wrapper">
-                                <span>
-                                    <i class="product__guarantee-icon fas fa-clipboard-check"></i>
-                                </span>
-                                <div class="product__guarantee-text">Minecraft Shop Đảm Bảo</div>
-                            </div>
-                            <span class="product__guarantee-note">3 Ngày Trả Hàng / Hoàn Tiền</span>
-                        </a>
-                    </div> 
-                    </div> -->
-
+              <!-- Thục hiện bên script -->
             </div>
 
         </div>
@@ -811,15 +703,15 @@
             <div class="product-shop__contact">
                 <a href="#" class="product-shop__contact-img-link">
                     <div class="product-shop__contact-avatar-wrapper">
-                        <img
-                            src="https://scontent.fpnh22-3.fna.fbcdn.net/v/t1.6435-9/154218384_2743309672588637_7671629930322155023_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=vDB2kMX-sxAAX9EINWv&_nc_ht=scontent.fpnh22-3.fna&oh=305f82369427cb9edab5399a050c97a2&oe=60AC34AA">
+                        <img id='userContactIMG'
+                            src="" alt='avatar'>
                     </div>
                     <span class="label-loving">Yêu Thích</span>
                 </a>
 
                 <div class="product-shop__contact-container">
                     <div class="product-shop__contact-info">
-                        <div class="product-shop__contact-name">Trương Mỹ Duyên</div>
+                        <div class="product-shop__contact-name" id="userName">Bạn chưa đăng nhập ?</div>
                         <div class="product-shop__contact-online-time">Online 28 Phút Trước</div>
                     </div>
 

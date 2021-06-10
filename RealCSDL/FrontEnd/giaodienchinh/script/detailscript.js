@@ -11,10 +11,46 @@ let emailLogin = document.getElementById("emailLogin")
 var login = document.getElementById("logInOut")
 var user = document.getElementById("useraccount")
 var adminManage = document.getElementById("adminManage")
+let userName=document.querySelector('#userName')
+
+
+// Hàm đổi tiền tệ 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'VND',
+    minimumFractionDigits: 0
+  })
+console.log(formatter.format(1000) )
 
 var userdata = []
 
 // Theem vao ne 
+
+//kiểm tra trong localStorage đã có người đăng nhập hay chưa 
+console.log("gio se check xem co ai dang nhap chua ")
+let listdata = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
+console.log("so luong localstorage" + listdata.length)
+console.log("Xem thong tin nguoi dung : ")
+
+if (listdata.length == 1) {
+    useraccount.style.display = "flex"
+    logInOut.style.display = "none"
+    userName.innerHTML = listdata[0].name
+    userIMG.src = listdata[0].src
+    document.getElementById("userContactIMG").src = listdata[0].srcIMG
+    if (listdata[0].isAdmin == true) adminManage.style.display = "block"
+}
+
+
+
+
+
+//Nếu nhấn logout thì data sẽ xóa dữ liệu 
+function logOut() {
+    localStorage.removeItem("data");
+    location.reload()
+}
+
 //ham dang xuat dang nhap hien form 
 var span = document.getElementsByClassName("close")[0];
 
@@ -54,6 +90,7 @@ function requestDataDetail(url) {
         success: function (response) {
 
             if (response.success) {
+                console.log(response.success)
                 loadData2(response.data)
             }
             else {
@@ -106,9 +143,9 @@ var loadData2 = function (proudcts) {
                </div>
                <div class="product__price">
                 <div class="product__price-main">
-                    <span class="product__price-old">${proudcts.proOldPrice}đ</span>
+                    <span class="product__price-old">${formatter.format(proudcts.proOldPrice)}</span>
                     <div class="product__price-current">
-                        <span class="product__price-new">${proudcts.proPrice}đ</span>
+                        <span class="product__price-new">${formatter.format(proudcts.proPrice)}đ</span>
                         <span class="product__price-label bgr-orange">${Math.floor((proudcts.proOldPrice - proudcts.proPrice) / proudcts.proOldPrice * 100)}%GIẢM</span>
                     </div>
                 </div>
@@ -133,7 +170,7 @@ var loadData2 = function (proudcts) {
                     <button class="soluong" onclick = "giamsl()">
                         <i class="shop__qnt-btn-icon fas fa-minus"></i>
                     </button>
-                    <input class="shop__qnt-input" type="text" value="1" maxlength="4" id = "soluongg">
+                    <input type='number' value=1 id='soluongg'> 
                     <button class="soluong" onclick = "tangsl()">
                         <i class="shop__qnt-btn-icon fas fa-plus"></i>
                     </button>
@@ -175,34 +212,12 @@ $(document).ready(function () {
     var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5";
     var url = new URL(url_string);
     var c = url.searchParams.get("c");
-    console.log(c);
     var url = new URL(window.location.href)
     let productId = url.searchParams.get("productId");
     requestDataDetail("http://localhost:37504/api/Product/GetProductByID?proID=" + productId);
-    //requestDataUser("http://localhost:37504/api/Users/LayListUser");
 });
 
-console.log("gio se check xem co ai dang nhap chua ")
-let listdata = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
-console.log("so luong localstorage" + listdata.length)
-console.log("Xem thong tin nguoi dung : ")
 
-if (listdata.length == 1) shownguoidung()
-
-//neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky 
-function shownguoidung() {
-    useraccount.style.display = "flex"
-    logInOut.style.display = "none"
-    username.innerText = listdata[0].name
-    userIMG.src = listdata[0].src
-    if (listdata[0].isAdmin == true) adminManage.style.display = "block"
-
-}
-//Nếu nhấn logout thì data sẽ xóa dữ liệu 
-function logOut() {
-    localStorage.removeItem("data");
-    location.reload()
-}
 // Sau khi bam dang ky , dang nhap 
 
 //dang nhap tu giao dien detail 
@@ -237,7 +252,7 @@ function checkLogin() {
     modal2.style.display = "none";
     let valid = false;
     let usevalid
-    userdata.forEach(function (item) {
+    userdata.forEach(function (item) {   
         if (emailLogin.value == item.userAccName && passwordLogin.value == item.userPass) {
             console.log(emailLogin.value)
             valid = true
@@ -266,6 +281,7 @@ function checkLogin() {
                 "address": usevalid.userAddress,
                 "src": usevalid.userLinkAvatar,
                 "isAdmin": usevalid.isAdmin,
+                'srcIMG':usevalid.userLinkAvatar
             }
             listnguoidung.push(nguoidung)
             localStorage.setItem("data", JSON.stringify(listnguoidung))
@@ -319,13 +335,9 @@ function changeToLogin() {
 }
 
 
-function isInt(num) {
-    if (num == parseInt(num)) return true
-    return false
-}
 
 function giamsl() {
-    if (isInt(soluongg.value) && soluongg.value > 1) {
+    if (soluongg.value > 1) {
         soluongg.value--;
     } else {
         soluongg.value = 1;
@@ -340,18 +352,57 @@ function tangsl() {
     }
 }
 
-function MuaNgay() {
-    if (isInt(soluongg.value) && soluongg.value > 0) {
-        if (listdata.length != 0){
-            var url = new URL(window.location.href)
-            let productId = url.searchParams.get("productId");
-            requestDatDon("http://localhost:37504/api/Orders/DatDon?pid=" + productId + "&uid=" + listdata[0].id + "&s=" + soluongg.value)
-        } else alert("Hãy đăng nhập trước")
-    } else {
-        alert("Số lượng lỗi, hãy thử lại!")
-        soluongg.value = 1;
+
+
+// Duyen test 
+//Đầu tiên nó sẽ check xem đã đăng nhập hay chưa , nếu chưa đăng nhập thì hiện form đăng nhập 
+function MuaNgay(){
+    if(listdata.length===0){
+        openLogInOut()
+    }
+    else{
+        console.log(soluongg.value)
+        var url = new URL(window.location.href)
+        let productId = url.searchParams.get("productId");
+        requestDatDon("http://localhost:37504/api/Orders/DatDon?pid=" + productId + "&uid=" + listdata[0].id + "&s=" + soluongg.value)
     }
 }
+
+//Nếu có người đang đăng nhập thì kiểm tra giỏ hàng 
+
+// Hàm check người dùng đang đăng nhập đã có đơn hàng hay chưa ? 
+// function checkGioHang(){
+//     //Thuc hiem truy cap list data nguoi dung 
+//     console.log('Ham trong check gio hang')
+//     let UID=listdata[0].id
+//     requestListOrderByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID="+listdata[0].id)
+// }
+//Thuc hien viec check gio hang 
+//Nếu số lượng đơn hàng của nguoiwf dugn lớn hơn 1 thì show giao diện khác 
+
+
+function requestListOrderByUID(url){
+    $.ajax({
+        url: url,
+        data: null,
+        cache: false,
+        type: "GET",
+        success: function (response) {
+            console.log(response)
+            if (response.success) {
+                console.log(response.data)
+            }
+            else {
+                alert("Thất bại???")
+            }
+        },
+        error: function (xhr) {
+        }
+    });
+}
+
+
+
 
 function requestDatDon(url) {
     $.ajax({
@@ -372,6 +423,10 @@ function requestDatDon(url) {
         }
     });
 }
+// Kiểm tra xem giỏ hàng đã có tồn tại đơn hàng hay chưa , nếu chưa thì hiện giao diện no-order 
+//nếu có rồi thì hiện giao diện của đơn hàng 
+
+
 
 function DoiThongTinNguoiDung() {
     modal3.style.display = "block"

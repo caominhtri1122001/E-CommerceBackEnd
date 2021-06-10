@@ -23,6 +23,9 @@
         integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
         crossorigin="anonymous"></script>
     <!-- Link bốttrap -->
+    <!-- Them phan favicon -->
+    <link rel="shortcut icon" type="image/jpg" href="../../public/images/logoheader2.png"/>
+
 </head>
 
 <body>
@@ -139,7 +142,7 @@
                                     <a>Thay đổi mật khẩu</a>
                                 </li>
                                 <li class="header__navbar-user-item">
-                                    <a href="../../Buyer/src/orderManage.html">Đơn mua hàng</a>
+                                    <a href="../../Buyer/src/orderTest.html">Đơn mua hàng</a>
                                 </li>
                                 <li class="header__navbar-user-item" id="adminManage">
                                     <a href="../../Admin/src/orderAdmin.html">Quản lý Website</a>
@@ -713,7 +716,7 @@
                         </div>
                         <div class="auth-form__controls ">
                             <button class="btn btn--normal auth-form__control-back">
-                                <a href="">
+                                <a href="" onclick='comeback()'>
                                     TRỞ LẠI
                                 </a>
                             </button>
@@ -914,7 +917,6 @@
     <script src="../script/script.js"></script>
     <!-- Phan chay san pham -->
     <script>
-        console.log("@@@")
         $('.items').slick({
             slidesToShow: 5,
             slidesToScroll: 1,

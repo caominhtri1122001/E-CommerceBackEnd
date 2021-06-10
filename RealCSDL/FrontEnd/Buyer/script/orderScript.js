@@ -16,6 +16,7 @@ function requestDataOrdersByUID(url) {
         type: "GET",
         success: function (response) {
             if (response.success) {
+                console.log(response.data)
                 loadData(response.data)
             }
             else {
@@ -30,6 +31,7 @@ function requestDataOrdersByUID(url) {
 
 var loadData = function (ods) {
     for (var i = 0; i < ods.length; i++) {
+        console.log(ods.length)
         var productHtml = `
         <div class="row list product">
                                 <div class="cell" data-title="ID">

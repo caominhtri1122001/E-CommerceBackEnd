@@ -42,7 +42,7 @@ html{
 #header{
     position: fixed!important;;
     width:100vw;
-    z-index:120;
+    z-index:20;
     transition:0.2s;
 }
 /* khi scroll manf hinh thi add class nay vao header */
@@ -762,8 +762,16 @@ display: none;
 .header__cart{
     width: 150px;
     text-align: center;
-    
-
+}
+/* Phần hiển thị thông báo không có sản phẩm */
+#header-no-product{
+    width:200px;
+    padding:50px 0px;
+    font-size:25px;
+    color:var(--primary-color);
+}
+.no-product{
+    background-color: red;
 }
 .header__cart-wrap{
     position: relative;
@@ -1352,6 +1360,9 @@ display: none;
     margin-right: 13px;
     margin-bottom:1.5em;
     color:red;
+}
+#soluongg{
+    width:50px;
 }
 .soluong{
     outline: none;

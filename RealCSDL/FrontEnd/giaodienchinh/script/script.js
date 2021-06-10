@@ -25,7 +25,13 @@ console.log('So luong san pham trong gio hang ')
 console.log(totalProduct.innerText==0)
 
 
-// nguoi dung detail 
+//Đổi tiền 
+const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'VND',
+    minimumFractionDigits: 0
+  })
+console.log(formatter.format(1000) )
 
 
 // Nếu nhấn vào thay đổi thông tin account của người dùng thì hiện form thay đổi thông tin lên 
@@ -148,8 +154,8 @@ var loadData = function (proudcts) {
                                     <img src=" ${product.proLinkPicture}">
                                     <div class="home-product-item__name"> ${product.proName} </div>
                                     <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old"> ${product.proOldPrice}đ</span>
-                                        <span class="home-product-item__price-current"> ${product.proPrice}đ </span>
+                                        <span class="home-product-item__price-old">${formatter.format(product.proOldPrice)}</span>
+                                        <span class="home-product-item__price-current">${formatter.format(product.proPrice)}</span>
                                     </div>
                                     <div class="home-product-item__action">
                                         <div class="home-product-item__rating">
@@ -191,11 +197,28 @@ function openRegister() {
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
+    // Phải thực hiện việc xóa những dữ liệu trong form
+    
     if (event.target == modal || event.target == modal2 || event.target == modal3 || event.target == modal4) {
         modal.style.display = "none";
         modal2.style.display = "none";
         modal3.style.display = "none";
         modal4.style.display = "none";
+        hvt.value=''
+        sdt.value=''
+        dc.value=''
+        mk.value=''
+        tk.value=''
+        mk2.value=''
+        emailLogin.value=''
+        passwordLogin.value=''
+        errorNameRegis.classList.remove("notValidData");
+        errorNumberRegis.classList.remove('notValidData')
+        errorAddressRegis.classList.remove('notValidData')
+        errorAccoutRegis.classList.remove('notValidData')
+        errorPWRegis.classList.remove('notValidData')
+        errorcheckPW.classList.remove('notValidData')
+
     }
 }
 
@@ -223,6 +246,7 @@ function requestDataUser(url) {
         type: "GET",
         success: function (response) {
             if (response.success) {
+                console.log(response.data)
                 checkData(response.data)
             }
             else {
@@ -230,12 +254,13 @@ function requestDataUser(url) {
             }
         },
         error: function (xhr) {
-
+            console.log(xhr)
         }
     });
 }
 
 var checkData = function (data) {
+    console.log('thuc hien ham checkData')
     for (i = 0; i < data.length; i++) {
         userdata.push(data[i])
     }
@@ -276,6 +301,7 @@ function checkLogin() {
                 "address": usevalid.userAddress,
                 "src": usevalid.userLinkAvatar,
                 "isAdmin": usevalid.isAdmin,
+                'srcIMG':usevalid.userLinkAvatar
             }
             listnguoidung.push(nguoidung)
             localStorage.setItem("data", JSON.stringify(listnguoidung))
@@ -285,6 +311,8 @@ function checkLogin() {
         }
     } else errorLogin.style.display="block"
 }
+// Khi bấm nút trở lại thì phải xóa hết dữ liệu trong form 
+
 
 function sortDefault() {
     $("#product-list-row").empty();
@@ -320,19 +348,17 @@ function logOut() {
 
 console.log("gio se check xem co ai dang nhap chua ")
 let listdata = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
-console.log("so luong localstorage" + listdata.length)
-console.log("Xem thong tin nguoi dung : ")
-
-if (listdata.length == 1) shownguoidung()
-
-//neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky
-function shownguoidung() {
+console.log("so luong localstorage  " + listdata.length)
+if (listdata.length == 1) {
     username.innerText = listdata[0].name
     userIMG.src = listdata[0].src
     useraccount.style.display = "flex"
     logInOut.style.display = "none"
     if (listdata[0].isAdmin) adminManage.style.display = "block"
 }
+
+//neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky
+
 
 //Cần một biến isError để kiểm tra việc nhập dữ liệu đã hợp lệ chưa, 
 //ban đầu gắn bằng true nghĩa là dữ liệu đã không hợp lệ , sau đó check dữ liệu đã nhập hay chưa 

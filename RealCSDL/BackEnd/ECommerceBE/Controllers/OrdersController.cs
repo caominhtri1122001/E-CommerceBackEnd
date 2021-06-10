@@ -55,9 +55,9 @@ namespace ECommerceBE.Controllers
                     o.proNum = i.proNum;
                     o.total = p.proPrice * o.proNum;
                     o.orderCTime = i.orderCTime;
-                    if (i.orderStatus == 0) o.orderStatus = "Đơn hàng đang chuẩn bị";
-                    if (i.orderStatus == 1) o.orderStatus = "Đơn hàng đã đi giao";
-                    if (i.orderStatus == -1) o.orderStatus = "Đơn hàng đã bị hủy";
+                    if (i.orderStatus == 0) o.orderStatus = "Chờ Xác Nhận";
+                    if (i.orderStatus == 1) o.orderStatus = "Đang Giao";
+                    if (i.orderStatus == -1) o.orderStatus = "Đã hủy";
                     if (i.orderStatus != 0)
                         o.oderATime = i.oderATime;
                     else o.oderATime = "";
@@ -74,6 +74,81 @@ namespace ECommerceBE.Controllers
             res.Success = true;
             return res;
         }
+
+
+        //Thử việc lấy listOrder đã hủy bởi id người dùng 
+        [HttpGet("GetListOrdersCancelByUID")]
+        public BaseRespone getListOrderCanceByUID(int userID)
+        {
+            var res = new BaseRespone(false, null);
+            List<OrdersFormUser> data = new List<OrdersFormUser>();
+            QuanLyDuLieu dulieu = new QuanLyDuLieu();
+            foreach (Orders i in dulieu.LayListDonHang())
+            {
+                if (i.userID == userID&&i.orderStatus==-1)
+                {
+                    OrdersFormUser o = new OrdersFormUser();
+                    Products p = LayIFSanPham(i.proID);
+                    o.orderID = i.orderID;
+                    o.proName = p.proName;
+                    o.proNum = i.proNum;
+                    o.total = p.proPrice * o.proNum;
+                    o.orderCTime = i.orderCTime;
+                    o.orderStatus = "Đã hủy";
+                    if (i.orderStatus != 0)
+                        o.oderATime = i.oderATime;
+                    else o.oderATime = "";
+                    o.orderIMG = p.proLinkPicture;
+                    o.orderAddress = i.orderAddress;
+                    o.proBrand = p.proBrand;
+                    o.proOldPrice = p.proOldPrice;
+                    o.proPrice = p.proPrice;
+                    data.Add(o);
+                }
+            }
+            data.Reverse();
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
+        //Laays danh sach order cho xac nhan by UID 
+        //dang test
+        [HttpGet("GetListOrdersConfirmlByUID")]
+        public BaseRespone getListOrderConfirmByUID(int userID)
+        {
+            var res = new BaseRespone(false, null);
+            List<OrdersFormUser> data = new List<OrdersFormUser>();
+            QuanLyDuLieu dulieu = new QuanLyDuLieu();
+            foreach (Orders i in dulieu.LayListDonHang())
+            {
+                if (i.userID == userID && i.orderStatus == -1)
+                {
+                    OrdersFormUser o = new OrdersFormUser();
+                    Products p = LayIFSanPham(i.proID);
+                    o.orderID = i.orderID;
+                    o.proName = p.proName;
+                    o.proNum = i.proNum;
+                    o.total = p.proPrice * o.proNum;
+                    o.orderCTime = i.orderCTime;
+                    o.orderStatus = "Đã hủy";
+                    if (i.orderStatus != 0)
+                        o.oderATime = i.oderATime;
+                    else o.oderATime = "";
+                    o.orderIMG = p.proLinkPicture;
+                    o.orderAddress = i.orderAddress;
+                    o.proBrand = p.proBrand;
+                    o.proOldPrice = p.proOldPrice;
+                    o.proPrice = p.proPrice;
+                    data.Add(o);
+                }
+            }
+            data.Reverse();
+            res.Data = data;
+            res.Success = true;
+            return res;
+        }
+
 
         [HttpGet("GetListOrders")]
         public BaseRespone GetList()

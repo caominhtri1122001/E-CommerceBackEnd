@@ -937,10 +937,7 @@ input:focus-visible{
 .tagLink{
     padding-left:10px;
 }
-.tagOrder div{
-    display: flex;
-    padding-right:5px;
-}
+
 .tag-order{
     margin-left:10px;
     display: flex;
@@ -963,7 +960,11 @@ input:focus-visible{
 }
 .deliStatus{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end;   
+    margin-right:10px;
+}
+.no-deli{
+    display: none;
 }
 .deliStatus div{
     color:#26aa99;
