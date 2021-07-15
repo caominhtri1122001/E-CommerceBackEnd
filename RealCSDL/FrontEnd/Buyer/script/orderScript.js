@@ -85,7 +85,6 @@ function requestCancelOrdersByID(url) {
             }
         },
         error: function (xhr) {
-
         }
     });
 }

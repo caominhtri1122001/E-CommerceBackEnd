@@ -81,11 +81,13 @@ namespace ECommerceBE.Controllers
         public List<Users> LayListNguoiDung()
         {
             List<Users> data = new List<Users>();
+            DBHelper.Instance.ExcuteDB("UPDATE Users SET userPass = DecryptByPassPhrase('PBL3', userPass)");
             string query = "Select * from Users";
             foreach (DataRow i in DBHelper.Instance.GetRecords(query).Rows)
             {
                 data.Add(LayNguoiDung(i));
             }
+            DBHelper.Instance.ExcuteDB("UPDATE Users SET userPass = EncryptByPassPhrase('PBL3', userPass)");
             return data;
         }
 
@@ -106,10 +108,12 @@ namespace ECommerceBE.Controllers
 
         public void DangKyTaiKhoan(Users u)
         {
+            DBHelper.Instance.ExcuteDB("UPDATE Users SET userPass = DecryptByPassPhrase('PBL3', userPass)");
             string query = "insert into Users (userName, userAccName, userPass, userPhone, userAddress, isAdmin, " +
                 "userLinkAvatar) values(N'" + u.userName + "', '" + u.userAccName + "', '" + u.userPass + "', '" +
                 u.userPhone + "', N'" + u.userAddress + "', " + Convert.ToInt32(u.isAdmin) + ", N'" + u.userLinkAvatar + "')";
             DBHelper.Instance.ExcuteDB(query);
+            DBHelper.Instance.ExcuteDB("UPDATE Users SET userPass = EncryptByPassPhrase('PBL3', userPass)");
         }
 
         public void SuaThongTinTaiKhoan(Users u)
@@ -121,8 +125,10 @@ namespace ECommerceBE.Controllers
 
         public void DoiMatKhau(Users u)
         {
+            DBHelper.Instance.ExcuteDB("UPDATE Users SET userPass = DecryptByPassPhrase('PBL3', userPass)");
             string query = "update Users set userPass = '" + u.userPass + "' where userID = " + u.userID;
             DBHelper.Instance.ExcuteDB(query);
+            DBHelper.Instance.ExcuteDB("UPDATE Users SET userPass = EncryptByPassPhrase('PBL3', userPass)");
         }
 
         public void KhoaTaiKhoan ( int id )
@@ -195,6 +201,12 @@ namespace ECommerceBE.Controllers
         {
             string query = "update Orders set orderStatus = 1, oderATime = '" + DateTime.Now.ToString() +
                 "' where orderID = " + id;
+            DBHelper.Instance.ExcuteDB(query);
+        }
+
+        public void DaNhanHang(int id)
+        {
+            string query = "update Orders set orderStatus = 10 where orderID = " + id;
             DBHelper.Instance.ExcuteDB(query);
         }
     }

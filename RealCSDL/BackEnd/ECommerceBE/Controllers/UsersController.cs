@@ -17,16 +17,16 @@ namespace ECommerceBE.Controllers
             {
                 if (i.userAccName == taikhoan) return false;
             }
-            //for (int i = 0; i < taikhoan.Length; i++)
-            //{
-            //    if ((taikhoan[i] < 48 || taikhoan[i] > 57) && (taikhoan[i] < 65 || taikhoan[i] > 90)
-            //        && (taikhoan[i] < 97 || taikhoan[i] > 122)) return false;
-            //}
-            //for (int i = 0; i < matkhau.Length; i++)
-            //{
-            //    if ((matkhau[i] < 48 || matkhau[i] > 57) && (matkhau[i] < 65 || matkhau[i] > 90)
-            //        && (matkhau[i] < 97 || matkhau[i] > 122)) return false;
-            //}
+            for (int i = 0; i < taikhoan.Length; i++)
+            {
+                if ((taikhoan[i] < 48 || taikhoan[i] > 57) && (taikhoan[i] < 65 || taikhoan[i] > 90)
+                    && (taikhoan[i] < 97 || taikhoan[i] > 122)) return false;
+            }
+            for (int i = 0; i < matkhau.Length; i++)
+            {
+                if ((matkhau[i] < 48 || matkhau[i] > 57) && (matkhau[i] < 65 || matkhau[i] > 90)
+                    && (matkhau[i] < 97 || matkhau[i] > 122)) return false;
+            }
             return true;
         }
 
