@@ -13,6 +13,10 @@ let noOrder=` <div class="container no-order">
 </div>
 </div> `
 
+
+
+
+
 // Hàm đổi tiền 
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -31,34 +35,50 @@ $(document).ready(function () {
     requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=T%E1%BA%A5t%20C%E1%BA%A3");
 });
 
-
-function TatCa() {
-    $("#listOrders").empty();
-    requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=T%E1%BA%A5t%20C%E1%BA%A3");
-    console.log("sort mới nhất")
-}
-function ChoXacNhan() {
-    $("#listOrders").empty();
-    requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=Ch%E1%BB%9D%20X%C3%A1c%20Nh%E1%BA%ADn");
-    console.log("sort bán chạy")
+//Ham đang xuất 
+function logOut(){
+    localStorage.removeItem("data");
+    window.location.href="../../giaodienchinh/src/index.html"
 }
 
-function DangGiao() {
-    $("#listOrders").empty();
-    requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=%C4%90ang%20Giao");
-    console.log("sort thấp đến cao")
-}
 
-function DaNhan() {
-    $("#listOrders").empty();
-    requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=%C4%90%C3%A3%20Nh%E1%BA%ADn");
-    console.log("sort cao đến thấp")
-}
+///Hamf lay danh sach san pham
 
-function DaHuy() {
-    $("#listOrders").empty();
-    requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=%C4%90%C3%A3%20h%E1%BB%A7y");
-    console.log("sort cao đến thấp")
+var btnContainer = document.getElementsByClassName('choiceManagers')[0];
+var btns = btnContainer.getElementsByClassName('choice-small');
+
+function getListUserUID(id){
+    for(let i = 0 ;i < btns.length;i++){
+        btns[i].classList.remove('choice-active');
+    }
+    btns[id].classList.add('choice-active')
+    //get list order by catagory
+    switch(id){
+        case 0: {
+            requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=T%E1%BA%A5t%20C%E1%BA%A3");
+            break;
+        }
+        case 1: {
+            requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=Ch%E1%BB%9D%20X%C3%A1c%20Nh%E1%BA%ADn");
+            break;
+        }
+        case 2: {
+            break;
+        }
+        case 3: {
+            requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=%C4%90ang%20Giao");
+            break;
+        }
+        case 4: {
+            requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=%C4%90%C3%A3%20Nh%E1%BA%ADn");
+            break;
+        }
+        case 5: {
+            requestDataOrdersByUID("http://localhost:37504/api/Orders/GetListOrdersByUID?userID=" + UID + "&loai=%C4%90%C3%A3%20h%E1%BB%A7y");
+            break;
+        }
+        
+    }  
 }
 
 function requestDataOrdersByUID(url) {
@@ -180,8 +200,6 @@ var loadData = function (ods) {
     }
    
 }
-
-
 
 // thực hiện việc hủy đơn hàng 
 function HuyDonHang(id) {
