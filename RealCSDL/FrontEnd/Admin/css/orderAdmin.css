@@ -32,6 +32,7 @@
 /* Giao diện quản lý  */
 #manager{
     background-color: transparent;
+    margin-bottom: 8em;
     
 }
 .manager-inner{

@@ -335,6 +335,12 @@ dành cho danh mục */
 #useraccount{
     display: none;
 }
+#useraccount img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: contain;
+}
 /* Có tài khoản người dùng */
 .header__navbar-user{
     display: flex;
