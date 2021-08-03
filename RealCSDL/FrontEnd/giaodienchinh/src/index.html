@@ -45,11 +45,11 @@
                             <div class="header__qr">
                                 <img src="https://cdn-www.vinid.net/2020/10/ae482776-qr-code-vinid.jpg" alt="QR_CODE" class="header__qr-img">
                                 <div class="header__qr-apps">
-                                    <a href="" class="header__qr-link">
+                                    <a class="header__qr-link">
                                         <img src="https://www.tudiengia.com/wp-content/uploads/2019/04/Play-Store-Error-Code-910.jpg" alt="GG PLAY" class="header__qr-dowload-img">
                                         <span>GOOGLE PLAY</span>
                                     </a>
-                                    <a href="" class="header__qr-link">
+                                    <a class="header__qr-link">
                                         <img src="https://congnghenhat.com/wp-content/uploads/2019/09/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A1ch-chuy%E1%BB%83n-v%C3%B9ng-AppStore-t%E1%BB%AB-Nh%E1%BA%ADt-v%E1%BB%81-l%E1%BA%A1i-Vi%E1%BB%87t-Nam-cho-c%C3%A1c-thi%E1%BA%BFt-b%E1%BB%8B-iOS.jpg" alt="appstore" class="header__qr-dowload-img">
                                         <span>APPSTORE</span>
                                     </a>
@@ -58,10 +58,10 @@
                         </li>
                         <li class="header__navbar-item ">
                             <span class="header__navbar-title--no-pointer">Kết nối</span>
-                            <a href="" class="header__navbar-icon-link">
+                            <a class="header__navbar-icon-link">
                                 <i class="header__navbar-icon fab fa-facebook"></i>
                             </a>
-                            <a href="" class="header__navbar-icon-link">
+                            <a class="header__navbar-icon-link">
                                 <i class=" header__navbar-icon fab fa-instagram"></i>
                             </a>
             
@@ -71,7 +71,7 @@
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--has-notify">
                             <!-- để khi trỏ chuột vào hiện ra thì cần 1 link -->
-                            <a href="" class="header__navbar-item-link">
+                            <a class="header__navbar-item-link">
                                 <i class="header__navbar-icon far fa-bell"></i>
                                 Thông báo
                             </a>
@@ -82,7 +82,7 @@
                                 </header>
                                 <ul class="header__notify-list">
                                     <li class="header__notify-item header__notify-item--viewed">
-                                        <a href="" class="header__notify-link">
+                                        <a class="header__notify-link">
                                             <img src="https://agiare.vn/wp-content/uploads/2019/08/bo-quan-ao-the-thao-nam.jpg" alt="" class="header__notify-img">
                                             <div class="header__notify-info">
                                                 <span class="header__notify-name">Quần áo thể thao chính hãng của DDVT
@@ -93,7 +93,7 @@
                                         </a>
                                     </li>
                                     <li class="header__notify-item header__notify-item--viewed">
-                                        <a href="" class="header__notify-link">
+                                        <a class="header__notify-link">
                                             <img src="https://agiare.vn/wp-content/uploads/2019/08/bo-quan-ao-the-thao-nam.jpg" alt="" class="header__notify-img">
                                             <div class="header__notify-info">
                                                 <span class="header__notify-name">Quần áo thể thao chính hãng của DDVT
@@ -104,7 +104,7 @@
                                         </a>
                                     </li>
                                     <li class="header__notify-item header__notify-item--viewed">
-                                        <a href="" class="header__notify-link">
+                                        <a class="header__notify-link">
                                             <img src="https://agiare.vn/wp-content/uploads/2019/08/bo-quan-ao-the-thao-nam.jpg" alt="" class="header__notify-img">
                                             <div class="header__notify-info">
                                                 <span class="header__notify-name">Quần áo thể thao chính hãng của DDVT
@@ -116,14 +116,14 @@
                                     </li>
                                 </ul>
                                 <footer class="header__notify-footer">
-                                    <a href="" class="header__modify-footer-btn">Xem tất cả</a>
+                                    <a class="header__modify-footer-btn">Xem tất cả</a>
                                 </footer>
                             </div>
                             
                         </li>
                         <li class="header__navbar-item">
                             <!-- Tương tự như trên -->
-                            <a href="" class="header__navbar-item-link">
+                            <a class="header__navbar-item-link">
                                 <i class="header__navbar-icon far fa-question-circle"></i>
                                 Trợ giúp
                             </a>
@@ -148,7 +148,7 @@
                                     <a href="../../Admin/src/orderAdmin.html">Quản lý Website</a>
                                 </li>
                                 <li class="header__navbar-user-item header__navbar-user-item--sperate">
-                                    <a href="" onclick="logOut()">Đăng xuất</a>
+                                    <a onclick="logOut()">Đăng xuất</a>
                                 </li>
                             </ul>
                         </li>
@@ -171,20 +171,20 @@
             
                     <div class="header__search">
                         <div class="header__search-input-wrap">
-                            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+                            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm" id = "textTimKiem">
             
                             <!-- search history -->
                             <div class="header__search-history">
                                 <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
                                 <ul class="header__search-history-list">
                                     <li class="header__search-history-item">
-                                        <a href="">Quần thể thao</a>
+                                        <a>Quần thể thao</a>
                                     </li>
                                     <li class="header__search-history-item">
-                                        <a href="">Áo tanktop</a>
+                                        <a>Áo tanktop</a>
                                     </li>
                                     <li class="header__search-history-item">
-                                        <a href="">Áo thể thao</a>
+                                        <a>Áo thể thao</a>
                                     </li>
                                 </ul>
                             </div>
@@ -203,7 +203,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="header__search-btn">
+                        <button class="header__search-btn" onclick="TimKiemSanPham()">
                             <i class="header__search-btn-icon fas fa-search"></i>
                         </button>
                     </div>
@@ -410,7 +410,7 @@
                                     </li>
             
                                 </ul>
-                                <a href="" class="header__card-view-cart btn btn--primary">Xem giỏ hàng</a>
+                                <a class="header__card-view-cart btn btn--primary">Xem giỏ hàng</a>
                             </div>  -->
                             
                             <!-- Khoong có sản phẩm -->
@@ -635,12 +635,12 @@
                             <img src="https://toanhocbactrungnam.vn/uploads/news/2019_11/1573006985.png" alt="Mã Qr"
                                 class="footer__dowload-qr">
                             <div class="footer__dowload-app">
-                                <a href="" class="footer__dowload-app-link">
+                                <a class="footer__dowload-app-link">
                                     <img src="https://sites.google.com/site/taichplaymjenphivem2019/_/rsrc/1539059092276/home/chplay.png?height=200&width=200"
                                         alt="Ch-play">
                                     <span>GOOGLE PLAY</span>
                                 </a>
-                                <a href="" class="footer__dowload-app-link">
+                                <a class="footer__dowload-app-link">
                                     <img src="https://e7.pngegg.com/pngimages/566/36/png-clipart-app-store-iphone-apple-app-store-icon-blue-text.png"
                                         alt="appstore">
                                     <span>APPSTORE</span>
@@ -686,7 +686,7 @@
                         </div>
                         <div class="auth-form__controls ">
                             <button class="btn btn--normal auth-form__control-back">
-                                <a href="" onclick='comeback()'>
+                                <a onclick='comeback()'>
                                     TRỞ LẠI
                                 </a>
                             </button>
@@ -799,16 +799,16 @@
 
 
                 <div class="auth-form__socials">
-                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                    <a class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
                         <i class="auth-form__socials-icon fab fa-facebook-square"></i>
                         <span class="auth-form__socials-title">
                             Kết nối với Facebook
                         </span>
                     </a>
-                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                    <a class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
                         <i class="auth-form__socials-icon fab fa-google"></i>
                         <span class="auth-form__socials-title">
-                            Kết nối với Foogle
+                            Kết nối với Google
                         </span>
                     </a>
                 </div>
@@ -846,11 +846,11 @@
                     <div class="auth-form__aside">
 
                         <div class="auth-form__help">
-                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                            <a class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
                             <span class="auth-form__help-separate">
 
                             </span>
-                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                            <a class="auth-form__help-link">Cần trợ giúp?</a>
                         </div>
                     </div>
 
@@ -867,16 +867,16 @@
 
 
                 <div class="auth-form__socials">
-                    <a href="" class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
+                    <a class="auth-form__socials-icon--facebook btn btn--size-s btn--witdh-icon">
                         <i class="auth-form__socials-icon fab fa-facebook-square"></i>
                         <span class="auth-form__socials-title">
                             Kết nối với Facebook
                         </span>
                     </a>
-                    <a href="" class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
+                    <a class="auth-form__socials-icon--google btn btn--size-s btn--witdh-icon">
                         <i class="auth-form__socials-icon fab fa-google"></i>
                         <span class="auth-form__socials-title">
-                            Kết nối với Foogle
+                            Kết nối với Google
                         </span>
                     </a>
                 </div>

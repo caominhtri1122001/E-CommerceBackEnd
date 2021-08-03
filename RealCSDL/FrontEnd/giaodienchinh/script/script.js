@@ -3,6 +3,7 @@ var modal2 = document.getElementById("myModal2")
 var modal3 = document.getElementById("myModal3")
 var modal4 = document.getElementById("myModal4")
 
+var textTimKiem = document.getElementById("textTimKiem");
 
 var login = document.getElementById("logInOut")
 var user = document.getElementById("useraccount")
@@ -484,6 +485,7 @@ function cate4() {
 
 
 function TimKiemSanPham(){
+    console.log(textTimKiem.value)
     if(textTimKiem.value.replace(/\s+/g,' ').trim().length == 0) cate0()
     else {
         localStorage.cate = 0;

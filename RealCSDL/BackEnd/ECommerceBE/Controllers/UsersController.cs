@@ -181,7 +181,7 @@ namespace ECommerceBE.Controllers
             var res = new BaseRespone(false, null);
             QuanLyDuLieu dulieu = new QuanLyDuLieu();
             Users u = LayIFNguoiDung(userID);
-            if ( u.userStatus != -1 )
+            if ( u.userStatus != -1 && u.isAdmin == false )
             {
                 dulieu.KhoaTaiKhoan(userID);
                 res.Success = true;
