@@ -190,8 +190,7 @@ namespace ECommerceBE.Controllers
         {
             int sl = LayDonHangBangID(id).proNum;
             int pid = LayDonHangBangID(id).proID;
-            string query = "update Orders set orderStatus = -1, oderATime = '" + DateTime.Now.ToString() +
-                "' where orderID = " + id;
+            string query = "update Orders set orderStatus = -1, oderATime = GETDATE() where orderID = " + id;
             string queryy = "update Products set proNOS = proNOS - " + sl + " where proID = " + pid;
             DBHelper.Instance.ExcuteDB(query);
             DBHelper.Instance.ExcuteDB(queryy);
