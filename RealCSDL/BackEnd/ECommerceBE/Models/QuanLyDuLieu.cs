@@ -199,8 +199,7 @@ namespace ECommerceBE.Controllers
 
         public void XacNhanDon(int id)
         {
-            string query = "update Orders set orderStatus = 1, oderATime = '" + DateTime.Now.ToString() +
-                "' where orderID = " + id;
+            string query = "update Orders set orderStatus = 1, oderATime = GETDATE() where orderID = " + id;
             DBHelper.Instance.ExcuteDB(query);
         }
 

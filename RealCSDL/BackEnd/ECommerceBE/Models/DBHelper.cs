@@ -22,10 +22,10 @@ namespace ECommerceBE.Controllers
                     //string cnnstr = @"Data Source=DESKTOP-P6C180P\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
 
                     // duyen
-                    string cnnstr = @"Data Source=DESKTOP-D9VU28Q\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
+                    //string cnnstr = @"Data Source=DESKTOP-D9VU28Q\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
 
                     // dung
-
+                    string cnnstr = @"Data Source=DESKTOP-0H7QQE6\SQLEXPRESS;Initial Catalog=PBL3_ShopTheThao;Integrated Security=True";
 
                     // tri
 
