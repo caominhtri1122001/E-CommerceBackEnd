@@ -24,7 +24,6 @@ console.log(formatter.format(1000) )
 
 var userdata = []
 
-
 // Theem vao ne 
 
 //kiểm tra trong localStorage đã có người đăng nhập hay chưa 
@@ -32,13 +31,11 @@ console.log("gio se check xem co ai dang nhap chua ")
 let listdata = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
 console.log("so luong localstorage" + listdata.length)
 console.log("Xem thong tin nguoi dung : ")
-console.log(listdata[0])
-username.innerText=listdata[0].name
 
 if (listdata.length == 1) {
     useraccount.style.display = "flex"
     logInOut.style.display = "none"
-    userName.innerHTML = listdata[0].name
+    username.innerHTML = listdata[0].name
     userIMG.src = listdata[0].src
     document.getElementById("userContactIMG").src = listdata[0].srcIMG
     if (listdata[0].isAdmin == true) adminManage.style.display = "block"
@@ -269,7 +266,7 @@ function checkLogin() {
             console.log("da tim duoc nguoi")
             login.style.display = "none"
             user.style.display = "flex"
-            // username.innerText = usevalid.userName
+            username.innerText = usevalid.userName
             userIMG.src = usevalid.userLinkAvatar
             // Nếu là admin thì hiển thị giao diện admin 
             if (usevalid.isAdmin) adminEdit.style.display = "block"
