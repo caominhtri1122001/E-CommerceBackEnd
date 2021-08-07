@@ -35,6 +35,16 @@
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+      integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="website" id="productManage">
@@ -67,11 +77,6 @@
                 <div class="cell cellDelete">Xóa</div>
                 <div class="cell cellAddProduct">Nhập hàng</div>
               </div>
-              <!-- test thu  -->
-              <!-- <div id="product-list-row">
-                        
-                        
-                    </div> -->
               <div id="product-list-row">
                 <!-- <div class="row list product">
                         <div class="cell"  data-title="Name">
@@ -102,6 +107,35 @@
               </div>
             </div>
           </div>
+          <!-- test pagination -->
+          <div class="content__paging">
+            <div class="page">
+              <ul>
+                <li class="btn-prev fas fa-angle-left"></li>
+                <div class="number-page" id="number-page">
+                  <!-- <li class="current-page"><a>1</a></li>
+                  <li class="active"><a>2</a></li>
+                  <li class=""><a>3</a></li>
+                  <li class=""><a>4</a></li>
+                  <li class=""><a>5</a></li>
+                  <li class=""><a>6</a></li> -->
+                </div>
+                <li class="btn-next fas fa-angle-right"></li>
+              </ul>
+            </div>
+            <div class="page-config">
+              <label for="">Item per page: </label>
+              <select name="" id="mySelect">
+                <option value="3">3</option>
+                <option value="6" selected="">6</option>
+                <option value="9">9</option>
+                <option value="12">12</option>
+              </select>
+            </div>
+            <div class="total-page">Total pages: 6</div>
+            <div class="total-item">Total Product: 36</div>
+          </div>
+          <!-- end test pagination -->
         </div>
       </div>
       <!-- Thực hiện form đăng ký sản phẩm mới -->
@@ -257,6 +291,15 @@
     <script>
       $("#header").load("./headerTest.html");
       $("#webControl").load("./webControl.html");
+      var btnContainer = document.getElementById("number-page");
+      var btns = btnContainer.getElementsByTagName('li')
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          var current = document.getElementsByClassName("active");
+          current[1].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+    }
     </script>
   </body>
 </html>

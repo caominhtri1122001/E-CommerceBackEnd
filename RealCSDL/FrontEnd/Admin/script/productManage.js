@@ -6,23 +6,15 @@ var promotion = document.getElementById("promotion");
 var idsanpham = 0;
 
 var productIMG = document.getElementById("input-image")
+let listProduct = []
+
+requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
 
 
-// $('#orderManage').click(function () {
-//     window.location.href = "../src/orderAdmin.html"
-// });
-
-// $('#proManage').click(function () {
-//     window.location.href = "../src/productManage.html.html"
-// });
-
-// $('#userManage').click(function () {
-//     window.location.href = "../src/userManage.html"
-// });
-// $( '#logOut' ).click(function() {
-//     window.location.href="../../giaodienchinh/src/index.html"
-//   });
-
+$(document).ready(function () {
+    console.log("ready!");
+    requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
+});
 
 function requestDataListProduct(url) {
     $.ajax({
@@ -33,6 +25,7 @@ function requestDataListProduct(url) {
         success: function (response) {
             if (response.success) {
                 loadData(response.data)
+                listProduct=response.data
             }
             else {
                 alert(response.message)
@@ -134,44 +127,105 @@ function requestDeleteProduct(url) {
     });
 }
 
-var loadData = function (proudcts) {
-    for (var i = 0; i < proudcts.length; i++) {
-        var productHtml = `
-        <div class="row list product">
-                        <div class="cell"  data-title="Name">
-                             ${proudcts[i].proID}
-                            </div>
-                            <div class="cell" id="proName" data-title="Age">
-                              ${proudcts[i].proName}
-                            </div>
-                            <div class="cell hinhanh" data-title="Occupation">
-                              <img src="${proudcts[i].proLinkPicture}" alt="">
-                            </div>
-                            <div class="cell" data-title="Location">
-                            ${proudcts[i].category}
-                            </div>
-                            <div class="cell" data-title="numberSold">
-                            ${proudcts[i].proNOS}
-                            </div>
-                            <div class="cell func edit" data-title="edit" onclick = "ThemSua(${proudcts[i].proID})">
-                                <i class="fas fa-edit"></i>
-                            </div>
-                            <div class="cell func" data-title="delete" onclick = "Xoa(${proudcts[i].proID})">
-                                <i class="fas fa-trash-alt"></i>
-                           </div>
-                            <div class="cell func" data-title="addmore" onclick = "NhapHang()">
-                                <i class="far fa-plus-square"></i>
-                            </div>
-                        </div>
-                          
-    `
-        $("#product-list-row").append(productHtml)
+
+//Thuc hien test pagination 
+let itemPerPage = 20 ; 
+let currentPage = 0; 
+let start = 0;
+let end = itemPerPage ; 
+let totalProduct= 0;
+let totalPage =  10;
+
+renderListPage(totalPage)
+
+function renderListPage(totalPage) {
+    console.log(totalPage)
+    let html = '';
+    html += `<li class="current-page active"><a>${1}</a></li>`;
+    for (let i = 2; i <= totalPage; i++) {
+        html += `<li><a>${i}</a></li>`;
+    }
+    if (totalPage === 0) {
+        html = ''
+    }
+    document.getElementById('number-page').innerHTML = html;
+}
+function getCurrentPage(currentPage){
+    start = (currentPage-1)*itemPerPage;
+    end = currentPage*itemPerPage;
+}
+console.log("currendPage " + getCurrentPage(2));
+function changePage(){
+    const currentPages = document.querySelectorAll('.number-page li')
+    console.log(currentPage);
+    for(let i = 0 ; i < currentPages.length; i++){
+        currentPages[i].addEventListener('click',()=>{
+            const value = i + 1; 
+            currentPage = value;
+            getCurrentPage(currentPage);
+            requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
+        })
     }
 }
-$(document).ready(function () {
-    console.log("ready!");
+changePage();
+let btnNext= document.querySelector('.btn-next')
+btnNext.addEventListener('click',()=>{
+    currentPage++;
+    if(currentPage>totalPage){
+        currentPage = totalPage
+    }
+    getCurrentPage(currentPage);
     requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
-});
+})
+let btnPrev = document.querySelector(".btn-prev")
+btnPrev.addEventListener('click',()=>{
+    currentPage--;
+    if(currentPage<=1){
+        currentPage=1;
+    }
+    getCurrentPage(currentPage);
+    requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
+})
+// end test pagination 
+
+var loadData = function (product) {
+        totalPage = Math.ceil(product.length/itemPerPage)
+        html = "";
+        const content = listProduct.map((item,index)=>{
+          if(index>=start&&index<=end){
+            html += ` <div class="row list product">
+            <div class="cell"  data-title="Name">
+                 ${item.proID}
+                </div>
+                <div class="cell" id="proName" data-title="Age">
+                  ${item.proName}
+                </div>
+                <div class="cell hinhanh" data-title="Occupation">
+                  <img src="${item.proLinkPicture}" alt="">
+                </div>
+                <div class="cell" data-title="Location">
+                ${item.category}
+                </div>
+                <div class="cell" data-title="numberSold">
+                ${item.proNOS}
+                </div>
+                <div class="cell func edit" data-title="edit" onclick = "ThemSua(${item.proID})">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <div class="cell func" data-title="delete" onclick = "Xoa(${item.proID})">
+                    <i class="fas fa-trash-alt"></i>
+               </div>
+                <div class="cell func" data-title="addmore" onclick = "NhapHang()">
+                    <i class="far fa-plus-square"></i>
+                </div>
+            </div>`
+            return html;
+          }
+        })
+        document.getElementById('product-list-row').innerHTML= html
+}
+
+
 
 
 

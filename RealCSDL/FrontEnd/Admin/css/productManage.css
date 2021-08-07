@@ -28,6 +28,69 @@
  /* phan header moi */
  
 
+ /* test pagination */
+ .no-result{
+    display: none;
+    margin-left: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    color: red;
+    padding: 80px;
+    border: 1px solid gray;
+}
+.content__paging{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.content__paging .page-config{
+    margin-right: 30px;
+}
+.content__paging .page-config select{
+    width: 50px;
+    height: 25px;
+    border-radius: 3px;
+}
+.content__paging .total-item , .total-page{
+    margin-right: 30px;
+}
+.content__paging .number-page{
+    display: flex;
+}
+.content__paging ul{
+    display: flex;
+    justify-content: center;
+}
+.content__paging li{
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+ }
+ .content__paging ul li a{
+    color:black;
+}
+.btn-active{
+    color: #c6c9cc;
+    border: solid 1px #c6c9cc !important;
+}
+.content__paging .active{
+    background: #ff6e06;
+    border: 1px solid #ff6e06;
+}
+.content__paging .active a{
+    color: white;
+}
+ /* end test pagination */
 /* Giao diện quản lý  */
 #manager{
     background-color: transparent;
@@ -60,9 +123,6 @@
     box-shadow: none !important;
 }
 /* File quan li */
-.form-manager{
-    background-color: yellow;
-}
 .body{
     font-family: 'Helvetica Neue', Helvetica, Arial;
 font-size: 14px;
