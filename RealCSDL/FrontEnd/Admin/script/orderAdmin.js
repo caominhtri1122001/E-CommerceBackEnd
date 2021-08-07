@@ -6,6 +6,8 @@ $(document).ready(function () {
   requestDataOrders("http://localhost:37504/api/Orders/GetListOrders")
 });
 
+
+
 function requestDataOrders(url) {
   $.ajax({
       url: url,

@@ -7,7 +7,7 @@
     </div>
 </div>
 <div id="logOutAdmin">
-    <p>Xin chào <span>TruongMyDuyen</span></p>
+    <p>Xin chào <span id="nameAdmin">TruongMyDuyen</span></p>
     <a href="./../../giaodienchinh/src/index.html"><i class="fas fa-store" style="color:#04417fb8"></i></a>
     <button type="button" class="btn btn-outline-secondary" id="logOut"><a href="../../giaodienchinh/src/index.html">Quay lại trang chủ</a></button>
     <div class="variation_form_section">
@@ -20,9 +20,13 @@
 </div>
 <script>
 
+    let listdata = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
+    
+
     const user=document.getElementById("userManage");
     const product=document.getElementById("proManage");
     const order=document.getElementById("orderManage");
+    document.querySelector("#nameAdmin").innerText=listdata[0].name
     let choice = location.pathname
 
     user.classList.remove('active')

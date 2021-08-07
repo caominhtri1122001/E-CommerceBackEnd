@@ -1,6 +1,11 @@
 let listdata = localStorage.getItem("data") ? JSON.parse(localStorage.getItem("data")) : []
 var UID = listdata[0].id;
+let userName=document.querySelector("#userAccount")
+let userInforIMG=document.querySelector("#userInfoIMG")
 
+
+userName.innerText=listdata[0].name
+userInforIMG.src=listdata[0].srcIMG
 
 let noOrder=` <div class="container no-order">
 <div class="row">
