@@ -135,6 +135,8 @@ let start = 0;
 let end = itemPerPage ; 
 let totalProduct= 0;
 let totalPage =  10;
+var btnContainer = document.getElementById("number-page");
+var btns = btnContainer.getElementsByTagName('li')
 
 renderListPage(totalPage)
 
@@ -171,6 +173,10 @@ changePage();
 let btnNext= document.querySelector('.btn-next')
 btnNext.addEventListener('click',()=>{
     currentPage++;
+    for(let i = 0 ; i< btns.length ; i++){
+        btns[i].classList.remove('active')
+    }
+    btns[currentPage].classList.add('active');
     if(currentPage>totalPage){
         currentPage = totalPage
     }
@@ -180,6 +186,10 @@ btnNext.addEventListener('click',()=>{
 let btnPrev = document.querySelector(".btn-prev")
 btnPrev.addEventListener('click',()=>{
     currentPage--;
+    for(let i = 0 ; i < btns.length;i++){
+        btns[i].classList.remove('active')
+    }
+    btns[currentPage].classList.add('active')
     if(currentPage<=1){
         currentPage=1;
     }

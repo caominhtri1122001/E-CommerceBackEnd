@@ -19,10 +19,10 @@ namespace ECommerceBE.Controllers
                 if (_Instance == null)
                 {
                     // vu
-                    string cnnstr = @"Data Source=DESKTOP-P6C180P\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
+                    //string cnnstr = @"Data Source=DESKTOP-P6C180P\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
 
                     // duyen
-                    //string cnnstr = @"Data Source=DESKTOP-D9VU28Q\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
+                    string cnnstr = @"Data Source=DESKTOP-D9VU28Q\SQLEXPRESS;Initial Catalog=DB_ShopTheThao;Integrated Security=True";
 
                     // dung
                     //string cnnstr = @"Data Source=DESKTOP-0H7QQE6\SQLEXPRESS;Initial Catalog=PBL3_ShopTheThao;Integrated Security=True";
@@ -41,7 +41,7 @@ namespace ECommerceBE.Controllers
             cnn = new SqlConnection(s);
         }
 
-        public DataTable GetRecords(string sql)
+        public DataTable (string sql)
         {
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand(sql, cnn);
