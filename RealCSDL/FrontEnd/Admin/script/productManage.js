@@ -9,7 +9,7 @@ var productIMG = document.getElementById("input-image")
 let listProduct = []
 
 
-//Thuc hien test pagination 
+// Thuc hien test pagination 
 let itemPerPage = 12 ; 
 let currentPage = 1; 
 let start = 0;
@@ -135,20 +135,13 @@ function requestDeleteProduct(url) {
     });
 }
 
-<<<<<<< HEAD
 
-//Thuc hien test pagination 
-let itemPerPage = 20 ; 
-let currentPage = 0; 
-let start = 0;
-let end = itemPerPage ; 
-let totalProduct= 0;
-let totalPage =  10;
+
+
 var btnContainer = document.getElementById("number-page");
 var btns = btnContainer.getElementsByTagName('li')
 
-=======
->>>>>>> b8ffbc84d27aca711e02f0d0c87cd0b05bcc0da3
+
 renderListPage(totalPage)
 
 function renderListPage(totalPage) {
@@ -214,6 +207,7 @@ btnPrev.addEventListener('click',()=>{
 
 var loadData = function (listProduct) {
         totalPage = Math.ceil(listProduct.length/itemPerPage)
+        console.log(totalPage)
         html = "";
         const content = listProduct.map((item,index)=>{
           if(index >= start && index < end){
