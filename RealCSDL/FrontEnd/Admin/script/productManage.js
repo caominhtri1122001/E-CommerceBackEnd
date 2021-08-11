@@ -8,11 +8,19 @@ var idsanpham = 0;
 var productIMG = document.getElementById("input-image")
 let listProduct = []
 
-requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
+
+//Thuc hien test pagination 
+let itemPerPage = 12 ; 
+let currentPage = 1; 
+let start = 0;
+let end = itemPerPage ; 
+let totalProduct= 0;
+let totalPage =  10;
 
 
 $(document).ready(function () {
     console.log("ready!");
+    getCurrentPage(1);
     requestDataListProduct("http://localhost:37504/api/Product/GetListProductManage");
 });
 
@@ -24,18 +32,18 @@ function requestDataListProduct(url) {
         type: "GET",
         success: function (response) {
             if (response.success) {
-                loadData(response.data)
                 listProduct=response.data
+                loadData(response.data)
             }
             else {
                 alert(response.message)
             }
         },
         error: function (xhr) {
-
         }
     });
 }
+
 var goToPage = function (id) {
     window.location.href = "/detailtest.html?productId=" + id;
 }
@@ -127,6 +135,7 @@ function requestDeleteProduct(url) {
     });
 }
 
+<<<<<<< HEAD
 
 //Thuc hien test pagination 
 let itemPerPage = 20 ; 
@@ -138,6 +147,8 @@ let totalPage =  10;
 var btnContainer = document.getElementById("number-page");
 var btns = btnContainer.getElementsByTagName('li')
 
+=======
+>>>>>>> b8ffbc84d27aca711e02f0d0c87cd0b05bcc0da3
 renderListPage(totalPage)
 
 function renderListPage(totalPage) {
@@ -152,10 +163,13 @@ function renderListPage(totalPage) {
     }
     document.getElementById('number-page').innerHTML = html;
 }
+
 function getCurrentPage(currentPage){
     start = (currentPage-1)*itemPerPage;
     end = currentPage*itemPerPage;
 }
+
+
 console.log("currendPage " + getCurrentPage(2));
 function changePage(){
     const currentPages = document.querySelectorAll('.number-page li')
@@ -198,11 +212,11 @@ btnPrev.addEventListener('click',()=>{
 })
 // end test pagination 
 
-var loadData = function (product) {
-        totalPage = Math.ceil(product.length/itemPerPage)
+var loadData = function (listProduct) {
+        totalPage = Math.ceil(listProduct.length/itemPerPage)
         html = "";
         const content = listProduct.map((item,index)=>{
-          if(index>=start&&index<=end){
+          if(index >= start && index < end){
             html += ` <div class="row list product">
             <div class="cell"  data-title="Name">
                  ${item.proID}
@@ -250,16 +264,35 @@ window.onclick = function (event) {
 // lấy dữ liệu trên form
 function CheckDataFom(){
     let checkValid=true;
+
+
     if(tensanpham.value=="") {
         nameError.innerHTML="Bạn chưa nhập tên sản phẩm"
         checkValid=false;
     }
+
+    if(tensanpham.value.length > 40){
+        nameError.innerHTML="Tên sản phẩm quá dài (tối đa 40 ký tự)"
+        checkValid=false;
+    }
+
     // if(catagory.value=="Chọn thể loại sản phẩm") {
     //     categoryError.innerHTML="Bạn chưa chọn thể loại sản phẩm"
     //     checkValid=false;
     // }
+
+    if(tenthuonghieu.value.length > 20){
+        brandError.innerHTML="Tên thương hiệu quá dài (tối đa 20 ký tự)"
+        checkValid=false;
+    }
+
     if(tenthuonghieu.value=="") {
         brandError.innerHTML="Bạn chưa nhập tên thương hiệu"
+        checkValid=false;
+    }
+
+    if(tenxuatxu.value.length > 30){
+        originError.innerHTML="Tên xuất xứ quá dài (tối đa 30 ký tự)"
         checkValid=false;
     }
     if(tenxuatxu.value=="") {
@@ -292,7 +325,7 @@ function CheckDataFom(){
         linkIMG2.value="https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
     }
     if(linkIMG3.value=="") {
-        linkIMG3.value="https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpgC"
+        linkIMG3.value="https://gemdigital.vn/wp-content/uploads/2019/11/8-1-1106x800.jpg"
     }
    return checkValid
 }
@@ -340,11 +373,6 @@ function XacNhan() {
         location.reload()
         idsanpham = 0;
     }
-    //Neeus sai thif hienj form loi
-    else {
-        alert("Du lieu dung")
-    }
-   
 }
 
 function requestEdit(url) {

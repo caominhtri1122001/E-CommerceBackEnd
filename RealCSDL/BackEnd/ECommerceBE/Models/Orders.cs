@@ -25,7 +25,7 @@ namespace ECommerceBE.Models
         public double total { get; set; }
         public string orderCTime { get; set; }
         public string orderStatus { get; set; }
-        public string oderATime { get; set; }
+        public string orderATime { get; set; }
         //Duyen them vao , lấy link ảnh của sản phẩm order
         public string orderIMG { get; set; }
         public string orderAddress { get; set; }
