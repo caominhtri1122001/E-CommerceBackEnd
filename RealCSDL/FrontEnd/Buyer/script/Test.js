@@ -184,8 +184,8 @@ var loadData = function (ods) {
                                     </div>
                                     <div class="col-7">
                                         <div class="policy">
-                                            <p>Bạn hài lòng với sản phẩm đã nhận? Nếu có, chọn "Đã nhận được hàng" nha. Nếu không, vui lòng chọn "Trả hàng/ Hoàn tiền" trước ngày 15-06-2021
-                                               nha.</p>
+                                            <p>Thời gian đặt hàng: &emsp;&emsp;&emsp;&emsp;&emsp;  ${ods[i].orderCTime} <br>
+                                            Thời gian xác nhận/hủy đơn: &emsp;  ${ods[i].orderATime}</p>
                                         </div>
                                     </div>
                                     <div class="col-5">

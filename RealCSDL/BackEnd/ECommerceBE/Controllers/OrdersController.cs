@@ -60,8 +60,8 @@ namespace ECommerceBE.Controllers
                     if (i.orderStatus == -1) o.orderStatus = "Đã hủy";
                     if (i.orderStatus == 10) o.orderStatus = "Đã Nhận";
                     if (i.orderStatus != 0)
-                        o.oderATime = i.oderATime;
-                    else o.oderATime = "";
+                        o.orderATime = i.oderATime;
+                    else o.orderATime = "";
                     o.orderIMG = p.proLinkPicture;
                     o.orderAddress = i.orderAddress;
                     o.proBrand = p.proBrand;
