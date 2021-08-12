@@ -51,8 +51,7 @@ function logOut(){
 
 var btnContainer = document.getElementsByClassName('choiceManagers')[0];
 var btns = btnContainer.getElementsByClassName('choice-small');
-btns[0].classList.add('choice-active')
-btns[1].classList.remove('choice-active')
+
 function getListUserUID(id){
     for(let i = 0 ;i < btns.length;i++){
         btns[i].classList.remove('choice-active');

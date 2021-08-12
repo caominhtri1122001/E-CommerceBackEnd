@@ -424,11 +424,11 @@
                 <!-- Phaanf luawj chon  -->
                 <div class="select-product">
                     <ul class="list-choice-product">
-                        <li><a href="#" onclick="cate0()" class="choice-item">Sản phẩm</a></li>
+                        <li><a href="#" onclick="cate0()">Sản phẩm</a></li>
                         <li><a href="#" onclick="cate1()">Áo quần</a></li>
                         <li> <a href="#" onclick="cate2()">Giày</a></li>
                         <li> <a href="#" onclick="cate3()">Phụ Kiện</a></li>
-                        <li> <a href="#" onclick="cate4()">Dụng Cụ Thể Thao</a></li>
+                        <li> <a href="#" onclick="cate4()">Bóng</a></li>
                     </ul>
                 </div>
             </div>
@@ -930,16 +930,6 @@
         let header=document.querySelector("#header");
         header.classList.toggle("sticky",window.scrollY>0);
     })
-    var btnContainer = document.querySelector(".list-choice-product");
-    console.log(btnContainer)
-    var btns = btnContainer.getElementsByTagName("a")
-    for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("choice-item");
-        current[0].className = current[0].className.replace("choice-item", "");
-        this.className += "choice-item";
-    });
-    }
         
   </script>
 </body>

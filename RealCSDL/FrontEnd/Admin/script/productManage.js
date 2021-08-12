@@ -9,7 +9,7 @@ var productIMG = document.getElementById("input-image")
 let listProduct = []
 
 
-// Thuc hien test pagination 
+//Thuc hien test pagination 
 let itemPerPage = 12 ; 
 let currentPage = 1; 
 let start = 0;
@@ -135,13 +135,6 @@ function requestDeleteProduct(url) {
     });
 }
 
-
-
-
-var btnContainer = document.getElementById("number-page");
-var btns = btnContainer.getElementsByTagName('li')
-
-
 renderListPage(totalPage)
 
 function renderListPage(totalPage) {
@@ -180,10 +173,6 @@ changePage();
 let btnNext= document.querySelector('.btn-next')
 btnNext.addEventListener('click',()=>{
     currentPage++;
-    for(let i = 0 ; i< btns.length ; i++){
-        btns[i].classList.remove('active')
-    }
-    btns[currentPage].classList.add('active');
     if(currentPage>totalPage){
         currentPage = totalPage
     }
@@ -193,10 +182,6 @@ btnNext.addEventListener('click',()=>{
 let btnPrev = document.querySelector(".btn-prev")
 btnPrev.addEventListener('click',()=>{
     currentPage--;
-    for(let i = 0 ; i < btns.length;i++){
-        btns[i].classList.remove('active')
-    }
-    btns[currentPage].classList.add('active')
     if(currentPage<=1){
         currentPage=1;
     }
@@ -207,7 +192,6 @@ btnPrev.addEventListener('click',()=>{
 
 var loadData = function (listProduct) {
         totalPage = Math.ceil(listProduct.length/itemPerPage)
-        console.log(totalPage)
         html = "";
         const content = listProduct.map((item,index)=>{
           if(index >= start && index < end){

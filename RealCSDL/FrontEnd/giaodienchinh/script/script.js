@@ -357,6 +357,7 @@ if (listdata.length == 1) {
     logInOut.style.display = "none"
     if (listdata[0].isAdmin) adminManage.style.display = "block"
 }
+
 //neu co du lieu trong local thi hien nguoi dung khong thi hien dang ky
 
 

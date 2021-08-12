@@ -41,7 +41,7 @@ namespace ECommerceBE.Controllers
             cnn = new SqlConnection(s);
         }
 
-        public DataTable (string sql)
+        public DataTable GetRecords(string sql)
         {
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand(sql, cnn);

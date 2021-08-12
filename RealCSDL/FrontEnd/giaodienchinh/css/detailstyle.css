@@ -934,7 +934,6 @@ display: none;
     border:2px solid #0355a8b8;
     color: var(--primary-color);
     background-color: var(--white-color);
-    display: none!important;
 
 }
 .header__card-view-cart{
@@ -1236,7 +1235,6 @@ display: none;
 .product-small-img img{
     width:33%;
     margin-right:0.5em;
-    object-fit: contain;
 }
 /* hình ảnh chia sẽ */
 .product__sharing-icons {
