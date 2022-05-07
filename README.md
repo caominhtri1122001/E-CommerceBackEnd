@@ -1,7 +1,5 @@
 # E-CommerceBackEnd
-Đây là BackEnd của website bán hàng online
-
-- có các chức năng CRUD cơ bản:
+- Chương trình có các chức năng CRUD cơ bản:
  + Thêm sửa xoá sản phẩm mới, quản lý tài khoản người dùng dành cho Admin.
  + Thêm sửa xoá đơn hàng mới, xem thông tin đơn hàng,...
 
