@@ -1,5 +1,8 @@
 # E-CommerceBackEnd
-- Chương trình có các chức năng CRUD cơ bản:
+# Đồ án PBL3: Website bán hàng thể thao
+front-end: HTML, CSS, JavaScript
+back-end: C# .NET
+- Có các chức năng CRUD cơ bản:
  + Thêm sửa xoá sản phẩm mới, quản lý tài khoản người dùng dành cho Admin.
  + Thêm sửa xoá đơn hàng mới, xem thông tin đơn hàng,...
 
